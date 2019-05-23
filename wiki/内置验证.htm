@@ -1,0 +1,930 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 内置验证
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='内置验证' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="javascript:if(confirm('http://www.playframework.cn/netbeansify.png?version=1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/netbeansify.png?version=1'" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../Diff.jsp-page=图片资源-netbeansify.png&r1=1&r2=1.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">内置验证</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Edit.jsp?page=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Edit.jsp?page=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'内置验证' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="写在最前面的话.htm" tppabs="http://www.playframework.cn/wiki/%E5%86%99%E5%9C%A8%E6%9C%80%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">写在最前面的话</a>, <a class="wikipage" href="名家推荐.htm" tppabs="http://www.playframework.cn/wiki/%E5%90%8D%E5%AE%B6%E6%8E%A8%E8%8D%90">名家推荐</a>, <a class="wikipage" href="前言.htm" tppabs="http://www.playframework.cn/wiki/%E5%89%8D%E8%A8%80">前言</a>, <a class="wikipage" href="序.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%8F">序</a>, <a class="wikipage" href="自定义Java标签.htm" tppabs="http://www.playframework.cn/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE">自定义Java标签</a>, <a class="wikipage" href="模板标签.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE">模板标签</a>, <a class="wikipage" href="Java扩展参考.htm" tppabs="http://www.playframework.cn/wiki/Java%E6%89%A9%E5%B1%95%E5%8F%82%E8%80%83">Java扩展参考</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="javascript:if(confirm('http://www.playframework.cn/netbeansify.png?skin=raw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/netbeansify.png?skin=raw'" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>Play框架定义了若干内置验证机制，具体的使用方法已在本书9.2数据验证中有所描述了。每个验证都有相对应的错误信息，这些错误信息都被定义在$PLAY_HOME/resources/messages文件中。它们由key和验证的内容组成，如validation.minSize=Minimum size is %2$d。用户可以在具体应用的conf/messages文件中通过使用相同的键重写这些错误信息，也可以使用本地化定义其他语言。
+</p><hr />
+<b>email</b>
+<p>验证值是合法的e-mail地址，其message key为validation.email。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.email(address);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Email String address
+</pre>
+</div>
+<hr />
+<b>equals</b>
+<p>验证值是否与另一个参数的值相等，例如在注册时常会用到的密码确认。其message key为validation.equals。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.equals(password, passwordConfirmation);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Equals(&quot;passwordConfirmation&quot;) String password
+</pre>
+</div>
+<hr />
+<b>future</b>
+<p>验证值是相对现在的将来时间。如果第二个参数被指定，那么验证的相对时间就是由第二个参数指定的时间。其message key为validation.future。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.future(dueDate);
+validation.future(dueDate, shipmentDate);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@InFuture String dueDate
+@InFuture(&quot;1979-12-31&quot;) String birthDate
+</pre>
+</div>
+<hr />
+<b>isTrue</b>
+<p>验证值是表示true的String类型或者Boolean类型变量，例如注册或者使用条款里面常有的“同意以上条款”选框必须被选中，或者某个选项必须填写的是非0的数字等。空值将会被认为flase，即不合法。其message key为validation.isTrue。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.isTrue(agree);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@IsTrue String agree
+</pre>
+</div>
+<hr />
+<b>match</b>
+<p>检查值是符合给定正则表达式的字符串。注意空字符串将会被认为是合法的。其message key为validation.match。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.match(abbreviation, &quot;[A-Z]{3}&quot;); // TLA
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Match(&quot;[A-Z]{3}&quot;) String abbreviation
+</pre>
+</div>
+<p />
+<hr />
+<b>max</b>
+<p>验证值是不大于给定数字的String类型或者Number类型的变量。注意空值将会被认为是合法的。其message key为validation.max。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.max(wordCount, 7500); // Short story
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Max(7500) String wordCount
+</pre>
+</div>
+<p />
+<hr />
+<b>maxSize</b>
+<p>验证值是长度不大于给定数值的String类型变量。注意空字符串将会被认为是合法的。其message key:为validation.maxSize。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.maxSize(url, 2083); // IE 4.0 - 8
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@MaxSize(2083) String value
+</pre>
+</div>
+<p />
+<hr />
+<b>min</b>
+<p>与max相对，验证值是不小于给定数字的String类型或者Number类型的变量。注意空值将会被认为是合法的。其message key:为validation.min。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.min(age, 18); // Adult
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Min(18) Long age
+</pre>
+</div>
+<p />
+<hr />
+<b>minSize</b>
+<p>与maxSize相对，验证值是长度不小于给定数值的String类型变量。注意空字符串将会被认为是合法的。其message key:为validation.minSize。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.minSize(value, 42);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@MinSize(42) String value
+</pre>
+</div>
+<hr />
+<b>past</b>
+<p>与future相对，验证值是相对现在的过去的时间。如果第二个参数被指定，那么验证的相对时间就是由第二个参数指定的时间。其message key为validation.past。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.past(actualDepartureDate);
+validation.past(expectedDepartureDate, expectedArrivalDate);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Past String actualDepartureDate
+@Past(&quot;1980-01-01&quot;) String birthDate
+</pre>
+</div>
+<hr />
+<b>range</b>
+<p>验证值是在给定两个数值范围内（包含两端点）的数字。其message key为validation.range。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.range(wordCount, 17500, 40000); // Novella
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Range(min = 17500, max = 40000) String wordCount
+</pre>
+</div>
+<p />
+<hr />
+<b>required</b>
+<p>验证值是非空的String、Collection、File或array数组。其message key为validation.required。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.required(value);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Required String value
+</pre>
+</div>
+<p />
+<hr />
+<b>url</b>
+<p>验证值是合法的URL。注意空字符串将被认为是合法的。其message key为validation.url。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.url(value);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@URL String address
+</pre>
+</div>
+<hr />
+<b>phone</b>
+<p>验证值是合法的电话号码。注意空字符串将被认为是合法的。验证是通过一个基本的电话模式确定的。通过实现@match可以制定不同国家的电话号码验证方式。其message key为 validation.phone。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.phone(value);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@Phone String phone
+</pre>
+</div>
+<p />
+<p>自定义格式：+CCC (SSSSSS)9999999999xEEEE
+</p>
+<ul><li>	+为可选的国家码。
+</li><li>	CCC是可选的3位国家代码，需要注意的是其后必须要有一个分隔符。
+</li><li>	(SSSSSS)可选的6位地区码。
+</li><li>	9999999999是必须的电话号码，最高为20位（已覆盖了所知的情况和未来可能的号码）。
+</li><li>	x是可选的扩展，也可以写成“ext”或是“extension”。
+</li><li>	EEEE是可选的扩展码，最高为4位。
+</li><li>	分隔符可以使用空格、‘-’、‘.’或是‘/’其中的一个，并且可以在号码中的任意地方使用。
+</li></ul><p>例如：
+中国:+86 (10)69445464 
+美国:(305) 613 09 58 ext 101 
+法国:+33 1 47 37 62 24 x3 
+德国:+49-4312 / 777 777 
+英国:(020) 1234 1234
+</p>
+<hr />
+<b>ipv4Address</b>
+<p>验证值是符合ipv4规则的IP地址。注意空字符串将被认为是合法的。其message key为validation.ipv4。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.ipv4Address(value);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@IPv4Address String ip
+</pre>
+</div>
+<p />
+<hr />
+<b>ipv6Address</b>
+<p>验证值是符合ipv6规则的IP地址。注意空字符串将被认为是合法的。其message key为validation.ipv6。
+</p>
+<p>代码示例：
+</p>
+<div class="prettify">
+<pre>
+validation.ipv4Address(value);
+</pre>
+</div>
+<p>注解语法：
+</p>
+<div class="prettify">
+<pre>
+@IPv6Address String ip
+</pre>
+</div>
+<p />
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-5) was last changed on <a href="../Login.jsp-redirect=图片资源-netbeans.png.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81&r1=5&r2=4">29-Jan-2012 04:00</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="javascript:if(confirm('http://www.playframework.cn/netbeansify.png?version=1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/netbeansify.png?version=1'" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../Diff.jsp-page=图片资源-netbeansify.png&r1=1&r2=1.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="javascript:if(confirm('http://www.playframework.cn/wiki/UserPreferences.jsp?redirect=%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%2Fnetbeans.png  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/wiki/UserPreferences.jsp?redirect=%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%2Fnetbeans.png'" tppabs="http://www.playframework.cn/wiki/%E5%86%85%E7%BD%AE%E9%AA%8C%E8%AF%81?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

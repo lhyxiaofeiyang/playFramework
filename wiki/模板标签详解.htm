@@ -1,0 +1,1475 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 模板标签详解
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='模板标签详解' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模板标签详解.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模板标签详解.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">模板标签详解</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'模板标签详解' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="控制层概述.htm" tppabs="http://www.playframework.cn/wiki/%E6%8E%A7%E5%88%B6%E5%B1%82%E6%A6%82%E8%BF%B0">控制层概述</a>, <a class="wikipage" href="获取HTTP参数.htm" tppabs="http://www.playframework.cn/wiki/%E8%8E%B7%E5%8F%96HTTP%E5%8F%82%E6%95%B0">获取HTTP参数</a>, <a class="wikipage" href="结果返回.htm" tppabs="http://www.playframework.cn/wiki/%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E">结果返回</a>, <a class="wikipage" href="Action链.htm" tppabs="http://www.playframework.cn/wiki/Action%E9%93%BE">Action链</a>, <a class="wikipage" href="拦截器.htm" tppabs="http://www.playframework.cn/wiki/%E6%8B%A6%E6%88%AA%E5%99%A8">拦截器</a>, <a class="wikipage" href="Session和Flash作用域.htm" tppabs="http://www.playframework.cn/wiki/Session%E5%92%8CFlash%E4%BD%9C%E7%94%A8%E5%9F%9F">Session和Flash作用域</a>, <a class="wikipage" href="本章小结4.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%934">本章小结4</a>, <a class="wikipage" href="模板引擎.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">模板引擎</a>, <a class="wikipage" href="模板语法.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95">模板语法</a>, <a class="wikipage" href="模板继承.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF">模板继承</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=模板标签详解.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.1_E5_86_85_E7_BD_AE_E6_A0_87_E7_AD_BE">5.3.1 内置标签<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.1_E5_86_85_E7_BD_AE_E6_A0_87_E7_AD_BE">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于Play采用的是MVC模型，这就要求表现层从请求处理和数据存储中分离开来。但是静态页面的功能毕竟是有限的，不能满足复杂的显示的需要，Play对一些常用的模板标签进行了封装，不仅实现了表现层和控制层的业务分离，还大大提升了模板功能的重用性。
+<p />
+<p><b>1. #{a}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play需要通过路由器（逆向）生成URL，以此来调用指定的Action。框架封装了HTML中的超链接标签&lt;a&gt;，可以方便地调用控制器中的Action，如：
+</p>
+<div class="prettify">
+<pre>
+#{a @Application.index()} 首页 #{/a}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该实例使用了内置标签#{a}，可以生成指向控制器Application中index方法的HTML链接元素。在模板执行时，以上代码会被会解析为如下HTML代码：
+<div class="prettify">
+<pre>
+&lt;a href=&quot;/application/index &quot;&gt;首页&lt;/a&gt;
+</pre>
+</div>
+<p />
+<p><b>2.#{authenticityToken /}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用#{authenticityToken /}标签可以防止跨站请求伪造，同时也能消除刷新提交和后退提交所带来的困扰。#{authenticityToken /}首先会为服务器和客户端表单生成相同的随机令牌，并以隐藏的input输入域的形式嵌入表单。当用户点击submit按钮提交时，令牌会伴随着表单信息一并发送至控制器中的Action，在Action对提交的表单进行处理前，会先进行令牌的比对，只有令牌信息一致时，才进行后续的表单处理操作。在模板中可以直接使用#{authenticityToken /}标签：
+</p>
+<div class="prettify">
+<pre>
+#{authenticityToken /}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当为form表单添加了#{authenticityToken /}标签后，HTML代码将会被解析为：
+</p>
+<div class="prettify">
+<pre>
+&lt;input type=&quot;hidden&quot; name=&quot;authenticityToken&quot;
+       value=&quot;1c6d92fed96200347f06b7c5e1a3a28fa258ef7c&quot;&gt;
+</pre>
+</div>
+<p />
+<p><b>3.#{cache}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play的设计理念是无状态架构，不建议开发人员记录用户的状态。缓存是很好的解决方案，在开发中会被大量的用到，但缓存也有它自身的缺点，因为缓存只是存在于内存中，适用于存放暂时性的数据，时间一到就会过期。框架对缓存进行了封装，可以在模板中以标签的形式对缓存进行操作：
+</p>
+<div class="prettify">
+<pre>
+#{cache 'startTime'}
+   ${new java.util.Date()}
+#{/cache}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例中使用#{cache}标签，将标签体内的日期进行缓存。还可以为#{cache}标签添加for参数，设置缓存的过期时间：
+<div class="prettify">
+<pre>
+#{cache 'currentTime', for:'3s'}
+   ${new java.util.Date()}
+#{/cache}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例为#{cache}标签添加了for参数，设置缓存的过期时间为3秒。
+<p><b>4.#{doLayout /}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play引入了模板继承机制，假设定义装饰模板main.html，代码如下：
+</p>
+<div class="prettify">
+<pre>
+&lt;!-- common header here --&gt;
+&lt;h1&gt;Main template&lt;/h1&gt;
+ 
+&lt;div id=&quot;content&quot;&gt;
+    #{doLayout /}
+&lt;/div&gt;
+&lt;!-- common footer here --&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{doLayout /}标签可以包含自身的页面内容，即表示在标签处可以插入子模板的内容。
+<p><b>5.#{extends}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;子模板可以通过#{extends}标签继承已经定义好的装饰模板。
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html'/}
+
+&lt;h1&gt;Some code&lt;/h1&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当子模板使用#{extends}标签继承了main.html，就会包含父模板的内容。需要注意的是：在指定模板中别漏掉 #{doLayout /}标签声明。
+<p><b>6.#{if}，#{ifnot}，#{ifError}，#{ifErrors}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板中使用#{if}标签可以进行条件判断：
+</p>
+<div class="prettify">
+<pre>
+#{if user.countryCode == 'en' }
+    Connected user is ${user}
+#{/if}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时，#{if}标签还支持复杂的条件判断：
+</p>
+<div class="prettify">
+<pre>
+#{if ( request.actionMethod == 'administer'  &amp;&amp; user.isAdmin() ) }
+    You are admin, allowed to administer.
+#{/if}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ifnot}标签顾名思义，就是ifnot的意思，其执行时具体的作用与#{if !condition}等价：
+</p>
+<div class="prettify">
+<pre>
+#{ifnot tasks}
+    No tasks today
+#{/ifnot}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可能经常会遇到这种情况，经过控制器中Action的处理，向模板中注入验证错误的提示消息。#{ifError}标签可以判断指定的作用域中是否有验证错误的信息：
+</p>
+<div class="prettify">
+<pre>
+#{ifError 'user.name'}
+  &lt;p&gt;
+    User name is invalid: 
+    #{error 'user.name' /}
+  &lt;p&gt;
+#{/ifError}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只要模板中有任何的验证错误信息，#{ifErrors}标签都可以将其输出：
+</p>
+<div class="prettify">
+<pre>
+#{ifErrors}
+  &lt;p&gt;Error(s) found!&lt;/p&gt;
+#{/ifErrors}
+</pre>
+</div>
+<b>7.#{else}，#{elseif}</b>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{else}标签通常与#{if}标签配合使用：
+</p>
+<div class="prettify">
+<pre>
+#{if user}
+    Connected user is ${user}
+#{/if}
+#{else}
+    Please log in
+#{/else}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play的模板中，#{else}标签也可以与#{list}标签一起使用，当使用#{list }标签进行迭代的集合为空时，可以执行#{else}标签中的内容：
+<div class="prettify">
+<pre>
+#{list items:task, as:'task'}
+    &lt;li&gt;${task}&lt;/li&gt;
+#{/list}
+ 
+#{else}
+    Nothing to do...
+#{/else}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{elseif}标签的作用同样是进行条件判断，用法与#{else}标签非常类似，也可以与#{list}标签配合使用：
+</p>
+<div class="prettify">
+<pre>
+#{if tasks.size() &gt; 1}
+    Busy tasklist
+#{/if}
+ 
+#{elseif tasks}
+    One task on the list
+#{/elseif}
+ 
+#{else}
+    Nothing to do
+#{/else}
+</pre>
+</div>
+<p><b>8. #{error}，#{errorClass}，#{errors}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{error}标签的作用是输出验证后的错误消息。如果指定字段的错误消息确实存在，则直接将其打印出来：
+</p>
+<div class="prettify">
+<pre>
+#{error 'user.name'/}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{errorClass}标签的作用是如果存在指定的验证错误消息，则标签在解析时将被替换为文本hasError，以此可以用于设置出现错误后的HTML元素的样式。
+</p>
+<div class="prettify">
+<pre>
+&lt;input name=&quot;name&quot; class=&quot;#{errorClass 'name'/}&quot;&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码将会按照如下规则解析：
+</p>
+<div class="prettify">
+<pre>
+&lt;input name=&quot;name&quot; class=&quot;${errors.forKey('name') ? 'hasError' : ''}&quot;&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{errors}标签可以遍历当前的验证错误对象集合，其使用方式与 #{list}非常类似，循环体中使用的对象变量名称是${error}：
+</p>
+<div class="prettify">
+<pre>
+&lt;ul&gt;
+#{errors}
+    &lt;li&gt;${error}&lt;/li&gt;
+#{/errors}
+&lt;/ul&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{errors}的标签体内参数变量有以下几种：
+</p>
+<ul><li>error：表示error对象。
+</li><li>error_index：表示当前错误在集合中的序号。
+</li><li>error_isLast：表示是否是集合中的最后一个错误。
+</li><li>error_isFirst：表示是否是集合中的第一个错误。
+</li><li>error_parity：表示当前错误在集合中序号的奇偶值，可能是even或odd。
+</li></ul><div class="prettify">
+<pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;Error&lt;/th&gt;
+    &lt;/tr&gt;
+    #{errors}
+        &lt;tr class=&quot;${error_parity}&quot;&gt;
+            &lt;td&gt;${error_index}&lt;/td&gt;
+            &lt;td&gt;${error}&lt;/td&gt;
+        &lt;/tr&gt;
+    #{/errors}
+&lt;/table&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于很多应用中表单的奇偶行的颜色是不同的，使用#{errors}标签的error_parity参数就可以很方便的解决这个问题，这样有利于用户查看表单，用户体验性更强。
+<p />
+<p />
+<p />
+<p><b>9.#{field}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{field}标签的作用非常大，本着Play的“简约”理念，#{field}标签可以帮助开发者减少同一变量名的重复使用：
+</p>
+<div class="prettify">
+<pre>
+&lt;p&gt;
+  &lt;label&gt;&amp;{'user.name'}&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;user_name&quot; name=&quot;user.name&quot; value=&quot;${user.name}&quot; class=&quot;${errors.forKey('user.name') ? 'has_error' : ''}&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;${errors.forKey('user.name')}&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上实例中，表单input输入中需要大量用到user.name。大量重复操作不仅给开发人员带来了不便，也使得页面的代码显得非常混乱。使用#{field}标签很大程度上可以缓解这个问题:
+</p>
+<div class="prettify">
+<pre>
+#{field 'user.name'}
+&lt;p&gt;
+  &lt;label&gt;&amp;{field.name}&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;${field.id}&quot; name=&quot;${field.name}&quot; value=&quot;${field.value}&quot; class=&quot;${field.errorClass}&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;${field.error}&lt;/span&gt;
+&lt;/p&gt;
+#{/}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提倡在页面开发中尽量使用#{field}标签，而不是重复地编写变量名。
+</p>
+<p />
+<p><b>10.#{form}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play的#{form}标签封装了HTML中的&lt;form&gt;元素，在模板中插入#{form}标签就等价于插入了表单元素。当在模板中使用了#{form}标签时，Play会从路由配置中自动匹配已经定义好的HTTP方法：如果在路由配置中没有定义HTTP方法类型，则默认以POST方式请求；如果在路由配置中GET与POST都定义了，则默认以最先定义的HTTP方法执行。#{form}标签中有以下三种参数：
+</p>
+<ul><li>method（可选）：定义表单提交的HTTP方法类型，可以是POST或 GET。
+</li><li>id（可选）：用于定义表单的id属性。
+</li><li>enctype（可选）：设置表单数据编码方式，默认的编码方式为application/x-www-form-urlencoded。
+</li></ul><br />
+<div class="quote">
+注意：
+<p>Play中字符编码方式只能是utf-8。
+</p></div>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play模板中使用#{form}标签的具体示例如下：
+</p>
+<div class="prettify">
+<pre>
+#{form @Client.details(), method:'GET', id:'detailsForm'}
+   ...
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码会被会解析为如下HTML代码：
+</p>
+<div class="prettify">
+<pre>
+&lt;form action=&quot;/client/details&quot; id=&quot;detailsForm&quot; method=&quot;GET&quot;
+      accept-charset=&quot;utf-8&quot;&gt;
+ ...
+&lt;/form&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以指定目标实体，作为Action方法的一部分：
+</p>
+<div class="prettify">
+<pre>
+#{form @Client.details(client.id)}
+   ...
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假设在控制器中，按照如下定义details方法。该方法中声明了String类型的参数，参数名为clientId。之后HTTP请求参数的名称会从声明的Action方法中匹配：
+</p>
+<div class="prettify">
+<pre>
+public static void details(String clientId){
+       // ...
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板代码解析时，Play会自动生成带clientId参数的URL地址：
+</p>
+<div class="prettify">
+<pre>
+&lt;form action=&quot;/client/details?clientId=3442&quot; method=&quot;GET&quot;
+      accept-charset=&quot;utf-8&quot;&gt;
+ ...
+&lt;/form&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要着重介绍的一点是，在使用#{form}标签以POST方式提交时，自带了令牌保护机制，也就是说#{form}标签包含了#{authenticityToken /}的功能：
+<div class="prettify">
+<pre>
+#{form @Client.create(), method:'POST', id:'creationForm',
+       enctype:'multipart/form-data' }
+   ...
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码会被会解析为如下HTML代码：
+</p>
+<div class="prettify">
+<pre>
+&lt;form action=&quot;/client/create&quot; id=&quot;creationForm&quot; method=&quot;POST&quot;
+      accept-charset=&quot;utf-8&quot; enctype=&quot;multipart/form-data&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;authenticityToken&quot; 
+       value=&quot;1c6d92fed96200347f06b7c5e1a3a28fa258ef7c&quot;&gt;
+ ...
+&lt;/form&gt;
+</pre>
+</div>
+<p><b>11.#{i18n}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i18n在模板中的用法比较特殊，不仅可以直接以标签的形式用于模板语言，也可以直接在JavaScript中调用。可以在JavaScript代码中使用i18n()方法来访问本地化消息文件，如i18n('app_title')。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，需要在conf/messages中进行国际化定义：
+</p>
+<div class="prettify">
+<pre>
+hello_world=Hello, World !
+hello_someone=Hello %s !
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后，在模板中就可以插入#{i18n /}标签来开启国际化支持了：
+</p>
+<div class="prettify">
+<pre>
+#{i18n /}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在JavaScript中可以调用i18n()方法来进行国际化操作，通过conf/messages中的key获取当前key的国际化值：
+</p>
+<div class="prettify">
+<pre>
+alert(i18n('hello_world'));
+alert(i18n('hello_someone', 'John'));
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还可以通过设置key的值来限制允许使用的国际化值，并且允许使用通配符来设置范围：
+</p>
+<div class="prettify">
+<pre>
+#{i18n keys:['title', 'menu.*'] /}
+</pre>
+</div>
+<p><b>12.#{include}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{include}标签的作用是在当前模板中导入另一个模板，并且当前模板中的所有变量对导入的模板透明。其具体使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+&lt;div id=&quot;tree&quot;&gt;
+    #{include 'tree.html' /}
+&lt;/div&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例代码中，直接在当前模板中导入了tree.html模板。
+<p><b>13.#{render}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{render}标签的作用是指定模板进行渲染。#{render}标签的参数是指定渲染模板的路径，可以是绝对路径，也可以是相对于/app/views的路径：
+</p>
+<div class="prettify">
+<pre>
+#{render 'Application/other.html'/}
+</pre>
+</div>
+<p />
+<p><b>14.#{jsAction}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{jsAction}标签会生成一个返回服务端Action的URL地址的JavaScript函数，它不会自动执行Ajax请求，需要通过返回的URL地址手动执行。具体的应用示例如下：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先在conf/routes文件中定义路由：
+</p>
+<div class="prettify">
+<pre>
+GET     /users/{id}        Users.show
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后，就可以在客户端导入定义好的路由：
+</p>
+<div class="prettify">
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var showUserAction = #{jsAction @Users.show(':id') /}
+    
+    var displayUserDetail = function(userId) {
+        $('userDetail').load( showUserAction({id: userId}) )
+    }
+&lt;/script&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有关Ajax的具体用法，会在第10.12节进行详细介绍。
+<p><b>15.#{list}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{list}标签提供非常简便的操作遍历对象集合：
+</p>
+<div class="prettify">
+<pre>
+&lt;ul&gt;
+#{list items:products, as:'product'}
+    &lt;li&gt;${product}&lt;/li&gt;
+#{/list}
+&lt;/ul&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中#{list items:products, as:'product'}用来遍历对象集合products，循环体中的每个对象用变量product来引用。在循环体的代码中可以引用一些预定义的变量，这些变量有固定的名称，但是会以循环体中的对象变量名作为前缀，在上面的例子中就是product_Xxx。#{list}标签的预定义的变量有以下几种：
+</p>
+<ul><li>note_index：表示当前对象在集合中的序号。
+</li><li>note_isFirst：表示是否是集合中的第一个对象。
+</li><li>note_isLast：表示是否是集合中的最后一个对象。
+</li><li>note_parity：表示当前对象在集合中序号的奇偶值，可能是even或odd。
+</li></ul><div class="prettify">
+<pre>
+&lt;ul&gt;
+#{list items:products, as:'product'}
+    &lt;span class=&quot;${product_parity}&quot;&gt;${product_index}. ${product}&lt;/span&gt;
+    ${product_isLast ? '' : '-'}
+#{/list}
+&lt;/ul&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{list}标签中的items参数是可选的，也可以无需声明参数类型直接写参数，这样可以简化#{list}标签的用法：
+</p>
+<div class="prettify">
+<pre>
+#{list products, as:'product'}
+    &lt;li&gt;${product}&lt;/li&gt;
+#{/list}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在#{list}标签中可以使用Groovy中的range对象，用法与for循环非常类似：
+</p>
+<div class="prettify">
+<pre>
+#{list items:0..10, as:'i'}
+    ${i}
+#{/list}
+</pre>
+</div>
+<div class="prettify">
+<pre>
+#{list items:'a'..'z', as:'letter'}
+    ${letter} ${letter_isLast ? '' : '|' }
+#{/list}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{list}标签中as参数也不是必须的，可以用约定的下划线符“ _ ”作为默认的变量名：
+</p>
+<div class="prettify">
+<pre>
+#{list users}
+    &lt;li&gt;${_}&lt;/li&gt;
+#{/list}
+</pre>
+</div>
+<p />
+<p><b>16.#{option}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{option}标签是HTML中&lt;option&gt;的封装，其作用是在当前模板位置中插入&lt;option&gt;元素。#{option}标签的参数只有一个：
+</p>
+<ul><li>value：选项的值。
+</li></ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{option}标签的具体使用方法如下：
+<div class="prettify">
+<pre>
+#{option user.id} ${user.name} #{/option}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码会被会解析为如下HTML代码： 
+</p>
+<div class="prettify">
+<pre>
+&lt;option value=&quot;42&quot;&gt;jto&lt;/option&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{option}标签一般与#{select}标签配合使用。
+<p />
+<p><b>17.#{select}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{select}标签是HTML中&lt;select&gt;的封装，其作用是在当前模板位置中插入&lt;select&gt;元素。#{select}标签有一个必选的参数：
+</p>
+<ul><li>name(必须)：设置select元素的name属性。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其具体使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+#{select 'booking.beds', value:2, id:'select1'}
+    #{option 1}One king-size bed#{/option}
+    #{option 2}Two double beds#{/option}
+    #{option 3}Three beds#{/option}
+#{/select}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码会被会解析为如下HTML代码： 
+</p>
+<div class="prettify">
+<pre>
+&lt;select name=&quot;booking.beds&quot; size=&quot;1&quot; id=&quot;select1&quot; &gt;
+    &lt;option value=&quot;1&quot;&gt;One king-size bed&lt;/option&gt;
+    &lt;option value=&quot;2&quot; selected=&quot;selected&quot;&gt;Two double beds&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Three beds&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在#{select}标签中使用items属性可以自动生成所需的option选择项：
+</p>
+<ul><li>items(可选)：设置集合对象。
+</li><li>value(可选)：设置默认选中项。
+</li><li>labelProperty(可选)：设置每一项的lable值对应对象的哪个属性。
+</li><li>valueProperty(可选)：设置每一项的value值对应对象的哪个属性，默认为对象的id属性。
+</li></ul><br />
+<div class="quote">
+注意：
+<p>labelProperty和valueProperty属性值不支持Java基本类型，需使用封装类型如Integer或Long来代替int或long类型 。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下代码为#{select}标签中使用items属性的例子。首先由控制器Action向页面模板注入用户集合List&lt;User&gt; users，且每一个用户user都有name属性，id是User的主键：
+</p>
+<div class="prettify">
+<pre>
+#{select 'users', items:users, valueProperty:'id', labelProperty:'name', value:5, class:'test', id:'select2' /}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板执行时，以上代码会被会解析为如下HTML代码： 
+</p>
+<div class="prettify">
+<pre>
+&lt;select name=&quot;users&quot; size=&quot;1&quot; class=&quot;test&quot; id=&quot;select2&quot; &gt;
+  &lt;option value=&quot;0&quot; &gt;User-0&lt;/option&gt;
+  &lt;option value=&quot;1&quot; &gt;User-1&lt;/option&gt;            
+  &lt;option value=&quot;2&quot; &gt;User-2&lt;/option&gt;            
+  &lt;option value=&quot;3&quot; &gt;User-3&lt;/option&gt;
+  &lt;option value=&quot;4&quot; &gt;User-4&lt;/option&gt;
+  &lt;option value=&quot;5&quot; selected=&quot;selected&quot;&gt;User-5&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+<p />
+<p><b>18.#{set}，#{get}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{set}标签用于设置可以在模板中使用的变量。如#{set email:'china@oopsplay.org'}，就设置了模板变量email的值，可以通过 #{get 'email'} 来获取。#{set}标签的定义中可以引用其他变量：
+</p>
+<div class="prettify">
+<pre>
+#{set title:'Profile of ' + user.login /}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还可以在#{set}标签体内定义变量的值：
+</p>
+<div class="prettify">
+<pre>
+#{set 'title'}
+    Profile of ${user.login}
+#{/set}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{get}标签的作用是获取由#{set}标签定义的值，在Play的模板中，通过get/set机制，可以使父模板和子模板间进行通信。
+</p>
+<div class="prettify">
+<pre>
+&lt;head&gt;
+    &lt;title&gt;#{get 'title' /}
+&lt;/head&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以在#{get}标签体内设置当变量不存在时的缺省值，如下例当title变量不存在时，会显示Homepage。
+</p>
+<div class="prettify">
+<pre>
+&lt;head&gt;
+    &lt;title&gt;#{get 'title'}Homepage #{/} 
+&lt;/head&gt;
+</pre>
+</div>
+<p />
+<p><b>19.#{script}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{script}标签用于生成一个&lt;script&gt;元素，可以引入/public/javascripts目录下的JavaScript文件。如 #{script 'jquery.js'}就引用了/public/javascripts/jquery.js 文件。
+</p>
+<div class="prettify">
+<pre>
+#{script src:'jquery-1.5.1.min.js ', id:'jquery' , charset:'utf-8' /}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{script}标签有以下几类参数：
+<ul><li>src(必须)：设置脚本文件的地址，无需在地址前加上默认父目录/public/javascripts。
+</li><li>id(可选)：设置生成的&lt;script&gt;元素的id。
+</li><li>charset(可选)：设置脚本文件的字符编码，默认为UTF-8。
+</li></ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果只需要在#{script}标签中设置src的参数值，则可以省略src参数名，直接写上需要引入的JavaScript文件即可：
+<div class="prettify">
+<pre>
+#{script 'jquery-1.5.1.min.js' /}
+</pre>
+</div>
+<p><b>20.#{stylesheet}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{stylesheet}标签的使用方法与#{script}类似，不同的是#{stylesheet}标签使用&lt;link&gt;元素来引入/public/stylesheets目录下的CSS文件。如#{stylesheet id:'main', media:'print', src:'print.css', title:'Print stylesheet' /}就引用了/public/stylesheets/print.js 文件。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{stylesheet}标签有以下几类参数：
+</p>
+<ul><li>src(必须)：设置样式文件的地址，无需在地址前加上默认父目录/public/stylesheets。
+</li><li>id(可选)：设置生成的&lt;link&gt;标签的id。
+</li><li>media(可选)：设置 media 属性: screen，print，aural，projection……
+</li><li>title(可选)：设置标签title属性。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果只需要在#{stylesheet}标签中设置src的参数值，则可以省略src参数名，直接写上需要引入的CSS文件即可：
+</p>
+<div class="prettify">
+<pre>
+#{stylesheet 'default.css' /}
+</pre>
+</div>
+<p><b>21.#{verbatim}</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用#{verbatim}标签可以禁用模板中的HTML转义功能。如果直接按照如下方式在模板中输出表达式：
+</p>
+<div class="prettify">
+<pre>
+${'&amp;amp;'} 
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经模板解析后，会默认转义输出“&amp;amp ;”。如果使用了#{verbatim}标签：
+<div class="prettify">
+<pre>
+#{verbatim}${'&amp;amp;'}#{/verbatim}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板解析时将不会进行转义，直接输出“&amp;”。
+<p />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.2_E8_87_AA_E5_AE_9A_E4_B9_89tag">5.3.2 自定义tag<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.2_E8_87_AA_E5_AE_9A_E4_B9_89tag">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供了模板标签的自定义功能，可以非常方便地为应用创建特定的标签。这不仅提高了代码重用性，也使模板中的代码更加整洁。在这里提到的标签，指的就是简单的模板文件（存放在app/views/tags目录中），在使用时标签的名称需要与模板的文件名保持一致。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体使用方法如下。在app/views/tags目录中新建hello.html文件，即成功创建了hello标签，之后编辑hello.html中的内容：
+</p>
+<div class="prettify">
+<pre>
+Hello from tag!
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;并没有进行任何配置，就完成了标签的自定义，之后就可以在其他模板中直接使用该标签了：
+</p>
+<div class="prettify">
+<pre>
+#{hello /}
+</pre>
+</div>
+<p><br />
+<b>获取标签参数</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在标签中可以包含参数，框架会自动将参数传递给模板变量。在使用中，标签的参数名与模板变量名并不是完全一致的，模板变量声明时需要增加下划线_。例如，在hello.html标签模板文件中进行如下声明：
+</p>
+<div class="prettify">
+<pre>
+Hello ${_name}!
+</pre>
+</div>
+ 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在其他模板中，就可以通过如下语句将name参数传递给标签了：
+</p>
+<div class="prettify">
+<pre>
+#{hello name:'Bob' /}
+</pre>
+</div>
+  
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果标签中只有一个参数，就可以采用默认的参数名称arg。由于该名称是内置的，在使用时可以不显式地写出参数名。例如，在hello.html标签模板文件中声明：
+</p>
+<p />
+<div class="prettify">
+<pre>
+Hello ${_arg}!
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在其他模板中，简单地使用如下语句就可以将Bob传递给标签：
+</p>
+<div class="prettify">
+<pre>
+#{hello 'Bob' /}
+</pre>
+</div>
+<p><br />
+<b>调用标签体</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;起始标签和结束标签之间包含的内容称为标签体,标签体可以是文本，HTML等。在Play中调用#{doBody /}标签可以很方便地完成以上内容。例如，在hello.html标签模板文件中声明：
+</p>
+<div class="prettify">
+<pre>
+Hello #{doBody /}!
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后Ben将会作为标签体进行传递：
+</p>
+<div class="prettify">
+<pre>
+#{hello}
+    Ben
+#{/hello}
+</pre>
+</div>
+<p><br />
+<b>自动选择最适标签</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据content type设置，不同的页面可能会由不同的格式进行渲染(HTML，XML，JSON等)。这一点在Play中完全不用担心，框架会选取最适合的形式来显示。例如，当请求希望以HTML格式渲染时，Play会自动调用app/views/tags/hello.html模板；当请求希望以XML格式渲染时，Play则会选择app/views/tags/hello.xml模板。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play中可以定义后缀为.tag的通用模板标签，但他的优先级是最低的。只有当规定的模板标签格式是无效时，才会调用它。例如，在程序中只定义了两个模板标签，分别是app/views/tags/hello.xml和app/views/tags/hello.tag，当请求希望以HTML格式渲染时，框架会优先寻找hello.html模板，当发现该文件不存在时，才会调用hello.tag模板。
+</p>
+<p />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.3_E8_87_AA_E5_AE_9A_E4_B9_89Play_E6_A0_87_E7_AD_BE">5.3.3 自定义Play标签<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E6_A0_87_E7_AD_BE_E8_AF_A6_E8_A7_A3-5.3.3_E8_87_AA_E5_AE_9A_E4_B9_89Play_E6_A0_87_E7_AD_BE">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以在Java代码中自定义标签，封装一些更为复杂的功能。如果希望自定义Java标签，需要先创建继承于play.templates.FastTags的类。
+<div class="prettify">
+<pre>
+package utils;
+
+public class MyFastTag extends FastTags {
+   ...
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个想要作为标签(tag)运行的方法都具有固定的声明方式，具体如下：
+<div class="prettify">
+<pre>
+public static void _tagName(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+   ExecutableTemplate template, int fromLine)
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>别漏了标签名前面的下划线。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了进一步了解如何创建标签，先来看看两个Play内置标签的例子(Play封装了这两个标签，在play/framework/src/play/templates/FastTags.java文件中可以查看）。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{verbatim}标签只是简单的调用了从JavaExtensions传递过来的toString()方法，直接在模板上打印了标签体中的内容：
+</p>
+<div class="prettify">
+<pre>
+public static void _verbatim(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+   ExecutableTemplate template, int fromLine) {
+   
+   out.println(JavaExtensions.toString(body));
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该标签的具体使用方法如下，从标签的开始到结束都是标签体内容：
+</p>
+<div class="prettify">
+<pre>
+#{verbatim}My verbatim #{/verbatim}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板中将会打印出标签体内容：
+</p>
+<div class="prettify">
+<pre>
+My verbatim
+
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二个Play内置标签例子是#{option}，它要稍微复杂一点，因为它的实现依赖于父标签#{select}(Play也封装了#{select}标签，在play/framework/templates/tags/select.tag文件中可以查看具体定义)。
+<div class="prettify">
+<pre>
+public static void _option(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+      ExecutableTemplate template, int fromLine) {
+ 
+   Object value = args.get(&quot;arg&quot;);
+   Object selection = TagContext.parent(&quot;select&quot;).data.get(&quot;selected&quot;);
+   boolean selected = selection != null &amp;&amp; value != null 
+      &amp;&amp; selection.equals(value);
+ 
+   out.print(&quot;&lt;option value=\&quot;&quot; + (value == null ? &quot;&quot; : value) + &quot;\&quot; &quot; 
+      + (selected ? &quot;selected=\&quot;selected\&quot;&quot; : &quot;&quot;) 
+      + &quot;&quot; + serialize(args, &quot;selected&quot;, &quot;value&quot;) + &quot;&gt;&quot;);
+   out.println(JavaExtensions.toString(body));
+   out.print(&quot;&lt;/option&gt;&quot;);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该Java标签的原理是封装了HTML的&lt;option&gt;标签，用于实现下拉列表实例，并且从父标签#{select}中获取被默认选中(selected)的值。方法体最开始的三行用于设定输出的变量，最后的三行则输出了标签的结果。该标签的具体使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+#{select name:&quot;country&quot;,value:&quot;中国&quot;}
+    #{option arg:&quot;英国&quot;}英国#{/option}
+    #{option arg:&quot;中国&quot;}中国#{/option}
+    #{option arg:&quot;美国&quot;}美国#{/option}
+    #{option arg:&quot;日本&quot;}日本#{/option}
+#{/select}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里需要对父标签#{select}的使用做一些简单说明：country是#{select}标签的name属性，是必选的；中国是#{select}标签的value属性，用于标识selected元素，是可选的。
+</p>
+<p><br />
+<b>标签的命名空间</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实际项目中可能会自定义大量的标签，标签命名不规范可能会造成一些不必要的麻烦(比如与已定义的标签重名，或是与Play框架的核心标签冲突)。为了解决这个问题，Play可以使用@FastTags.Namespace注解来设定命名空间。对于my.tags命名空间中的#{hello}标签需要做以下工作：
+</p>
+<div class="prettify">
+<pre>
+@FastTags.Namespace(&quot;my.tags&quot;) 
+public class MyFastTag extends FastTags {
+   public static void _hello (Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+      ExecutableTemplate template, int fromLine) {
+      ...
+   }
+}
+
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后在模板中可以通过以下方式来调用#{hello}标签：
+</p>
+<div class="prettify">
+<pre>
+#{my.tags.hello/}
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-38) was last changed on <a href="../Diff.jsp-page=模板标签详解&r1=38&r2=37.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3&r1=38&r2=37">08-Apr-2012 10:33</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模板标签详解.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模板标签详解.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="模板标签详解-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

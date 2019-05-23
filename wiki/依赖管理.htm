@@ -1,0 +1,1063 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 依赖管理
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='依赖管理' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=依赖管理.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=依赖管理.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">依赖管理</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'依赖管理' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="配置框架ID.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6ID">配置框架ID</a>, <a class="wikipage" href="国际化.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96">国际化</a>, <a class="wikipage" href="缓存.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98">缓存</a>, <a class="wikipage" href="产品化.htm" tppabs="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96">产品化</a>, <a class="wikipage" href="邮件功能.htm" tppabs="http://www.playframework.cn/wiki/%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD">邮件功能</a>, <a class="wikipage" href="集成OpenID.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90OpenID">集成OpenID</a>, <a class="wikipage" href="Ajax请求.htm" tppabs="http://www.playframework.cn/wiki/Ajax%E8%AF%B7%E6%B1%82">Ajax请求</a>, <a class="wikipage" href="应用部署.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">应用部署</a>, <a class="wikipage" href="管理数据库升级.htm" tppabs="http://www.playframework.cn/wiki/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7">管理数据库升级</a>, <a class="wikipage" href="安全向导.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC">安全向导</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=依赖管理.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play依赖管理系统的入口文件为dependencies.yml，框架通过该文件管理应用的外部依赖。Play应用通常包含以下三种类型的依赖:
+</p><ul><li>Play框架本身，因为Play应用必须依赖框架本身。
+</li><li>任意的Java库，可以将JAR包拷贝至应用的lib/目录下。
+</li><li>Play模块（即应用的一部分），将模块安装至应用的modules/目录下。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play应用的conf/dependencies.yml文件对依赖进行描述，框架就会自动为应用下载并安装相应的依赖。
+</p>
+<p><br />
+<h3 id="section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.1_E4_BE_9D_E8_B5_96_E6_A0_BC_E5_BC_8F">10.16.1 依赖格式<a class="hashlink" href="#section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.1_E4_BE_9D_E8_B5_96_E6_A0_BC_E5_BC_8F">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dependencies.yml是Play应用的依赖配置文件，具有特定的依赖配置格式，使用坐标的形式将依赖进行划分。dependencies.yml中具体的书写格式由四个部分组成，具体为：依赖的组织名organisation、依赖名称name、版本号revision和环境分类classifier，其中classifier是可选的，它表示在相同版本下针对不同的环境或者jdk所使用的JAR。具体的依赖描述如下：
+</p>
+<div class="prettify">
+<pre>
+organisation -&gt; name revision [classifier]
+</pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果应用需要配置Play PDF模块(版本号为1.0)，可以按如下方式描述：
+</p>
+<div class="prettify">
+<pre>
+play -&gt; pdf 1.0
+</pre>
+</div> 
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有时也会碰到组织名和依赖名相同的情况，以commons-lang为例：
+</p>
+<div class="prettify">
+<pre>
+commons-lang -&gt; commons-lang 2.5
+</pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果出现这种情况，可以采用简略的依赖描述方式，即在描述中省略组织名，只需要描述依赖名和版本号即可：
+</p>
+<div class="prettify">
+<pre>
+commons-lang 2.5
+</pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果依赖需要针对不同的jdk环境，需要使用可选的classifier配置属性。以JSON依赖为例，net.sf.json-lib:json-lib:2.4的完整格式为json-lib-2.4-jdk15.jar，如果需要使用依赖引入该JAR文件，具体写法如下：
+<div class="prettify">
+<pre>
+net.sf.json-lib -&gt; json-lib 2.4 jdk15
+</pre>
+</div> 
+<p />
+<p><br />
+<b>动态版本识别</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dependencies.yml文件中需要描述依赖的版本号，版本可以是静态的，也可以是动态的。动态版本表示版本范围内的依赖都是可以被接受和使用的，例如:
+</p>
+<ul><li>[1.0,2.0] 匹配所有1.0（包含1.0）~2.0（包含2.0）的版本。<br />
+</li></ul><ul><li>[1.0,2.0[ 匹配所有1.0（包含1.0）~2.0（不包含2.0）的版本。<br />
+</li></ul><ul><li>]1.0,2.0] 匹配所有1.0（不包含1.0）~2.0（包含2.0）的版本。<br />
+</li></ul><ul><li>]1.0,2.0[ 匹配所有1.0（不包含1.0）~2.0（不包含2.0）的版本。<br />
+</li></ul><ul><li>[1.0,) 匹配所有1.0（包含1.0）以上的版本。<br />
+</li></ul><ul><li>]1.0,) 匹配所有1.0（不包含1.0）以上的版本。<br />
+</li></ul><ul><li>(,2.0] 匹配所有2.0（包含2.0）以下的版本。<br />
+</li></ul><ul><li>(,2.0[ 匹配所有2.0（不包含2.0）以下的版本。<br />
+</li></ul><p />
+<p><br />
+<h3 id="section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.2Dependencies.yml">10.16.2 dependencies.yml<a class="hashlink" href="#section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.2Dependencies.yml">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用<b>play new</b>命令创建Play应用时，在conf/目录下会自动生成dependencies.yml文件，并具有初始的依赖描述:
+</p>
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+</pre>
+</div>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require标识下的内容即应用所需的依赖。新创建的应用已包含了Play 1.2依赖。假设应用还需要Google Guava依赖，只需要添加相应的依赖描述即可：
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07
+</pre>
+</div>
+ 
+<br />
+<b>play dependencies</b>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play dependencies</b>命令的作用是解析并下载安装新依赖，具体命令界面如下所示：
+</p>
+<div class="prettify">
+<pre>
+$ play dependencies
+~        _            _ 
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/   
+~
+~ play! 1.2, http://www.playframework.org
+~ framework ID is gbo
+~
+~ Resolving dependencies using ~/Documents/coco/conf/dependencies.yml,
+~
+~ 	com.google.guava-&gt;guava r07 (from mavenCentral)
+~ 	com.google.code.findbugs-&gt;jsr305 1.3.7 (from mavenCentral)
+~
+~ Downloading required dependencies,
+~
+~ 	downloaded http://repo1.maven.org/maven2/com/google/guava/guava/r07/guava-r07.jar
+~ 	downloaded http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.7/jsr305-1.3.7.jar
+~
+~ Installing resolved dependencies,
+~
+~ 	lib/guava-r07.jar
+~ 	lib/jsr305-1.3.7.jar
+~
+~ Done!
+~
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此时Play将会从Maven仓库下载两个JAR包（guava-r07.jar, jsr305-1.3.7.jar），并将它们安装至应用的lib/目录下。描述中只新增了一个依赖，为什么会下载两个JAR包呢？这是因为Google Guava包含了传递依赖，但在实际应用中该依赖并不需要，可以拒绝将其引入。
+</p>
+<p><br />
+<b>传递依赖</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下，任何传递性的依赖都会被自动下载并安装。如果需要排除它们，有以下几种方式：
+</p>
+<p>1.禁用个别传递依赖。具体修改方式如下：
+</p>
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07:
+        transitive: false
+</pre>
+</div>
+2.禁用项目中所有的传递依赖。具体修改方式如下：
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+transitiveDependencies: false    
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07
+</pre>
+</div> 
+3.显式地排除指定的传递依赖，具体修改方式如下：
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07:
+        exclude:
+            - com.google.code.findbugs -&gt; *
+</pre>
+</div> 
+<p><br />
+<b>保持lib/和modules/目录同步</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此时再运行<b>play dependencies</b>命令(<b>play deps</b>命令与<b>play dependencies</b>命令等价)，findbugs依赖就会被忽略，具体信息如下：
+</p>
+<div class="prettify">
+<pre>
+$ play deps
+~        _            _ 
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/   
+~
+~ play! 1.2, http://www.playframework.org
+~ framework ID is gbo
+~
+~ Resolving dependencies using ~/Documents/coco/conf/dependencies.yml,
+~
+~ 	com.google.guava-&gt;guava r07 (from mavenCentral)
+~
+~ Installing resolved dependencies,
+~
+~ 	lib/guava-r07.jar
+~
+~ ********************************************************************
+~ WARNING: Your lib/ and modules/ directories and not synced with 
+~ current dependencies (use --sync to automatically delete them)
+~
+~ 	Unknown: ~/Documents/coco/lib/jsr305-1.3.7.jar
+~ ********************************************************************
+~
+~ Done!
+~
+</pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前下载的jsr305-1.3.7.jar文件仍然在应用的lib/目录中。依赖管理系统具有同步功能，可以保持lib/和modules/目录中的依赖一致,只需在<b>play dependencies</b>命令中添加<b>--sync</b>选项即可：
+<div class="prettify">
+<pre>
+play dependencies --sync
+</pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;再运行此命令，不需要的JAR包就会被删除。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果使用依赖dependencies.yml引入模块（module）时，会将完整模块全部引入（包括模块的source源代码、documentation文档、demo例子等等）。这在实际的应用产品中是不需要的，所以在应用发布的产品模式中（PROD模式），可以不引入这些内容，在保证模块可用的前提下将应用瘦身，节约空间。Play的做法很简单，只需要在<b>play dependencies</b>命令中添加<b>--forProd</b>选项即可：
+</p>
+<div class="prettify">
+<pre>
+play dependencies --forProd
+</pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在<b>play dependencies</b>命令中添加<b>--forProd</b>选项执行后，会将模块的documentation/目录、src/目录、tmp/目录、*sample*/目录和*test*/目录移除。
+</p>
+<p />
+<p><br />
+<h3 id="section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.3_E4_BE_9D_E8_B5_96_E5_86_B2_E7_AA_81_E7_9A_84_E8_A7_A3_E5_86_B3_E6_96_B9_E6_A1_88">10.16.3 依赖冲突的解决方案<a class="hashlink" href="#section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.3_E4_BE_9D_E8_B5_96_E5_86_B2_E7_AA_81_E7_9A_84_E8_A7_A3_E5_86_B3_E6_96_B9_E6_A1_88">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果应用的两个组件需要同一个依赖的不同版本，冲突管理系统必须做出选择。框架默认会选择最新版本的依赖，而忽略其他版本。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特殊情况：当Play框架的核心依赖产生冲突时，会直接选择$PLAY/framework/lib目录下的版本。例如Play框架依赖commons-lang 2.5，而具体应用可能需要依赖 commons-lang 3.0：
+</p>
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07:
+        transitive: false
+    - commons-lang 3.0
+</pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当运行<b>play dependencies</b>命令时，尽管commons-lang 3.0是最新版本，但还是会被忽略：
+<div class="prettify">
+<pre>
+play dependencies
+~        _            _ 
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/   
+~
+~ play! 1.2, http://www.playframework.org
+~ framework ID is gbo
+~
+~ Resolving dependencies using ~/Documents/coco/conf/dependencies.yml,
+~
+~ 	com.google.guava-&gt;guava r07 (from mavenCentral)
+~
+~ Some dependencies have been evicted,
+~
+~	commons-lang 3.0 is overriden by commons-lang 2.5
+~
+~ Installing resolved dependencies,
+~
+~ 	lib/guava-r07.jar
+~
+~ Done!
+~
+</pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于commons-lang 2.5依赖已经存在于$PLAY/framework/lib目录中，所以不会安装至应用的ilb/目录。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要强制指定某个依赖的版本(比如覆盖Play的核心依赖或者选择不是最新版本的依赖)，那么需要为依赖指定force属性，具体修改内容如下：
+</p>
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07:
+        transitive: false
+    - commons-lang 3.0:
+        force: true
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.4_E6_B7_BB_E5_8A_A0_E6_96_B0_E7_9A_84_E4_BE_9D_E8_B5_96_E4_BB_93_E5_BA_93">10.16.4 添加新的依赖仓库<a class="hashlink" href="#section-_E4_BE_9D_E8_B5_96_E7_AE_A1_E7_90_86-10.16.4_E6_B7_BB_E5_8A_A0_E6_96_B0_E7_9A_84_E4_BE_9D_E8_B5_96_E4_BB_93_E5_BA_93">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play默认从Maven仓库搜索需要的JAR依赖，从Play的模块仓库搜索需要的模块。读者也可以在dependencies.yml文件中使用repositories标识定义其他下载源：
+</p>
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play 1.2
+    - com.google.guava -&gt; guava r07:
+        transitive: false
+    - commons-lang 3.0:
+        force: true
+    - com.zenexity -&gt; sso 1.0
+        
+# My custom repositories
+repositories:
+    
+    - zenexity:
+        type:       http
+        artifact:   &quot;http://www.zenexity.com/repo/[module]-[revision].[ext]&quot;
+        contains:
+            - com.zenexity -&gt; *
+</pre>
+</div>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例由于在依赖描述中使用repositories标识，Play将会从com.zenexity远程HTTP服务器下载依赖。
+<p><br />
+<b>Maven仓库</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以将repositories标识的type属性设置为iBiblio，添加与maven2兼容的仓库：
+</p>
+<div class="prettify">
+<pre>
+## Application dependencies
+    
+require:
+    - play
+    - play -&gt; scala 0.8
+    - org.jbpm -&gt; jbpm-persistence-jpa 5.0.0:
+        exclude:
+            - javassist -&gt; javassist *
+            - org.hibernate -&gt; hibernate-annotations *
+            - javax.persistence -&gt; persistence-api *
+repositories:
+    - jboss:
+        type: iBiblio
+        root: &quot;http://repository.jboss.org/nexus/content/groups/public-jboss/&quot;
+        contains:
+            - org.jbpm -&gt; *
+            - org.drools -&gt; *
+</pre>
+</div> 
+<p><br />
+<b>本地仓库</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play中建立本地模块仓库的依赖，需要根据模块的目录结构进行设置。如项目应用的名字为myplayapp，该项目引用了两个模块，分别为myfirstmodule和mysecondmodule。目录结构如下所示。
+</p>
+<div class="prettify">
+<pre>
+myplayapp/
+myfirstmodule/
+mysecondmodule/
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开myplayapp/conf/depencencies.yml文件，进行如下配置：
+<div class="prettify">
+<pre>
+# Application dependencies
+    
+require:
+    - play
+    - myfirstmodule -&gt; myfirstmodule
+    - mysecondmodule -&gt; mysecondmodule
+    
+repositories:
+    - My modules:
+        type:       local
+        artifact:   ${application.path}/../[module]
+        contains:
+            - myfirstmodule
+            - mysecondmodule
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置完成后，在命令行中执行<b>play dependencies myplayapp</b>命令即可。
+<p />
+<p><br />
+<b>自定义Ivy设置</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play依赖管理技术底层实现采用的是Ivy，如果开发者希望配置代理、内部maven nexus仓库的认证等功能，需要修改ivysettings.xml文件的内容。ivysettings.xml文件位于用户目录下的.ivy2/目录里。
+</p>
+<div class="quote">
+<p>提示：
+</p>
+<p>Apache Ivy是Apache Ant下的一个子项目，是一款优秀的管理（记录、跟踪、解析和报告）项目依赖的工具，提供了强大的依赖管理功能，可与Apache Ant紧密集成。
+</p></div>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivysettings.xml配置范例1，忽略Ivy的checksums。
+</p>
+<div class="prettify">
+<pre>
+&lt;!-- .ivy2/ivysettings.xml --&gt;
+&lt;ivysettings&gt;
+  &lt;property name=&quot;ivy.checksums&quot; value=&quot;&quot;/&gt;
+&lt;/ivysettings&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivysettings.xml配置范例2，使用基本认证。
+</p>
+<div class="prettify">
+<pre>
+&lt;!-- .ivy2/ivysettings.xml --&gt;
+&lt;ivysettings&gt;
+  &lt;credentials host=&quot;maven-repo.xxx&quot; realm=&quot;Sonatype Nexus Repository Manager&quot;
+    username=&quot;user&quot; passwd=&quot;reallygreatpassword&quot;/&gt;
+&lt;/ivysettings&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ivysettings.xml配置范例3，重用本地maven仓库和仓库manager。
+</p>
+<div class="prettify">
+<pre>
+&lt;!-- .ivy2/ivysettings.xml --&gt;
+&lt;ivy-settings&gt;
+  &lt;!-- path to local maven repo and default maven layout --&gt;
+  &lt;property name=&quot;local-maven2-pattern&quot; 
+    value=&quot;${user.home}/.m2/repository/[organisation]/[module]/[revision]/[module]-[revision]&quot; 
+    override=&quot;false&quot; /&gt;
+ 
+  &lt;!-- set resolver chain as default --&gt;
+  &lt;settings defaultResolver=&quot;main&quot; /&gt;
+ 
+  &lt;!-- configure caches --&gt;
+  &lt;caches repositoryCacheDir=&quot;${user.home}/.ivy2/cache&quot;&gt;
+    &lt;!-- do not cache from local .m2--&gt;
+    &lt;cache name=&quot;nocache&quot; useOrigin=&quot;true&quot; /&gt;
+    &lt;cache name=&quot;default&quot; /&gt;
+  &lt;/caches&gt;
+ 
+  &lt;resolvers&gt;
+    &lt;chain name=&quot;main&quot;&gt;
+      &lt;!-- as this is not cached, even changing SNAPSHOT dependencies 
+        are resolved correctly --&gt;
+      &lt;filesystem name=&quot;local-maven-2&quot; m2compatible=&quot;true&quot; local=&quot;true&quot; 
+        cache=&quot;nocache&quot;&gt;
+        &lt;ivy pattern=&quot;${local-maven2-pattern}.pom&quot; /&gt;
+        &lt;artifact pattern=&quot;${local-maven2-pattern}(-[classifier]).[ext]&quot; /&gt;
+      &lt;/filesystem&gt;
+      &lt;!-- use repository manager as proxy to maven-central
+        (and all other repositories)--&gt; 
+      &lt;ibiblio name=&quot;repomanager&quot; m2compatible=&quot;true&quot;
+        root=&quot;http://your.repomanager.intra/path/to/repo&quot; cache=&quot;default&quot;/&gt;
+    &lt;/chain&gt;
+  &lt;/resolvers&gt;
+&lt;/ivy-settings&gt;
+</pre>
+</div>
+<p><br />
+<b>清除Ivy缓存</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ivy的缓存可能会过期或损坏，这种情况在conf/dependencies.yml文件中设置type为http时比较常见。如果出现这种情况，依赖管理将不会工作，需要先进行缓存清除操作。在<b>play dependencies</b>命令中添加--<b>clearcache</b>选项后执行，就可以清除Ivy缓存。
+</p>
+<div class="prettify">
+<pre>
+$ play dependencies --clearcache
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该命令的作用等价于：
+<div class="prettify">
+<pre>
+rm -r ~/.ivy2/cache
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-20) was last changed on <a href="../Diff.jsp-page=依赖管理&r1=20&r2=19.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86&r1=20&r2=19">06-Sep-2013 09:45</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=依赖管理.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=依赖管理.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="依赖管理-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

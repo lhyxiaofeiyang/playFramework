@@ -1,0 +1,1197 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: HTTP数据验证
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='HTTP数据验证' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=HTTP数据验证.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=HTTP数据验证.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">HTTP数据验证</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'HTTP数据验证' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="使用WebSocket.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8WebSocket">使用WebSocket</a>, <a class="wikipage" href="本章小结8.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%938">本章小结8</a>, <a class="wikipage" href="测试.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95">测试</a>, <a class="wikipage" href="编写测试.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">编写测试</a>, <a class="wikipage" href="Fixures.htm" tppabs="http://www.playframework.cn/wiki/Fixures">Fixures</a>, <a class="wikipage" href="运行测试.htm" tppabs="http://www.playframework.cn/wiki/%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95">运行测试</a>, <a class="wikipage" href="集成测试.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95">集成测试</a>, <a class="wikipage" href="本章小结9.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%939">本章小结9</a>, <a class="wikipage" href="文件上传.htm" tppabs="http://www.playframework.cn/wiki/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">文件上传</a>, <a class="wikipage" href="JPA支持.htm" tppabs="http://www.playframework.cn/wiki/JPA%E6%94%AF%E6%8C%81">JPA支持</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=HTTP数据验证.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据验证是应用程序健壮性的体现，在实际项目中也是必不可少的环节。Play内置了验证器(Validation)的支持，并提供了非常灵活的使用方法。在Play项目中可以很简单地对数据，模型对象(可能需要持久化)以及HTTP表单进行验证。
+</p><p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.1_E4_BD_BF_E7_94_A8Play_E9_AA_8C_E8_AF_81_E5_99_A8">10.3.1 使用Play验证器<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.1_E4_BD_BF_E7_94_A8Play_E9_AA_8C_E8_AF_81_E5_99_A8">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出于数据验证的考虑，框架为每个请求绑定了验证器。应用代码中可以通过以下三种方式对数据进行验证：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.在控制器的Action方法中，直接使用验证器对数据进行相应的验证：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(String name) {
+     validation.required(name);  //验证name参数是否被赋值
+     ...
+}
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.在控制器的Action方法的参数中，使用注解进行数据验证：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(@Required String name){
+    ...
+}
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.定义域模型时直接为属性添加验证注解，Action中就可以通过@Valid注解对该POJO参数进行验证了：
+</p>
+<div class="prettify">
+<pre>
+public class User extends Model {
+   @Required
+   public String name;  //为User的name属性添加@Required验证
+   ... 
+} 
+</pre>
+</div>
+<div class="prettify">
+<pre>
+//直接使用@Valid注解对POJO参数进行验证
+public static void save(@Valid User user) { 
+   ...
+}
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>框架为每个请求绑定了一个验证器，同个验证器可以校验多个数据。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当验证不通过时，验证器会将错误以play.data.validation.Error的形式保存，因此每个验证器以集合的形式维护了一系列的error对象。每个error对象有key和message两个属性：
+</p>
+<ul><li>key：该属性帮助我们标识引起错误的元素。key的值可以任意设定，默认与验证的数据同名。
+</li></ul><ul><li>message:验证消息，用于描述验证不通过的错误信息。message可以是纯文本或指向消息包（message bundle）的key（通常为了支持国际化）。
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文字的描述可能有些空洞，接下来让我们看看如何使用验证器校验简单的HTTP参数：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(String name) {
+     validation.required(name);
+     ...
+}
+</pre>
+</div>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上这段程序代码检查了name参数是否被赋值。如果没有，相应的错误就会被添加到当前的error集合中。如果有多个数据需要验证，可以重复该操作：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(String name, Integer age) {
+     validation.required(name);     //验证name是否被赋值
+     validation.required(age);      //验证age是否被赋值
+     validation.min(age, 0);        //验证age不小于0
+     ...
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.2_E9_AA_8C_E8_AF_81_E6_B6_88_E6_81_AFError_E5_AF_B9_E8_B1_A1_E4_B8_AD_E7_9A_84message_E5_B1_9E_E6_80_A7">10.3.2 验证消息(error对象中的message属性)<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.2_E9_AA_8C_E8_AF_81_E6_B6_88_E6_81_AFError_E5_AF_B9_E8_B1_A1_E4_B8_AD_E7_9A_84message_E5_B1_9E_E6_80_A7">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在验证结束后我们可以检查是否有error产生，并将验证消息打印出来：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(String name, Integer age) {
+     validation.required(name);
+     validation.required(age);
+     validation.min(age, 0);
+     
+     if(validation.hasErrors()) {                
+         for(Error error : validation.errors()) {
+             System.out.println(error.message());
+         }
+     }
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假定name和age都没有赋值，控制台将会打印以下信息：
+</p>
+<div class="prettify">
+<pre>
+Required
+Required
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是因为在$PLAY_HOME/resources/messages文件中定义了默认的消息：
+</p>
+<div class="prettify">
+<pre>
+validation.required=Required
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供了三种方式自定义验证消息：
+</p>
+<ol><li>在项目的conf/messages文件中自定义消息，覆盖默认的message消息。
+</li><li>直接将自定义的验证消息作为参数传递给验证器，覆盖默认的message消息。
+</li><li>定义带参数的验证消息，参数通常为error对象的key值。
+</li></ol><p><br />
+<b>本地化的验证消息</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以配置应用程序的conf/messages文件，采用统一的验证消息匹配error对象的message消息，这是最简单的覆盖消息的写法：
+</p>
+<div class="prettify">
+<pre>
+validation.required = Please enter a value 
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经过以上配置后，任何不通过validation.required验证的消息都是Please enter a value。
+<p><br />
+<b>带参数的验证消息</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s占位符将被替换成error对象的key：
+</p>
+<div class="prettify">
+<pre>
+validation.required=%s is required
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结合以上例子，输出结果为：
+</p>
+<div class="prettify">
+<pre>
+name is required
+age is required
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;框架默认将被验证的参数的名字作为error对象的key值进行传递，但也有其他方法修改error对象的key值。比如，针对上例中hello方法(Action)的name参数进行本地化处理：
+</p>
+<div class="prettify">
+<pre>
+name = Customer name
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结果就会变成：
+</p>
+<div class="prettify">
+<pre>
+Customer name is required
+age is required
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以使用error.message(String key)方法直接覆盖error对象的key值：
+</p>
+<div class="prettify">
+<pre>
+Error error = validation.required(name).error;
+if(error != null) {
+    System.out.println(error.message(&quot;Customer name&quot;));
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play内置了很多验证方法，也提供了不同的消息参数。比如match验证，在消息表达式中定义了字符串类型的参数，与前面介绍的%s的占位符不同，其规定的参数索引为2：
+</p>
+<div class="prettify">
+<pre>
+validation.match=Must match %2$s
+</pre>
+</div>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类似的，range验证定义了两个整数型参数，以2和3作为索引：
+</p>
+<div class="prettify">
+<pre>
+validation.range=Not in the range %2$d through %3$d 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可以在$PLAY_HOME/resources/messages文件中查看其他的验证以及所含的参数。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>读者可能会有疑问，为什么这些参数的索引都是从2开始的。因为match，range，minSize等验证都是需要比较的，框架规定将索引为1的参数设置为比较源。
+</p></div>
+
+<p><br />
+<b>自定义本地化验证消息</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play内置验证器的message消息，是在$PLAY_HOME/resources/messages文件中定义的。我们也可以在项目中定义自己的验证消息：
+</p>
+<div class="prettify">
+<pre>
+validation.required.em = You must enter the %s! 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Action方法中，就可以采用自己定义的验证消息机制，手动进行验证：
+</p>
+<div class="prettify">
+<pre>
+validation.required(manualKey).message(&quot;validation.required.em&quot;); 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也可以把自己定义的验证消息机制作为注解中message的参数使用：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(@Required(message=&quot;validation.required.em&quot;) String name) { 
+   ...
+} 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同理，JavaBean的属性中也可以使用这种验证技术(注解在JavaBean的属性前)：
+</p>
+<div class="prettify">
+<pre>
+public class Person extends Model { 
+   @Required(message = &quot;validation.required.em&quot;)
+   public String name; 
+   ...
+} 
+</pre>
+</div>
+<div class="prettify">
+<pre>
+public static void hello(@Valid Person person) { 
+   ...
+} 
+</pre>
+</div> 
+<p />
+<p><br />
+<b>更灵活的自定义方式</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play还提供了一种非常灵活的方式实现验证消息的自定义，直接在代码中为验证器标注message消息：
+</p>
+<div class="prettify">
+<pre>
+validation.required(manualKey).message(&quot;Give us a name!&quot;); 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在注解中的使用方法：
+</p>
+<div class="prettify">
+<pre>
+public static void save(@Required(message = &quot;Give us a name!&quot;) String name) { 
+   ...
+} 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在JavaBean中的使用方法：
+</p>
+<div class="prettify">
+<pre>
+public class Person extends Model {
+   @Required(message = &quot;Give us a name!&quot;)
+   public String name; 
+   ...
+} 
+</pre>
+</div>
+<div class="prettify">
+<pre>
+public static void save(@Valid Person person) { 
+   ...
+}
+</pre>
+</div> 
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.3_E6_A8_A1_E6_9D_BF_E4_B8_AD_E6_98_BE_E7_A4_BA_E9_94_99_E8_AF_AF_E4_BF_A1_E6_81_AF">10.3.3 模板中显示错误信息<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.3_E6_A8_A1_E6_9D_BF_E4_B8_AD_E6_98_BE_E7_A4_BA_E9_94_99_E8_AF_AF_E4_BF_A1_E6_81_AF">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要将验证的错误信息在视图模板中显示，Play提供的#{ifErrors}标签和error对象可以轻松完成这些工作。在hello Action中进行数据验证，并使用默认的hello.html模板显示：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(String name, Integer age) {
+     validation.required(name);
+     validation.required(age);
+     validation.min(age, 0);
+     render(name, age);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑view/Application/hello.html模板内容，使用#{ifErrors}标签显示验证结果信息：
+</p>
+<div class="prettify">
+<pre>
+#{ifErrors}
+ 
+   &lt;h1&gt;Oops...&lt;/h1&gt;
+ 
+   #{errors}
+       &lt;li&gt;${error}&lt;/li&gt;
+   #{/errors}
+ 
+#{/ifErrors}
+#{else}
+ 
+   Hello ${name}, you are ${age}.
+ 
+#{/else}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显然，以上的代码并不能满足真实应用的需求。因为在实际项目中，如果验证失败了就应该显示原来的表单，并提示用户请再次输入。针对这个需求，我们需要定义两个Action：一个用于显示表单，另一个用于处理POST，数据的验证将发生在后一个操作。当验证有错误发生时，保存错误信息并重定向到第一个Action。Play提供的validation.keep()方法可以在下一个请求中保持错误信息的集合。以下是真实项目示例：
+</p>
+<div class="prettify">
+<pre>
+public class Application extends Controller {
+ 
+   public static void index() {
+      render();
+   }
+ 
+   public static void hello(String name, Integer age) {
+      validation.required(name);
+      validation.required(age);
+      validation.min(age, 0);
+      if(validation.hasErrors()) {
+          params.flash();     // 将HTTP参数保存在Flash作用域中
+          validation.keep();  // 在下一个请求中保持错误信息的集合
+          index();
+      }
+      render(name, age);
+   }
+ 
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改view/Application/index.html模板：
+</p>
+<div class="prettify">
+<pre>
+#{ifErrors}
+   &lt;h1&gt;Oops…&lt;/h1&gt;
+ 
+   #{errors}
+       &lt;li&gt;${error}&lt;/li&gt;
+   #{/errors}
+#{/ifErrors}
+ 
+#{form @Application.hello()}
+   &lt;div&gt;
+      Name: &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;${flash.name}&quot; /&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      Age: &lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;${flash.age}&quot; /&gt; 
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Say hello&quot; /&gt; 
+   &lt;/div&gt;
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了提供更好的用户体验，我们可以将错误信息显示在未通过验证的字段旁：
+</p>
+<div class="prettify">
+<pre>
+#{ifErrors}
+   &lt;h1&gt;Oops…&lt;/h1&gt;
+#{/ifErrors}
+ 
+#{form @Application.hello()}
+   &lt;div&gt;
+      Name: &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;${flash.name}&quot; /&gt;
+      &lt;span class=&quot;error&quot;&gt;#{error 'name' /}&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      Age: &lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;${flash.age}&quot; /&gt; 
+      &lt;span class=&quot;error&quot;&gt;#{error 'age' /}&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Say hello&quot; /&gt; 
+   &lt;/div&gt;
+#{/form}
+</pre>
+</div>
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.4_E6_B3_A8_E8_A7_A3_E6_96_B9_E5_BC_8F">10.3.4 注解方式<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.4_E6_B3_A8_E8_A7_A3_E6_96_B9_E5_BC_8F">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注解封装于play.data.validation包中，它采用与每个验证对象一一对应的方式，实现有选择性的，更加直观的数据约束。在使用数据验证的时候，只需要对控制器中的方法参数添加注解即可：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(@Required String name, @Required @Min(0) Integer age) {
+   if(validation.hasErrors()) {
+       params.flash();    // 将HTTP参数保存在Flash作用域中
+       validation.keep(); // 在下一个请求中保持错误信息的集合
+       index();
+   }
+   render(name, age);
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相比之下，使用注解的代码就显得整洁的多了。
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.5_E6_A8_A1_E5_9E_8B_E5_AF_B9_E8_B1_A1_E7_9A_84_E9_AA_8C_E8_AF_81">10.3.5 模型对象的验证<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.5_E6_A8_A1_E5_9E_8B_E5_AF_B9_E8_B1_A1_E7_9A_84_E9_AA_8C_E8_AF_81">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play中通常采用注解的形式为模型对象添加数据验证。重写前面所介绍的例子，为User实体的name属性添加@Required验证注解，age属性添加@Required和@Min(0)验证注解：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+public class User {
+    
+    @Required
+    public String name;
+ 
+    @Required
+    @Min(0)
+    public Integer age;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接着修改hello Action方法，使用@Valid注解对模型对象进行数据验证：
+</p>
+<div class="prettify">
+<pre>
+public static void hello(@Valid User user) {
+   if(validation.hasErrors()) {
+       params.flash();    // 将HTTP参数保存在flash作用域中
+       validation.keep(); // 在下一个request中保持错误信息的集合
+       index();
+   }
+   render(user);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后修改index.html表单，如果验证有错，在页面上显示提示信息：
+</p>
+<div class="prettify">
+<pre>
+#{ifErrors}
+   &lt;h1&gt;Oops...&lt;/h1&gt;
+#{/ifErrors}
+ 
+#{form @Application.hello()}
+   &lt;div&gt;
+      Name: &lt;input type=&quot;text&quot; name=&quot;user.name&quot; value=&quot;${flash['user.name']}&quot; /&gt;
+      &lt;span class=&quot;error&quot;&gt;#{error 'user.name' /}&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      Age: &lt;input type=&quot;text&quot; name=&quot;user.age&quot; value=&quot;${flash['user.age']}&quot; /&gt; 
+      &lt;span class=&quot;error&quot;&gt;#{error 'user.age' /}&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Say hello&quot; /&gt; 
+   &lt;/div&gt;
+#{/form}
+</pre>
+</div>
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.6_E5_86_85_E7_BD_AE_E9_AA_8C_E8_AF_81">10.3.6 内置验证<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.6_E5_86_85_E7_BD_AE_E9_AA_8C_E8_AF_81">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在框架的play.data.validation包中，系统已经定义了若干内置的验证机制，这些常用的验证如表10-1所示：
+</p>
+<p />
+<p><b>(表10-1 内置验证)</b>
+</p>
+<p />
+<table class="wikitable" border="1"><tr class="odd"><th>名称</th><th>验证内容</th><th>名称</th><th>验证内容</th></tr>
+<tr><td>email</td><td>验证E-mail地址是否合法</td><td>equals</td><td>验证两个值是否相等</td></tr>
+<tr class="odd"><td>future</td><td>验证是否为相对未来的时间</td><td>isTrue</td><td>验证String或者Boolean类型变量是否为true</td></tr>
+<tr><td>max</td><td>验证数值大小是否大于给定的值</td><td>maxSize</td><td>验证字符串长度是否大于给定的值</td></tr>
+<tr class="odd"><td>min</td><td>验证数值大小是否小于给定的值</td><td>minSize</td><td>验证字符串长度是否小于给定的值</td></tr>
+<tr><td>match</td><td>验证是否匹配给定的正则表达式</td><td>past</td><td>与future相对，验证是否为相对过去的时间</td></tr>
+<tr class="odd"><td>range</td><td>验证是否在给定的两个数值范围内</td><td>required</td><td>验证是否为空</td></tr>
+<tr><td>url</td><td>验证是否为合法的URL</td><td>phone</td><td>验证是否为合法的电话号码</td></tr>
+<tr class="odd"><td>ipv4Address</td><td>验证是否为符合ipv4规则的IP地址</td><td>ipv6Address</td><td>验证是否为符合ipv6规则的IP地址</td></tr>
+</table><p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中，required、min以及range验证器在前几节介绍的示例中已经有所涉及。本小节将着重介绍其中的email、match与phone验证器。除此之外的几类验证器都非常简单实用，就不再做过多的叙述了。
+</p>
+<p><b>email</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用email验证器可以对给定的E-mail地址是否正确进行验证，其message key为validation.email。下面通过示例演示如何使用email验证器对给定的E-mail地址进行检测。
+</p>
+<div class="prettify">
+<pre>
+validation.email(address);
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对变量address进行email验证，如果address不是有效的E-mail地址，验证器会将错误以play.data.validation.Error的形式保存。email验证同样也支持注解用法，读者在定义model时可以为模型的属性添加@Email注解：
+</p>
+<div class="prettify">
+<pre>
+@Email String address
+</pre>
+</div>
+<p><br />
+<b>match</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match验证器是相对比较特别的验证器，该验证器可以使用正则表达式（用于描述或者匹配一系列符合某个句法规则的字符串的单个字符串）作为校验规则。在使用match验证器时，需要制定充当验证规则的正则表达式字符串作为参数，注意空字符串将会被认为是合法的，其message key为validation.match。下面通过示例演示如何使用match验证器对给定的字符串进行检测。
+</p>
+<div class="prettify">
+<pre>
+validation.match(abbreviation, &quot;[A-Z]{3}&quot;); // TLA
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对变量abbreviation进行match验证，如果abbreviation不能匹配正则表达式，验证器会将错误以play.data.validation.Error的形式保存。match验证同样也支持注解用法，读者在定义model时可以为模型的属性添加@match注解：
+</p>
+<div class="prettify">
+<pre>
+@Match(&quot;[A-Z]{3}&quot;) String abbreviation
+</pre>
+</div>
+<p />
+<p><br />
+<b>phone</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone验证器可以对电话号码进行校验，验证是否合法。在使用phone验证器时需要注意，空字符串也将被认为是合法的，其message key为 validation.phone。下面通过示例演示如何使用phone验证器对给定的电话号码进行检测。
+</p>
+<div class="prettify">
+<pre>
+validation.phone(value);
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对变量value进行phone验证，如果value不是合法的电话号码，验证器会将错误以play.data.validation.Error的形式保存。phone验证同样也支持注解用法，读者在定义model时可以为模型的属性添加@phone注解：
+</p>
+<div class="prettify">
+<pre>
+@Phone String phone
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者在使用时需要注意，phone验证器的底层实现是基于电话号码模式匹配的，其准确性并不是特别高。如果希望实现准确的电话号码验证器，推荐使用@match验证器制定不同国家的电话号码验证方式。电话号码的自定义格式可以是+CCC (SSSSSS)9999999999xEEEE，其中：
+<ul><li>+是可选的，代表国家码。
+</li><li>CCC是可选的，代表前3位国家代码，需要注意的是其后必须要有一个分隔符。
+</li><li>(SSSSSS)是可选的，代表6位地区码。
+</li><li>9999999999是必须，表示电话号码，最高为20位（已覆盖了所知的情况和未来可能的号码）。
+</li><li>x是可选的，表示扩展，也可以写成“ext”或“extension”。
+</li><li>EEEE是可选的，代表扩展码，最多4位。
+</li><li>分隔符可以使用空格、‘-’、‘.’或是‘/’其中的一个，并且可以在号码的任意地方使用。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面是不同国家电话号码的样例，提供给读者们参考：
+</p>
+<ul><li>中国:+86 (10)69445464 
+</li><li>美国:(305) 613 09 58 ext 101 
+</li><li>法国:+33 1 47 37 62 24 x3 
+</li><li>德国:+49-4312 / 777 777 
+</li><li>英国:(020) 1234 1234
+</li></ul><p />
+<p><br />
+<h3 id="section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.7_E8_87_AA_E5_AE_9A_E4_B9_89_E9_AA_8C_E8_AF_81">10.3.7 自定义验证<a class="hashlink" href="#section-HTTP_E6_95_B0_E6_8D_AE_E9_AA_8C_E8_AF_81-10.3.7_E8_87_AA_E5_AE_9A_E4_B9_89_E9_AA_8C_E8_AF_81">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自定义的验证器可以通过@CheckWith注解进行绑定：
+</p>
+<div class="prettify">
+<pre>
+public class User {
+    
+    @Required
+    @CheckWith(MyPasswordCheck.class)
+    public String password;
+    
+    static class MyPasswordCheck extends Check {
+        
+        public boolean isSatisfied(Object user, Object password) {
+            return notMatchPreviousPasswords(password);
+        }
+    }
+}
+</pre>
+</div>
+<br />
+<div class="quote">
+注意：
+<p>自定义验证器时不要忘记加载play.data.validation包。
+</p></div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-31) was last changed on <a href="../Diff.jsp-page=HTTP数据验证&r1=31&r2=30.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81&r1=31&r2=30">01-May-2012 05:26</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=HTTP数据验证.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=HTTP数据验证.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="HTTP数据验证-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

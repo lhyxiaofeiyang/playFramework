@@ -1,0 +1,1013 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 添加授权认证
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='添加授权认证' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=添加授权认证.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=添加授权认证.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">添加授权认证</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'添加授权认证' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="Google Web Toolkit.htm" tppabs="http://www.playframework.cn/wiki/Google%20Web%20Toolkit">Google Web Toolkit</a>, <a class="wikipage" href="Bespin在线编辑器.htm" tppabs="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="本章小结11.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9311">本章小结11</a>, <a class="wikipage" href="项目启动.htm" tppabs="http://www.playframework.cn/wiki/%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8">项目启动</a>, <a class="wikipage" href="数据模型迭代.htm" tppabs="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3">数据模型迭代</a>, <a class="wikipage" href="构建页面.htm" tppabs="http://www.playframework.cn/wiki/%E6%9E%84%E5%BB%BA%E9%A1%B5%E9%9D%A2">构建页面</a>, <a class="wikipage" href="显示文章和发布评论.htm" tppabs="http://www.playframework.cn/wiki/%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%92%8C%E5%8F%91%E5%B8%83%E8%AF%84%E8%AE%BA">显示文章和发布评论</a>, <a class="wikipage" href="设置图形验证码.htm" tppabs="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a>, <a class="wikipage" href="添加标签功能.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD">添加标签功能</a>, <a class="wikipage" href="使用CRUD进行管理.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8CRUD%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86">使用CRUD进行管理</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=添加授权认证.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在我们需要为管理域添加授权认证。Play提供的<b>Secure</b>模块可以很好的为应用提供安全保障。
+</p><p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.1_E5_90_AF_E7_94_A8Secure_E6_A8_A1_E5_9D_97">12.8.1 启用Secure模块<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.1_E5_90_AF_E7_94_A8Secure_E6_A8_A1_E5_9D_97">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在/yabe/conf/application.conf文件中进行如下配置，开启<b>Secure</b>模块：
+</p>
+<div class="prettify">
+<pre>
+# Import the secure module
+module.secure=${play.path}/modules/secure
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在应用重启的过程中，控制台会显示模块已经被正确加载。<b>Secure</b>模块自带了一些通用的路由规则，需要在/yabe/conf/routes文件中进行配置： ：
+</p>
+<div class="prettify">
+<pre>
+# Import Secure routes
+*       /                                       module:secure
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.2_E4_BF_9D_E6_8A_A4_E7_AE_A1_E7_90_86_E5_9F_9F_E6_8E_A7_E5_88_B6_E5_99_A8">12.8.2 保护管理域控制器<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.2_E4_BF_9D_E6_8A_A4_E7_AE_A1_E7_90_86_E5_9F_9F_E6_8E_A7_E5_88_B6_E5_99_A8">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Secure</b>模块提供了controllers.Secure控制器，该控制器声明了所有需要的拦截器。当然我们可以选择继承该控制器来使用<b>Secure</b>模块，但是由于Java对继承有限制（不允许多重继承），所用使用时会很局限。除了直接继承<b>Secure</b>控制器外，我们还可以在管理域的控制器上使用@With注解来通知Play调用<b>Secure</b>模块拦截器。
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import play.*;
+import play.mvc.*;
+ 
+@With(Secure.class)
+public class Posts extends CRUD {    
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对Comments，Users，Tags控制器也做同样的处理，因为操作相似，本节就不一一举例了。现在当我们访问管理域时，需要先进行登录操作，如图12.25所示：
+<img class="inline" src="../attach/图片资源/guide8-1.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-1.png" alt="图片资源/guide8-1.png" />
+<p />
+<p><b>(图12.25 登录管理域)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还没有对授权认证做任何处理，所以可以使用任意用户名和密码登录。
+</p>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.3_E8_87_AA_E5_AE_9A_E4_B9_89_E6_8E_88_E6_9D_83_E6_93_8D_E4_BD_9C">12.8.3 自定义授权操作<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.3_E8_87_AA_E5_AE_9A_E4_B9_89_E6_8E_88_E6_9D_83_E6_93_8D_E4_BD_9C">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果希望自定义授权认证操作，需要在应用程序中实现controllers.Secure.Security实例。创建授权认证类后，按照需求覆盖所需的方法，实现对用户的认证。在yabe/controllers/目录下创建Security.java文件，并且覆盖authenticate()方法：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import models.*;
+ 
+public class Security extends Secure.Security {
+	
+    static boolean authenticate(String username, String password) {
+        return true;
+    }
+    
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们已经创建了User模型对象，并且定义了connect()方法，在授权认证中可以借助该方法进行验证：
+</p>
+<div class="prettify">
+<pre>
+static boolean authenticate(String username, String password) {
+    return User.connect(username, password) != null;
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;访问http://localhost:9000/logout注销，并再次尝试登录管理域。只有使用initial-data.yml文件中定义的用户名和密码才能成功登录(比如bob@gmail.com/secret)。
+</p>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.4_E9_87_8D_E6_9E_84_E7_AE_A1_E7_90_86_E5_9F_9F">12.8.4 重构管理域<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.4_E9_87_8D_E6_9E_84_E7_AE_A1_E7_90_86_E5_9F_9F">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们一开始就使用<b>CRUD</b>模块来实现管理域，并没有很好地与博客的界面结合。接下来我们将构建新的管理域，允许用户对自己发表的文章进行管理。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在yabe/controllers/目录下创建Admin.java文件，为管理域创建新的Admin控制器：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import play.*;
+import play.mvc.*;
+ 
+import java.util.*;
+ 
+import models.*;
+ 
+@With(Secure.class)
+public class Admin extends Controller {
+    
+    @Before
+    static void setConnectedUser() {
+        if(Security.isConnected()) {
+            User user = User.find(&quot;byEmail&quot;, Security.connected()).first();
+            renderArgs.put(&quot;user&quot;, user.fullname);
+        }
+    }
+ 
+    public static void index() {
+        render();
+    }
+    
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在yabe/conf/routes文件中重构路由规则：
+</p>
+<div class="prettify">
+<pre>
+# Administration
+GET     /admin/?                                Admin.index
+*       /admin                                  module:crud
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改yabe/app/views/main.html模版中Log in to write something的链接，指向Admin.index() Action：
+</p>
+<div class="prettify">
+<pre>
+...
+&lt;ul id=&quot;tools&quot;&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;@{Admin.index()}&quot;&gt;Log in to write something&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+...
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，我们需要做的就是创建相应的yabe/app/views/Admin/index.html模版：
+</p>
+<div class="prettify">
+<pre>
+Welcome ${user}!
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完成以上操作后，登录博客主页点击Log in to write something链接，就会转入新的管理域，如图12.26所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-2.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-2.png" alt="图片资源/guide8-2.png" />
+</p>
+<p><b>(图12.26 进入新的管理域)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这只是我们重构管理域的第一步，由于该管理域包含很多页面，我们可以定义主模版（super-template），使别的管理域界面继承于该模板。创建yabe/app/views/admin.html模板：
+</p>
+<div class="prettify">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Administration&lt;/title&gt;		
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+        #{get 'moreStyles' /}	
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; 
+                href=&quot;@{'/public/stylesheets/main.css'}&quot; /&gt;
+        &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/png&quot; 
+                href=&quot;@{'/public/images/favicon.png'}&quot; /&gt;
+        &lt;script src=&quot;@{'/public/javascripts/jquery-1.4.2.min.js'}&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;@{'/public/javascripts/jquery.tools-1.2.5.toolbox.expose.min.js'}&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body id=&quot;admin&quot;&gt;
+        
+        &lt;div id=&quot;header&quot;&gt;
+            &lt;div id=&quot;logo&quot;&gt;
+                yabe. &lt;span&gt;administration&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ul id=&quot;tools&quot;&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;@{Secure.logout()}&quot;&gt;Log out&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;div id=&quot;main&quot;&gt;
+            #{doLayout /} 
+        &lt;/div&gt;
+        
+        &lt;p id=&quot;footer&quot;&gt;
+            Yabe is a (not so) powerful blog engine built with the 
+            &lt;a href=&quot;http://www.playframework.org&quot;&gt;Play framework&lt;/a&gt;
+            as a tutorial application.
+        &lt;/p&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们定义的admin.html模板与博客引擎前端所使用的主模版非常相似。只是将Log in链接替换为Log out，并使该链接指向<b>Secure</b>控制器的logout方法。修改yabe/app/views/Admin/index.html模版，使之继承于admin.html：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+ 
+Welcome ${user}!
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刷新浏览器，如图12.27所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-3.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-3.png" alt="图片资源/guide8-3.png" />
+<b>(图12.27 继承主模板的管理域界面)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果点击log out链接，则会登出管理域，并跳转至登录面，如图12.28所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-4.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-4.png" alt="图片资源/guide8-4.png" />
+<b>(图12.28 重新回到登录界面)</b>
+</p>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是<b>secure</b>模块默认处理log out事件的方式，我们可以通过覆盖controllers.Security类中onDisconnected()方法，自定义登出事件的流程：
+</p>
+<div class="prettify">
+<pre>
+static void onDisconnected() {
+    Application.index();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类似的，还可以对onAuthenticated()方法做同样的操作：
+</p>
+<div class="prettify">
+<pre>
+static void onAuthenticated() {
+    Admin.index();
+}
+</pre>
+</div>
+<br />
+<div class="quote">
+补充：
+<p>登出管理域后，<b>Secure</b>模块会调用onDisconnected()方法。onAuthenticated()方法则会在模块认证成功后调用。
+</p></div>
+
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.5_E4_B8_BA_E4_B8_8D_E5_90_8C_E7_94_A8_E6_88_B7_E8_AE_BE_E7_BD_AE_E6_9D_83_E9_99_90">12.8.5 为不同用户设置权限<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.5_E4_B8_BA_E4_B8_8D_E5_90_8C_E7_94_A8_E6_88_B7_E8_AE_BE_E7_BD_AE_E6_9D_83_E9_99_90">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按照博客引擎的需求，我们需要建立两个管理域：一个供博客作者使用，另一个供超级管理员使用。我们在设计User模型对象时，就考虑了isAdmin字段，用来判断用户是否具有超级管理员权限。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Secure</b>模块不仅提供了认证功能，而且还能进行授权管理，只需在创建的Security授权认证类中覆盖check()方法即可：
+</p>
+<div class="prettify">
+<pre>
+static boolean check(String profile) {
+    if(&quot;admin&quot;.equals(profile)) {
+        return User.find(&quot;byEmail&quot;, connected()).&lt;User&gt;first().isAdmin;
+    }
+    return false;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据权限的划分，不同的用户会显示不同页面。修改yabe/views/admin.html模板，添加顶层菜单栏：
+</p>
+<p />
+<div class="prettify">
+<pre>
+...
+&lt;div id=&quot;main&quot;&gt;
+    
+    &lt;ul id=&quot;adminMenu&quot;&gt;
+        &lt;li class=&quot;${request.controller == 'Admin' ? 'selected' : ''}&quot;&gt;
+            &lt;a href=&quot;@{Admin.index()}&quot;&gt;My posts&lt;/a&gt;
+        &lt;/li&gt;
+        #{secure.check 'admin'}
+            &lt;li class=&quot;${request.controller == 'Posts' ? 'selected' : ''}&quot;&gt;
+                &lt;a href=&quot;@{Posts.list()}&quot;&gt;Posts&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;${request.controller == 'Tags' ? 'selected' : ''}&quot;&gt;
+                &lt;a href=&quot;@{Tags.list()}&quot;&gt;Tags&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;${request.controller == 'Comments' ? 'selected' : ''}&quot;&gt;
+                &lt;a href=&quot;@{Comments.list()}&quot;&gt;Comments&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;${request.controller == 'Users' ? 'selected' : ''}&quot;&gt;
+                &lt;a href=&quot;@{Users.list()}&quot;&gt;Users&lt;/a&gt;
+            &lt;/li&gt;
+        #{/secure.check}
+    &lt;/ul&gt;
+    
+    #{doLayout /} 
+&lt;/div&gt;
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在admin.html模板中我们使用#{secure.check /}标签进行权限划分，只有超级管理员才能显示功能菜单，如图12.29所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-5.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-5.png" alt="图片资源/guide8-5.png" />
+</p>
+<p><b>(图12.29 显示管理菜单)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;博客引擎中有关<b>CRUD</b>的部分还是存在安全隐患的，如果用户知道URL地址，仍然可以访问。使用<b>Secure</b>模块提供的@Check注解，可以很方便的将这些控制器保护起来。修改Posts控制器，为其添加@Check(&quot;admin&quot;)注解：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import play.*;
+import play.mvc.*;
+ 
+@Check(&quot;admin&quot;)
+@With(Secure.class)
+public class Posts extends CRUD {    
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对Tags，Comments，Users控制器做相同的保护操作。如果我们试图直接访问http://localhost:9000/admin/users，会得到403禁止访问的响应，如图12.30所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-6.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-6.png" alt="图片资源/guide8-6.png" />
+</p>
+<p />
+<p><b>(图12.30 禁止访问页面)</b>
+</p>
+<p />
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.6_E8_87_AA_E5_AE_9A_E4_B9_89CRUD_E5_B8_83_E5_B1_80">12.8.6 自定义CRUD布局<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.6_E8_87_AA_E5_AE_9A_E4_B9_89CRUD_E5_B8_83_E5_B1_80">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们访问管理域中<b>CRUD</b>部分时，会发现页面是没有布局的。这是因为<b>CRUD</b>模块提供了自己的布局，我们需要将其覆盖，使用<b>crud:ov</b>命令：
+</p>
+<div class="prettify">
+<pre>
+play crud:ov –layout
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;会在应用的/yabe/app/vewis/CRUD/目录下生成layout.html模版。修改该模板内容，使其继承admin.html模板，并对内容进行整合：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+#{set 'moreStyles'}
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; 
+        href=&quot;@{'/public/stylesheets/crud.css'}&quot; /&gt;
+#{/set}
+ 
+&lt;div id=&quot;crud&quot;&gt;
+ 
+    #{if flash.success}
+    	&lt;div class=&quot;crudFlash flashSuccess&quot;&gt;
+    		${flash.success}
+    	&lt;/div&gt;
+    #{/if}
+    #{if flash.error || error}
+    	&lt;div class=&quot;crudFlash flashError&quot;&gt;
+    		${error ?: flash.error}
+    	&lt;/div&gt;
+    #{/if}
+ 
+    &lt;div id=&quot;crudContent&quot;&gt;
+    	#{doLayout /}
+    &lt;/div&gt;
+ 
+&lt;/div&gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在layout.html模板中，我们使用#{set /}标签引入了crud.css样式，使<b>CRUD</b>与博客引擎管理域的布局集成，如图12.31，12.32所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-7.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-7.png" alt="图片资源/guide8-7.png" />
+<b>(图12.31 集成后的管理界面一)</b>
+</p>
+<p><img class="inline" src="../attach/图片资源/guide8-9.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-9.png" alt="图片资源/guide8-9.png" />
+<b>(图12.32 集成后的管理界面二)</b>
+</p>
+<p />
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.7_E4_BC_98_E5_8C_96_E7_99_BB_E5_BD_95_E9_A1_B5_E9_9D_A2">12.8.7 优化登录页面<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_8E_88_E6_9D_83_E8_AE_A4_E8_AF_81-12.8.7_E4_BC_98_E5_8C_96_E7_99_BB_E5_BD_95_E9_A1_B5_E9_9D_A2">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;博客引擎前端与管理域的样式风格已经非常一致了，只是登录页面还有点欠缺。使用<b>secure:ov</b>命令覆盖默认的CSS样式：
+</p>
+<div class="prettify">
+<pre>
+play secure:ov –css
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该命令会通知框架将secure.css样式文件拷贝至应用的yabe/public/stylesheets/目录。保持该CSS文件内容不变，在最上面导入main.css样式：
+</p>
+<div class="prettify">
+<pre>
+@import url(main.css);
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置yabe/conf/messages文件，自定义登录的本地化信息：
+</p>
+<div class="prettify">
+<pre>
+secure.username=Your email:
+secure.password=Your password:
+secure.signin=Log in now
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/guide8-8.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide8-8.png" alt="图片资源/guide8-8.png" />
+</p>
+<p><b>(图12.32 风格一致的登录界面)</b>
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-13) was last changed on <a href="../Diff.jsp-page=添加授权认证&r1=13&r2=12.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81&r1=13&r2=12">14-Feb-2012 08:30</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=添加授权认证.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=添加授权认证.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="添加授权认证-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

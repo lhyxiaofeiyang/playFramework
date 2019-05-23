@@ -1,0 +1,1030 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: Hello world
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=Hello%20world' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='Hello world' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=Hello+world.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=Hello+world" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=Hello+world.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=Hello+world"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">Hello world</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'Hello world' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="序.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%8F">序</a>, <a class="wikipage" href="名家推荐.htm" tppabs="http://www.playframework.cn/wiki/%E5%90%8D%E5%AE%B6%E6%8E%A8%E8%8D%90">名家推荐</a>, <a class="wikipage" href="前言.htm" tppabs="http://www.playframework.cn/wiki/%E5%89%8D%E8%A8%80">前言</a>, <a class="wikipage" href="读者群.htm" tppabs="http://www.playframework.cn/wiki/%E8%AF%BB%E8%80%85%E7%BE%A4">读者群</a>, <a class="wikipage" href="如何阅读.htm" tppabs="http://www.playframework.cn/wiki/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB">如何阅读</a>, <a class="wikipage" href="创作过程.htm" tppabs="http://www.playframework.cn/wiki/%E5%88%9B%E4%BD%9C%E8%BF%87%E7%A8%8B">创作过程</a>, <a class="wikipage" href="框架概述.htm" tppabs="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0">框架概述</a>, <a class="wikipage" href="框架特性.htm" tppabs="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7">框架特性</a>, <a class="wikipage" href="安装.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E8%A3%85">安装</a>, <a class="wikipage" href="IDE配置.htm" tppabs="http://www.playframework.cn/wiki/IDE%E9%85%8D%E7%BD%AE">IDE配置</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=Hello world.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=Hello%20world" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-Hello+world-1.5.1_E5_87_86_E5_A4_87_E5_B7_A5_E4_BD_9C">1.5.1 准备工作<a class="hashlink" href="#section-Hello+world-1.5.1_E5_87_86_E5_A4_87_E5_B7_A5_E4_BD_9C">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先确认已经安装了Java5或者更高版本的JDK。由于Play开发会频繁用到命令行，所以建议使用Unix或者Linux操作系统。如果读者使用的是Windows系统，也没有问题，只需要在命令提示行下输入命令即可。其次，准备好文本编辑器，当然也可以使用功能完备的Java IDE（Eclipse或者Neatbeans）。由于Play应用开发的高效性，框架会自行管理编译和部署过程，所以使用简单的文本编辑器（Intype，Textmate，Emacs，VI等）也能够满足开发的基本需求。
+</p>
+<h3 id="section-Hello+world-1.5.2_E9_A1_B9_E7_9B_AE_E5_88_9B_E5_BB_BA">1.5.2 项目创建<a class="hashlink" href="#section-Hello+world-1.5.2_E9_A1_B9_E7_9B_AE_E5_88_9B_E5_BB_BA">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在开始创建Hello world应用。新建Play应用相当简单，只需要使用Play提供的<b>play new</b>命令，如图1.21所示。
+打开命令行，然后输入：
+</p>
+<div class="prettify">
+<pre>
+play new helloworld 
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接着按照提示输入应用的全名：Hello world。
+</p>
+<p><img class="inline" src="../attach/图片资源/helloword.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/helloword.png" alt="图片资源/helloword.png" />
+</p>
+<p><b>(图1.21 生成Hello world项目)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play new</b>命令新建了目录helloworld/，并在里面生成了Play应用的目录结构，如图1.22所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/目录结构.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="图片资源/目录结构.png" />
+</p>
+<p><b>(图1.22 Play项目目录结构)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该目录包含以下几个重要部分：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>app/</b>目录：包含了应用的核心部分，默认分为models，controllers，views三个子目录，当然也能够包含其他Java包。app各个子目录中存放的是*.java源文件以及页面模版文件。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>conf/</b>目录：包含了应用的所有配置文件，特别是主配置文件application.conf，定义路由规则的配置文件routes和用于国际化配置的文件messages。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>lib/</b>目录：包含了所有可选的标准Java类库（*.jar）。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>public/</b>目录：包含了所有公用资源，主要有javascripts，stylesheets和images三个子目录。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>test/</b>目录：包含了所有的应用测试，框架集成了JUnit和Selenium测试工具。
+</p>
+<p />
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>由于Play使用UTF-8作为其唯一的编码，所以在这些目录中的文本文件用此字符集来编码就显得尤为重要。读者在开发时，请确保正确设置文本编辑器的编码格式。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者已经是经验丰富的Java开发者，可能很想知道.class文件去哪里了，答案是不存在。Play没有使用任何.class文件，而是直接读取Java源文件。框架底层使用了Eclipse compiler来快速编译Java源文件，实现在开发过程中两个非常重要的特性：第一，检查Java源文件的变更，并在运行时自动重载；第二，Java异常发生时，Play生成更友好的错误报告来准确显示源代码的出错位置。
+</p>
+<p><br />
+<h3 id="section-Hello+world-1.5.3_E8_BF_90_E8_A1_8C_E5_BA_94_E7_94_A8">1.5.3 运行应用<a class="hashlink" href="#section-Hello+world-1.5.3_E8_BF_90_E8_A1_8C_E5_BA_94_E7_94_A8">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello world应用已经成功创建，接下来运行该应用。回到命令行，进入helloworld目录，然后输入：
+</p>
+<div class="prettify">
+<pre>
+play run
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play run</b>命令运行后，Play开始加载应用并通过9000端口开放Web服务，在浏览器中打开http://localhost:9000就能查看刚发布的helloworld应用。新创建的应用都带有标准的欢迎页面，代表项目已经成功运行，如图1.23所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/default page.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/default%20page.png" alt="图片资源/default page.png" />
+</p>
+<p><b>(图1.23 标准欢迎页面)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来让我们看看这个新的应用是如何显示这个页面的。Play应用的主入口是conf/routes文件，该文件定义了所有可访问的URL。打开默认生成的conf/routes路由文件，可以看到：
+</p>
+<div class="prettify">
+<pre>
+GET		/			Application.index
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当Web服务器接收到客户端以GET方式请求根路径时，会调用Application.index方法。Application.index其实是controllers.Application.index的缩略写法，因为controllers包是被默认引入的。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建标准的Java应用程序时，通常会定义一个方法作为其唯一入口点，比如：
+</p>
+<div class="prettify">
+<pre>
+public static void main(String[] args) {
+  ... 
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而Play应用拥有多个入口点，每个入口点对应一个URL。对应的Java方法称之为Action，Action定义在特殊的类中，称之为控制器（Controller）。查看controller.Application，打开helloworld/app/controllers/Application.java源文件：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import play.mvc.*;
+ 
+public class Application extends Controller {
+ 
+	public static void index() {
+		render();
+	}
+ 
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application控制器继承于play.mvc.Controller。该父类为控制器提供了很多有用的方法，比如在index方法中调用的render()方法。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可能会感到奇怪，index()方法（即Action方法）被声明为public static void，而且Play中所有这些Action方法都必须这样定义。方法被定义为static，是因为控制器类从来不会被实例化。标识public是为了授权框架在URL响应时调用Action方法，并且返回结果总是为void。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认的index()方法很简单，仅仅调用render()方法让框架使用HTML模板进行渲染。调用模板是响应HTTP请求最常见的方式（但不是唯一方式，比如直接以二进制形式响应）。模板是简单的文本文件，保存在app/views/目录下，由于render()方法中没有指定渲染的目标模板，所以框架默认使用与Action同名的HTML模板文件渲染（上例中为：Application/index.html）。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来看下模板文件，打开helloworld/app/views/Application/index.html文件：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+#{welcome /}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板内容看起来非常简洁，只有少量的Play标签。#{welcome /}标签生成了在浏览器中看到的欢迎信息。#{extends /}标签告诉Play此模板是从另外的模板（main.html）继承而来。Play的模板具有继承机制，允许重用公共部分，以此达到创建复杂的Web页面的目的。该特性比以往使用include导入更加灵活和高效。打开helloworld/app/views/main.html模板文件：
+</p>
+<div class="prettify">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;#{get 'title' /}&lt;/title&gt;		
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; 
+            href=&quot;@{'/public/stylesheets/main.css'}&quot; /&gt;
+        &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/png&quot; 
+            href=&quot;@{'/public/images/favicon.png'}&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        #{doLayout /} 
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.html模板文件中的<tt>#{doLayout /}标签用于动态插入子模板的内容，本例中为Application/index.html的内容。
+</tt><p />
+<p><br />
+<h3 id="section-Hello+world-1.5.4_E5_88_9B_E5_BB_BA_E8_A1_A8_E5_8D_95">1.5.4 创建表单<a class="hashlink" href="#section-Hello+world-1.5.4_E5_88_9B_E5_BB_BA_E8_A1_A8_E5_8D_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面将从创建表单开始，逐步完成helloworld应用。编辑helloworld/app/views/Application/index.html文件，为模板添加表单功能，用户可以在表单中输入名字：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+&lt;form action=&quot;@{Application.sayHello()}&quot; method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;myName&quot; /&gt; 
+    &lt;input type=&quot;submit&quot; value=&quot;Say hello!&quot; /&gt;
+&lt;/form&gt; 
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意，在表单的method属性中使用GET提交方法，因为通过GET来提交表单没有任何负面影响并且是幂等的。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>从理论上讲，如果请求具有幂等性就可以使用GET，所谓幂等是指多个请求返回相同的结果。实际上，相应的服务器方法可能会以某种方式修改状态，所以一般情况下这是不成立的，只是一种标准。GET与POST的区别在于所能携带信息的大小，在许多情况下，浏览器和服务器会限制URL的长度（GET利用URL向服务器发送数据）。一般来讲，如果请求是从服务器获取数据应该使用GET；换句话说，要避免通过GET方式改变服务器上的状态。当改变服务器上的状态时应该使用POST方法，POST不会限制发送给服务器的信息的大小，而且POST请求不能保证是幂等的。在实际开发过程中，大多数请求可能都是GET请求，不过如果需要，也完全可以使用POST。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;form表单中使用@{...}标签请求Play自动生成URL，以便调用Application.sayHello()方法。刷新浏览器查看编辑后的主页，如图1.24所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/No route found.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/No%20route%20found.png" alt="图片资源/No route found.png" />
+</p>
+<p><b>(图1.24 Play显示错误界面)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用运行出错。这是因为调用了不存在的Action方法（Application.sayHello），接下来在helloworld/app/controllers/目录中编辑Application.java文件，添加sayHello()方法：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+ 
+import play.mvc.*;
+ 
+public class Application extends Controller {
+ 
+    public static void index() {
+        render();
+    }
+    
+    public static void sayHello(String myName) {
+        render(myName);
+    }
+ 
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action方法（sayHello）中声明了myName变量，该变量可以自动匹配HTTP表单提交的myName参数。方法体非常简单，只是调用了render()方法来使用默认模板进行页面的渲染。由于myName的值传递给render()方法，所以默认模板中（sayHello.html）可以使用该值。再次刷新浏览器，表单页面显示正常，如图1.25所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/sayhello.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/sayhello.png" alt="图片资源/sayhello.png" />
+</p>
+<p><b>(图1.25 index.html界面)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在表单中输入名字并提交表单，Play提示出错，如图1.26所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/template not found.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/template%20not%20found.png" alt="图片资源/template not found.png" />
+</p>
+<p><b>(图1.26 Play显示错误界面)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错误显示得非常直观，Action中调用render(myName)方法采用默认的模板进行渲染，但是该模板并不存在。所以需要在helloworld/app/views/Applicaton/目录中创建sayHello.html模板文件。
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html'/}
+#{set title:'Home'/}
+&lt;h1&gt;Hello ${myName ?:'guest'}!&lt;/h1&gt;
+&lt;a href=&quot;@{Application.index()}&quot;&gt;Back to form&lt;/a&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sayHello.html模板添加完毕后，刷新浏览器，应用一切正常，如图1.27所示。
+<p><img class="inline" src="../attach/图片资源/sayhello-html.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/sayhello-html.png" alt="图片资源/sayhello-html.png" />
+</p>
+<p><b>(图1.27 sayHello.html页面)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sayHello.html模板代码中使用了Groovy操作符”?:”，该操作符的作用是判断myName参数的值是否为空，若为空则显示默认值。所以如果用户没有在表单中输入任何内容，就会显示Hello guest。
+</p>
+<p><br />
+<h3 id="section-Hello+world-1.5.5_E6_8F_90_E4_BE_9B_E6_9B_B4_E5_A5_BD_E7_9A_84URL">1.5.5 提供更好的URL<a class="hashlink" href="#section-Hello+world-1.5.5_E6_8F_90_E4_BE_9B_E6_9B_B4_E5_A5_BD_E7_9A_84URL">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看地址栏中提交后的URL，会发现很长:
+</p>
+<div class="prettify">
+<pre>
+http://localhost:9000/application/sayhello?myName=guillaume
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样的URL看起来并不简洁，更不用说美观了。这是因为Play使用了catch all默认路由规则：
+</p>
+<div class="prettify">
+<pre>
+*       /{controller}/{action}                  {controller}.{action}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以通过为Application.sayHello方法自定义路由来提供更好的URL。编辑helloworld/conf/routes文件，添加如下路由配置：
+</p>
+<div class="prettify">
+<pre>
+GET     /hello                                  Application.sayHello
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回到表单页面并再次提交表单，检查是否使用了新的URL：
+</p>
+<div class="prettify">
+<pre>
+http://localhost:9000/hello?myName=guillaume
+</pre>
+</div>
+<p><br />
+<h3 id="section-Hello+world-1.5.6_E5_AE_9A_E5_88_B6_E5_B8_83_E5_B1_80">1.5.6 定制布局<a class="hashlink" href="#section-Hello+world-1.5.6_E5_AE_9A_E5_88_B6_E5_B8_83_E5_B1_80">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到目前为止，所有应用使用的模板都继承于相同的main.html，编辑helloworld/app/views/main.html，就可以很容易地定制布局：
+</p>
+<div class="prettify">
+<pre>
+...
+&lt;body&gt;
+    The Hello world app.
+    &lt;hr/&gt;
+    
+    #{doLayout /}
+&lt;/body&gt;
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有继承于main.html模板的页面都有相同的顶部，如图1.28所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/commom header.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/commom%20header.png" alt="图片资源/commom header.png" />
+</p>
+<p><b>(图1.28 index.html界面)</b>
+</p>
+<p />
+<p><br />
+<h3 id="section-Hello+world-1.5.7_E6_B7_BB_E5_8A_A0_E9_AA_8C_E8_AF_81">1.5.7 添加验证<a class="hashlink" href="#section-Hello+world-1.5.7_E6_B7_BB_E5_8A_A0_E9_AA_8C_E8_AF_81">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play框架具备了数据验证功能，因此我们可以为表单增加一些验证，使myName参数作为必填项。编辑helloworld/app/controllers/Application.java控制器中的sayHello方法:
+</p>
+<div class="prettify">
+<pre>
+...
+public static void sayHello(@Required String myName) {
+    if(validation.hasErrors()) {
+        flash.error(&quot;Oops, please enter your name!&quot;);
+        index();
+    }
+    render(myName);
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用Play提供的数据验证时，别忘了导入play.data.validation.*包。我们为myName参数添加了@Required验证注解，Play会自动检查myName的值是否被填充。如果myName的值为空，验证器会添加一个error对象。验证器的hasErrors()方法用于检查error对象，如果有error对象存在，则可以在Flash作用域中增加错误提示信息并重定向到index Action。
+</p>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>Flash作用域通常用于Action重定向时保存信息（比如错误提示信息）。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来需要做的是如何显示这些错误信息。编辑helloworld/app/views/Application/index.html模板文件：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+#{if flash.error}
+    &lt;p style=&quot;color:#c00&quot;&gt;
+        ${flash.error}
+    &lt;/p&gt;
+#{/if}
+ 
+&lt;form action=&quot;@{Application.sayHello()}&quot; method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;myName&quot; /&gt; 
+    &lt;input type=&quot;submit&quot; value=&quot;Say hello!&quot; /&gt;
+&lt;/form&gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{if}标签判断Flash作用域中是否有错误信息存在，如果存在则直接打印错误信息。刷新浏览器，检查Play提供的验证器是否能够正常工作，如图1.29所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/validation.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/validation.png" alt="图片资源/validation.png" />
+</p>
+<p><b>(图1.29 显示错误信息)</b><br />
+</p>
+<p><br />
+<h3 id="section-Hello+world-1.5.8_E7_BC_96_E5_86_99_E8_87_AA_E5_8A_A8_E6_B5_8B_E8_AF_95_E5_A5_97_E4_BB_B6">1.5.8 编写自动测试套件<a class="hashlink" href="#section-Hello+world-1.5.8_E7_BC_96_E5_86_99_E8_87_AA_E5_8A_A8_E6_B5_8B_E8_AF_95_E5_A5_97_E4_BB_B6">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用开发完后，需要进行一系列的测试来保证应用的质量。接下来为创建完的应用编写测试套件，由于Hello world应用不需要进行Java逻辑测试，所以编写简单的Selenium就可以测试该Web应用了。Play进行测试的前提是应用需要运行在test模式下。停止应用（Ctel+C）并使用<b>play test</b>命令重启应用。
+</p>
+<div class="prettify">
+<pre>
+play test
+</pre>
+</div>
+<br />
+<div class="quote">
+补充：
+<p><b>play test</b>命令和<b>play run</b>命令并没有太多的区别，只不过前者加载了测试运行模块，允许直接在浏览器中运行测试套件。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用开启test模式后，在浏览器中打开http://localhost:9000/@tests查看测试运行器，选择所有默认的测试并运行，结果应该是全部通过（表现为绿色）。事实上这些默认的测试并没有做任何有意义的事情，如图1.30所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/tests.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/tests.png" alt="图片资源/tests.png" />
+</p>
+<p><b>(图1.30 运行测试界面)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selenium测试套件是典型的HTML文件，它里面的HTML语法写起来有一些令人乏味（使用HTML table元素来格式化）。值得欣慰的是，Play使用自身的模板引擎和一系列的标签来帮助生成这些语法，为Selenium脚本提供了简单的语法支持。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新建了Play应用后，其默认测试套件已经包含了Selenium测试，打开helloworld/test/Application.test.html测试文件：
+</p>
+<div class="prettify">
+<pre>
+*{ You can use plain selenium command using the selenium tag }*
+ 
+#{selenium}
+    // 打开主页,检查主页没有错误
+    open('/')
+    assertNotTitle('Application error')
+#{/selenium}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果直接运行这个测试应该不会有任何问题出现，它的作用只是打开主页然后检查页面的title不为Application error。接下来为Hello world应用编写相应的Selenium测试，测试结果如图1.31所示：
+</p>
+<div class="prettify">
+<pre>
+#{selenium}
+    // 打开主页,检查主页没有错误
+    open('/')
+    assertNotTitle('Application error')
+    
+    // 断言页面中包含'The Hello world app.'文本
+    assertTextPresent('The Hello world app.')
+    
+    // 提交表单
+    clickAndWait('css=input[type=submit]')
+    
+    // 断言页面中包含'Oops, please enter your name!'文本
+    assertTextPresent('Oops, please enter your name!')
+    
+    // 在输入框中输入名字并提交
+    type('css=input[type=text]', 'bob')
+    clickAndWait('css=input[type=submit]')
+    
+    // 检查结果
+    assertTextPresent('Hello bob!')
+    assertTextPresent('The Hello world app.')
+    
+    // 返回
+    clickAndWait('link=Back to form')
+    
+    // 检查是否返回主页
+    assertTextNotPresent('Hello bob!')
+#{/selenium}
+</pre>
+</div>
+<p />
+<p><img class="inline" src="../attach/图片资源/selenium-test.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/selenium-test.png" alt="图片资源/selenium-test.png" />
+</p>
+<p><b>(图1.31 测试结果)</b><br />
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-44) was last changed on <a href="../Diff.jsp-page=Hello world&r1=44&r2=43.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=Hello%20world&r1=44&r2=43">07-Apr-2012 08:00</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=Hello+world.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=Hello+world" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=Hello+world.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=Hello+world"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="Hello world-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/Hello%20world?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

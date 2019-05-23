@@ -1,0 +1,750 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 编写测试
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='编写测试' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=编写测试.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=编写测试.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">编写测试</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'编写测试' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="Bootstrap Job.htm" tppabs="http://www.playframework.cn/wiki/Bootstrap%20Job">Bootstrap Job</a>, <a class="wikipage" href="Scheduled Job.htm" tppabs="http://www.playframework.cn/wiki/Scheduled%20Job">Scheduled Job</a>, <a class="wikipage" href="Job的直接调用.htm" tppabs="http://www.playframework.cn/wiki/Job%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8">Job的直接调用</a>, <a class="wikipage" href="本章小结7.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%937">本章小结7</a>, <a class="wikipage" href="HTTP异步编程.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B">HTTP异步编程</a>, <a class="wikipage" href="挂起HTTP请求.htm" tppabs="http://www.playframework.cn/wiki/%E6%8C%82%E8%B5%B7HTTP%E8%AF%B7%E6%B1%82">挂起HTTP请求</a>, <a class="wikipage" href="HTTP流式响应.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94">HTTP流式响应</a>, <a class="wikipage" href="使用WebSocket.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8WebSocket">使用WebSocket</a>, <a class="wikipage" href="本章小结8.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%938">本章小结8</a>, <a class="wikipage" href="测试.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95">测试</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=编写测试.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建自动测试是让应用更加健壮的一种有效方式。同时，基于测试驱动的模式，开发者能够在早期发现问题，使得复杂应用的构建更加顺利。Play的测试基于JUnit和Selenium，具体的选择可根据测试目标而定。 
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play的测试文件都必须在test/目录下创建，该目录只有当应用运行在test模式（使用<b>play test</b>命令启动）下才会被添加到source path中。根据需求的不同，Play提供了以下三种类型的测试。
+</p>
+<p><br />
+<h3 id="section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.1_E5_8D_95_E5_85_83_E6_B5_8B_E8_AF_95">8.1.1 单元测试<a class="hashlink" href="#section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.1_E5_8D_95_E5_85_83_E6_B5_8B_E8_AF_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单元测试采用JUnit编写，用于测试应用的模型层或者一些工具类。以下是最常用的等价判断例子:
+</p>
+<div class="prettify">
+<pre>
+import play.test.*;
+import org.junit.*;
+ 
+public class MyTest extends UnitTest {
+     
+    @Test
+    public void aTest() {
+        assertEquals(2, 1 + 1); // A really important thing to test
+    }
+ 
+    @Test
+    public void testUsers() {
+        assertEquals(3, Users.count()); 
+    }
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.2_E5_8A_9F_E8_83_BD_E6_B5_8B_E8_AF_95">8.1.2 功能测试<a class="hashlink" href="#section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.2_E5_8A_9F_E8_83_BD_E6_B5_8B_E8_AF_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play的功能测试也采用JUnit编写。功能测试直接调用框架底层的ActionInvoker，模拟HTTP发送请求。所以只需要在Play的功能测试中给定相应的HTTP方法，URI以及参数，框架就会自动将请求进行路由，调用相应的Action执行，最终返回响应。接下来就可以对响应进行分析，判断是否返回指定的HTTP状态。以下功能测试判断服务器是否成功返回页面，成功返回对应的状态码为200:
+</p>
+<div class="prettify">
+<pre>
+import play.test.*;
+import play.mvc.*;
+import play.mvc.Http.*;
+import org.junit.*;
+ 
+public class ApplicationTest extends FunctionalTest {
+     
+    @Test
+    public void testTheHomePage() {
+        Response response = GET(&quot;/&quot;);
+        assertStatus(200, response);
+    }
+     
+}
+</pre>
+</div>
+<div class="quote">
+补充：
+<p>常见的HTTP状态码：200 - 服务器成功返回网页； 404 - 请求的网页不存在； 503 - 服务不可用。 
+</p></div>
+
+<p />
+<p><br />
+<h3 id="section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.3Selenium_E6_B5_8B_E8_AF_95">8.1.3 Selenium测试<a class="hashlink" href="#section-_E7_BC_96_E5_86_99_E6_B5_8B_E8_AF_95-8.1.3Selenium_E6_B5_8B_E8_AF_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play中采用Selenium作为验收测试，创建脚本模拟用户在浏览器中进行业务操作来验证应用的有效性。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>Selenium是用于Web应用程序测试的工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE，Mozilla和Firefox等。Selenium测试套件的主要功能包括：兼容性测试————测试应用程序是否能够很好地工作在不同浏览器和操作系统之上；系统功能测试————创建衰退测试检验软件功能和用户需求；支持自动录制动作；自动生成.Net、Java、Perl等不同语言的测试脚本。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果之前已经使用过Selenium，就一定不会对Selenium测试代码中的HTML table元素感到陌生。在Play中编写Selenium测试可以使用其自身的语法，但更推荐使用Play提供的#{selenium}标签：
+</p>
+<div class="prettify">
+<pre>
+#{selenium 'Test security'}
+ 
+    // Try to log in the administration area
+    clearSession()
+    open('/admin')
+    assertTextPresent('Login')
+    type('login', 'admin')
+    type('password', 'secret')
+    clickAndWait('signin')
+ 
+    // Verify that the user in correctly logged in
+    assertText('success', 'Welcom admin!')
+ 
+#{/selenium}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selenium测试在浏览器上自动运行，可以测试一些操作较为复杂的功能，比如进入邮箱模拟发送email等。以下是采用Play内置的#{selenium}标签编写的Selenium测试的例子：访问最近使用的email，将邮件发送到指定的邮箱账户上。 
+</p>
+<div class="prettify">
+<pre>
+#{selenium 'Test email sending'}
+ 
+    // Open email form and send an email to boron@localhost
+    open('/sendEmail')
+    assertTextPresent('Email form')
+    type('To', 'boron@localhost')
+    type('Subject', 'Berillium Subject')
+    clickAndWait('send')
+ 	
+	// Extract the last email sent to boron@localhost into a JavaScript
+	// variable called email
+	storeLastReceivedEmailBy('boron@localhost', 'email')
+	// Extract the subject line from the email variable into a variable 
+	// called subject
+	store('javascript{/Subject:\s+(.*)/.exec(storedVars[&quot;email&quot;])[1]}', 'subject')
+	// Test the contents of the subject variable
+	assertEquals('Berillium Subject', '$[subject]')
+ 
+#{/selenium}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在进行Selenium测试时，如果需访问Play存放在Cache里面的字符串数据，则要使用Selenium扩展。以下是使用Selenium测试注册功能的例子，需要访问Play存放在Cache中的字符串(如Cache中存放的有效验证码)：
+<div class="prettify">
+<pre>
+#{selenium 'Get string from cache'}
+ 
+	open('/register')
+	assertTextPresent('Registration form')
+	type('Email', 'my@email.com')
+	type('Password', 'secretpass')
+	type('Password2', 'secretpass')
+	// .. Fill in the registration form ..
+ 
+	// Get the value of the magicKey variable from the cache
+	// (set to the CAPTCHA answer in the application)
+	storeCacheEntry('magicKey', 'captchaAnswer')
+	// Type it into the form
+	type('Answer', '$[captchaAnswer]')
+ 
+        clickAndWait('register')
+ 
+#{/selenium}
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-20) was last changed on <a href="../Diff.jsp-page=编写测试&r1=20&r2=19.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95&r1=20&r2=19">02-May-2012 00:21</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=编写测试.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=编写测试.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="编写测试-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

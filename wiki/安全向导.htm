@@ -1,0 +1,727 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 安全向导
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='安全向导' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=安全向导.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=安全向导.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">安全向导</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'安全向导' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="配置Log.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AELog">配置Log</a>, <a class="wikipage" href="配置框架ID.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6ID">配置框架ID</a>, <a class="wikipage" href="国际化.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96">国际化</a>, <a class="wikipage" href="缓存.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98">缓存</a>, <a class="wikipage" href="产品化.htm" tppabs="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96">产品化</a>, <a class="wikipage" href="邮件功能.htm" tppabs="http://www.playframework.cn/wiki/%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD">邮件功能</a>, <a class="wikipage" href="集成OpenID.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90OpenID">集成OpenID</a>, <a class="wikipage" href="Ajax请求.htm" tppabs="http://www.playframework.cn/wiki/Ajax%E8%AF%B7%E6%B1%82">Ajax请求</a>, <a class="wikipage" href="应用部署.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">应用部署</a>, <a class="wikipage" href="管理数据库升级.htm" tppabs="http://www.playframework.cn/wiki/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7">管理数据库升级</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=安全向导.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安全性是Web框架最基本的内置因素，Play在设计时就考虑了很多安全特性，但这并不意味着Play开发时就不需要担心任何风险。框架毕竟不是万能的，不能预防所有的漏洞和安全问题。本节将介绍Web应用中一些常见的安全问题，并演示如何在Play开发中预防它们。
+</p><p><br />
+<h3 id="section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.1Session">10.15.1 Session<a class="hashlink" href="#section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.1Session">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Web应用中，常常需要保存一些与用户绑定的状态信息(比如用户的登录状态信息)，通常的处理方式是将这些信息保存在session中。session是一系列存储在用户浏览器中的cookie，用来识别用户(也可以存储其他有用的信息)，如果将这些信息存储在Web应用的模型层显然不太合适。如果没有session，服务器对于每个访问请求，都会要求用户重新登录一次。
+</p>
+<p><br />
+<b>Keep your secret… secret</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session是以“key/value”键值对的形式组成的，由于底层实现是cookie，所以是经过签名的(但并没有被加密)。这表明只要密钥是安全的，session就不可能由第三方伪造。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play将密钥保存在conf/application.conf文件中。当安装他人编写的Play应用时，可以通过<b>play secret</b>命令修改密钥。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>请保持application.conf文件的私有性，切记不能将它存放于公开的目录中。
+</p></div>
+
+<p><br />
+<b>不要在session中存储重要的数据</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session中的数据并没有被加密，所以不应该存储非常重要的数据。因为这些数据是可以通过查看用户的cookie直接获取的，特别是在局域网或者wifi环境中可以很容易的检索到用户的cookie信息。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于session存储在cookie中，而cookie的大小是受限制的(小于4KB)，所以最好只在session中存储少量字符串信息。
+</p>
+<p><br />
+<h3 id="section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.2_E8_B7_A8_E7_AB_99_E8_84_9A_E6_9C_AC">10.15.2 跨站脚本<a class="hashlink" href="#section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.2_E8_B7_A8_E7_AB_99_E8_84_9A_E6_9C_AC">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跨站脚本（Cross-site scripting）是Web应用中比较常见的安全问题。黑客通常使用表单提交将一些危险的JavaScript代码注入被攻击网站，之后当其他用户浏览该网页时，这些代码便会自动运行或者以欺骗用户点击运行的方式产生危害。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体实例说明：假如有一个博客系统，任意的用户都可以评论或留言。如果系统本身不对用户评论时写入的数据进行过滤（比如评论内容中包含几段JS代码），便有可能使网站遭受攻击。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跨站脚本可能造成的危害如下：
+</p>
+<ul><li>在用户浏览网站时自动弹窗。
+</li><li>将网站的请求重定向到攻击者指定的站点。
+</li><li>窃取那些只有当前用户可见的信息，并把这些信息发送到攻击者的网站。
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因此，保护Web应用不受跨站脚本攻击是非常重要的。Play的模板引擎默认对显示的数据进行转义，起到防范作用。如果必须在模板中插入不经转义的HTML源代码，可以使用raw()方法(详见JAVA扩展)，但当这些字符串来自用户输入时，必须先通过审查并确定数据是无害的。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还可以通过建立白名单（即被允许的安全标签列表）和黑名单（即被禁止的不安全的标签列表）的形式来帮助审查用户输入的内容。
+</p>
+<p><br />
+<h3 id="section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.3SQL_E6_B3_A8_E5_85_A5">10.15.3 SQL注入<a class="hashlink" href="#section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.3SQL_E6_B3_A8_E5_85_A5">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL注入(SQL Injection)是通过把SQL命令插入到Web表单递交，域名输入或页面请求的查询字符串，最终达到欺骗服务器执行恶意SQL命令的行为。该行为可能会造成服务器端数据库数据毁坏，用户权限泄漏等危害。
+<br />
+</p>
+<p><img class="inline" src="../attach/图片资源/exploits_of_a_mom.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/exploits_of_a_mom.png" alt="图片资源/exploits_of_a_mom.png" />
+</p>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了预防这种攻击，开发人员在开发过程中需要注意一些编程习惯。当开发人员使用较高权限的find()方法时，就必须得注意SQL注入的问题了。当手工创建查询语句时，推荐使用“？”占位符的方式书写查询语句，不推荐使用“+”拼接查询字符串的方式。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下是推荐的书写方式与不推荐的书写方式的对比。使用“？”占位符的方式：
+</p>
+<div class="prettify">
+<pre>
+createQuery(&quot;SELECT * from Stuff WHERE type= ?1&quot;).setParameter(1, theType);
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用“+”拼接查询字符串的方式：
+</p>
+<div class="prettify">
+<pre>
+createQuery(&quot;SELECT * from Stuff WHERE type=&quot; + theType);
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.4_E8_B7_A8_E7_AB_99_E8_AF_B7_E6_B1_82_E4_BC_AA_E9_80_A0">10.15.4 跨站请求伪造<a class="hashlink" href="#section-_E5_AE_89_E5_85_A8_E5_90_91_E5_AF_BC-10.15.4_E8_B7_A8_E7_AB_99_E8_AF_B7_E6_B1_82_E4_BC_AA_E9_80_A0">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跨站请求伪造CSRF(Cross-Site Request Forgery)在Web应用中非常危险，造成的后果也是最严重的。CSRF主要通过伪装来自受信任用户的请求，从而利用受信任的网站进行一些恶意行为。该类型的攻击往往是加入一些不安全的代码或者链接到用户已被认证的网站应用，如果已认证的session并没有过期，就有可能被攻击者成功执行本不该授权的事务。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体举例：用户Bob和用户Alice同时在使用网站论坛，Alice刚刚发布了一条具有Bob银行链接的图片消息。设想一下，该消息中Alice编写了在Bob的银行站点进行取款的form提交链接，并将此链接作为图片标签。那么如果Bob的银行在cookie中保存了他的授权信息，并且此时cookie还未过期，当Bob的浏览器尝试装载该图片时将提交这个取款form以及他的cookie，这样在未经Bob允许的情况下便授权了这次事务。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要预防这类攻击，首要的事情就是恰当的使用GET和POST方法。使用原则是当需要改变应用的状态时尽量使用POST的方法。针对POST请求，保证安全的唯一方式就是为其添加对应可靠的令牌。Play在1.0.2版本起就以内建的形式来帮助实现:
+</p>
+<ul><li>在控制器中使用checkAuthenticity()方法，该方法将检查POST请求中的令牌是否有效，并且在无效时禁止返回响应。
+</li><li>session.getAuthenticityToken()自动生成的令牌只对当前会话有效。
+</li><li>#{authenticityToken /}标签以隐藏域的形式伴随表单提交令牌信息。
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如destroyMyAccount Action需要进行CSRF保护，为其添加checkAuthenticity()方法：
+</p>
+<div class="prettify">
+<pre>
+public static destroyMyAccount() {
+    checkAuthenticity();
+    ...
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkAuthenticity()方法只会在包含#{authenticityToken /}标签的表单提交时运行。
+</p>
+<div class="prettify">
+<pre>
+&lt;form method=&quot;post&quot; action=&quot;/account/destroy&quot;&gt;
+    #{authenticityToken /}
+    &lt;input type=&quot;submit&quot; value=&quot;destroy my account&quot;&gt;
+&lt;/form&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板标签#{form}内置了生成令牌的功能，不需要显式调用：
+</p>
+<div class="prettify">
+<pre>
+#{form @destroyMyAccount()}
+    &lt;input type=&quot;submit&quot; value=&quot;destroy my account&quot;&gt;
+#{/form}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也可以将checkAuthenticity()方法作为@before拦截器，保护控制器中所有的Action。
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-14) was last changed on <a href="../Diff.jsp-page=安全向导&r1=14&r2=13.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC&r1=14&r2=13">14-Feb-2012 08:08</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=安全向导.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=安全向导.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="安全向导-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

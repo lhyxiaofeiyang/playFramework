@@ -1,0 +1,1154 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 数据模型迭代
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='数据模型迭代' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=数据模型迭代.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=数据模型迭代.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">数据模型迭代</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'数据模型迭代' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="Mongo模块.htm" tppabs="http://www.playframework.cn/wiki/Mongo%E6%A8%A1%E5%9D%97">Mongo模块</a>, <a class="wikipage" href="Secure模块.htm" tppabs="http://www.playframework.cn/wiki/Secure%E6%A8%A1%E5%9D%97">Secure模块</a>, <a class="wikipage" href="Search模块.htm" tppabs="http://www.playframework.cn/wiki/Search%E6%A8%A1%E5%9D%97">Search模块</a>, <a class="wikipage" href="Spring支持.htm" tppabs="http://www.playframework.cn/wiki/Spring%E6%94%AF%E6%8C%81">Spring支持</a>, <a class="wikipage" href="CSS扩展.htm" tppabs="http://www.playframework.cn/wiki/CSS%E6%89%A9%E5%B1%95">CSS扩展</a>, <a class="wikipage" href="Google App Engine.htm" tppabs="http://www.playframework.cn/wiki/Google%20App%20Engine">Google App Engine</a>, <a class="wikipage" href="Google Web Toolkit.htm" tppabs="http://www.playframework.cn/wiki/Google%20Web%20Toolkit">Google Web Toolkit</a>, <a class="wikipage" href="Bespin在线编辑器.htm" tppabs="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="本章小结11.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9311">本章小结11</a>, <a class="wikipage" href="项目启动.htm" tppabs="http://www.playframework.cn/wiki/%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8">项目启动</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=数据模型迭代.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本节将着重介绍yabe模型类的构建。
+</p><p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.1_E4_BD_BF_E7_94_A8JPA">12.2.1 使用JPA<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.1_E4_BD_BF_E7_94_A8JPA">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模型层（Model）在Play应用中处于核心地位（事实上在所有设计良好的应用中都是如此），这也是领域模型驱动的表现。我们的目标是创建博客引擎应用，其中模型层包含User，Post，Comment等类。对这些模型类的实例对象进行操作前，需要先将这些对象持久化到数据库中。受益于Java的面向对象特性，我们可以使用ORM（对象-关系数据库映射Object Relational Mapper）产品来帮助我们自动进行对象与数据之间的映射。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play使用JPA的实现Hibernate进行自动映射。在Play中无需进行任何配置，就可以直接使用JPA，下面我们将介绍通过JPA创建模型类。
+</p>
+<p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.2User_E7_B1_BB">12.2.2 User类<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.2User_E7_B1_BB">#</a></h3>
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先创建User模型类。在yabe/app/models目录下新建User.java，编写User类的初步实现：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+import java.util.*;
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+ 
+@Entity
+public class User extends Model {
+ 
+    public String email;
+    public String password;
+    public String fullname;
+    public boolean isAdmin;
+    
+    public User(String email, String password, String fullname) {
+        this.email = email;
+        this.password = password;
+        this.fullname = fullname;
+    }
+ 
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Entity注解标记User类为受管理的JPA实体，并且超类Model提供了一套有用的JPA方法，类中的所有属性会自动持久化到数据库中。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>模型对象继承play.db.jpa.Model并不是必须的，我们也可以以纯JPA实现，但是继承Model类在很多情况下是最佳选择。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者之前已经使用过JPA，就应该知道每个JPA实体必须添加@Id属性。play.db.jpa.Model超类提供了自动生成的数字id主键，已经可以满足大部分的需求。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>不要将自动生成的id字段作为功能性的标识符(应该理解为技术性标识，读者最好对这两个概念有所区分)。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刷新应用的主页查看结果（除非有错误发生，否则我们看不到任何改变）：Play已经自动编译并且加载User类，但并没有为应用提供任何功能特性。
+</p>
+<p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.3_E7_BC_96_E5_86_99_E9_A6_96_E4_B8_AA_E6_B5_8B_E8_AF_95">12.2.3 编写首个测试<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.3_E7_BC_96_E5_86_99_E9_A6_96_E4_B8_AA_E6_B5_8B_E8_AF_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写JUnit测试用例是测试新建的User类的最好方法。测试驱动开发的优点是：允许我们逐步完成应用，并确保一切都正常。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了运行测试用例，需要在特殊的test模式下启动应用。停止当前运行中的应用，打开命令行输入：
+</p>
+<div class="prettify">
+<pre>
+play test yabe
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/yabe_test.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/yabe_test.png" alt="图片资源/yabe_test.png" />
+</p>
+<p><b>(图12.3 命令行输入play test命令)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Play test</b>命令与<b>play run</b>命令几乎一样，唯一的区别是前者加载了测试运行模块，以便直接从浏览器中运行测试套件。
+</p>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>当应用在test模式下运行时，Play会自动选择test作为框架ID，同时加载相应的application.conf配置文件信息。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在浏览器中输入http://localhost:9000/@tests，页面显示的就是测试运行器，如图12.4所示。选择所有默认的测试然后运行，可见所有测试都通过了，因为这些测试并没有做任何有效的事情。
+</p>
+<p><img class="inline" src="../attach/图片资源/yabe_test_run.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/yabe_test_run.png" alt="图片资源/yabe_test_run.png" />
+</p>
+<p><b>(图12.4 测试运行结果)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们通常使用JUnit对模型对象进行测试，框架自带默认的BasicTest.java测试文件（/yabe/test/BasicTest.java）：
+</p>
+<div class="prettify">
+<pre>
+import org.junit.*;
+import play.test.*;
+import models.*;
+ 
+public class BasicTest extends UnitTest {
+ 
+    @Test
+    public void aVeryImportantThingToTest() {
+        assertEquals(2, 1 + 1);
+    }
+ 
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除无用的默认测试方法（aVeryImportantThingToTest），编写自定义测试，创建新用户并读取该用户数据：
+</p>
+<div class="prettify">
+<pre>
+import org.junit.*;
+import java.util.*;
+import play.test.*;
+import models.*;
+
+public class BasicTest extends UnitTest {
+
+    @Test
+    public void createAndRetriveUser(){
+    	//创建新用户并保存
+    	new User(&quot;demo@oopsplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    	//使用邮箱地址读取用户数据
+    	User savage=User.find(&quot;byEmail&quot;,&quot;demo@oopsplay.org&quot;).first();
+    	
+    	//测试
+    	assertNotNull(savage);
+    	assertEquals(&quot;savage&quot;,savage.fullname);
+    	
+    }
+
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上测试代码中使用了Model超类提供的两个非常有用的方法：save()和find()。在测试运行器中选择BasicTest.java，点击Start!按钮进行测试，并检查结果是否都呈绿色。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改User.java文件，添加connect()方法检查特定用户名和密码是否存在：
+</p>
+<p />
+<div class="prettify">
+<pre>
+public static User connect(String email, String password) {
+    return find(&quot;byEmailAndPassword&quot;, email, password).first();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后在BasicTest.java中编写新的测试用例，测试connect()方法：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void tryConnectAsUser(){
+    	
+    new User(&quot;demo@oopsplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    assertNotNull(User.connect(&quot;demo@oopsplay.org&quot;, &quot;123&quot;));
+    assertNull(User.connect(&quot;dhl@oopsplay.org&quot;, &quot;123&quot;));
+    assertNull(User.connect(&quot;demo@oopsplay.org&quot;, &quot;456&quot;));
+    	
+}
+
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每次代码更新后可以在Play的测试运行器中运行所有的测试，确保应用没有遭到任何破坏。
+</p>
+<p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.4Post_E7_B1_BB">12.2.4 Post类<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.4Post_E7_B1_BB">#</a></h3>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post类表示博客中发表的文章，接下来编写该类的初步实现：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+import java.util.*;
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+ 
+@Entity
+public class Post extends Model {
+ 
+    public String title;
+    public Date postedAt;
+    
+    @Lob
+    public String content;
+    
+    @ManyToOne
+    public User author;
+    
+    public Post(User author, String title, String content) {
+        this.author = author;
+        this.title = title;
+        this.content = content;
+        this.postedAt = new Date();
+    }
+ 
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post类的定义中使用@Lob注解通知JPA使用长文本数据类型存储文章的主体内容，使用@ManyToOne注解声明Post类与User类的多对一关系（表示每篇Post由单个User发表，每个User能够撰写多篇Post）。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写新的测试用例检查Post类是否能够正常工作。但是在编写这些测试之前，我们需要对BasicTest.java测试文件进行一些操作。因为测试进行到当前阶段，内存数据库的内容从未被清除过，每次运行新的测试会创建越来越多的对象。当需要运行更加高级的测试（如统计内存数据库中对象数量）时，可能会出现意想不到的问题。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为测试编写setup()方法，用于每次测试前清空数据：
+</p>
+<div class="prettify">
+<pre>
+public class BasicTest extends UnitTest {
+ 
+    @Before
+    public void setup() {
+        Fixtures.deleteAll();
+    }
+    
+    ...
+ 
+}
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>@Before是JUnit测试工具的注解，指测试用例执行前的环境处理，可以认为是前置处理。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixtures是测试中用于处理数据的工具类。再次运行测试检查应用是否会出现问题：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void createPost(){
+    
+    //创建并保存用户
+    User savage=new User(&quot;demo2@oopsplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    //发表新的文章
+    new Post(savage,&quot;Title&quot;,&quot;Hello savage&quot;).save();
+    	
+    //测试文章已经成功发表
+    assertEquals(1,Post.count());
+    	
+    //读取savage发布的所有文章
+    List&lt;Post&gt; savagePost=Post.find(&quot;byAuthor&quot;,savage).fetch();
+    	
+    //测试
+    assertEquals(1,savagePost.size());
+    Post firstPost=savagePost.get(0);
+    assertNotNull(firstPost);
+    assertEquals(savage,firstPost.author);
+    assertEquals(&quot;Title&quot;,firstPost.title);
+    assertEquals(&quot;Hello savage&quot;,firstPost.content);
+    assertNotNull(firstPost.postedAt);
+}
+
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>不要忘记导入java.util.List包，否则会出现编译错误。
+</p></div>
+
+<p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.5Comment_E7_B1_BB">12.2.5 Comment类<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.5Comment_E7_B1_BB">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通常博客中的文章都具有添加评论的功能，定义Comment类用于存放文章的评论：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+import java.util.*;
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+ 
+@Entity
+public class Comment extends Model {
+ 
+    public String author;
+    public Date postedAt;
+     
+    @Lob
+    public String content;
+    
+    @ManyToOne
+    public Post post;
+    
+    public Comment(Post post, String author, String content) {
+        this.post = post;
+        this.author = author;
+        this.content = content;
+        this.postedAt = new Date();
+    }
+ 
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接着编写相应的测试用例：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void postComment(){
+    //创建用户并保存
+    User savage=new User(&quot;demo3@ooposplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    //发表一篇文章
+    Post savagePost=new Post(savage,&quot;Title2&quot;,&quot;Hello savage2&quot;).save();
+    	
+    //发表评论
+    new Comment(savagePost,&quot;dhlzj&quot;,&quot;Hi i am dhl&quot;).save();
+    new Comment(savagePost,&quot;dhlzj2&quot;,&quot;Hi i am dhl2&quot;).save();
+    	
+    //读取所有评论
+    List&lt;Comment&gt; savagePostComments=Comment.find(&quot;byPost&quot;,savagePost).fetch();
+    	
+    //测试
+    assertEquals(2,savagePostComments.size());
+    	
+    Comment firstComment=savagePostComments.get(0);
+    assertNotNull(firstComment);
+    assertEquals(&quot;dhlzj&quot;,firstComment.author);
+    assertEquals(&quot;Hi i am dhl&quot;,firstComment.content);
+    assertNotNull(firstComment.postedAt);
+    	
+    Comment secondComment=savagePostComments.get(1);
+    assertNotNull(secondComment);
+    assertEquals(&quot;dhlzj2&quot;,secondComment.author);
+    assertEquals(&quot;Hi i am dhl2&quot;,secondComment.content);
+    assertNotNull(secondComment.postedAt);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们会发现Post和Comment之间的关系并不是非常清晰，我们需要使用查询才能获取每篇文章所对应的评论。因而我们可以将关系建立到另一边，也就是Post类中。在Post类中添加comments属性：
+</p>
+<div class="prettify">
+<pre>
+...
+@OneToMany(mappedBy=&quot;post&quot;, cascade=CascadeType.ALL)
+public List&lt;Comment&gt; comments;
+ 
+public Post(User author, String title, String content) { 
+    this.comments = new ArrayList&lt;Comment&gt;();
+    this.author = author;
+    this.title = title;
+    this.content = content;
+    this.postedAt = new Date();
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者请注意，这里使用的mappedBy属性用于通知JPA，关系是由Comment类中的post属性所维护的。当用JPA定义双向关系时，告诉哪一边是关系维护方就显得特别重要。在本项目中，由于评论属于发表的文章，所以最好是由Comment类来维护两者之间的关系。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置级联属性通知JPA，当文章删除的时候能够级联到评论。换句话说，如果删除一篇文章，那么它的评论也随之删除。在这个新的关系下，需要在Post类中增加一个帮助方法以便轻松地发布评论。
+</p>
+<div class="prettify">
+<pre>
+public Post addComment(String author, String content) {
+    Comment newComment = new Comment(this, author, content).save();
+    this.comments.add(newComment);
+    this.save();
+    return this;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写测试用例：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void useTheCommentsRelation(){
+    //创建用户并保存
+    User savage=new User(&quot;demo4@oopsplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    //发布一篇文章
+    Post savagePost=new Post(savage,&quot;Title3&quot;,&quot;Hi i am dhl3&quot;).save();
+    	
+    //添加评论
+    savagePost.addComment(&quot;dhl01&quot;, &quot;good job&quot;);
+    savagePost.addComment(&quot;dhl02&quot;, &quot;great&quot;);
+    	
+    //统计
+    assertEquals(1,User.count());
+    assertEquals(1,Post.count());
+    assertEquals(2,Comment.count());
+    	
+    //读取savage发表的文章
+    savagePost=Post.find(&quot;byAuthor&quot;,savage).first();
+    assertNotNull(savagePost);
+    	
+    //导航到评论
+    assertEquals(2,savagePost.comments.size());
+    assertEquals(&quot;dhl01&quot;,savagePost.comments.get(0).author);
+    	
+    //删除文章
+    savagePost.delete();
+    	
+    //检查所有评论都已经删除
+    assertEquals(1,User.count());
+    assertEquals(0,Post.count());
+    assertEquals(0,Comment.count());
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的测试都通过，如图12.5所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/yabe_test_run2.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/yabe_test_run2.png" alt="图片资源/yabe_test_run2.png" />
+<b>(图12.5 测试结果显示)</b>
+</p>
+<p><br />
+<h3 id="section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.6_E4_BD_BF_E7_94_A8Fixtures_E7_BC_96_E5_86_99_E6_9B_B4_E5_8A_A0_E5_A4_8D_E6_9D_82_E7_9A_84_E6_B5_8B_E8_AF_95">12.2.6 使用Fixtures编写更加复杂的测试<a class="hashlink" href="#section-_E6_95_B0_E6_8D_AE_E6_A8_A1_E5_9E_8B_E8_BF_AD_E4_BB_A3-12.2.6_E4_BD_BF_E7_94_A8Fixtures_E7_BC_96_E5_86_99_E6_9B_B4_E5_8A_A0_E5_A4_8D_E6_9D_82_E7_9A_84_E6_B5_8B_E8_AF_95">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;复杂的测试往往需要大量的测试数据。我们可以在测试之前使用Fixtures调用YAML文件(用于描述模型)，加载测试数据。编辑/abe/test/data.yml文件，描述用户：
+</p>
+<div class="prettify">
+<pre>
+User(savage):
+   email: demo@oopsplay.org
+   password: 123
+   fullname: savage
+
+User(savage2):
+   email: demo2@oopsplay.org
+   password: 123
+   fullname: savage2
+
+Post(firstSavagePost):
+   title:    About the model layer
+   postedAt: 2009-03-25
+   author:   savage
+   content:  &gt;
+             The content of the model layer
+
+Post(secondSavagePost):
+   title:    About the model layer
+   postedAt: 2009-03-25
+   author:   savage2
+   content:  &gt;
+             The content of the model layer2
+             
+Post(dhlPost):
+   title:    The MVC application
+   postedAt: 2009-03-25
+   author:   savage2
+   content: &gt;
+            THe content of MVC
+            
+Comment(c1):
+   author: Gust
+   content: &gt;
+            You are right!
+   postedAt: 2009-03-25
+   post: firstSavagePost
+   
+Comment(c2):
+   author: Mike
+   content: &gt;
+            I know that...
+   postedAt: 2009-03-25
+   post: firstSavagePost
+   
+Comment(c3):
+   author: Tom
+   content: &gt;
+            good job.
+   postedAt: 2009-03-25
+   post: secondSavagePost
+
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>注意变量和值之间存在空格，否则将无法加载data.yml文件。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写测试用例，并基于测试数据执行一些断言：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void fullTest(){
+    	
+    Fixtures.load(&quot;data.yml&quot;);
+    	
+    //计数
+    assertEquals(2,User.count());
+    assertEquals(3,Post.count());
+    assertEquals(3,Comment.count());
+    	
+    //连接到用户
+    assertNotNull(User.connect(&quot;demo@oopsplay.org&quot;, &quot;123&quot;));
+    assertNotNull(User.connect(&quot;demo2@oopsplay.org&quot;,&quot;123&quot;));
+    assertNull(User.connect(&quot;demo@oopsplay.org&quot;, &quot;456&quot;));
+    assertNull(User.connect(&quot;dhl@oopsplay.org&quot;, &quot;123&quot;));
+    	
+    //查找所有savage发表的文章
+    List&lt;Post&gt; savagePosts=Post.find(&quot;author.email&quot;,&quot;demo@oopsplay.org&quot;).fetch();
+    assertEquals(1,savagePosts.size());
+    	
+    //查找所有savage发表文章中的评论
+    List&lt;Comment&gt; savageComments=Comment.find(&quot;post.author.email&quot;,&quot;demo@oopsplay.org&quot;).fetch();
+    assertEquals(2,savageComments.size());
+    	
+    //查找最新发表的文章
+    Post frontPost=Post.find(&quot;order by postedAt desc&quot;).first();
+    assertNotNull(frontPost);
+    assertEquals(&quot;The MVC application&quot;,frontPost.title);
+    	
+    //检查该文章下没有评论
+    assertEquals(0,frontPost.comments.size());
+    	
+    //发表一条新的评论
+    frontPost.addComment(&quot;dhlzj&quot;, &quot;come on,savage&quot;);
+    assertEquals(1,frontPost.comments .size());
+    assertEquals(4,Comment.count());
+    	
+}
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-16) was last changed on <a href="../Diff.jsp-page=数据模型迭代&r1=16&r2=15.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3&r1=16&r2=15">06-Apr-2012 05:41</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=数据模型迭代.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=数据模型迭代.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="数据模型迭代-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

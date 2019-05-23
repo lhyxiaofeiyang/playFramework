@@ -1,0 +1,839 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 文件上传
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='文件上传' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=文件上传.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=文件上传.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">文件上传</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'文件上传' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="挂起HTTP请求.htm" tppabs="http://www.playframework.cn/wiki/%E6%8C%82%E8%B5%B7HTTP%E8%AF%B7%E6%B1%82">挂起HTTP请求</a>, <a class="wikipage" href="HTTP流式响应.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94">HTTP流式响应</a>, <a class="wikipage" href="使用WebSocket.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8WebSocket">使用WebSocket</a>, <a class="wikipage" href="本章小结8.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%938">本章小结8</a>, <a class="wikipage" href="测试.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95">测试</a>, <a class="wikipage" href="编写测试.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">编写测试</a>, <a class="wikipage" href="Fixures.htm" tppabs="http://www.playframework.cn/wiki/Fixures">Fixures</a>, <a class="wikipage" href="运行测试.htm" tppabs="http://www.playframework.cn/wiki/%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95">运行测试</a>, <a class="wikipage" href="集成测试.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95">集成测试</a>, <a class="wikipage" href="本章小结9.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%939">本章小结9</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=文件上传.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web应用经常会需要文件上传的功能，比如上传用户的头像或照片。Play提供了处理HTTP文件上传并将数据保存到服务器的功能。
+</p><p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.1_E6_9E_B6_E6_9E_84_E8_80_83_E8_99_91">10.1.1 架构考虑<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.1_E6_9E_B6_E6_9E_84_E8_80_83_E8_99_91">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用中通常有两种方式来保存二进制数据：将数据保存到服务器的文件系统中，或者直接保存到数据库中。当然这两种实现各有利弊，使用文件系统非常容易，而使用数据库则具有事务处理支持，但两者都有通病，那就是很难扩展。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这一节需要向读者着重强调的是，Play中提供的play.db.jpa.Blob类型，与java.sql.Blob类型有很大的区别。在Play中声明为play.db.jpa.Blob类型的属性默认将数据存储在数据库之外的文件当中，并没有在数据库中使用带有BLOB的java.sql.Blob类型。在服务器端，Play默认将上传的文件存储到应用的data/attachments/目录下。文件名称（UUID）和MIME类型拼接的字符串被作为SQL中VARCHAR类型存储在数据库属性中。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要将数据存储到数据库表中，可以将@javax.persistence.Lob注解添加到模型属性前。带有@Lob注解的数据便会作为BLOB或者CLOB类型存储到数据表中。
+</p>
+<p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.2_E4_B8_8A_E4_BC_A0_E6_96_87_E4_BB_B6_E5_B9_B6_E5_AD_98_E5_82_A8_E5_88_B0_E6_9C_8D_E5_8A_A1_E5_99_A8_E4_B8_AD">10.1.2 上传文件并存储到服务器中<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.2_E4_B8_8A_E4_BC_A0_E6_96_87_E4_BB_B6_E5_B9_B6_E5_AD_98_E5_82_A8_E5_88_B0_E6_9C_8D_E5_8A_A1_E5_99_A8_E4_B8_AD">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play中实现文件的上传，存储和共享都非常简单，因为框架自动将HTML表单中提交的文件绑定到JPA模型中，而且Play提供的便捷的方法使得共享文件如同显示文本一样简单。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，在应用中定义User模型，该模型用于存储上传文件。将photo属性定义为play.db.jpa.Blob类型：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+import play.db.jpa.Blob;
+import play.db.jpa.Model;
+ 
+import javax.persistence.Entity;
+ 
+@Entity
+public class User extends Model {
+ 
+   public Blob photo;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模型定义完成后，在视图文件中添加上传文件的表单。为了绑定JPA模型，上传文件的name属性设置为user.photo：
+</p>
+<div class="prettify">
+<pre>
+#{form @addUser(), enctype:'multipart/form-data'}
+   &lt;input type=&quot;file&quot; name=&quot;user.photo&quot;&gt;
+   &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Upload&quot;&gt;
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在控制器中添加相应的Action方法，使用新建的模型对象来保存上传的文件：
+</p>
+<div class="prettify">
+<pre>
+public static void addUser(User user) {
+   user.save();
+   index();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因为文件上传是由框架自动处理的，所以代码看起来除了保存JPA实体以外，并没有做其他事情。实际上，框架内部帮我们完成了如下一系列的操作：首先，在Action方法执行之前，上传的文件会被保存到应用的tmp/uploads子目录。当实体保存之后，上传的文件使用UUID命名并被复制到data/attachments目录下。最后当Action方法执行完毕时，删除临时文件。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要将文件保存到其他目录，可以在conf/application.conf文件中指定路径，可以是绝对路径，也可以是Play应用目录的相对路径：
+</p>
+<div class="prettify">
+<pre>
+attachments.path=photos
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了使上传的图片更加直观，我们为模板文件中增加&lt;img&gt;标签，用于显示上传的图片：
+</p>
+<div class="prettify">
+<pre>
+#{list items:models.User.findAll(), as:'user'}
+   &lt;img src=&quot;@{userPhoto(user.id)}&quot;&gt;
+#{/list}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，在控制器中增加Action方法，用于加载模型并返回上传的图片：
+</p>
+<div class="prettify">
+<pre>
+public static void userPhoto(long id) {
+   final User user = User.findById(id);
+   notFoundIfNull(user);
+   response.setContentTypeIfNotSet(user.photo.type());
+   renderBinary(user.photo.get());
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上就是Play中实现的简单的文件上传功能。读者会发现，我们并没有写很多的业务代码，也没有做过多的配置处理，只不过几句方法调用就完成了文件上传的功能。这就是Play提倡的设计哲学：简单并且高效。
+<p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.3_E6_9B_B4_E6_96_B0_E4_B8_8A_E4_BC_A0">10.1.3 更新上传<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.3_E6_9B_B4_E6_96_B0_E4_B8_8A_E4_BC_A0">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者希望更新上传的文件，也很容易，只需在请求参数中提供user.id，就可以使用save()方法来更新实体：
+</p>
+<div class="prettify">
+<pre>
+public static void updateUser(User user) {
+   user.save();
+   index();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上传的更新文件会以新的UUID命名并保存，这意味着原始的文件会失去关联。如果服务器没有足够的空间，那么就必须实现清理策略。本节介绍以下几种可行的方案：
+</p>
+<ul><li>比较蛮力的方式是使用异步Job定期查询所有当前使用文件类型的JPA模型，扫描attachments文件夹，然后删除没有关联的文件。这种方法很难在大规模的应用中使用。
+</li></ul><ul><li>针对某些应用，在模型中维护所有文件之前版本的引用是非常有意义的。这样我们可以在用户界面显示这些旧版本的文件信息，就像wiki通常会保存每个页面之前的版本那样。清理工作可以是手动，也可以是新文件上传或者异步Job进行触发。清理的策略可以是保存一定数量的版本，或者删除指定日期之前的版本。使用@PreUpdate和@PreRemove JPA拦截器能够很好地处理以上问题。
+</li></ul><ul><li>比较极端的做法是直接使用BinaryField字段来实现具有事务的上传更新。
+</li></ul><p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.4_E6_96_87_E4_BB_B6_E5_88_A0_E9_99_A4">10.1.4 文件删除<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.4_E6_96_87_E4_BB_B6_E5_88_A0_E9_99_A4">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果我们删除带有play.db.jpa.Blob属性的对象，attachments文件夹中的文件不会自动删除，我们需要通过引用java.io.File属性来手动进行删除，具体操作如下：
+</p>
+<div class="prettify">
+<pre>
+public static void deleteUser(long id) {
+   final User user = User.findById(id);
+   user.photo.getFile().delete();
+   user.delete();
+   index();
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也可以将文件删除封装到模型里，只要在User.java中覆盖_delete()方法，就可以在数据库实体成功删除后自动执行文件删除操作。
+</p>
+<div class="prettify">
+<pre>
+@Override
+public void _delete() {
+   super._delete();
+   photo.getFile().delete();
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.5_E4_B8_8A_E4_BC_A0_E6_96_87_E4_BB_B6_E5_B9_B6_E4_BF_9D_E5_AD_98_E6_96_87_E4_BB_B6_E5_90_8D">10.1.5 上传文件并保存文件名<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.5_E4_B8_8A_E4_BC_A0_E6_96_87_E4_BB_B6_E5_B9_B6_E4_BF_9D_E5_AD_98_E6_96_87_E4_BB_B6_E5_90_8D">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者需要保存原始上传文件的名称，我们可以在服务器端将文件扩展名映射为MIME类型，这样就可以以原始文件名的方式保存文件了。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们需要将表单控制绑定到具有java.io.File类型的Action方法参数中以便得到文件名，这意味着我们需要在控制器中创建一个新的Action方法，将单独的表单参数构建为模型对象，而不是像第一个例子那样直接绑定模型对象。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，在User模型中添加photoFileName属性：
+</p>
+<div class="prettify">
+<pre>
+@Entity
+public class User extends Model {
+
+   public String photoFileName;
+   public Blob photo;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新建Action方法addUserWithFileName()，实例化模型对象以及初始化Blob属性：
+</p>
+<div class="prettify">
+<pre>
+public static void addUserWithFileName(File photo) throws FileNotFoundException {
+   final User user = new User();
+   user.photoFileName = photo.getName();
+   user.photo = new Blob();
+   user.photo.set(new FileInputStream(photo),
+   MimeTypes.getContentType(photo.getName());
+   user.save();
+   index();
+}
+</pre>
+</div>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接着修改视图层的模版，显示上传后的图片文件名称。由于使用新的控制器方法为addUserWithFileName()，文件上传控件的名称也需要做相应的改变（将user.photo改成photo）：
+</p>
+<div class="prettify">
+<pre>
+#{list items:models.User.findAll(), as:'user'}
+   &lt;img title=&quot;${user.photoFileName}&quot; src=&quot;@{userPhoto(user.id)}&quot;&gt;
+#{/list}
+
+#{form @addUserWithFileName(), enctype:'multipart/form-data'}
+   &lt;input type=&quot;file&quot; name=&quot;photo&quot;&gt;
+   &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Upload&quot;&gt;
+#{/form}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.6_E4_B8_8B_E8_BD_BD_E6_96_87_E4_BB_B6">10.1.6下载文件<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.6_E4_B8_8B_E8_BD_BD_E6_96_87_E4_BB_B6">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们访问二进制数据（比如图片）时，可能会以正常的方式直接在浏览器中显示。比如之前通过URL访问的图片资源就是直接在浏览器中显示的。但是，我们可以设置HTTP头来通知浏览器将文件作为附件的形式下载到用户的计算机中，而不是直接显式地在浏览器中呈现。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，创建实现下载功能的Action方法。假设文件名已经被正确设置，实现下载功能的Action方法与userPhoto()方法唯一不同的地方是需要将文件名作为renderBinary()方法的参数传递，这样Play就会设置Content-Disposition响应头来提供文件名。
+</p>
+<div class="prettify">
+<pre>
+public static void downloadUserPhoto(long id) {
+   final User user = User.findById(id);
+   notFoundIfNull(user);
+   response.setContentTypeIfNotSet(user.photo.type());
+   renderBinary(user.photo.get(), user.photoFileName);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改模版文件，增加链接指向图片下载的URL：
+</p>
+<div class="prettify">
+<pre>
+#{list items:models.User.findAll(), as:'user'}
+   &lt;a href=&quot;@{downloadUserPhoto(user.id)}&quot;&gt;
+       &lt;img src=&quot;@{Application.userPhoto(user.id)}&quot;&gt;
+   &lt;/a&gt;
+#{/list}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.7_E8_87_AA_E5_AE_9A_E4_B9_89contentType">10.1.7 自定义content type<a class="hashlink" href="#section-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0-10.1.7_E8_87_AA_E5_AE_9A_E4_B9_89contentType">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们知道，浏览器响应的内容是在控制器的Action方法中设置的。框架的play.libs.MimeTypes类负责查找给定文件扩展名的MIME类型，详细类型列表参见$PLAY_HOME/framework/src/play/libs/mime-types.properties文件。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从Play的1.2版本开始，我们可以在conf/application.conf配置文件中添加自定义类型。比如，增加以xcf为扩展名的GIMP图片的MIME类型:
+</p>
+<div class="prettify">
+<pre>
+mimetype.xcf=application/x-gimp-image
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>设置content type的例子只适用于addUserWithFileName()方法，因为方法会隐式查找基于原始文件名的MIME类型。最早介绍的addUser()例子使用的MIME类型是HTTP请求文件上传时发送的。
+</p></div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-25) was last changed on <a href="../Diff.jsp-page=文件上传&r1=25&r2=24.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0&r1=25&r2=24">02-May-2012 02:12</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=文件上传.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=文件上传.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="文件上传-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

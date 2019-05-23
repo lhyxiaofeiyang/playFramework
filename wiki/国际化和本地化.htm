@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：国际化和本地化
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/mootools.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/prettify.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="国际化和本地化">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">国际化和本地化</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','国际化和本地化' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">PlayFramework Tutorial</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%92%8C%E5%8F%91%E5%B8%83%E8%AF%84%E8%AE%BA">显示文章和发布评论</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96%E5%87%86%E5%A4%87">产品化准备</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到此，博客引擎已经基本开发完毕了。当我们需要将产品向全球市场推广
+时，就必须进行本地化工作。在实际应用中，通常将国际化和本地化操作安排在项目功能开发完成之后再进行(当然也可以安排在项目的开始阶段)。下面以博客引
+擎为例，进行应用的国际化和本地化操作演示。
+</p><p><br>
+</p>
+<div class="quote">
+注意：
+<p>在项目功能开发过程中，采用统一的语言。当开发完毕后，再按照需求配置不同的本地化语言。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.1_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96">12.12.1 国际化和本地化<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.1_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地化和国际化的国际组织是Openil18n，其前身是li18nux。下面给出国际化和本地化的基本定义：
+</p>
+<p><b>国际化</b>：软件国际化(I18N，Internationalization的简写——由于首字母“I”和末尾字母“n”间有18个字
+符，所以简称I18N)是指所开发的软件能适应全世界市场的本地化工作，但又不需要对程序做任何系统性或结构性变化的特征。这种特征通过特定的系统设计，
+程序设计，编码方式来实现。从编程的角度考虑，就是在应用中避免使用具有本地化特色的代码。因此在应用程序中，需要通过模版来为不同的使用者显示不同的视
+图界面(其中模板显示的样式通过messages文件控制)。国际化还包括了不同数据类型的显示规范，比如时间，货币，数字等。
+</p>
+<p><b>本地化</b>：软件本地化(L10N，英文的Localization一词的缩写。由于首字母“L”和末字母“n”间有10个字母，所以简
+称L10N)是指将一个软件产品按照特定地区的需要而进行定制的过程，即在原语言版本的基础上，通过翻译、定制和参数配置等工作，使软件产品或系统在语
+言、时区等各个方面与当地的相应内容相一致。即为应用准备一个具有本地化特色的服务，方便应用“入乡随俗”。因此一个应用(已经具备国际化)往往包含一个
+或多个本地化版本。在应用程序中，将使用本地语言的视图界面(通过messages文件控制模板)显示给用户。浏览器会自动为不同地区的用户选择最佳的本
+地化版本(前提是该应用具有本地化特征)。
+</p>
+<p> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国际化与本地化是一个辩证的关系，两者缺一不可。国际化是核心，是内在的实
+现，是将来本地化的基础，使本地化过程不需要对代码改动就能完成。另一方面，本地化是外在的表现，通过定制、配置等工作实现本地化。
+</p>
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.2_E4_B8_BAyabe_E5_8D_9A_E5_AE_A2_E5_BC_95_E6_93_8E_E9_85_8D_E7_BD_AE_E6_9C_AC_E5_9C_B0_E5_8C_96">12.12.2 为yabe博客引擎配置本地化<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.2_E4_B8_BAyabe_E5_8D_9A_E5_AE_A2_E5_BC_95_E6_93_8E_E9_85_8D_E7_BD_AE_E6_9C_AC_E5_9C_B0_E5_8C_96">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开conf/application.conf文件，增加如下配置(或者去掉该配置前注释符#)，以此来支持三种本地化语言(English，Dutch和French)：
+<p></p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Localisations for English, Dutch and French. </span><span class="pln"><br>application</span><span class="pun">.</span><span class="pln">langs</span><span class="pun">=</span><span class="pln">en</span><span class="pun">,</span><span class="pln">nl</span><span class="pun">,</span><span class="pln">fr </span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完成以上配置后启动应用，Play会发出以下警告。这是因为我们还没有配置相应的本地化messages文件：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="lit">16</span><span class="pun">:</span><span class="lit">19</span><span class="pun">:</span><span class="lit">04</span><span class="pun">,</span><span class="lit">728</span><span class="pln"> WARN </span><span class="pun">~</span><span class="pln"> </span><span class="typ">Messages</span><span class="pln"> file missing </span><span class="kwd">for</span><span class="pln"> locale en <br></span><span class="lit">16</span><span class="pun">:</span><span class="lit">19</span><span class="pun">:</span><span class="lit">04</span><span class="pun">,</span><span class="lit">729</span><span class="pln"> WARN </span><span class="pun">~</span><span class="pln"> </span><span class="typ">Messages</span><span class="pln"> file missing </span><span class="kwd">for</span><span class="pln"> locale nl <br></span><span class="lit">16</span><span class="pun">:</span><span class="lit">19</span><span class="pun">:</span><span class="lit">04</span><span class="pun">,</span><span class="lit">729</span><span class="pln"> WARN </span><span class="pun">~</span><span class="pln"> </span><span class="typ">Messages</span><span class="pln"> file missing </span><span class="kwd">for</span><span class="pln"> locale fr</span></pre>
+</div>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>本节的代码可以在Play框架的samples-and-tests/yabe目录下找到。本例中以法语(French)和荷兰语(Dutch)作为本地化语言，实现应用程序的国际化。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.3_E5_AE_9A_E4_B9_89messages_E6_96_87_E4_BB_B6">12.12.3 定义messages文件<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.3_E5_AE_9A_E4_B9_89messages_E6_96_87_E4_BB_B6">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在conf/目录下创建以下三个文件，替代原有的messages文件，就可以解决上面出现的问题了：
+</p>
+<ul><li>messages.en 
+</li><li>messages.nl 
+</li><li>messages.fr 
+</li></ul><p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在此我们需要注意：messages文件和Java中的属性文件(properties files)使用相同的语法规则，但编码格式却是不一样的。messages文件为为纯文本文件，采用UTF-8作为编码格式，用于设置本地化语言，以下是希腊语的本地化例子：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">hello</span><span class="pun">.</span><span class="pln">morning </span><span class="pun">=</span><span class="pln"> </span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u222b</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00b1</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00aa</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u2211</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00ba</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u2260</span><span class="pun">\</span><span class="pln">u0153</span><span class="pun">\</span><span class="pln">u00c5</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00b1<br>hello</span><span class="pun">.</span><span class="pln">informal </span><span class="pun">=</span><span class="pln"> </span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u2265</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00b5</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u03c0</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00b1</span><span class="pun">\</span><span class="pln">u0153</span><span class="pun">\</span><span class="pln">u00c9</span><span class="pun">\</span><span class="pln">u0152</span><span class="pun">\</span><span class="pln">u00f8</span><span class="pun">\</span><span class="pln">u0153</span><span class="pun">\</span><span class="pln">u00d6 </span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也可以在定义中直接使用希腊字母：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">hello</span><span class="pun">.</span><span class="pln">morning </span><span class="pun">=</span><span class="pln"> </span><span class="pun">καλημέρα</span><span class="pln"> <br>hello</span><span class="pun">.</span><span class="pln">informal </span><span class="pun">=</span><span class="pln"> </span><span class="pun">γεια</span><span class="pln"> </span><span class="pun">σου</span><span class="pln"> </span></pre>
+</div>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>Java中的属性文件采用ISO-8859-1或Latin-1作为编码格式。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.4_E7_BC_96_E5_86_99_E7_AE_80_E5_8D_95_E7_9A_84messages_E6_96_87_E4_BB_B6">12.12.4 编写简单的messages文件<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.4_E7_BC_96_E5_86_99_E7_AE_80_E5_8D_95_E7_9A_84messages_E6_96_87_E4_BB_B6">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本例针对yabe/app/views/main.html模版进行本地化操作，需要本地化操作的对象是字符串“Log in to write something”：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;ul </span><span class="atn">id</span><span class="tag">=</span><span class="atv">"tools"</span><span class="tag">&gt;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="tag">&lt;li&gt;</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Admin.index()}"</span><span class="tag">&gt;</span><span class="pln">Log in to write something</span><span class="tag">&lt;/a&gt;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="tag">&lt;/li&gt;</span><span class="pln"> <br></span><span class="tag">&lt;/ul&gt;</span><span class="pln"> </span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了实现国际化需求，使用&amp;{}标签替换原字符串：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;ul </span><span class="atn">id</span><span class="tag">=</span><span class="atv">"tools"</span><span class="tag">&gt;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="tag">&lt;li&gt;</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Admin.index()}"</span><span class="tag">&gt;</span><span class="pln">&amp;{'views.main.tools.login'}</span><span class="tag">&lt;/a&gt;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="tag">&lt;/li&gt;</span><span class="pln"> <br></span><span class="tag">&lt;/ul&gt;</span><span class="pln"> </span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后在定义的三个messages文件中加入对应的本地化描述：
+</p>
+<p><b>conf/messages.en：</b>
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="pln">main</span><span class="pun">.</span><span class="pln">tools</span><span class="pun">.</span><span class="pln">login </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Log</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> to write something</span></pre>
+</div>
+<b>conf/messages.nl：</b>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="pln">main</span><span class="pun">.</span><span class="pln">tools</span><span class="pun">.</span><span class="pln">login </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Inloggen</span><span class="pln"> om iets te schrijven </span></pre>
+</div>
+<b>conf/messages.fr：</b> 
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="pln">main</span><span class="pun">.</span><span class="pln">tools</span><span class="pun">.</span><span class="pln">login </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Connectez</span><span class="pun">-</span><span class="pln">vous pour </span><span class="pun">é</span><span class="pln">crire quelque chose </span></pre>
+</div>
+<p><br>
+</p>
+<div class="quote">
+注意: 
+<p>&amp;{'key'}标签中的key的值是可以任意设定的，只需要在对应的messages本地化文件中定义即可。
+</p></div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们保存了这些设置后，就可以在浏览器中通过改变语言设定来查看不同语言版本的界面了(设置不同的Accept-Language HTTP请求头)。
+
+<p><br>
+</p>
+<div class="quote">
+补充: 
+<p>Firefox浏览器的设置方法如下：工具 » 选项 » 内容 » 语言 »选择。如果列表中没有该语言选项则通过添加按钮来导入French\[fr] 或 Dutch\[nl]（如图12.41所示），完成后重启浏览器生效。
+</p></div>
+<br>
+
+<p><img class="inline" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/guide12-1.png" alt="图片资源/guide12-1.png">
+</p>
+<p>
+</p><p><b>(图12.41 Firefox浏览器中设置语言)</b>
+</p>
+<p>
+</p><p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.5_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_A8_A1_E5_9E_8B_E5_AF_B9_E8_B1_A1">12.12.5 本地化模型对象<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.5_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_A8_A1_E5_9E_8B_E5_AF_B9_E8_B1_A1">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们登录到博客引擎的管理域页面时(http://localhost:9000/admin)，会看到被管理的模型对象列表(posts，tags，comments，users)，以及由<b>CRUD</b>模块提供的相应的模型编辑页面。这些页面中的标题默认采用域模型命名(也就是JavaBean的名字或属性名称)。
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>CRUD</b>模块已经具备了国际化支持，只需在messages本地化文件中使用JavaBean或属性名称作为key值进行配置即可。编辑conf/messages.nl文件，进行如下配置：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">post </span><span class="pun">=</span><span class="pln"> artikel <br></span><span class="typ">Post</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Artikel</span><span class="pln"> <br>posts </span><span class="pun">=</span><span class="pln"> artikelen <br></span><span class="typ">Posts</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Artikelen</span><span class="pln"> <br>comment </span><span class="pun">=</span><span class="pln"> reactie <br></span><span class="typ">Comment</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Reactie</span><span class="pln"> <br>comments </span><span class="pun">=</span><span class="pln"> reacties <br></span><span class="typ">Comments</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Reacties</span><span class="pln"> <br>user </span><span class="pun">=</span><span class="pln"> gebruiker <br></span><span class="typ">User</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Gebruiker</span><span class="pln"> <br>users </span><span class="pun">=</span><span class="pln"> gebruikers <br></span><span class="typ">Users</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Gebruikers</span><span class="pln"> </span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑conf/messages.fr文件，进行如下配置：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">post </span><span class="pun">=</span><span class="pln"> article <br></span><span class="typ">Post</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Article</span><span class="pln"> <br>posts </span><span class="pun">=</span><span class="pln"> articles <br></span><span class="typ">Posts</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Articles</span><span class="pln"> <br>comment </span><span class="pun">=</span><span class="pln"> commentaire <br></span><span class="typ">Comment</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Commentaire</span><span class="pln"> <br>comments </span><span class="pun">=</span><span class="pln"> commentaires <br></span><span class="typ">Comments</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Commentaires</span><span class="pln"> <br>user </span><span class="pun">=</span><span class="pln"> utilisateur <br></span><span class="typ">User</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Utilisateur</span><span class="pln"> <br>users </span><span class="pun">=</span><span class="pln"> utilisateur <br></span><span class="typ">Users</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Utilisateurs</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刷新浏览器查看结果。编辑页面都已经实现了本地化操作，但是导航栏还没有改变，如图12.42所示：
+</p>
+<p>
+</p><p><img class="inline" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/guide12-2.png" alt="图片资源/guide12-2.png">
+</p>
+<p>
+</p><p><b>(图12.42 导航栏)</b>
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是因为导航栏是我们在views/admin.html中自己定义的。使用&amp;{'...'}标签将其替代，实现本地化操作：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Posts.list()}"</span><span class="tag">&gt;</span><span class="pln">&amp;{'Posts'}</span><span class="tag">&lt;/a&gt;</span><span class="pln"> <br>...<br></span><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Tags.list()}"</span><span class="tag">&gt;</span><span class="pln">&amp;{'Tags'}</span><span class="tag">&lt;/a&gt;</span><span class="pln"> <br>...<br></span><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Comments.list()}"</span><span class="tag">&gt;</span><span class="pln">&amp;{'Comments'}</span><span class="tag">&lt;/a&gt;</span><span class="pln"> <br>...<br></span><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Users.list()}"</span><span class="tag">&gt;</span><span class="pln">&amp;{'Users'}</span><span class="tag">&lt;/a&gt;</span><span class="pln"> </span></pre>
+</div> 
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.6_E5_AE_9A_E4_B9_89_E5_B8_A6_E5_8F_82_E6_95_B0_E7_9A_84messages_E6_96_87_E4_BB_B6">12.12.6 定义带参数的messages文件<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.6_E5_AE_9A_E4_B9_89_E5_B8_A6_E5_8F_82_E6_95_B0_E7_9A_84messages_E6_96_87_E4_BB_B6">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地化messages文件中也可以定义参数。如果本地化操作中包含单个参数变量，可以按照如下方式进行描述(与Java语法非常类似)：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="typ">Application</span><span class="pun">.</span><span class="pln">listTagged</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Posts</span><span class="pln"> tagged </span><span class="kwd">with</span><span class="pln"> </span><span class="pun">%</span><span class="pln">s</span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板中以如下方式使用，传递单个参数变量：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">&amp;{</span><span class="str">'views.Application.listTagged.title'</span><span class="pun">,</span><span class="pln"> tag</span><span class="pun">}</span><span class="pln"> </span></pre>
+</div> 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当本地化messages文件中包含多个参数变量时，需要引入索引机制：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="typ">Admin</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">welcome </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Welcome</span><span class="pln"> </span><span class="pun">%</span><span class="lit">1</span><span class="pln">$s</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">span</span><span class="pun">&gt;</span><span class="pln">you have written </span><span class="pun">%</span><span class="lit">2</span><span class="pln">$s posts so far</span><span class="pun">&lt;/</span><span class="pln">span</span><span class="pun">&gt;</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板中以如下方式使用，传递多个参数变量：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">&amp;{</span><span class="str">'views.Admin.index.welcome'</span><span class="pun">,</span><span class="pln"> user</span><span class="pun">,</span><span class="pln"> posts</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()}</span><span class="pln"> </span></pre>
+</div> 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在博客引擎的例子中，我们希望文章post以正确的单复数形式显示，因此可以将post是否为复数也作为一个参数进行传递：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">views</span><span class="pun">.</span><span class="typ">Admin</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">welcome </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Welcome</span><span class="pln"> </span><span class="pun">%</span><span class="lit">1</span><span class="pln">$s</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">span</span><span class="pun">&gt;</span><span class="pln">you have written </span><span class="pun">%</span><span class="lit">2</span><span class="pln">$s </span><span class="pun">%</span><span class="lit">3</span><span class="pln">$s so far</span><span class="pun">&lt;/</span><span class="pln">span</span><span class="pun">&gt;</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板中使用pluralize扩展判断文章是否为复数：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">&amp;{</span><span class="str">'views.Admin.index.welcome'</span><span class="pun">,</span><span class="pln"> user</span><span class="pun">,</span><span class="pln"> posts</span><span class="pun">.</span><span class="pln">size</span><span class="pun">(),</span><span class="pln"> posts</span><span class="pun">.</span><span class="pln">pluralize</span><span class="pun">(</span><span class="pln">messages</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'post'</span><span class="pun">),</span><span class="pln"> messages</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'posts'</span><span class="pun">))}</span><span class="pln"> &nbsp;</span></pre>
+</div> 
+<br>
+<div class="quote">
+补充：
+<p>messages.get()方法用于参照messages文件中的本地化描述是否为复数。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.7_E6_A8_A1_E5_9D_97_E6_9C_AC_E5_9C_B0_E5_8C_96">12.12.7 模块本地化<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.7_E6_A8_A1_E5_9D_97_E6_9C_AC_E5_9C_B0_E5_8C_96">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play应用中，模块的本地化操作和应用程序类似。该博客引擎使用了<b>CRUD</b>模块和<b>Secure</b>模块，因此我们需要在play/modules/crud/conf/messages文件和play/modules/secure/conf/messages文件中进行本地化描述。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将如下配置添加至conf/messages.nl文件中：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># play/modules/crud (administration) </span><span class="pln"><br>crud</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Beheer</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">home </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Home</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">blank </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Nieuw</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Kies</span><span class="pln"> het te bewerken </span><span class="kwd">object</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">objectType </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Type</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">action </span><span class="pun">=</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">add </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Voeg</span><span class="pln"> toe <br>crud</span><span class="pun">.</span><span class="pln">add </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> toevoegen <br>crud</span><span class="pun">.</span><span class="pln">list</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">list</span><span class="pun">.</span><span class="pln">size </span><span class="pun">=</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">list</span><span class="pun">.</span><span class="pln">totalSize </span><span class="pun">=</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d totaal <br>crud</span><span class="pun">.</span><span class="pln">pagination</span><span class="pun">.</span><span class="pln">previous </span><span class="pun">=</span><span class="pln"> </span><span class="pun">«</span><span class="pln"> </span><span class="typ">Vorige</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">pagination</span><span class="pun">.</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Volgende</span><span class="pln"> </span><span class="pun">»</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">pagination</span><span class="pun">.</span><span class="pln">last </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Laatste</span><span class="pln"> </span><span class="pun">»»</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">pagination</span><span class="pun">.</span><span class="pln">first </span><span class="pun">=</span><span class="pln"> </span><span class="pun">««</span><span class="pln"> </span><span class="typ">Eerste</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">show</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> bewerken <br>crud</span><span class="pun">.</span><span class="pln">save </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Opslaan</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">saveAndContinue </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Opslaan</span><span class="pln"> en verder bewerken <br>crud</span><span class="pun">.</span><span class="pln">cancel </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Annuleren</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">hasErrors </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Corrigeer</span><span class="pln"> fouten a</span><span class="pun">.</span><span class="pln">u</span><span class="pun">.</span><span class="pln">b</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">blank</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> toevoegen <br>crud</span><span class="pun">.</span><span class="pln">saveAndAddAnother </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Opslaan</span><span class="pln"> en nogmaals cre</span><span class="pun">ë</span><span class="pln">ren <br>crud</span><span class="pun">.</span><span class="kwd">delete</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> verwijderen <br>crud</span><span class="pun">.</span><span class="pln">created </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> aangemaakt <br>crud</span><span class="pun">.</span><span class="pln">saved </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> opgeslagen <br>crud</span><span class="pun">.</span><span class="pln">deleted </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="pln">s</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> verwijderd <br>crud</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">.</span><span class="pln">error </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Kan</span><span class="pln"> dit </span><span class="kwd">object</span><span class="pln"> niet verwijderen <br>crud</span><span class="pun">.</span><span class="pln">search </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Zoeken</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">none </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Geen</span><span class="pun">)</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">required </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Verplicht</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">minlength </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Min</span><span class="pun">.</span><span class="pln"> lengte </span><span class="kwd">is</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">maxlength </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Max</span><span class="pun">.</span><span class="pln"> lengte </span><span class="kwd">is</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">email </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Geldig</span><span class="pln"> e</span><span class="pun">-</span><span class="pln">mailadres <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">dateformat </span><span class="pun">=</span><span class="pln"> </span><span class="typ">In</span><span class="pln"> de vorm YYYY</span><span class="pun">-</span><span class="pln">MM</span><span class="pun">-</span><span class="pln">DD</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">numeric </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Numeriek</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">min </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Moet</span><span class="pln"> groter daan </span><span class="pun">%</span><span class="pln">d zijn</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">future </span><span class="pun">=</span><span class="pln"> </span><span class="typ">In</span><span class="pln"> de toekomst</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">past </span><span class="pun">=</span><span class="pln"> </span><span class="typ">In</span><span class="pln"> het verleden</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">after </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Na</span><span class="pln"> </span><span class="pun">%</span><span class="pln">s</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">before </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Voor</span><span class="pln"> </span><span class="pun">%</span><span class="pln">s</span><span class="pun">.</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">help</span><span class="pun">.</span><span class="pln">range </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Tussen</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d en </span><span class="pun">%</span><span class="pln">d <br>&nbsp;<br></span><span class="com"># play/modules/secure </span><span class="pln"><br>secure</span><span class="pun">.</span><span class="pln">username </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Uw</span><span class="pln"> e</span><span class="pun">-</span><span class="pln">mailadres</span><span class="pun">:</span><span class="pln"> <br>secure</span><span class="pun">.</span><span class="pln">password </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Uw</span><span class="pln"> wachtwoord</span><span class="pun">:</span><span class="pln"> <br>secure</span><span class="pun">.</span><span class="pln">signin </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Nu</span><span class="pln"> inloggen </span></pre>
+</div> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将如下配置添加至conf/messages.nl文件中：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># play/modules/crud (administration) </span><span class="pln"><br>crud</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Administration</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">home </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Home</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">blank </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Nouveau</span><span class="pln"> <br>crud</span><span class="pun">.</span><span class="pln">index</span><span class="pun">.</span><span class="pln">title </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Choisissez</span><span class="pln"> l</span><span class="str">'objet à modifier <br>crud.index.objectType = Type objet <br>crud.index.action = XXX <br>crud.index.add = Ajouter <br>crud.add = Ajouter &amp;{%s} <br>crud.list.title = &amp;{%s} <br>crud.list.size = %d &amp;{%s} <br>crud.list.totalSize = %d total <br>crud.pagination.previous = « Précédent <br>crud.pagination.next = Suivant » <br>crud.pagination.last = Dernier »» <br>crud.pagination.first = «« Premier <br>crud.show.title = Modifier &amp;{%s} <br>crud.save = Enregistrer <br>crud.saveAndContinue = Enregistrer et continuez à modifier <br>crud.cancel = Annuler <br>crud.hasErrors = Corrigez les erreurs s.v.p. <br>crud.blank.title = Ajouter &amp;{%s} <br>crud.saveAndAddAnother = Enregistrer et ajouter un autre <br>crud.delete = Supprimer &amp;{%s} <br>crud.created = &amp;{%s} a été crée <br>crud.saved = &amp;{%s} est enregistré <br>crud.deleted = &amp;{%s} est supprimé <br>crud.delete.error = Ne peut pas supprimer l’objet <br>crud.search = Chercher <br>crud.none = (aucun) <br>crud.help.required = Obligatoire. <br>crud.help.minlength = Longeur minimum est %d. <br>crud.help.maxlength = Longeur maximum est %d. <br>crud.help.email = Adresse e-mail valide <br>crud.help.dateformat = En format YYYY-MM-DD. <br>crud.help.numeric = Numerique. <br>crud.help.min = Doit être plus grand que %d. <br>crud.help.future = Dans le futur. <br>crud.help.past = Dans le passé. <br>crud.help.after = Après %s. <br>crud.help.before = Avant %s. <br>crud.help.range = Entre %d et %d <br>&nbsp;<br># play/modules/secure <br>secure.username = Votre adresse e-mail: <br>secure.password = Votre mot de passe: <br>secure.signin = Connectez-vous maintenant </span></pre>
+</div> 
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.8Play_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_93_8D_E4_BD_9C_E7_9A_84_E4_BC_98_E5_8A_BF">12.12.8 Play本地化操作的优势<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.8Play_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_93_8D_E4_BD_9C_E7_9A_84_E4_BC_98_E5_8A_BF">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具有开发经验的程序员可能会发现，传统的本地化操作非常笨拙。以JavaServer Faces框架为例，介绍该框架本地化操作的一些设计缺陷：
+<p></p>
+<ol><li>无法在属性中传递本地化参数。
+</li><li>参数格式化非常繁琐。
+</li><li>无法实现超链接的本地化操作。
+</li></ol><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play的设计师很巧妙地避免了这些问题，可以非常简单地处理这些特殊情况。
+</p>
+<p><br>
+</p>
+<div class="quote">
+补充：
+<p>JavaServer Faces(JSF)是一种标准的J2EE表示层的技术，其主旨是为了使Java开发人员能够快速的开发基于Java的Web应用程序。它不同于其它Java表示层技术的最大优势是其采用了组件模型，事件驱动。
+</p></div>
+<br>
+
+<p>
+</p><p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两种框架针对问题一的解决方案对比：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们希望在模板的&lt;a&gt;标签的title属性中传递参数：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Application.show(_post.id)}"</span><span class="tag"> </span><span class="atn">title</span><span class="tag">=</span><span class="atv">"By Bob"</span><span class="tag">&gt;</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个问题在JSF中尤为明显,JSF通常使用XML标签代替参数，但属性是不支持使用标签的。Play语法就可以很好地避免这个问题：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Application.show(_post.id)}"</span><span class="tag"> </span><span class="atn">title</span><span class="tag">=</span><span class="atv">"&amp;{'views.tags.display.author', _post.author.fullname}"</span><span class="tag">&gt;</span><span class="pln"> </span></pre>
+</div> 
+<br>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两种框架针对问题二的解决方案对比：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果在JSF中需要对参数进行格式化(比如格式化日期参数2009-06-14)， 必须使用XML标签，这同样会在属性操作时产生问题。让我们来看下在Play中是如何解决的：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;span&gt;</span><span class="pln">&amp;{'views.tags.display.author', _post.author.fullname, comment.postedAt.format('yyyy-MM-dd')}"}</span><span class="tag">&lt;/span&gt;</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然也可以按照以下方式实现参数的格式化：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;span&gt;</span><span class="pln">&amp;{'views.tags.display.author', _post.author.fullname, comment.postedAt.format(messages.get('views.dateFormat'))}"}</span><span class="tag">&lt;/span&gt;</span></pre>
+</div> 
+<p>
+</p><p><br>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两种框架针对问题三的解决方案对比：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当需要本地化操作的内容是带有超链接时(以Log in to write something为例)，JSF会产生很多问题。因为超链接是JSF的组件，链接标签(&lt;a&gt;&lt;/a&gt;)无法在本地化文件中进行描述。Play以纯HTML文件作为模板，可以直接在本地化操作中描述标签，并将超链接的URL作为参数进行传递：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">logIn </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">a href</span><span class="pun">=</span><span class="str">"%s"</span><span class="pun">&gt;</span><span class="typ">Log</span><span class="pln"> </span><span class="kwd">in</span><span class="pun">&lt;/</span><span class="pln">a</span><span class="pun">&gt;</span><span class="pln"> to write something </span></pre>
+</div> 
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">&amp;{</span><span class="str">'logIn'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'/admin'</span><span class="pun">}</span><span class="pln"> </span></pre>
+</div> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当“/admin”参数传入本地化文件的logIn描述后，根据路由规则生成如下超链接：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;a </span><span class="atn">href</span><span class="tag">=</span><span class="atv">"@{Admin.index()}"</span><span class="tag">&gt;</span></pre>
+</div> 
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.9_E5_8D_9A_E5_AE_A2_E5_BC_95_E6_93_8E_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_95_88_E6_9E_9C_E5_9B_BE">12.12.9 博客引擎本地化效果图<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96_E5_92_8C_E6_9C_AC_E5_9C_B0_E5_8C_96-12.12.9_E5_8D_9A_E5_AE_A2_E5_BC_95_E6_93_8E_E6_9C_AC_E5_9C_B0_E5_8C_96_E6_95_88_E6_9E_9C_E5_9B_BE">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;博客引擎的最后一步就是为其添加不同的本地化语言，在本例中使用英语(English)，荷兰语(Dutch)，法语(French)作为本地化语言。以下是博客引擎管理域的本地化效果展示，图12.43为荷兰语管理域，图12.44为法语管理域：
+</p>
+<p><img class="inline" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/guide12-3.png" alt="图片资源/guide12-3.png">
+</p>
+<p><b>（图12.43 荷兰语管理域）</b>
+</p>
+<p>
+</p><p>
+</p><p>
+</p><p><img class="inline" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/guide12-4.png" alt="图片资源/guide12-4.png">
+</p>
+<p><b>（图12.44 法语管理域）</b>
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 14）最后由 郑舒天 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96&amp;r1=14&amp;r2=13">14-Feb-2012 08:35</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/stat.php" type="text/javascript"></script><script src="%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>

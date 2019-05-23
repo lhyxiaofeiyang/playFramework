@@ -1,0 +1,925 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 创建自定义编辑区
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='创建自定义编辑区' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=创建自定义编辑区.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=创建自定义编辑区.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">创建自定义编辑区</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'创建自定义编辑区' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="Bespin在线编辑器.htm" tppabs="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="本章小结11.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9311">本章小结11</a>, <a class="wikipage" href="项目启动.htm" tppabs="http://www.playframework.cn/wiki/%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8">项目启动</a>, <a class="wikipage" href="数据模型迭代.htm" tppabs="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3">数据模型迭代</a>, <a class="wikipage" href="构建页面.htm" tppabs="http://www.playframework.cn/wiki/%E6%9E%84%E5%BB%BA%E9%A1%B5%E9%9D%A2">构建页面</a>, <a class="wikipage" href="显示文章和发布评论.htm" tppabs="http://www.playframework.cn/wiki/%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%92%8C%E5%8F%91%E5%B8%83%E8%AF%84%E8%AE%BA">显示文章和发布评论</a>, <a class="wikipage" href="设置图形验证码.htm" tppabs="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a>, <a class="wikipage" href="添加标签功能.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD">添加标签功能</a>, <a class="wikipage" href="使用CRUD进行管理.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8CRUD%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86">使用CRUD进行管理</a>, <a class="wikipage" href="添加授权认证.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81">添加授权认证</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=创建自定义编辑区.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的博客引擎共有两类用户，分别为博客作者和超级管理员。前面的章节已经采用<b>CURD</b>模块实现了超级管理员的管理功能，这一节将为博客作者添加创建文章的功能，并且可以对已发布的文章进行管理。读者可能会想到继续使用<b>CRUD</b>模块，因为以<b>CURD</b>模块作为基础实现管理域确实太简单了。但是这次我们将从头开始创建，因为这些页面需要个性化定制，<b>CURD</b>模块显然满足不了我们的需求。
+</p><p><br />
+<h3 id="section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.1_E6_96_87_E7_AB_A0_E5_88_97_E8_A1_A8_E7_AE_A1_E7_90_86">12.9.1 文章列表管理<a class="hashlink" href="#section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.1_E6_96_87_E7_AB_A0_E5_88_97_E8_A1_A8_E7_AE_A1_E7_90_86">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改Admin.index()方法，获取已登录用户的所有文章posts，并使用render()方法将posts注入视图模板：
+</p>
+<div class="prettify">
+<pre>
+public static void index() {
+    String user = Security.connected();
+    List&lt;Post&gt; posts = Post.find(&quot;author.email&quot;, user).fetch();
+    render(posts);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改yabe/app/views/Admin/index.html模板，使用#{list /}标签使文章以列表的形式在模板上呈现，页面效果如图12.34所示：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+ 
+&lt;h3&gt;Welcome ${user}, &lt;span&gt;you have written ${posts.size() ?: 'no'} 
+${posts.pluralize('post', 'posts')} so far&lt;/span&gt;&lt;/h3&gt;
+ 
+#{list items:posts, as:'post'}
+    &lt;p class=&quot;post ${post_parity}&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;${post.title}&lt;/a&gt;
+    &lt;/p&gt;
+#{/list}
+ 
+&lt;p id=&quot;newPost&quot; &gt;
+    &lt;a href=&quot;#&quot;&gt;&lt;span&gt;+&lt;/span&gt; write a new post&lt;/a&gt;
+&lt;/p&gt;
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/guide9-1.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide9-1.png" alt="图片资源/guide9-1.png" />
+</p>
+<p />
+<p><b>(图12.34 显示文章)</b>
+</p>
+<p><br />
+<h3 id="section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.2_E5_AE_9E_E7_8E_B0_E6_96_87_E7_AB_A0_E5_8F_91_E5_B8_83_E5_8A_9F_E8_83_BD">12.9.2 实现文章发布功能<a class="hashlink" href="#section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.2_E5_AE_9E_E7_8E_B0_E6_96_87_E7_AB_A0_E5_8F_91_E5_B8_83_E5_8A_9F_E8_83_BD">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们需要创建表单页面实现发布文章的功能。文章发布功能包含两个Action：显示表单页面和处理表单提交。首先在Admin.java控制器中创建Admin.form()和Admin.save()两个Action方法:
+</p>
+<div class="prettify">
+<pre>
+public static void form() {
+    render();
+}
+ 
+public static void save() {
+    // 暂时为空方法
+}
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;并在yabe/conf/routes文件中为这两个Action方法配置路由：
+</p>
+<div class="prettify">
+<pre>
+GET     /admin/new                          Admin.form
+POST    /admin/new                          Admin.save
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当路由配置完毕后，创建yabe/app/views/Admin/form.html模版作为文章发布界面：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+ 
+&lt;h3&gt;Write, &lt;span&gt;a new post&lt;/span&gt;&lt;/h3&gt;
+ 
+#{form @save()}
+ 
+    #{ifErrors}
+        &lt;p class=&quot;error&quot;&gt;
+            Please correct these errors.
+        &lt;/p&gt;
+    #{/ifErrors}
+     
+    &lt;p&gt;
+        #{field 'title'}
+        &lt;label&gt;Post title:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;${field.name}&quot; 
+            value=&quot;${post?.title}&quot; /&gt;
+        &lt;span class=&quot;error&quot;&gt;#{error 'post.title' /}&lt;/span&gt;
+        #{/field}
+    &lt;/p&gt;
+ 
+    &lt;p&gt;
+        #{field 'content'}
+        &lt;label&gt;Write here:&lt;/label&gt;
+        &lt;textarea name=&quot;${field.name}&quot;&gt;${post?.content}&lt;/textarea&gt;
+        &lt;span class=&quot;error&quot;&gt;#{error 'post.content' /}&lt;/span&gt;
+        #{/field}
+    &lt;/p&gt;
+ 
+    &lt;p&gt;
+        #{field 'tags'}
+        &lt;label&gt;Enter some tags:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; size=&quot;50&quot; 
+            name=&quot;${field.name}&quot; value=&quot;${post?.tags?.join(' ')}&quot; /&gt;
+        #{/field}
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Publish this post to the blog&quot; /&gt;
+    &lt;/p&gt;
+    
+#{/form}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，修改yabe/app/views/Admin/index.html模版，将Write a new post按钮的链接指定到到form() Acion：
+</p>
+<div class="prettify">
+<pre>
+...
+&lt;p id=&quot;newPost&quot; &gt;
+    &lt;a href=&quot;@{form()}&quot;&gt;&lt;span&gt;+&lt;/span&gt; write a new post&lt;/a&gt;
+&lt;/p&gt;
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开浏览器查看发布文章页面，如图12.35所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/guide9-2.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide9-2.png" alt="图片资源/guide9-2.png" />
+</p>
+<p />
+<p><b>(图12.35 发布文章页面)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;雏形完成后，我们需要完善Admin.save() Action，正确处表单的提交。当用户调用save()方法时，系统会创建新的post对象，并将一并提交的标签列表转换为真实的Tag集合添加至post对象。接下来使用validation验证器对字段进行数据验证，当验证都通过后保存post。如果验证出现任何问题，都会重定向至发布文章页面，并提示错误信息：
+</p>
+<div class="prettify">
+<pre>
+public static void save(String title, String content, String tags) {
+    // 创建post对象
+    User author = User.find(&quot;byEmail&quot;, Security.connected()).first();
+    Post post = new Post(author, title, content);
+    // 为post对象添加tag
+    for(String tag : tags.split(&quot;\\s+&quot;)) {
+        if(tag.trim().length() &gt; 0) {
+            post.tags.add(Tag.findOrCreateByName(tag));
+        }
+    }
+    // 数据验证
+    validation.valid(post);
+    if(validation.hasErrors()) {
+        render(&quot;@form&quot;, post);
+    }
+    // 保存post
+    post.save();
+    index();
+}
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>上例中所使用的render(&quot;@form&quot;)，其实就是render(&quot;Admin/form.html&quot;)的简写。仅仅是为了告诉Play使用form() Action的默认模版进行渲染。
+</p></div>
+
+<p><br />
+<h3 id="section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.3_E7_BC_96_E8_BE_91_E6_96_87_E7_AB_A0_E9_A1_B5_E9_9D_A2">12.9.3 编辑文章页面<a class="hashlink" href="#section-_E5_88_9B_E5_BB_BA_E8_87_AA_E5_AE_9A_E4_B9_89_E7_BC_96_E8_BE_91_E5_8C_BA-12.9.3_E7_BC_96_E8_BE_91_E6_96_87_E7_AB_A0_E9_A1_B5_E9_9D_A2">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们已经创建了HTML表单和相应的Action方法，实现了新建文章的功能。现在只需对以前的代码稍作一些修改，就可以实现编辑文章的功能。修改Admin.form()方法，使用id获取已经发布的文章：
+</p>
+<div class="prettify">
+<pre>
+public static void form(Long id) {
+    if(id != null) {
+        Post post = Post.findById(id);
+        render(post);
+    }
+    render();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例代码中，我们通过判断id参数是否为空来获取发布的文章，使得form()方法得到了重用。现在我们可以为主页列表添加指向编辑表单的链接。修改yabe/app/views/Admin/index.html模版：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+ 
+&lt;h3&gt;Welcome ${user}, &lt;span&gt;you have written ${posts.size() ?: 'no'} ${posts.pluralize('post', 'posts')} so far&lt;/span&gt;&lt;/h3&gt;
+ 
+#{list items:posts, as:'post'}
+    &lt;p class=&quot;post ${post_parity}&quot;&gt;
+        &lt;a href=&quot;@{Admin.form(post.id)}&quot;&gt;${post.title}&lt;/a&gt;
+    &lt;/p&gt;
+#{/list}
+ 
+&lt;p id=&quot;newPost&quot; &gt;
+	&lt;a href=&quot;@{form()}&quot;&gt;&lt;span&gt;+&lt;/span&gt; write a new post&lt;/a&gt;
+&lt;/p&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑文章的功能已经基本实现了，但是还存在一些小瑕疵。查看路由器为该Action生成的URL：
+</p>
+<div class="prettify">
+<pre>
+/admin/new?id=3
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们会发现该URL并不是很美观，容易造成混乱。为带参数的form() Action定义额外路由：
+<div class="prettify">
+<pre>
+GET     /admin/myPosts/{id}                 Admin.form
+GET     /admin/new                          Admin.form
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将新定义的路由添加至原有的路由之前，就会具有较高的优先级。这意味着如果调用form() Action时附带了id参数，Play会优先匹配该URL表达式；如果调用form() Action时没有提交id参数，则使用原先的路由。继续修改yabe/app/views/Admin/form.html模版：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'admin.html' /}
+ 
+#{ifnot post?.id}
+    &lt;h3&gt;Write, &lt;span&gt;a new post&lt;/span&gt;&lt;/h3&gt;
+#{/ifnot}
+#{else}
+    &lt;h3&gt;Edit, &lt;span&gt;this post&lt;/span&gt;&lt;/h3&gt;
+#{/else}
+ 
+#{form @save(post?.id)}
+ 
+    #{ifErrors}
+        &lt;p class=&quot;error&quot;&gt;
+            Please correct these errors.
+        &lt;/p&gt;
+    #{/ifErrors}
+     
+    &lt;p&gt;
+        #{field 'title'}
+        &lt;label&gt;Post title:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;${field.name}&quot; 
+            value=&quot;${post?.title}&quot; /&gt;
+        &lt;span class=&quot;error&quot;&gt;#{error 'post.title' /}&lt;/span&gt;
+        #{/field}
+    &lt;/p&gt;
+ 
+    &lt;p&gt;
+        #{field 'content'}
+        &lt;label&gt;Write here:&lt;/label&gt;
+        &lt;textarea name=&quot;${field.name}&quot;&gt;
+          ${post?.content}
+        &lt;/textarea&gt;
+        &lt;span class=&quot;error&quot;&gt;#{error 'post.title' /}&lt;/span&gt;
+        #{/field}
+    &lt;/p&gt;
+ 
+    &lt;p&gt;
+        #{field 'tags'}
+        &lt;label&gt;Enter some tags:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; size=&quot;50&quot; 
+            name=&quot;${field.name}&quot; value=&quot;${post?.tags?.join(' ')}&quot; /&gt;
+        #{/field}
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Publish this post to the blog&quot; /&gt;
+    &lt;/p&gt;
+    
+#{/form}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们修改了表单的目标Action。如果文章存在，就将其id作为Action参数。所以当文章具有id属性字段时（也就是说文章已经存在，我们做的只是修改文章的操作），会将其传递给Admin.save方法。对save()方法稍作一些修改，实现通用的文章创建和编辑功能：
+</p>
+<div class="prettify">
+<pre>
+public static void save(Long id, String title, String content, String tags) {
+    Post post;
+    if(id == null) {
+        // Create post
+        User author = User.find(&quot;byEmail&quot;, Security.connected()).first();
+        post = new Post(author, title, content);
+    } else {
+        // Retrieve post
+        post = Post.findById(id);
+        // Edit
+        post.title = title;
+        post.content = content;
+        post.tags.clear();
+    }
+    // Set tags list
+    for(String tag : tags.split(&quot;\\s+&quot;)) {
+        if(tag.trim().length() &gt; 0) {
+            post.tags.add(Tag.findOrCreateByName(tag));
+        }
+    }
+    // Validate
+    validation.valid(post);
+    if(validation.hasErrors()) {
+        render(&quot;@form&quot;, post);
+    }
+    // Save
+    post.save();
+    index();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用相同的技巧配置新的路由，让URL更加整洁：
+</p>
+<div class="prettify">
+<pre>
+POST    /admin/myPosts/{id}                 Admin.save
+POST    /admin/new                          Admin.save
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-8) was last changed on <a href="../Diff.jsp-page=创建自定义编辑区&r1=8&r2=7.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA&r1=8&r2=7">14-Feb-2012 08:31</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=创建自定义编辑区.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=创建自定义编辑区.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="创建自定义编辑区-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

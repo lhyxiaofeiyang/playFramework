@@ -1,0 +1,186 @@
+1、培训概述
+===================================
+1.1、培训讲师介绍
+	黄运松 深圳市英迈思文化科技有限公司 互联网金融事业部 开发部 开发经理
+
+2、开发环境与工具
+===================================
+2.1、jdk
+	jdk1.6或1.7（jvm配置：-XX:-UseSplitVerifier）
+
+2.2、play framework
+SJP（shove java play）基于play1.2.7
+全栈框架
+mvc
+groovy
+play安装配置：只需要配置pth;%PLAY%;   PLAY=D:\Program Files\play-1.2.7
+
+2.3、mysql
+	mysql 5.5以上
+
+2.4、tomcat
+	tomcat7
+
+2.5、eclipse
+
+
+3、开发框架
+===========================================
+3.1、了解受训者的Java web框架使用情况
+常用框架：ssm
+
+3.2、play框架培训
+重点内容；
+play中文社区：http://www.playframework.cn
+第一章：
+1.1
+1.2
+1.3
+1.4 eclipse
+
+第二章
+2.1 
+2.2
+2.3
+2.4 生产使用prod 性能更高
+
+第三章
+3.1
+3.2
+3.3
+3.4 
+3.5 action跳转：只用重定向，没有服务器内跳转
+3.6 
+
+第四章
+4.1 
+4.2 POJO对象绑定：链式的参数：<input name="user.name" />
+4.3
+4.4
+4.5 拦截器需要配置优先级：@Before(priority=0)
+	多继承使用；@With({BaseCtrl2.class,BaseCtrl3.class})
+4.6 session数据大小非常有限（不能超过4K）
+	使用服务器缓存来保存用户信息（play.cache.Cache;）
+
+第五章 
+5.1 尽量使用原生的html
+	注意bean里的getter和setter
+	所的表达式里的对象需要使用“?”进行非空处理:${user?.name}
+	默认值：${user?.name?:"aa"}
+	5.1.1 5.1.2 5.1.3 5.1.5 5.1.6
+
+5.2
+
+5.3
+5.3.1 2.#{authenticityToken /} 4.#{doLayout /} 5.#{extends} 6.#{if}，#{ifnot}，#{ifError}，#{ifErrors}
+	  7.#{else}，#{elseif} 12.#{include} 15.#{list} 18.#{set}，#{get} 21.#{verbatim} 
+5.3.2 自定义tag
+5.3.3 自定义Play标签
+5.4 
+	2.日期扩展：${user?.birthday?.format('yyyy-MM-dd')}
+	5.数字扩展：${user?.money?.format("0.00")}
+	7.字符串扩展
+5.4.2 创建自定义扩展#
+5.5 flash params request response session
+
+第六章
+6.2
+6.3
+   定义定时任务规则：
+		配置文件:cron.MyJob=2s
+		注解：@Every("cron.MyJob")
+
+第七章
+7.1
+7.2
+7.3 配置文件修改定时规则：
+
+第九章
+知道怎么debug和单元测试就行了
+
+debug：
+“ctx_demo.launch”右键run as 启动，
+“Connect JPDA to ctx_demo.launch” 右键debug as
+
+单元测试
+
+
+第十章
+10.1
+10.3 HTTP数据验证
+10.4 验证码
+10.5 配置Log
+	建议不要使用通配符：“%s”Logger.info("用户id="+"1");
+10.8 缓存
+
+10.13应用部署
+	命令：play war sfs_ctx --exclude .svn:target:logs:tmp -o ctx
+	执行命令之前：
+		1、关闭本地运行的项目
+		2、删除ctx_demo\precompiled(如果有)
+		3、删除ctx_demo\tmp(如果有)
+		4、删除已经编译好的文件夹ctx
+		5、如果是模块化开发项目：sfs_ctx\modules下的模块路径修改为绝对路径
+			比如：D:\Users\pc\workspace\ctx_test\sfs_ctx\..\ctx.modules.baseframe
+			修改为：D:\Users\pc\workspace\ctx_test\ctx.modules.baseframe
+		
+	编译后的目录解释：
+		WEB-INF\application\app  源文件
+		WEB-INF\application\conf 配置
+		WEB-INF\application\precompiled  编译后文件，运行文件
+		WEB-INF\application\public 静态资源
+		WEB-INF\application\modules 模块源码
+		
+	linux下部署
+		压缩成tar包：WEB-INF.tar.gz
+		上传到项目目录，解压
+	tomcat配置：
+		修改vi catalina.sh，进行jvm参数的配置
+			JAVA_OPTS='-Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m -XX:-UseSplitVerifier'
+			JAVA_OPTS='-XX:-UseSplitVerifier'
+		server.xml
+			<Host name="localhost"  appBase="" >
+				<Context path="" docBase="/home/wwwroot/ctx"/>
+			</Host>
+		
+	项目配置；修改application.conf
+		application.mode=prod
+		application.log=debug --》INFO
+		数据库配置：db=mysql://root:iamgavin@10.10.50.136/ctx_test
+		db.pool.timeout=1000
+		db.pool.maxSize=500 --》前提修改mysql配置
+		db.pool.minSize=10
+		jpa.ddl=none
+		bf.app_base_url=http://10.10.2.115
+		bf.sms.toggle=on
+		bf.ems.toggle=on
+		
+		
+		
+
+10.16依赖管理 
+	本地仓库
+	依赖文件检验十分严格，建议显示特殊字符，
+	
+附录
+B 参数配置
+application.name=ctx_demo  项目名称
+application.mode=dev  生产模式配置成prod
+http.port=9000 本地运行端口
+application.session.cookie=PLAY  同一台服务器部署多个play应用时需要区分开
+jvm
+jvm.memory=-Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m -XX:-UseSplitVerifier  本地有效
+jpa.ddl=none 配置为none
+attachments.path=data/attachments 文件上传目录
+
+
+4、创天下项目构建：
+========================================
+1.解压到工作空间 然后删除压缩文件
+2、import到eclipse
+3、运行autoComplie.zip中的main，生成依赖批处理文件dependencies.bat
+4、双击运行dependencies.bat，然后刷新项目即可
+注意：如果主项目中没有出现模块的source，则删除build path里的source引用，然后手工use as source folder
+
+
+

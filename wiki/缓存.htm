@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：缓存
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="%E7%BC%93%E5%AD%98_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="%E7%BC%93%E5%AD%98_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="%E7%BC%93%E5%AD%98_files/mootools.js"></script>
+<script type="text/javascript" src="%E7%BC%93%E5%AD%98_files/prettify.js"></script>
+<script type="text/javascript" src="%E7%BC%93%E5%AD%98_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="%E7%BC%93%E5%AD%98_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E7%BC%93%E5%AD%98">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="缓存">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="%E7%BC%93%E5%AD%98_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="%E7%BC%93%E5%AD%98_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E7%BC%93%E5%AD%98" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%BC%93%E5%AD%98" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">缓存</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','缓存' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/%E6%8B%A6%E6%88%AA%E5%99%A8">拦截器</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Session%E5%92%8CFlash%E4%BD%9C%E7%94%A8%E5%9F%9F">Session和Flash作用域</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E5%B1%9E%E6%80%A7%E6%A8%A1%E6%8B%9F">属性模拟</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE">数据库配置</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96">数据持久化</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%97%A0%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B">无状态模型</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Job%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8">Job的直接调用</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%937">本章小结7</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E9%AA%8C%E8%AF%81%E7%A0%81">验证码</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96">国际化</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E7%BC%93%E5%AD%98" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;缓存是用来避免频繁到服务器端获取数据而建立的一个存取更快的临时存储器。缓存的容量相对较小，但执行速度非常快，其主要作用为：
+</p><ul><li>存储系统经常访问的数据。
+</li><li>存储耗时较长的计算结果。
+</li></ul><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合理地缓存数据，可以提高系统的性能。Play内置了缓存库，并为分布式环境提供了Memcached缓存数据的支持。
+</p>
+<p><br>
+</p>
+<div class="quote">
+补充：
+<p>Memcached是一套开源的分布式内存对象缓存系统，它通过在内存中缓存数据和对象来减少读取数据库的次数，从而大幅度降低数据库负载。
+</p></div>
+
+<p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果项目中没有配置Memcached，Play将使用JVM堆中的独立缓存
+进行数据存储。但是将数据缓存在不同服务器的JVM堆中破坏了Play的share 
+nothing原则：我们不能将应用程序运行在多个服务器上的同时，还期望数据保持一致，这样做只会导致每个程序实例都拥有各自不同的数据副本。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们在使用缓存时，必须明确其自身特性：缓存存在于内存中（不进行持
+久化），只是用于存放暂时性的数据，时间一到就会过期。因此缓存并不是一个安全的存储器，不能保证数据可以永久存在。如果发现数据在缓存中已过期，需要重
+新获取数据，并再次放入缓存：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> allProducts</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Product</span><span class="pun">&gt;</span><span class="pln"> products </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">"products"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">List</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">products </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; products </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">.</span><span class="pln">findAll</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">set</span><span class="pun">(</span><span class="str">"products"</span><span class="pun">,</span><span class="pln"> products</span><span class="pun">,</span><span class="pln"> </span><span class="str">"30mn"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; render</span><span class="pun">(</span><span class="pln">products</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p><br>
+</p><h3 id="section-_E7_BC_93_E5_AD_98-10.8.1_E7_BC_93_E5_AD_98API">10.8.1 缓存 API<a class="hashlink" href="#section-_E7_BC_93_E5_AD_98-10.8.1_E7_BC_93_E5_AD_98API">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.cache.Cache类提供了一系列访问缓存的API，包含了完整的设置、替换和获取数据的方法：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> showProduct</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> id</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Product</span><span class="pln"> product </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="pln">id</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">product </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; product </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">.</span><span class="pln">findById</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">set</span><span class="pun">(</span><span class="str">"product_"</span><span class="pun">+</span><span class="pln">id</span><span class="pun">,</span><span class="pln"> product</span><span class="pun">,</span><span class="pln"> </span><span class="str">"30mn"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; render</span><span class="pun">(</span><span class="pln">product</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br>&nbsp;<br></span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> addProduct</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> price</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Product</span><span class="pln"> product </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> price</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; product</span><span class="pun">.</span><span class="pln">save</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; showProduct</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br>&nbsp;<br></span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> editProduct</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> id</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> price</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Product</span><span class="pln"> product </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">.</span><span class="pln">findById</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; product</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; product</span><span class="pun">.</span><span class="pln">price </span><span class="pun">=</span><span class="pln"> price</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">set</span><span class="pun">(</span><span class="str">"product_"</span><span class="pun">+</span><span class="pln">id</span><span class="pun">,</span><span class="pln"> product</span><span class="pun">,</span><span class="pln"> </span><span class="str">"30mn"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; showProduct</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br>&nbsp;<br></span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> deleteProduct</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> id</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Product</span><span class="pln"> product </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">.</span><span class="pln">findById</span><span class="pun">(</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; product</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Cache</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">(</span><span class="str">"product_"</span><span class="pun">+</span><span class="pln">id</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; allProducts</span><span class="pun">();</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作缓存的API中有很多方法是以safe作为前缀的，如safeDelete，safeSet等。带safe前缀的方法是阻塞的，而标准方法是非阻塞的，这意味当我们执行以下程序时：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Cache</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">(</span><span class="str">"product_"</span><span class="pun">+</span><span class="pln">id</span><span class="pun">);</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete方法会立即返回结果，并没有等待缓存对象是否被真正地物理删除。因此，如果程序执行期间发生了错误(例如IO错误)，缓存对象可能仍然存在，并没有被删除。
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果操作需要确保缓存对象被删除，可以使用safeDelete方法：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Cache</span><span class="pun">.</span><span class="pln">safeDelete</span><span class="pun">(</span><span class="str">"product_"</span><span class="pun">+</span><span class="pln">id</span><span class="pun">);</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该方法是阻塞式的，并返回一个布尔值标识对象是否被成功删除。确保缓存对象被删除的标准写法如下：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">if</span><span class="pun">(!</span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">safeDelete</span><span class="pun">(</span><span class="str">"product_"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> id</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Exception</span><span class="pun">(</span><span class="str">"Oops, the product has not been removed from the cache"</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span><span class="pun">...</span></pre>
+</div>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>带safe前缀的方法是阻塞式的，会降低应用程序的性能。因此，在实际操作中需要酌情考虑，选择最佳方案。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E7_BC_93_E5_AD_98-10.8.2_E9_81_BF_E5_85_8D_E4_BD_BF_E7_94_A8Session_E4_BD_9C_E4_B8_BA_E7_BC_93_E5_AD_98">10.8.2 避免使用Session作为缓存<a class="hashlink" href="#section-_E7_BC_93_E5_AD_98-10.8.2_E9_81_BF_E5_85_8D_E4_BD_BF_E7_94_A8Session_E4_BD_9C_E4_B8_BA_E7_BC_93_E5_AD_98">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play只允许将少量的数据以字符串形式储存在HTTP Session中。读者可能会感到非常不适应，但这样的设计确实更优雅，因为Session本来就不应该是缓存数据的地方！
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可能已经习惯于以下写法，将数据缓存在Session中：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">httpServletRequest</span><span class="pun">.</span><span class="pln">getSession</span><span class="pun">().</span><span class="pln">put</span><span class="pun">(</span><span class="str">"userProducts"</span><span class="pun">,</span><span class="pln"> products</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">...</span><span class="pln"><br></span><span class="com">// and then in subsequent requests</span><span class="pln"><br>products </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Product</span><span class="pun">&gt;)</span><span class="pln">httpServletRequest</span><span class="pun">.</span><span class="pln">getSession</span><span class="pun">().</span><span class="pln">get</span><span class="pun">(</span><span class="str">"userProducts"</span><span class="pun">);</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但在Play中实现同样效果的方式却截然不同：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Cache</span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">session</span><span class="pun">.</span><span class="pln">getId</span><span class="pun">(),</span><span class="pln"> products</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">...</span><span class="pln"><br></span><span class="com">// and then in subsequent requests</span><span class="pln"><br></span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Product</span><span class="pun">&gt;</span><span class="pln"> products </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Cache</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="pln">session</span><span class="pun">.</span><span class="pln">getId</span><span class="pun">(),</span><span class="pln"> </span><span class="typ">List</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以通过UUID获取缓存中关联用户的信息。
+</p>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>与Session对象不同，缓存中的内容是独立的，不会绑定任何特定的用户。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E7_BC_93_E5_AD_98-10.8.3_E9_85_8D_E7_BD_AEMemcached">10.8.3 配置Memcached<a class="hashlink" href="#section-_E7_BC_93_E5_AD_98-10.8.3_E9_85_8D_E7_BD_AEMemcached">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果项目要启用Memcached，需要在application.conf中打开Memcached开关，并设置Memcached的守护进程地址：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">memcached</span><span class="pun">=</span><span class="pln">enabled<br>memcached</span><span class="pun">.</span><span class="pln">host</span><span class="pun">=</span><span class="lit">127</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">1</span><span class="pun">:</span><span class="lit">11211</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还可以指定多个守护进程地址，使之连接到同一个分布式缓存：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">memcached</span><span class="pun">=</span><span class="pln">enabled<br>memcached</span><span class="pun">.</span><span class="lit">1</span><span class="pun">.</span><span class="pln">host</span><span class="pun">=</span><span class="lit">127</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">1</span><span class="pun">:</span><span class="lit">11211</span><span class="pln"><br>memcached</span><span class="pun">.</span><span class="lit">2</span><span class="pun">.</span><span class="pln">host</span><span class="pun">=</span><span class="lit">127</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">0</span><span class="pun">.</span><span class="lit">1</span><span class="pun">:</span><span class="lit">11212</span></pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 20）最后由 丁海亮 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E7%BC%93%E5%AD%98&amp;r1=20&amp;r2=19">25-Aug-2013 08:29</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E7%BC%93%E5%AD%98" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%BC%93%E5%AD%98" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="%E7%BC%93%E5%AD%98_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="%E7%BC%93%E5%AD%98_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%BC%93%E5%AD%98_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%BC%93%E5%AD%98_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%BC%93%E5%AD%98_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="%E7%BC%93%E5%AD%98_files/stat.php" type="text/javascript"></script><script src="%E7%BC%93%E5%AD%98_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>

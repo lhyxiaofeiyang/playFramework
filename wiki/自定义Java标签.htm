@@ -1,0 +1,1394 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 自定义Java标签
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='自定义Java标签' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Diff.jsp-page=图片资源-new_netbeansify_play.png&r1=1&r2=1.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="javascript:if(confirm('http://www.playframework.cn/new_netbeansify_play.png?skin=raw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/new_netbeansify_play.png?skin=raw'" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">自定义Java标签</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Edit.jsp?page=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Edit.jsp?page=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'自定义Java标签' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="写在最前面的话.htm" tppabs="http://www.playframework.cn/wiki/%E5%86%99%E5%9C%A8%E6%9C%80%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">写在最前面的话</a>, <a class="wikipage" href="名家推荐.htm" tppabs="http://www.playframework.cn/wiki/%E5%90%8D%E5%AE%B6%E6%8E%A8%E8%8D%90">名家推荐</a>, <a class="wikipage" href="前言.htm" tppabs="http://www.playframework.cn/wiki/%E5%89%8D%E8%A8%80">前言</a>, <a class="wikipage" href="序.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%8F">序</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../Login.jsp-redirect=图片资源-new_exists_play.png.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-5.4.1_E5_86_85_E7_BD_AE_E6_89_A9_E5_B1_95">5.4.1 内置扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-5.4.1_E5_86_85_E7_BD_AE_E6_89_A9_E5_B1_95">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java扩展为在视图层的模版中调用对象提供了更加便捷的方式，并让表达式可以表示更多的内容。接下来是Play中Java扩展的例子，每个例子的运行结果紧跟在代码之后。
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E9_9B_86_E5_90_88_E6_89_A9_E5_B1_95">集合扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E9_9B_86_E5_90_88_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>join(separator)</b>
+<p>使用给定的分隔符连接集合中的条目。返回类型：String。
+</p>
+<div class="prettify">
+<pre>
+${['red', 'green', 'blue'].join('/')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+red/green/blue
+</pre>
+</div>
+<p />
+<hr />
+<b>pluralize()</b>
+<p>当集合的数量不为1的时候，返回字符串+“s”（即英语中的复数表示）。返回值:String。
+</p>
+<div class="prettify">
+<pre>
+colour${['red', 'green', 'blue'].pluralize()} 
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+colours
+</pre>
+</div>
+<hr />
+<b>pluralize(plural)</b>
+<p>当集合的数量不为1的时候，该扩展方法将返回一个给定字符，用于展现复数形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+box${['red', 'green', 'blue'].pluralize('es')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+boxes
+</pre>
+</div>
+<p />
+<hr />
+<b>journ(singular, plural)</b>
+<p>当集合的数量为1的时候，该扩展方法将返回一个给定字符，用于展现单数形式，当数量不为1的时候，该扩展方法将返回一个给定字符，用于展现复数形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+journ${['red'].pluralize('al', 'aux')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+journal
+</pre>
+</div>
+<br />
+<div class="prettify">
+<pre>
+journ${['red', 'green', 'blue'].pluralize('al', 'aux')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+journaux
+</pre>
+</div>
+<p />
+<p />
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E6_97_A5_E6_9C_9F_E6_89_A9_E5_B1_95">日期扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E6_97_A5_E6_9C_9F_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>format(format)</b>
+<p>根据给定的日期格式化字符串，并返回格式化后的日期。返回：String。
+</p>
+<div class="prettify">
+<pre>
+${new Date(1275910970000).format('dd MMMM yyyy hh:mm:ss')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+07 June 2010 01:42:50
+</pre>
+</div>
+<hr />
+<b>format(format, language)</b>
+<p>同上个扩展类似，不过用language来指定了日期所采用的国际化语言。返回：String。
+</p>
+<div class="prettify">
+<pre>
+${new Date(1275910970000).format('dd MMMM yyyy hh:mm:ss', 'fr')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+07 juin 2010 01:42:50
+</pre>
+</div>
+<p />
+<hr />
+<b>since()</b>
+<p>将日期格式化为一个相对的时间，相对现在的时刻，比如3分钟之前。返回：String。
+</p>
+<div class="prettify">
+<pre>
+${new Date(new Date().getTime() - 1000000).since()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+16 minutes ago
+</pre>
+</div>
+<p>利用下面的消息可以自定义输出相对时间的形式：since.seconds，since.minutes，since.hours，since.days，since.months和since.years。
+</p>
+<hr />
+<b>since(condition)</b>
+<p>同样是格式化日期为相对现在的某个相对时间。如果给定的condition为true，则当日期是在一个月之前的话会格式化为一个日期；如果给定的condition为false，效果与since()相同。
+</p>
+<p>同样也可以使用与since()相同的消息来自定义输出的相对时间的形式，也可以使用since.format的方式自定义一个月之前的日期的输出形式。
+</p>
+<div class="prettify">
+<pre>
+${new Date(1262350000000).since(false)}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+5 months ago
+</pre>
+</div>
+<p> 
+</p>
+<div class="prettify">
+<pre>
+${new Date(1262350000000).since(true)}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Jan 1, 2010
+</pre>
+</div>
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E9_95_BF_E6_95_B4_E5_9E_8B_E6_89_A9_E5_B1_95">长整型扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E9_95_BF_E6_95_B4_E5_9E_8B_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>asdate(format)</b>
+<p>将时间戳格式化为日期。返回：String。
+</p>
+<div class="prettify">
+<pre>
+${1275910970000.asdate('dd MMMM yyyy hh:mm:ss')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+07 June 2010 01:42:50
+</pre>
+</div>
+<p />
+<hr />
+<b>asdate(format, language)</b>
+<p>使用给定的语言将时间戳格式化为日期。返回：String。
+</p>
+<div class="prettify">
+<pre>
+${1275910970000.asdate('dd MMMM yyyy hh:mm:ss', 'fr')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+07 juin 2010 01:42:50
+</pre>
+</div>
+<p />
+<hr />
+<b>formatSize()</b>
+<p>将字节数格式化为文件大小。
+</p>
+<div class="prettify">
+<pre>
+${726016L.formatSize()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+709KB
+</pre>
+</div>
+<p />
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-Map_E6_89_A9_E5_B1_95">Map 扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-Map_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>asAttr()</b>
+<p>将map中的key和value格式化为HTML中的属性。返回值：play.templates.Template.ExecutableTemplate.RawData。
+</p>
+<div class="prettify">
+<pre>
+${[id:'42', color:'red'].asAttr()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+id=&quot;42&quot; color=&quot;red&quot; 
+</pre>
+</div>
+<hr />
+<b>asAttr(condition)</b>
+<p>当condition为true时，将map中的key和value格式化为HTML中的属性。返回值：play.templates.Template.ExecutableTemplate.RawData。
+</p>
+<div class="prettify">
+<pre>
+${[id:'42', color:'red'].asAttr(true)}
+</pre>
+</div>
+运行结果
+<div class="prettify">
+<pre>
+id=&quot;42&quot; color=&quot;red&quot; 
+</pre>
+</div>
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E6_95_B0_E5_AD_97_E6_89_A9_E5_B1_95">数字扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E6_95_B0_E5_AD_97_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>divisibleBy(divisor)</b>
+<p>返回数字是否可以被给定的除数整除。返回值：boolean。
+</p>
+<div class="prettify">
+<pre>
+${42.divisibleBy(7)}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+true
+</pre>
+</div>
+<hr />
+<b>format(format)</b>
+<p>将数字用指定的数字格式化字符串进行格式化。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${42.format('000.00')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+042.00
+</pre>
+</div>
+<p />
+<hr />
+<b>formatCurrency(currencyCode)</b>
+<p>将数字根据给定的货币代码格式化为货币表现形式，货币代码EUR表示欧元。返回值: String。
+</p>
+<div class="prettify">
+<pre>
+${42.formatCurrency('EUR').raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+€ 42.00 
+</pre>
+</div>
+<hr />
+<b>page(pageSize)</b>
+<p>通过给定的分页大小返回页数。返回值：Integer。
+</p>
+<div class="prettify">
+<pre>
+${42.page(10)}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+5
+</pre>
+</div>
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AF_B9_E8_B1_A1_E6_89_A9_E5_B1_95">对象扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AF_B9_E8_B1_A1_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>addSlashes()</b>
+<p>为字符串中的单引号或双引号添加转义符。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+
+${&quot;single quote (')&quot;.addSlashes().raw()} ${'double quote (&quot;)'.addSlashes().raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+single quote (\') double quote (\&quot;)
+</pre>
+</div>
+<hr />
+<b>capAll()</b>
+<p>将字符串中每个单词的首字母变为大写。
+</p>
+<div class="prettify">
+<pre>
+${&quot;lorum ipsum dolor&quot;.capAll()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Lorum Ipsum Dolor
+</pre>
+</div>
+<p />
+<hr />
+<b>capFirst()</b>
+<p>将字符串中第一个单词的首字母变为大写。
+</p>
+<div class="prettify">
+<pre>
+${&quot;lorum ipsum dolor&quot;.capFirst()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Lorum ipsum dolor
+</pre>
+</div>
+<hr />
+<b>cut(substring)</b>
+<p>从对象中删除给定的子字符串，返回删除后的字符串。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;lorum ipsum dolor&quot;.cut('um')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+lor ips dolor
+</pre>
+</div>
+<p />
+<hr />
+<b>escape()</b>
+<p>将对象中的字符串中的HTML字符变为带转义符的形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;The &lt;blink&gt;tag&lt;/blink&gt; is evil&quot;.escape().raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+The &amp;lt;blink&amp;gt;tag&amp;lt;/blink&amp;gt; is evil
+</pre>
+</div>
+<hr />
+<b>nl2br()</b>
+<p>将‘\n’替换为HTML &lt;br /&gt; 标签。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;one\ntwo&quot;.nl2br()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+one&lt;br/&gt;two
+</pre>
+</div>
+<p />
+<hr />
+<b>raw()</b>
+<p>直接返回对象的内容，跳过模板转义处理。返回值：play.templates.Template.ExecutableTemplate.RawData。
+</p>
+<div class="prettify">
+<pre>
+${'&lt;'}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+&amp;lt;
+</pre>
+</div>
+<div class="prettify">
+<pre>
+${'&lt;'.raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+&lt;
+</pre>
+</div>
+<hr />
+<b>raw(condition)</b>
+<p>当给定的condtion为true时，直接返回对象的内容，而不经模板转义处理。返回值：play.templates.Template.ExecutableTemplate.RawData。
+</p>
+<div class="prettify">
+<pre>
+${'&lt;'.raw(true)}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+&lt;
+</pre>
+</div>
+<p />
+<hr />
+<b>yesNo('yes', 'no')</b>
+<p>如果对象为真，就返回第一个参数（'yes'），反之返回第二个参数（'no'）。返回值:Sring。
+</p>
+<div class="prettify">
+<pre>
+${&quot;&quot;.yesno('yes', 'no')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+no
+</pre>
+</div>
+<p> 
+</p>
+<div class="prettify">
+<pre>
+${&quot;not empty&quot;.yesno('yes', 'no')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+yes
+</pre>
+</div>
+<p />
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AD_97_E7_AC_A6_E4_B8_B2_E6_89_A9_E5_B1_95">字符串扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AD_97_E7_AC_A6_E4_B8_B2_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>asXml()</b>
+<p>解析给定的XML字符串。返回值：groovy.util.slurpersupport.GPathResult。
+</p>
+<hr />
+<b>camelCase()</b>
+<p>将字符串格式化为camel形式（即骆驼命名法），类似于Java推荐的类命名形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;lorum ipsum dolor&quot;.camelCase()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+LorumIpsumDolor
+</pre>
+</div>
+<hr />
+<b>capitalizeWords()</b>
+<p>将字符串中每个单词的首字母变为大写。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;lorum ipsum dolor&quot;.capitalizeWords()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Lorum Ipsum Dolor
+</pre>
+</div>
+<hr />
+<b>escapeHtml()</b>
+<p>将字符串中的HTML字符变为带转义符的形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;The &lt;blink&gt;tag&lt;/blink&gt; is evil&quot;.escape().raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+The &amp;lt;blink&amp;gt;tag&amp;lt;/blink&amp;gt; is evil
+</pre>
+</div>
+<hr />
+<b>escapeJavaScript()</b>
+<p>将字符串中出现的JavaScript字符替换为转义符的形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;single quote (') double quote (\&quot;)&quot;.escapeJavaScript().raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+single quote (\') double quote (\&quot;)
+</pre>
+</div>
+<hr />
+<b>escapeXml()</b>
+<p>将字符串中的XML字符变为带转义符的形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;&lt;&gt;\&quot;&amp;&quot;.escape().raw()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+&amp;lt;&amp;gt;&amp;quot;&amp;amp;
+</pre>
+</div>
+<hr />
+<b>last()</b>
+<p>返回列表中的最后一项。返回值：Object。
+</p>
+<div class="prettify">
+<pre>
+${['red', 'green', 'blue'].last()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Blue
+</pre>
+</div>
+<hr />
+<b>noAccents()</b>
+<p>将字符串中带有重音符号的字母替换为不带重音符号的字母。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;Stéphane Épardaud&quot;.noAccents()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+Stephane Epardaud
+</pre>
+</div>
+<hr />
+<b>pad(length)</b>
+<p>在字符串后增加给定length长度的&amp;nbsp（HTML空格转义符）字符。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;x&quot;.pad(4).raw()}${&quot;x&quot;}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+x&amp;nbsp;&amp;nbsp;&amp;nbsp;x
+</pre>
+</div>
+<hr />
+<b>slugify()</b>
+<p>将字符串格式化为用“-”连接字符串中的每个单词，并将原有的标点符号去除。主要用于生成URL，避免与URL的保留字符冲突。
+</p>
+<div class="prettify">
+<pre>
+${&quot;The Play! framework’s manual&quot;.slugify()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+the-play-framework-s-manual
+</pre>
+</div>
+<hr />
+<b>urlEncode()</b>
+<p>将URL查询字符串中的字符变为转义输出的形式。返回值：String。
+</p>
+<div class="prettify">
+<pre>
+${&quot;!@#\$%^&amp;()&quot;.urlEncode()}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+%21%40%23%24%25%5E%26%28%29
+</pre>
+</div>
+<h4 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AD_97_E7_AC_A6_E4_B8_B2_E6_95_B0_E7_BB_84_E6_89_A9_E5_B1_95">字符串数组扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-_E5_AD_97_E7_AC_A6_E4_B8_B2_E6_95_B0_E7_BB_84_E6_89_A9_E5_B1_95">#</a></h4>
+<hr />
+<b>add(value)</b>
+<p>在数组末尾增加数据。返回值：String[]。
+</p>
+<div class="prettify">
+<pre>
+${([&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;] as String[]).add('pink').join(' ')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+red green blue pink
+</pre>
+</div>
+<p />
+<hr />
+<b>contains(string)</b>
+<p>如果数组中存在给定的字符串，返回true，反之返回false。返回值：boolean。
+</p>
+<div class="prettify">
+<pre>
+${(['red', 'green', 'blue'] as String[]).contains('green')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+True
+</pre>
+</div>
+<p />
+<hr />
+<b>remove(string)</b>
+<p>在数组中删除给定的字符串，并返回删除后的字符串数组。返回值：String[]。
+</p>
+<div class="prettify">
+<pre>
+${(['red', 'green', 'blue'] as String[]).remove('green').join(' ')}
+</pre>
+</div>
+运行结果：
+<div class="prettify">
+<pre>
+red blue
+</pre>
+</div>
+<h3 id="section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-5.4.2_E8_87_AA_E5_AE_9A_E4_B9_89_E6_89_A9_E5_B1_95">5.4.2 自定义扩展<a class="hashlink" href="#section-_E8_87_AA_E5_AE_9A_E4_B9_89Java_E6_A0_87_E7_AD_BE-5.4.2_E8_87_AA_E5_AE_9A_E4_B9_89_E6_89_A9_E5_B1_95">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们也可以在Java代码中自定义标签，封装一些更为复杂的功能。如果读者希望自定义Java标签，需要先创建继承于play.templates.FastTags的类。
+<div class="prettify">
+<pre>
+package utils;
+
+public class MyFastTag extends FastTags {
+   ...
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个我们想要作为标签(tag)运行的方法都具有固定的声明方式，具体如下：
+<div class="prettify">
+<pre>
+public static void _tagName(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+   ExecutableTemplate template, int fromLine)
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>别漏了标签名前面的下划线。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了进一步了解如何创建标签，我们先来看看两个Play内置标签的例子(这两个标签已经被Play封装，在play/framework/src/play/templates/FastTags.java文件中可以查看）。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{verbatim}标签只是简单的调用了从JavaExtensions传递过来的toString()方法，直接在模板上打印了标签体中的内容：
+</p>
+<div class="prettify">
+<pre>
+public static void _verbatim(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+   ExecutableTemplate template, int fromLine) {
+   
+   out.println(JavaExtensions.toString(body));
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该标签的具体使用方法如下，从标签的开始到结束都是标签体内容：
+</p>
+<div class="prettify">
+<pre>
+#{verbatim}My verbatim #{/verbatim}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板中将会打印出标签体内容：
+</p>
+<div class="prettify">
+<pre>
+My verbatim
+
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二个Play内置标签例子是#{option}，它要稍微复杂一点，因为它的实现依赖于父标签#{select}(Play也封装了#{select}标签，在play/framework/templates/tags/select.tag文件中可以查看具体定义)。
+<div class="prettify">
+<pre>
+public static void _option(Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+      ExecutableTemplate template, int fromLine) {
+ 
+   Object value = args.get(&quot;arg&quot;);
+   Object selection = TagContext.parent(&quot;select&quot;).data.get(&quot;selected&quot;);
+   boolean selected = selection != null &amp;&amp; value != null 
+      &amp;&amp; selection.equals(value);
+ 
+   out.print(&quot;&lt;option value=\&quot;&quot; + (value == null ? &quot;&quot; : value) + &quot;\&quot; &quot; 
+      + (selected ? &quot;selected=\&quot;selected\&quot;&quot; : &quot;&quot;) 
+      + &quot;&quot; + serialize(args, &quot;selected&quot;, &quot;value&quot;) + &quot;&gt;&quot;);
+   out.println(JavaExtensions.toString(body));
+   out.print(&quot;&lt;/option&gt;&quot;);
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该Java标签的原理是封装了HTML的&lt;option&gt;标签，用于实现下拉列表实例，并且从父标签#{select}中获取被默认选中(selected)的值。方法体最开始的三行用于设定输出的变量，最后的三行则输出了标签的结果。该标签的具体使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+#{select name:&quot;country&quot;,value:&quot;中国&quot;}
+    #{option arg:&quot;英国&quot;}英国#{/option}
+    #{option arg:&quot;中国&quot;}中国#{/option}
+    #{option arg:&quot;美国&quot;}美国#{/option}
+    #{option arg:&quot;日本&quot;}日本#{/option}
+#{/select}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里需要对父标签#{select}的使用做一些简单说明：country是#{select}标签的name属性，是必选的；中国是#{select}标签的value属性，用于标识selected元素，是可选的。
+</p>
+<p><br />
+<b>标签的命名空间</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实际项目中可能会自定义大量的标签，标签命名不规范可能会造成一些不必要的麻烦(比如与已定义的标签重名，或是与Play框架的核心标签冲突)。为了解决这个问题，Play可以使用@FastTags.Namespace注解来设定命名空间。对于my.tags命名空间中的#{hello}标签我们需要做以下工作：
+</p>
+<div class="prettify">
+<pre>
+@FastTags.Namespace(&quot;my.tags&quot;) 
+public class MyFastTag extends FastTags {
+   public static void _hello (Map&lt;?, ?&gt; args, Closure body, PrintWriter out, 
+      ExecutableTemplate template, int fromLine) {
+      ...
+   }
+}
+
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后在模板中可以通过以下方式来调用#{hello}标签：
+</p>
+<div class="prettify">
+<pre>
+#{my.tags.hello/}
+</pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-15) was last changed on <a href="../UserPreferences.jsp-redirect=图片资源-new_exists_play.png.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE&r1=15&r2=14">24-Feb-2012 05:45</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Diff.jsp-page=图片资源-new_netbeansify_play.png&r1=1&r2=1.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="javascript:if(confirm('http://www.playframework.cn/new_netbeansify_play.png?skin=raw  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/new_netbeansify_play.png?skin=raw'" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="javascript:if(confirm('http://www.playframework.cn/wiki/new_exists_play.png?version=1  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ����������ʼ��ַ��Զ�����ӡ������������ʼ��ַ�����������, ���ļ������������ض��С�  \n\n�����ڷ������ϴ���?'))window.location='http://www.playframework.cn/wiki/new_exists_play.png?version=1'" tppabs="http://www.playframework.cn/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89Java%E6%A0%87%E7%AD%BE?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

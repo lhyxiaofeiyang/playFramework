@@ -1,0 +1,985 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 添加标签功能
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='添加标签功能' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=添加标签功能.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=添加标签功能.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">添加标签功能</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'添加标签功能' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="CSS扩展.htm" tppabs="http://www.playframework.cn/wiki/CSS%E6%89%A9%E5%B1%95">CSS扩展</a>, <a class="wikipage" href="Google App Engine.htm" tppabs="http://www.playframework.cn/wiki/Google%20App%20Engine">Google App Engine</a>, <a class="wikipage" href="Google Web Toolkit.htm" tppabs="http://www.playframework.cn/wiki/Google%20Web%20Toolkit">Google Web Toolkit</a>, <a class="wikipage" href="Bespin在线编辑器.htm" tppabs="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="本章小结11.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9311">本章小结11</a>, <a class="wikipage" href="项目启动.htm" tppabs="http://www.playframework.cn/wiki/%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8">项目启动</a>, <a class="wikipage" href="数据模型迭代.htm" tppabs="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%BF%AD%E4%BB%A3">数据模型迭代</a>, <a class="wikipage" href="构建页面.htm" tppabs="http://www.playframework.cn/wiki/%E6%9E%84%E5%BB%BA%E9%A1%B5%E9%9D%A2">构建页面</a>, <a class="wikipage" href="显示文章和发布评论.htm" tppabs="http://www.playframework.cn/wiki/%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%92%8C%E5%8F%91%E5%B8%83%E8%AF%84%E8%AE%BA">显示文章和发布评论</a>, <a class="wikipage" href="设置图形验证码.htm" tppabs="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=添加标签功能.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着用户的使用，博客中发表的文章会越来越多，文章的获取和管理也就变得更加困难。为了便于文章进行分类管理，我们为博客增加了标签(Tag)支持。
+</p><p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.1Tag_E6_A8_A1_E5_9E_8B_E7_B1_BB">12.6.1 Tag模型类:<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.1Tag_E6_A8_A1_E5_9E_8B_E7_B1_BB">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在yabe/app/models目录中新建Tag.java，作为标签类对文章进行管理：
+</p>
+<div class="prettify">
+<pre>
+package models;
+ 
+import java.util.*;
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+ 
+@Entity
+public class Tag extends Model implements Comparable&lt;Tag&gt; {
+ 
+    public String name;
+ 
+    private Tag(String name) {
+        this.name = name;
+    }
+ 
+    public String toString() {
+        return name;
+    }
+ 
+    public int compareTo(Tag otherTag) {
+        return name.compareTo(otherTag.name);
+    }
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;并为Tag类增加findOrCreateByName(String name)工厂方法，方便对标签进行管理(先查询标签，若结果不存在则创建该标签):
+</p>
+<div class="prettify">
+<pre>
+public static Tag findOrCreateByName(String name) {
+    Tag tag = Tag.find(&quot;byName&quot;, name).first();
+    if(tag == null) {
+        tag = new Tag(name);
+    }
+    return tag;
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.2_E4_BF_AE_E6_94_B9Post_E7_B1_BB">12.6.2 修改Post类<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.2_E4_BF_AE_E6_94_B9Post_E7_B1_BB">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于对博客的文章做标签扩展，所以Post类需要进行一些修改，使Post模型和Tag模型关联起来。在Post类中增加文章与标签的多对多关联：
+</p>
+<div class="prettify">
+<pre>
+...
+@ManyToMany(cascade=CascadeType.PERSIST)
+public Set&lt;Tag&gt; tags;
+ 
+public Post(User author, String title, String content) {
+    this.comments = new ArrayList&lt;Comment&gt;();
+    this.tags = new TreeSet&lt;Tag&gt;();
+    this.author = author;
+    this.title = title;
+    this.content = content;
+    this.postedAt = new Date();
+}
+...
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>Post模型中采用TreeSet容器存放Tag，是为了保证标签列表以有序的形式保存(Tag模型中重写了compareTo()方法，标签列表将按照name属性排序）。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来为Post类增加一些辅助方法，继续简化标签的管理。定义tagItWith()方法，用于为文章添加标签：
+</p>
+<div class="prettify">
+<pre>
+...
+public Post tagItWith(String name) {
+    tags.add(Tag.findOrCreateByName(name));
+    return this;
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定义findTaggedWith()方法，用于获取指定标签的所有文章：
+</p>
+<div class="prettify">
+<pre>
+...
+public static List&lt;Post&gt; findTaggedWith(String tag) {
+    return Post.find(
+        &quot;select distinct p from Post p join p.tags as t where t.name = ?&quot;, tag
+    ).fetch();
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于我们对博客引擎的模型层做了较多的修改和扩展，需要进行测试以保证代码的正确性。在BasicTest.java文件中编写测试用例：
+</p>
+<div class="prettify">
+<pre>
+@Test
+public void testTags(){
+
+    // 创建用户并保存
+    User savage=new User(&quot;demo5@oopsplay.org&quot;,&quot;123&quot;,&quot;savage&quot;).save();
+    	
+    // 发表文章
+    Post savagePost=new Post(savage,&quot;My first post&quot;,&quot;Hello world&quot;).save();
+    Post anotherSavagePost=new Post(savage,&quot;My second post&quot;,&quot;Hello word2&quot;).save();
+    	
+    // 测试
+    assertEquals(0,Post.findTaggedWith(&quot;Red&quot;).size());
+    	
+    // 为文章添加标签
+    savagePost.tagItWith(&quot;Red&quot;).tagItWith(&quot;Blue&quot;).save();
+    anotherSavagePost.tagItWith(&quot;Red&quot;).tagItWith(&quot;Green&quot;).save();
+    	
+    // 测试
+    assertEquals(2,Post.findTaggedWith(&quot;Red&quot;).size());
+    assertEquals(1,Post.findTaggedWith(&quot;Blue&quot;).size());
+    assertEquals(1,Post.findTaggedWith(&quot;Green&quot;).size());
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用<b>play test</b>命令开启测试模式，运行测试套件确保博客引擎一切正常。
+</p>
+<div class="prettify">
+<pre>
+play test
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.3_E9_80_9A_E8_BF_87_E6_8C_87_E5_AE_9A_E6_A0_87_E7_AD_BE_E6_9F_A5_E6_89_BE_E6_96_87_E7_AB_A0">12.6.3 通过指定标签查找文章<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.3_E9_80_9A_E8_BF_87_E6_8C_87_E5_AE_9A_E6_A0_87_E7_AD_BE_E6_9F_A5_E6_89_BE_E6_96_87_E7_AB_A0">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本节介绍如何使用JPQL语句，实现多个标签标记的文章的查询。虽然该方法有些晦涩，但比较实用，读者可以将该方法应用于其他Web项目中：
+</p>
+<div class="prettify">
+<pre>
+...
+public static List&lt;Post&gt; findTaggedWith(String... tags) {
+    return Post.find(
+            &quot;select distinct p from Post p join p.tags as t where t.name in (:tags) group by p.id, p.author, p.title, p.content,p.postedAt having count(t.id) = :size&quot;
+    ).bind(&quot;tags&quot;, tags).bind(&quot;size&quot;, tags.length).fetch();
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例使用having count子句，从连接视图中过滤出指定标签标记的文章。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>我们不能使用Post.find(&quot;...&quot;,tags,tags.count)方式进行查询。因为tags本身就是动态变量，tags.count需要运行时才能动态计算出来。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;继续编写测试用例，对实现的查询功能进行验证：
+</p>
+<div class="prettify">
+<pre>
+...
+assertEquals(1, Post.findTaggedWith(&quot;Red&quot;, &quot;Blue&quot;).size());   
+assertEquals(1, Post.findTaggedWith(&quot;Red&quot;, &quot;Green&quot;).size());   
+assertEquals(0, Post.findTaggedWith(&quot;Red&quot;, &quot;Green&quot;, &quot;Blue&quot;).size());  
+assertEquals(0, Post.findTaggedWith(&quot;Green&quot;, &quot;Blue&quot;).size());
+...
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.4_E6_A0_87_E7_AD_BE_E4_BA_91">12.6.4 标签云<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.4_E6_A0_87_E7_AD_BE_E4_BA_91">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当数据库中存储了很多标签后，我们可以为Tag类添加getCloud()方法，实现标签云功能：
+</p>
+<div class="prettify">
+<pre>
+public static List&lt;Map&gt; getCloud() {
+    List&lt;Map&gt; result = Tag.find(
+        &quot;select new map(t.name as tag, count(p.id) as pound) from Post p join p.tags as t group by t.name order by t.name&quot;
+    ).fetch();
+    return result;
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hibernate具有非常人性化的特性，允许我们使用JPA查询返回自定义对象类型。上例会返回一组Map对象，包含了两个属性：标签名tag和标签数量pound。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写相应测试代码进行测试：
+</p>
+<div class="prettify">
+<pre>
+...
+List&lt;Map&gt; cloud = Tag.getCloud();
+assertEquals(
+    &quot;[{tag=Blue, pound=1}, {tag=Green, pound=1}, {tag=Red, pound=2}]&quot;,
+    cloud.toString()
+);
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.5_E5_9C_A8_E5_8D_9A_E5_AE_A2_E7_95_8C_E9_9D_A2_E4_B8_AD_E6_98_BE_E7_A4_BA_E6_A0_87_E7_AD_BE">12.6.5 在博客界面中显示标签<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.5_E5_9C_A8_E5_8D_9A_E5_AE_A2_E7_95_8C_E9_9D_A2_E4_B8_AD_E6_98_BE_E7_A4_BA_E6_A0_87_E7_AD_BE">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;既然博客引擎已经拥有标签功能，我们可以以一种新的方式浏览博客。为了方便起见，使用YAML文件初始化数据。编辑/yabe/conf/initial-data.yml文件，增加一些测试标签：
+</p>
+<div class="prettify">
+<pre>
+...
+Tag(play):
+    name:           Play
+ 
+Tag(architecture):
+    name:           Architecture
+ 
+Tag(test):
+    name:           Test
+ 
+Tag(mvc):
+    name:           MVC
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后将定义好的标签添加至文章中：
+</p>
+<div class="prettify">
+<pre>
+...
+Post(jeffPost):
+    title:          The MVC application
+    postedAt:       2009-06-06
+    author:         jeff
+    tags:
+                    - play
+                    - architecture
+                    - mvc
+    content:        &gt;
+                    A Play
+...
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>因为文章需要参考这些标签，所以标签和文章定义的顺序不能颠倒，必须将标签的定义放在YAML文件的最顶部。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重启应用，框架自动加载最新的初始化数据集。我们注意到Play甚至连YAML文件的错误也会很友好地显示出来，如图12.16所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/guide6-1.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide6-1.png" alt="图片资源/guide6-1.png" />
+</p>
+<p />
+<p><b>(图12.16 Play显示yml文件的错误)</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接下来修改#{display /}的定义，使博客显示文章的同时，也显示标记该文章的标签，界面效果如图12.17所示。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑/yabe/app/views/tags/display.html文件：
+</p>
+<div class="prettify">
+<pre>
+...
+#{if _as != 'full'}
+    &lt;span class=&quot;post-comments&quot;&gt;
+        &amp;nbsp;|&amp;nbsp; ${_post.comments.size() ?: 'no'}
+        comment${_post.comments.size().pluralize()}
+        #{if _post.comments}
+            , latest by ${_post.comments[0].author}
+        #{/if}
+    &lt;/span&gt;
+#{/if}
+#{elseif _post.tags}
+    &lt;span class=&quot;post-tags&quot;&gt;
+        - Tagged
+        #{list items:_post.tags, as:'tag'}
+            &lt;a href=&quot;#&quot;&gt;${tag}&lt;/a&gt;${tag_isLast ? '' : ', '}
+        #{/list}
+    &lt;/span&gt;
+#{/elseif}
+...
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/guide6-2.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide6-2.png" alt="图片资源/guide6-2.png" />
+</p>
+<p><b>(图12.17 显示文章标签)</b>
+</p>
+<p><br />
+<h3 id="section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.6_E5_AE_9A_E4_B9_89_E6_A0_87_E7_AD_BE_E9_A1_B5_E9_9D_A2">12.6.6 定义标签页面<a class="hashlink" href="#section-_E6_B7_BB_E5_8A_A0_E6_A0_87_E7_AD_BE_E5_8A_9F_E8_83_BD-12.6.6_E5_AE_9A_E4_B9_89_E6_A0_87_E7_AD_BE_E9_A1_B5_E9_9D_A2">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用标签对文章进行分类会有很多好处，我们可以在博客引擎中采用标签分类的形式显示文章列表。修改上例中的代码，将原来&lt;a&gt;&lt;/a&gt;中空白的链接指向listTagged Action：
+</p>
+<div class="prettify">
+<pre>
+...
+- Tagged
+#{list items:_post.tags, as:'tag'}
+    &lt;a href=&quot;@{Application.listTagged(tag.name)}&quot;&gt;${tag}&lt;/a&gt;${tag_isLast ? '' : ', '}
+#{/list}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Application控制器中创建相应的listTagged方法：
+</p>
+<div class="prettify">
+<pre>
+...
+public static void listTagged(String tag) {
+    List&lt;Post&gt; posts = Post.findTaggedWith(tag);
+    render(tag, posts);
+}
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;并为其指定路由：
+</p>
+<div class="prettify">
+<pre>
+GET     /posts/{tag}                    Application.listTagged
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前我们为show Action指定的路由会和listTagged Action的路由冲突，因为这两条路由会匹配相同的URI。
+</p>
+<div class="prettify">
+<pre>
+GET     /posts/{id}                     Application.show
+GET     /posts/{tag}                    Application.listTagged
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show Action中传递的参数id是数字类型的，而listTagged Action中传递的是字符串类型的参数，所以可以使用正则表达式对第一条路由进行约束，非常巧妙地解决了冲突问题：
+</p>
+<div class="prettify">
+<pre>
+GET     /posts/{&lt;[0-9]+&gt;id}             Application.show
+GET     /posts/{tag}                    Application.listTagged
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后我们创建/yabe/app/views/Application/listTagged.html模版进行渲染，界面效果如图12.18所示：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html' /}
+#{set title:'Posts tagged with ' + tag /}
+ 
+*{********* Title ********* }*
+ 
+#{if posts.size() &gt; 1}
+   &lt;h3&gt;There are ${posts.size()} posts tagged '${tag}'&lt;/h3&gt;
+#{/if}
+#{elseif posts}
+    &lt;h3&gt;There is 1 post tagged '${tag}'&lt;/h3&gt;
+#{/elseif}
+#{else}
+    &lt;h3&gt;No post tagged '${tag}'&lt;/h3&gt;
+#{/else}
+ 
+*{********* Posts list *********}*
+ 
+&lt;div class=&quot;older-posts&quot;&gt;
+    #{list items:posts, as:'post'}
+        #{display post:post, as:'teaser' /}
+    #{/list}
+&lt;/div&gt;
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/guide6-3.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/guide6-3.png" alt="图片资源/guide6-3.png" />
+</p>
+<p><b>(图12.18 listTagged.html模版渲染结果)</b>
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-9) was last changed on <a href="../Diff.jsp-page=添加标签功能&r1=9&r2=8.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD&r1=9&r2=8">14-Feb-2012 08:28</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=添加标签功能.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=添加标签功能.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="添加标签功能-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,834 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 使用WebSocket
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E4%BD%BF%E7%94%A8WebSocket' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='使用WebSocket' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=使用WebSocket.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E4%BD%BF%E7%94%A8WebSocket" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=使用WebSocket.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E4%BD%BF%E7%94%A8WebSocket"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">使用WebSocket</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'使用WebSocket' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="本章小结6.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%936">本章小结6</a>, <a class="wikipage" href="Job异步处理.htm" tppabs="http://www.playframework.cn/wiki/Job%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86">Job异步处理</a>, <a class="wikipage" href="Job实现.htm" tppabs="http://www.playframework.cn/wiki/Job%E5%AE%9E%E7%8E%B0">Job实现</a>, <a class="wikipage" href="Bootstrap Job.htm" tppabs="http://www.playframework.cn/wiki/Bootstrap%20Job">Bootstrap Job</a>, <a class="wikipage" href="Scheduled Job.htm" tppabs="http://www.playframework.cn/wiki/Scheduled%20Job">Scheduled Job</a>, <a class="wikipage" href="Job的直接调用.htm" tppabs="http://www.playframework.cn/wiki/Job%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8">Job的直接调用</a>, <a class="wikipage" href="本章小结7.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%937">本章小结7</a>, <a class="wikipage" href="HTTP异步编程.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B">HTTP异步编程</a>, <a class="wikipage" href="挂起HTTP请求.htm" tppabs="http://www.playframework.cn/wiki/%E6%8C%82%E8%B5%B7HTTP%E8%AF%B7%E6%B1%82">挂起HTTP请求</a>, <a class="wikipage" href="HTTP流式响应.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94">HTTP流式响应</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=使用WebSocket.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E4%BD%BF%E7%94%A8WebSocket" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-_E4_BD_BF_E7_94_A8WebSocket-8.3.1WebSocket_E4_BB_8B_E7_BB_8D">8.3.1 WebSocket介绍<a class="hashlink" href="#section-_E4_BD_BF_E7_94_A8WebSocket-8.3.1WebSocket_E4_BB_8B_E7_BB_8D">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WebSocket的目标是通过在浏览器和应用程序之间建立一条通信的频道，实现两者的双向通信。在Play中的WebSocket实现如下：
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在浏览器端，可以使用“ws://” URL方式建立socket连接：
+</p>
+<div class="prettify">
+<pre>
+new WebSocket(&quot;ws://localhost:9000/helloSocket?name=Guillaume&quot;)
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务器端配置对应的WebSocket路由规则：
+<div class="prettify">
+<pre>
+WS   /helloSocket            MyWebSocket.hello
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyWebSocket是自定义的WebSocket控制器，继承于WebSocketController。WebSocket控制器和标准的HTTP控制器有些类似，但两者在概念上有所区别：
+<ul><li>WebSocket控制器只有request对象，没有response对象。
+</li><li>WebSocket控制器可以访问session，但访问权限是只读的。
+</li><li>WebSocket控制器没有renderArgs，routeArgs以及flash作用域。
+</li><li>WebSocket控制器只能从路由模式或者以查询字符串的形式来读取参数。
+</li><li>WebSocket控制器拥有inbound和outbound两种通信频道。
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当客户端(即浏览器)通过ws://localhost:9000/helloSocket 建立socket连接时，Play会调用MyWebSocket控制器中的hello Action方法，一旦MyWebSocket.hello方法结束，该socket连接就会自动关闭：
+</p>
+<div class="prettify">
+<pre>
+public class MyWebSocket extends WebSocketController {
+ 
+    public static void hello(String name) {
+        outbound.send(&quot;Hello %s!&quot;, name);
+    }
+ 
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;针对上述例子，如果客户端建立了socket连接，就会收到“Hello Guillaume”消息，之后Play将socket连接关闭。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然，大部分情况下并不需要急于将socket连接关闭，可以使用await()方法进行一些适当的扩展。以下程序使用了Continuations，使服务器具有应答功能：
+</p>
+<div class="prettify">
+<pre>
+public class MyWebSocket extends WebSocketController {
+ 
+    public static void echo() {
+        while(inbound.isOpen()) {
+             WebSocketEvent e = await(inbound.nextEvent());
+             if(e instanceof WebSocketFrame) {
+                  WebSocketFrame frame = (WebSocketFrame)e;
+                  if(!e.isBinary) {
+                      if(frame.textData.equals(&quot;quit&quot;)) {
+                          outbound.send(&quot;Bye!&quot;);
+                          disconnect();
+                      } else {
+                          outbound.send(&quot;Echo: %s&quot;, frame.textData);
+                      }
+                  }
+             }
+             if(e instanceof WebSocketClose) {
+                 Logger.info(&quot;Socket closed!&quot;);
+             }
+        }
+    }
+ 
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上述例子用了大量的if嵌套语句，书写起来不仅乏味，而且容易出错，这并不是优雅的Java代码。处理如此简单的例子都需要编写复杂的嵌套语句，更何况那些结合了一些数据流，甚至拥有不同事件类型的应用，就会变得异常难以维护。这里介绍一种简洁的书写方式，其中的方法封装在play.libs.F库中。下面对具有应答功能的代码进行重构：
+<div class="prettify">
+<pre>
+public static void echo() {
+    while(inbound.isOpen()) {
+         WebSocketEvent e = await(inbound.nextEvent());
+         
+         for(String quit: TextFrame.and(Equals(&quot;quit&quot;)).match(e)) {
+             outbound.send(&quot;Bye!&quot;);
+             disconnect();
+         }
+ 
+         for(String msg: TextFrame.match(e)) {
+             outbound.send(&quot;Echo: %s&quot;, frame.textData);
+         }
+         
+         for(WebSocketClose closed: SocketClosed.match(e)) {
+             Logger.info(&quot;Socket closed!&quot;);
+         }
+    }
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E4_BD_BF_E7_94_A8WebSocket-8.3.2_E4_BD_BF_E7_94_A8WebSocket">8.3.2 使用WebSocket<a class="hashlink" href="#section-_E4_BD_BF_E7_94_A8WebSocket-8.3.2_E4_BD_BF_E7_94_A8WebSocket">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发WebSocket应用，需要使用支持WebSocket的浏览器（比如Chrome）。Firefox和Opera出于安全考虑，无法使用WebSocket协议。与长时间处理的方法不同，WebSocket中的方法需要在预先定义的时间间隔执行针对模型更新的数据库检查，从而触发事件。WebSocket的理念是保持连接状态，等待事件的触发，然后将事件广播给每个需要的用户。因此在Play中实现WebSocket的最佳方式是使用存储在服务器端的状态对象。虽然这样做有点违背无状态(stateless)以及RESTful风格的理念，但这应该是使用WebSocket的最佳实践。在设计WebSocket应用时，开发者需要根据自己的实际情况对代码做进一步的优化：
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面将演示如何创建WebSocket应用。使用<b>play new</b>命令创建新的应用，名称为websocket：
+</p>
+<div class="prettify">
+<pre>
+Play new websocket
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在app/models/目录中创建StatefulModel.java：
+</p>
+<div class="prettify">
+<pre>
+package models;
+
+import play.libs.F;
+
+public class StatefulModel {
+   public static StatefulModel instance = new StatefulModel();
+   public final F.EventStream event = new F.EventStream();
+
+   private StatefulModel() { }
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StatefulModel非常简单，由以下几个部分组成：
+</p>
+<ul><li>私有的构造方法StatefulModel()。
+</li><li>单例的静态实例化对象（单例模式），这意味着服务器端只允许存在一个StatefulModel的实例。
+</li><li>EventStream对象，是WebSocket在Play中实现的最核心部分，它允许发布事件来通知所有等待监听的用户。
+</li></ul><p><br />
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在这个例子当中，使用了标准的EventStream来访问当前的事件。Play同时提供了ArchiveEventStream（读者可以在samples-and-tests目录中查看Play提供的chat应用示例），可以获取所有可用的信息。打开app/controllers/Application.java文件，添加如下代码：
+</p>
+<div class="prettify">
+<pre>
+package controllers;
+
+import play.mvc.*;
+import models.*;
+
+public class Application extends Controller {
+
+   public static void index() {
+      render();
+   }
+
+   public static class WebSocket extends WebSocketController {
+
+      public static void listen() {
+         while(inbound.isOpen()) {
+            String event = await(StatefulModel.instance.event.nextEvent());
+            outbound.send(event);
+         }
+      }
+   }
+}
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Application控制器中增加了继承WebSocketController的静态类。WebSocketController与标准的控制器有所不同：前者是基于inbound/outbound模式，而后者是面向request/response模式的。上述代码的业务逻辑非常简单，只是通过while循环来检查inbound是否处于打开状态（即WebSocket处于连接状态），接着调用nextEvent()方法来等待事件的触发。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早期的Play版本并没有await()方法。await()方法的作用是挂起HTTP请求，释放当前资源让框架以便继续处理其他的请求。直到有新的事件添加到StatefulModel中，程序会从之前离开的地方继续执行，而不是重新开始。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码将数据从事件发送到outbound，最终返回到浏览器。那么浏览器需要如何处理这些数据呢？创建views/application/index.html模板：
+</p>
+<div class="prettify">
+<pre>
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+&lt;div id=&quot;socketout&quot;&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    // Create a socket
+    var socket = new WebSocket('@@{Application.WebSocket.listen}')
+
+    // Message received on the socket
+    socket.onmessage = function(event) {
+        $('#socketout').append(event.data+&quot;&lt;br /&gt;&quot;);
+    }
+&lt;/script&gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模版中，仅仅使用div来显示WebSocket发送的数据。JavaScript的内容为：
+</p>
+<ol><li>创建WebSocket连接。
+</li><li>将获得的数据添加到div中。
+</li></ol><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在为自定义的WebSocket增加事件之前，先定义好路由：
+</p>
+<div class="prettify">
+<pre>
+WS      /socket                            Application.WebSocket.listen
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要注意的是，这里使用WS作为HTTP请求类型来描述WebSocket请求，剩下的部分和之前一样配置。现在WebSocket已经可以运行了，但是这时候开启应用，打开浏览器看到的是空白页面，这是因为服务器并没有返回数据给浏览器，所以最后需要做的是触发事件。创建异步Job，在EventStream中增加一些消息。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在app目录下新建jobs包，然后创建Startup.java文件：
+</p>
+<div class="prettify">
+<pre>
+package job;
+
+import play.jobs.*;
+import models.StatefulModel;
+
+@OnApplicationStart(async = true)
+public class Startup extends Job {
+   public void doJob() throws InterruptedException {
+      int i = 0;
+
+      while (true) {
+         i++;
+         Thread.sleep(1000);
+         StatefulModel.instance.event.publish(&quot;On step &quot; + i);
+      }
+   }
+}
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个Job会在应用启动的时候执行，并一直循环下去，直到应用停止。每次迭代的时候暂停1秒钟，然后为StatefulModel的EventStream发送一个事件。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开启应用，访问http://localhost:9000/查看效果，当打开页面的时候，可以发现事件会广播到每个监听的浏览器：
+</p>
+<p />
+<p><img class="inline" src="../attach/图片资源/websocket.jpg" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/websocket.jpg" alt="图片资源/websocket.jpg" />
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-22) was last changed on <a href="../Diff.jsp-page=使用WebSocket&r1=22&r2=21.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E4%BD%BF%E7%94%A8WebSocket&r1=22&r2=21">10-Apr-2012 02:55</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=使用WebSocket.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E4%BD%BF%E7%94%A8WebSocket" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=使用WebSocket.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E4%BD%BF%E7%94%A8WebSocket"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="使用WebSocket-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8WebSocket?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

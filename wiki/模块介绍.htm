@@ -1,0 +1,794 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 模块介绍
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='模块介绍' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模块介绍.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模块介绍.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">模块介绍</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'模块介绍' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="缓存.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98">缓存</a>, <a class="wikipage" href="产品化.htm" tppabs="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96">产品化</a>, <a class="wikipage" href="邮件功能.htm" tppabs="http://www.playframework.cn/wiki/%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD">邮件功能</a>, <a class="wikipage" href="集成OpenID.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90OpenID">集成OpenID</a>, <a class="wikipage" href="Ajax请求.htm" tppabs="http://www.playframework.cn/wiki/Ajax%E8%AF%B7%E6%B1%82">Ajax请求</a>, <a class="wikipage" href="应用部署.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">应用部署</a>, <a class="wikipage" href="管理数据库升级.htm" tppabs="http://www.playframework.cn/wiki/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7">管理数据库升级</a>, <a class="wikipage" href="安全向导.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC">安全向导</a>, <a class="wikipage" href="依赖管理.htm" tppabs="http://www.playframework.cn/wiki/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86">依赖管理</a>, <a class="wikipage" href="本章小结10.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9310">本章小结10</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=模块介绍.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play应用程序可以由多个应用模块组装而成。这使得可以将大型应用分割为多个较小的应用模块，从而提高应用程序组件的重用性。
+</p><p><br />
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.1_E6_A8_A1_E5_9D_97_E6_98_AF_E4_BB_80_E4_B9_88">11.1.1 模块是什么？<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.1_E6_A8_A1_E5_9D_97_E6_98_AF_E4_BB_80_E4_B9_88">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play中的模块可以被理解为应用程序，但两者在资源加载方式上存在一些区别：
+</p>
+<ul><li>模块不存在conf/application.conf配置文件。
+</li><li>模块拥有自己的conf/routes配置文件，但该路由配置文件不会被自动加载。
+</li><li>应用启动时，Play首先在主应用的目录下搜索，之后才会到所有已加载的模块目录下搜索。
+</li><li>模块的module/lib目录下可以存放JAR格式的第三方库文件。
+</li><li>模块包含文档文件。
+</li><li>在模块中一切都是可选的。
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者也可以创建自己的模块，只需要使用Play提供的<b>play new-module</b>命令即可。
+</p>
+<p><br />
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.2_E5_A6_82_E4_BD_95_E5_9C_A8_E7_A8_8B_E5_BA_8F_E4_B8_AD_E5_8A_A0_E8_BD_BD_E6_A8_A1_E5_9D_97">11.1.2 如何在程序中加载模块<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.2_E5_A6_82_E4_BD_95_E5_9C_A8_E7_A8_8B_E5_BA_8F_E4_B8_AD_E5_8A_A0_E8_BD_BD_E6_A8_A1_E5_9D_97">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;框架中模块的默认安装路径为$PLAY_HOME/modules，该目录下的模块可以供所有应用程序使用。如果需要在应用程序中加载外部模块，需要配置应用程序的application.conf文件，引入模块：
+</p>
+<div class="prettify">
+<pre>
+# Additional modules
+# ~~~~~
+# A module is another Play application. Add a line for each module you want
+# to add to your application. Module paths are either absolute or relative to
+# the application root.
+#
+module.crud=${play.path}/modules/crud
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可以按照自己的需求，选择性地引入模块。比如某个大型应用程序包含<b>CMS</b>模块、<b>FORUM</b>模块、<b>DIRECTORY</b>模块和<b>GWT</b>模块。首先，可以按照以下目录结构创建项目：
+</p>
+<p>/my-project
+</p>
+<ul><li>/cms
+</li><li>/forum
+</li><li>/directory
+</li><li>/gwt
+</li><li>/main
+</li></ul><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中<b>main</b>是主程序目录（使用<b>play new</b>命令创建），<b>GWT</b>模块需要从模块库安装，<b>CMS</b>模块、<b>FORUM</b>模块以及 <b>DIRECTORY</b>模块均由<b>play new-module</b>命令创建。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p><b>GWT</b>即Google Web Toolkit的缩写。有了<b>GWT</b>可以使用Java编程语言编写Ajax前端，然后<b>GWT</b>会交叉编译到优化的JavaScript中，而JavaScript可以自动在所有主要浏览器上运行。<b>GWT</b>允许开发人员使用Java编程语言快速构建和维护复杂但性能高的JavaScript前端应用程序，从而降低了开发难度，尤其是与Eclipse Google插件结合使用时，优势更明显。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后配置主程序文件（my-project/main/conf/application.conf），引入所需的模块：
+</p>
+<div class="prettify">
+<pre>
+# Additional modules
+# ~~~~~
+mdoule.gwt=../gwt
+module.cms=../cms
+module.forum=../forum
+module.directory=../directory
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当主程序启动时(使用<b>play run my-project/main</b>命令)，Play会将所有需要的模块加载至内存中。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>如果以相对路径配置模块，Play会相对主程序根目录解析目的地址。
+</p></div>
+<br />
+
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.3_E5_8A_A0_E8_BD_BD_E6_A8_A1_E5_9D_97_E8_B7_AF_E7_94_B1">11.1.3 加载模块路由<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.3_E5_8A_A0_E8_BD_BD_E6_A8_A1_E5_9D_97_E8_B7_AF_E7_94_B1">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个模块都包含自身的路由文件。需要在主程序的routes文件中进行配置，才能加载模块的路由：
+</p>
+<div class="prettify">
+<pre>
+# Import the default CRUD routes
+GET     /admin	     module:crud
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以直接加载所有的可用模块路由：
+</p>
+<div class="prettify">
+<pre>
+GET     /	     module:*
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.4_E6_B7_BB_E5_8A_A0_E6_A8_A1_E5_9D_97_E6_96_87_E6_A1_A3">11.1.4 添加模块文档<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.4_E6_B7_BB_E5_8A_A0_E6_A8_A1_E5_9D_97_E6_96_87_E6_A1_A3">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play为模块配备了文档功能。可以为模块动态添加文档，记录模块的信息或者使用说明，方便日后开发者查询。Play文档采用特定的语法规则编写，并以.textile格式保存在$PLAY_HOME/documentation/manual/目录下。如果为Play添加了新的文档，需要在$PLAY_HOME/documentation/manual/home.textile文件中为其添加相应的目录。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果正在运行的Play应用引入了附带文档的模块，那么访问http://localhost:9000/@documentation就可以查看文档的目录页面。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>Textile是人性化的Web文本生成器，以简洁的方式提供HTML标签功能，使用类似wiki的语法生成HTML格式化的文档内容。
+</p></div>
+<br />
+
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.5_E4_BD_BF_E7_94_A8_E6_A8_A1_E5_9D_97_E5_BA_93">11.1.5 使用模块库<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.5_E4_BD_BF_E7_94_A8_E6_A8_A1_E5_9D_97_E5_BA_93">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play模块库中包含的所有模块均由官方社区提供。一个模块可能会有多个不同版本，所以使用者需要事先阅读文档查看模块的版本变更情况，选择适合自己框架的模块。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以使用<b>play list-modules</b>命令来浏览模块库，以下是使用<b>play list-modules</b>命令的结果：
+</p>
+<div class="prettify">
+<pre>
+gbo-mac:~ guillaume$ play list-modules
+~        _            _ 
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/   
+~
+~ play! 1.2, http://www.playframework.org
+~
+~ You can also browse this list online at http://www.playframework.org/modules
+~
+~ [bespin]
+~   Bespin online editor
+~   http://www.playframework.org/modules/bespin
+~   Versions: 1.0, 1.0.1
+~
+~ [cobertura]
+~   Cobertura
+~   http://www.playframework.org/modules/cobertura
+~   Versions: 1.0
+...
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play install {module}-{version}</b>是模块安装命令。例如可以使用<b>play install</b>命令安装支持Scala的模块：
+</p>
+<div class="prettify">
+<pre>
+play install scala-head
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按照惯例， 以head标识的模块是不稳定的版本。可以在命令中省略该标识，安装默认版本的模块：
+</p>
+<div class="prettify">
+<pre>
+play install scala
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play install</b>命令默认将模块安装至$PLAY_HOME/modules/目录。可以在该命令中配置--path选项更改模块的安装路径：
+</p>
+<div class="prettify">
+<pre>
+play install gwt --path=my-project
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.6_E6_8F_90_E4_BA_A4_E6_96_B0_E7_9A_84_E6_A8_A1_E5_9D_97_E5_88_B0_E6_A8_A1_E5_9D_97_E5_BA_93">11.1.6 提交新的模块到模块库<a class="hashlink" href="#section-_E6_A8_A1_E5_9D_97_E4_BB_8B_E7_BB_8D-11.1.6_E6_8F_90_E4_BA_A4_E6_96_B0_E7_9A_84_E6_A8_A1_E5_9D_97_E5_88_B0_E6_A8_A1_E5_9D_97_E5_BA_93">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户也可以将自己创建的模块提交给Play官方社区。模块提交者需要有自己的OpenID，并通过Google Group向Play官方发送注册模块的申请。Play社区会根据OpenID验证模块作者，并要求模块作者提供更加详细的模块信息，具体内容如下：
+</p>
+<ul><li>模块的作用。
+</li><li>模块名称，命名必须符合 [a-zA-Z]+ 正则表达式。
+</li><li>模块的简短描述。
+</li><li>模块提交者的项目主页。
+</li><li>模块提交者的OpenID。
+</li><li>提交的模块需要托管在可以存放源代码和反馈Bug的平台。如果提交者不知道有什么好的平台，github，Google Code和Launchpad都是不错的选择。
+</li></ul><br />
+<div class="quote">
+补充：
+<p>Github：Git是分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。GitHub可以托管各种Git库，并提供Web界面。
+</p>
+<p />
+<p>Google Code是一个开源社区，它提供了svn、cvs等多种代码管理方式，用于存放开发人员的工具和API技术资源。而且Google Code不支持私有项目，即所有项目全部开源，任何人都可以获得项目的所有代码。 
+</p>
+<p>Launchpad是Ubuntu母公司Canonical有限公司所资助架设的网站，是一个提供维护、支援或连络Ubuntu开发者的平台。在Launchpad网站上可以进行Ubuntu（或其相关软件）的翻译工作或管理开发专权，也可以利用该网站的回报机制来回报相关软体的Bug，或进一步提供相关建议。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果通过审核，模块作者可以使用<b>play build-module</b>命令发布模块，Play会自动连接到模块库并上传生成的包。更多有关模块的讨论都在Google Group，欢迎大家分享Play开发经验。
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-37) was last changed on <a href="../Diff.jsp-page=模块介绍&r1=37&r2=36.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D&r1=37&r2=36">31-Jul-2012 03:12</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模块介绍.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模块介绍.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="模块介绍-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

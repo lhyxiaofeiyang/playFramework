@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：设置content type
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/mootools.js"></script>
+<script type="text/javascript" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/prettify.js"></script>
+<script type="text/javascript" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E8%AE%BE%E7%BD%AEcontent%20type">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="设置content type">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="%E8%AE%BE%E7%BD%AEcontent%20type_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E8%AE%BE%E7%BD%AEcontent+type" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E8%AE%BE%E7%BD%AEcontent+type" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">设置content type</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','设置content type' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/%E5%BC%80%E5%8F%91%E5%91%A8%E6%9C%9F">开发周期</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E7%B1%BB%E5%A2%9E%E5%BC%BA">类增强</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%932">本章小结2</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E8%B7%AF%E7%94%B1%E4%BC%98%E5%85%88%E7%BA%A7">路由优先级</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%8F%90%E4%BE%9B%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90">提供静态资源</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AEcontent%20type?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E8%AE%BE%E7%BD%AEcontent%20type" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play会根据request.format设定的值，选择指定的
+media类型来响应HTTP请求。该值通过文件扩展名来决定使用何种视图模板进行渲染，并且通过Play框架中的mime-
+types.properties文件进行映射处理(映射关系详见play\framework\src\play\libs\mime-
+types.properties文件)，为media类型设定Content-type响应。
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play请求的默认格式为html，因此index()控制器方法默认的渲染模板文件为index.html。如果需要指定其他的格式，有以下四种方式：
+</p>
+<p><br>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）可以在程序代码调用render()方法之前进行格式设置。比如将media类型设置为text/css，就可以使用CSS文件进行渲染：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> index</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; request</span><span class="pun">.</span><span class="pln">format </span><span class="pun">=</span><span class="pln"> </span><span class="str">"css"</span><span class="pun">;</span><span class="pln"> <br>&nbsp; &nbsp; render</span><span class="pun">();</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p><br>
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（2）推荐一种更直接的做法，直接在routes文件中使用URL来指定格式。以下列路由配置为例：首先客户端通过index.xml请求服务器，服务器端将响应格式设置为xml，最后使用index.xml模版进行渲染。
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">GET &nbsp; </span><span class="pun">/</span><span class="pln">index</span><span class="pun">.</span><span class="pln">xml &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="typ">Application</span><span class="pun">.</span><span class="pln">index</span><span class="pun">(</span><span class="pln">format</span><span class="pun">:</span><span class="str">'xml'</span><span class="pun">)</span></pre>
+</div>
+<p>
+</p><p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同样地，我们也可以使用CSS进行渲染：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">GET &nbsp; </span><span class="pun">/</span><span class="pln">stylesheets</span><span class="pun">/</span><span class="pln">dynamic_css &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;css</span><span class="pun">.</span><span class="typ">SiteCSS</span><span class="pun">(</span><span class="pln">format</span><span class="pun">:</span><span class="str">'css'</span><span class="pun">)</span></pre>
+</div>
+<p><br>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（3）Play还可以直接从URL中获取请求格式，动态指定渲染的模板类型。参考如下路由配置：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">GET &nbsp; </span><span class="pun">/</span><span class="pln">index</span><span class="pun">.{</span><span class="pln">format</span><span class="pun">}</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="typ">Application</span><span class="pun">.</span><span class="pln">index</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当请求为/index.xml时，服务器会将返回格式设置为xml并使用相应的XMl文件进行渲染；请求为/index.txt时，则会使用文本进行渲染。
+</p>
+<p><br>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（4）使用Play中的HTTP内容协商进行格式设置，详见下节内容。
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 25）最后由 丁海亮 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E8%AE%BE%E7%BD%AEcontent%20type&amp;r1=25&amp;r2=24">07-Apr-2012 10:36</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E8%AE%BE%E7%BD%AEcontent+type" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E8%AE%BE%E7%BD%AEcontent+type" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="%E8%AE%BE%E7%BD%AEcontent%20type_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E8%AE%BE%E7%BD%AEcontent%20type_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E8%AE%BE%E7%BD%AEcontent%20type_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E8%AE%BE%E7%BD%AEcontent%20type_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="%E8%AE%BE%E7%BD%AEcontent%20type_files/stat.php" type="text/javascript"></script><script src="%E8%AE%BE%E7%BD%AEcontent%20type_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>

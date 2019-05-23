@@ -1,0 +1,719 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: Google App Engine
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=Google%20App%20Engine' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='Google App Engine' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=Google+App+Engine.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=Google+App+Engine" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=Google+App+Engine.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=Google+App+Engine"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">Google App Engine</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'Google App Engine' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="安全向导.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E5%85%A8%E5%90%91%E5%AF%BC">安全向导</a>, <a class="wikipage" href="依赖管理.htm" tppabs="http://www.playframework.cn/wiki/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86">依赖管理</a>, <a class="wikipage" href="本章小结10.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9310">本章小结10</a>, <a class="wikipage" href="模块介绍.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D">模块介绍</a>, <a class="wikipage" href="CRUD模块.htm" tppabs="http://www.playframework.cn/wiki/CRUD%E6%A8%A1%E5%9D%97">CRUD模块</a>, <a class="wikipage" href="Mongo模块.htm" tppabs="http://www.playframework.cn/wiki/Mongo%E6%A8%A1%E5%9D%97">Mongo模块</a>, <a class="wikipage" href="Secure模块.htm" tppabs="http://www.playframework.cn/wiki/Secure%E6%A8%A1%E5%9D%97">Secure模块</a>, <a class="wikipage" href="Search模块.htm" tppabs="http://www.playframework.cn/wiki/Search%E6%A8%A1%E5%9D%97">Search模块</a>, <a class="wikipage" href="Spring支持.htm" tppabs="http://www.playframework.cn/wiki/Spring%E6%94%AF%E6%8C%81">Spring支持</a>, <a class="wikipage" href="CSS扩展.htm" tppabs="http://www.playframework.cn/wiki/CSS%E6%89%A9%E5%B1%95">CSS扩展</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=Google App Engine.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=Google%20App%20Engine" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GAE</b>模块为应用提供了Google App Engine支持，它不仅在Play基础服务中封装了常用的GAE模块功能（比如Logging，Mail，Cache等），还包括其他Google特有服务（User services，Database等）。此外，该模块直接在Play开发服务中搭建了<b>GAE</b>开发环境，因此无需切换成Google App Engine SDK环境就可以进行开发（当然安装Google App Engine SDK肯定没有问题）。Play所支持的标准有：
+</p><ul><li>应用层次完全标准化。
+</li><li>按照预期工作的自动重载。
+</li><li>当模块开启后，Logging会正确指派给java.util.logging。
+</li><li>Tmp文件夹被禁用，因为在GAE中不能向文件系统中进行写操作。
+</li><li>完全支持对数据库的直接访问。
+</li><li>提供JPA的支持，但仍然受到GAE JPA的限制。
+</li><li>Cache被相应封装成GAE Memcached的实例。
+</li><li>Mail被相应封装成GAE mail服务。
+</li><li>仍然可以将应用分成多个模块。
+</li><li>在开发服务器上可以通过模拟登陆页面来访问用户服务
+</li><li>应用在GAE产品环境中运行时必须使用PROD模式。
+</li></ul><p><br />
+<h3 id="section-Google+App+Engine-11.9.1_E9_85_8D_E7_BD_AEGAE_E6_A8_A1_E5_9D_97">11.9.1 配置GAE模块<a class="hashlink" href="#section-Google+App+Engine-11.9.1_E9_85_8D_E7_BD_AEGAE_E6_A8_A1_E5_9D_97">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，使用常规的方式创建一个新的应用：
+</p>
+<div class="prettify">
+<pre>
+play new test-gae
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用<b>play install</b>命令安装<b>GAE</b>模块：
+<div class="prettify">
+<pre>
+play install gae
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在conf/application.conf文件中进行如下配置，引入<b>GAE</b>模块： 
+<div class="prettify">
+<pre>
+# Additional modules
+# ~~~~~
+# A module is another play! application. Add a line for each module you want
+# to add to your application. Module paths are either absolutes or relative to
+# the application root.
+#
+module.gae=${play.path}/modules/gae
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运行应用，Play会开启GAE开发环境：
+</p>
+<div class="prettify">
+<pre>
+# play run test-gae
+ 
+~        _            _ 
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/   
+~
+~ play! 1.0-stable5-localbuild, http://www.playframework.org
+~
+~ Ctrl+C to stop
+~ 
+11:37:02,228 INFO  ~ Starting /Volumes/Data/Desktop/test-gae
+11:37:02,240 INFO  ~ Module gae is available (/Volumes/Data/Desktop/play/modules/gae)
+11:37:02,350 WARN  ~ 
+11:37:02,351 WARN  ~ Google App Engine module
+11:37:02,351 WARN  ~ ~~~~~~~~~~~~~~~~~~~~~~~
+11:37:02,351 WARN  ~ No Google App Engine environment found. Setting up a development environment
+11:37:02,379 WARN  ~ Don't forget to define your GAE application id in the 'war/WEB-INF/appengine-web.xml' file
+11:37:02,379 WARN  ~ 
+11:37:02,380 WARN  ~ You're running play in DEV mode
+11:37:02,381 INFO  ~ Application 'Test of GAE' is ready !
+11:37:02,529 INFO  ~ Listening for HTTP on port 9000 ...
+11:37:02,529 INFO  ~
+
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后在应用的war/WEB-INF目录下创建了一个空白的appengine-web.xml文件，不要忘记配置正确的GAE应用ID以便能够运行GAE SDK。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>war目录的内容会在<b>war</b>输出命令时自动合并，这并不仅限于GAE模块。
+</p></div>
+
+<p><br />
+<h3 id="section-Google+App+Engine-11.9.2_E5_85_B3_E4_BA_8EJPA">11.9.2 关于JPA<a class="hashlink" href="#section-Google+App+Engine-11.9.2_E5_85_B3_E4_BA_8EJPA">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play通过JPASupport/Model类提供了非常棒的JPA抽象，但是在GAE中使用这些类的时候会出现很多问题，因为GAE中的JPA支持与Hibenate(搭配关系数据库)存在很大的不同。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;吸引开发者在Google App Engine中使用JPA有两个原因：
+</p>
+<ol><li>能够更加方便地将应用程序移植到GAE上，或是在将来从GAE移植到其他平台。
+</li><li>开发者对JPA API已经运用得非常熟练，直接使用JPA可以节约学习其他持久化技术的成本。
+</li></ol><p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是这两个原因并没有体现其应有的价值。由于GAE中JPA支持的差异性，无法直接使用。它只适用于没有关联而且单一的实体，即使实体只包含简单的关系，也必须依赖特定的Google类。这正是不提倡在Google App Engine中使用JPA的原因，如果实在需要使用JPA，那么应该尽量避免使用JPASupport/Model辅助类，而仅依赖Google提供的简单JPA示例。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供了替代的持久化管理模块<b>Siena</b>，它具有更好的兼容性，而且应用代码甚至比使用JPA更简单。
+</p>
+<p><br />
+<h3 id="section-Google+App+Engine-11.9.3_E7_A4_BA_E4_BE_8B_E5_BA_94_E7_94_A8">11.9.3 示例应用<a class="hashlink" href="#section-Google+App+Engine-11.9.3_E7_A4_BA_E4_BE_8B_E5_BA_94_E7_94_A8">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可以查看samples-and-tests/lists-with-gae项目作为实际的Google App Engine应用示例。
+</p>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>通过http://play-lists.appspot.com可以在线访问该应用。
+</p></div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-14) was last changed on <a href="../Diff.jsp-page=Google App Engine&r1=14&r2=13.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=Google%20App%20Engine&r1=14&r2=13">31-Jul-2012 02:53</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=Google+App+Engine.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=Google+App+Engine" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=Google+App+Engine.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=Google+App+Engine"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="Google App Engine-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/Google%20App%20Engine?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

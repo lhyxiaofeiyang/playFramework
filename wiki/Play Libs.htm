@@ -1,0 +1,692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：Play Libs
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="Play%20Libs_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="Play%20Libs_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="Play%20Libs_files/mootools.js"></script>
+<script type="text/javascript" src="Play%20Libs_files/prettify.js"></script>
+<script type="text/javascript" src="Play%20Libs_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="Play%20Libs_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=Play%20Libs">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="Play Libs">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="Play%20Libs_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="Play%20Libs_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=Play+Libs" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=Play+Libs" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">Play Libs</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','Play Libs' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">PlayFramework Tutorial</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Bespin%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8">Bespin在线编辑器</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%92%8C%E5%8F%91%E5%B8%83%E8%AF%84%E8%AE%BA">显示文章和发布评论</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96%E5%87%86%E5%A4%87">产品化准备</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96">国际化和本地化</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/Play%20Libs?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=Play%20Libs" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="section-Play+Libs-_E7_B1_BB_E5_BA_93_E6_80_BB_E8_A7_88">类库总览<a class="hashlink" href="#section-Play+Libs-_E7_B1_BB_E5_BA_93_E6_80_BB_E8_A7_88">#</a></h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs包中包含了很多实用的类库，这些类库满足了基本的开发需求，其中大部分类库都是非常简单实用的辅助类，可以直接使用：
+<ul><li>Codec：编码和解码数据的工具类。
+</li><li>Crypto：加密类。
+</li><li>Expression：动态表达式。
+</li><li>F：Java函数式编程。
+</li><li>Files：文件系统处理类。
+</li><li>I18N：国际化类。
+</li><li>IO：流处理类。
+</li><li>Images：图形处理工具。
+</li><li>Mail：提供E-mail邮件功能。
+</li><li>Mime Types：处理MIME类型。
+</li><li>OAuth：OAuth客户协议。
+</li><li>OAuth2：OAuth2客户协议。
+</li><li>Time：时间工具类。
+</li><li>WS：强大的Web service工具类。
+</li><li>XML：加载XML结构。
+</li><li>XPath：XML解析。
+</li></ul><hr>
+<h4 id="section-Play+Libs-_E4_BD_BF_E7_94_A8XPath_E8_A7_A3_E6_9E_90XML">使用XPath解析XML<a class="hashlink" href="#section-Play+Libs-_E4_BD_BF_E7_94_A8XPath_E8_A7_A3_E6_9E_90XML">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs.XPath为解析XML文档提供了很好的支持。无
+需使用任何代码生成工具，XPath就能轻松处理XML文档，完成解析工作。下例为XPath对org.w3.dom.Node类型进行操作的示例：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">org</span><span class="pun">.</span><span class="pln">w3</span><span class="pun">.</span><span class="pln">dom</span><span class="pun">.</span><span class="typ">Document</span><span class="pln"> xmlDoc </span><span class="pun">=</span><span class="pln"> </span><span class="pun">…</span><span class="pln"> </span><span class="com">// 获得XML文档</span><span class="pln"><br>&nbsp; <br></span><span class="kwd">for</span><span class="pun">(</span><span class="typ">Node</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">:</span><span class="pln"> </span><span class="typ">XPath</span><span class="pun">.</span><span class="pln">selectNodes</span><span class="pun">(</span><span class="str">"events//event"</span><span class="pun">,</span><span class="pln"> xmlDoc</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; <br>&nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> name </span><span class="pun">=</span><span class="pln"> </span><span class="typ">XPath</span><span class="pun">.</span><span class="pln">selectText</span><span class="pun">(</span><span class="str">"name"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> data </span><span class="pun">=</span><span class="pln"> </span><span class="typ">XPath</span><span class="pun">.</span><span class="pln">selectText</span><span class="pun">(</span><span class="str">"@date"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; <br>&nbsp; &nbsp; </span><span class="kwd">for</span><span class="pun">(</span><span class="typ">Node</span><span class="pln"> place</span><span class="pun">:</span><span class="pln"> </span><span class="typ">XPath</span><span class="pun">.</span><span class="pln">selectNodes</span><span class="pun">(</span><span class="str">"//place"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> place </span><span class="pun">=</span><span class="pln"> </span><span class="typ">XPath</span><span class="pun">.</span><span class="pln">selectText</span><span class="pun">(</span><span class="str">"@city"</span><span class="pun">,</span><span class="pln"> place</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">…</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; <br>&nbsp; &nbsp; </span><span class="pun">…</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<hr>
+<h4 id="section-Play+Libs-WebService_E5_AE_A2_E6_88_B7_E7_AB_AF">Web service 客户端<a class="hashlink" href="#section-Play+Libs-WebService_E5_AE_A2_E6_88_B7_E7_AB_AF">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs.WS提供了强大的HTTP客户端，底层实现采用了异步HTTP客户端。以下为使用play.libs.WS进行GET方法请求的示例：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">HttpResponse</span><span class="pln"> res </span><span class="pun">=</span><span class="pln"> WS</span><span class="pun">.</span><span class="pln">url</span><span class="pun">(</span><span class="str">"http://www.google.com"</span><span class="pun">).</span><span class="pln">get</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用和操作时，一旦获得了HttpResponse对象，就可以从该对象中获取所有的response属性：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">int</span><span class="pln"> status </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getStatus</span><span class="pun">();</span><span class="pln"><br></span><span class="typ">String</span><span class="pln"> type </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getContentType</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然，我们也可以按照不同的内容，使用相应的格式来匹配数据：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">String</span><span class="pln"> content </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getString</span><span class="pun">();</span><span class="pln"><br></span><span class="typ">Document</span><span class="pln"> xml </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getXml</span><span class="pun">();</span><span class="pln"><br></span><span class="typ">JsonElement</span><span class="pln"> json </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getJson</span><span class="pun">();</span><span class="pln"><br></span><span class="typ">InputStream</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">getStream</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当使用async API以非阻塞的方式来处理HTTP请求时，我们通常使用Promise&lt;HttpResponse&gt;类型来维护数据：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Promise</span><span class="pun">&lt;</span><span class="typ">HttpResponse</span><span class="pun">&gt;</span><span class="pln"> futureResponse </span><span class="pun">=</span><span class="pln"> WS</span><span class="pun">.</span><span class="pln">url</span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="str">"http://www.google.com"</span><span class="pln"><br></span><span class="pun">).</span><span class="pln">getAsync</span><span class="pun">();</span></pre>
+</div>
+<hr>
+<h4 id="section-Play+Libs-Java_E5_87_BD_E6_95_B0_E5_BC_8F_E7_BC_96_E7_A8_8B">Java函数式编程<a class="hashlink" href="#section-Play+Libs-Java_E5_87_BD_E6_95_B0_E5_BC_8F_E7_BC_96_E7_A8_8B">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs.F类库的设计受到函数式编程的启发，提供了很多实用的结构，我们可以通过这些结构去处理复杂并且抽象的用例。以下几个场景建议使用函数式编程方法：
+</p>
+<ul><li>Option&lt;T&gt; (T是可选的)。
+</li><li>Either&lt;A,B&gt; (包含A或B)。
+</li><li>Tuple&lt;A,B&gt; (包含A和B)。
+</li></ul><hr>
+<h4 id="section-Play+Libs-Promise">Promise<a class="hashlink" href="#section-Play+Libs-Promise">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Promise是Play自定义的Future类型。事实上，Promise&lt;T&gt;就等价于Future&lt;T&gt;，因此我们可以像标准的Future一样来使用它。但是Promise包含了一个非常有用的属性：它具有使用onRedeem(…)注册回调函数的功能，这个方法会在promised value可用后调用。在Play中Promise被广泛用来代替Future（Jobs,WS.async等等），以下为Promise能够结合的各种方式：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Promise</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Promise</span><span class="pun">.</span><span class="pln">waitAll</span><span class="pun">(</span><span class="pln">p1</span><span class="pun">,</span><span class="pln"> p2</span><span class="pun">,</span><span class="pln"> p3</span><span class="pun">)</span><span class="pln"><br></span><span class="typ">Promise</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Promise</span><span class="pun">.</span><span class="pln">waitAny</span><span class="pun">(</span><span class="pln">p1</span><span class="pun">,</span><span class="pln"> p2</span><span class="pun">,</span><span class="pln"> p3</span><span class="pun">)</span><span class="pln"><br></span><span class="typ">Promise</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Promise</span><span class="pun">.</span><span class="pln">waitEither</span><span class="pun">(</span><span class="pln">p1</span><span class="pun">,</span><span class="pln"> p2</span><span class="pun">,</span><span class="pln"> p3</span><span class="pun">)</span></pre>
+</div>
+<hr>
+<h4 id="section-Play+Libs-_E6_A8_A1_E5_BC_8F_E5_8C_B9_E9_85_8D">模式匹配<a class="hashlink" href="#section-Play+Libs-_E6_A8_A1_E5_BC_8F_E5_8C_B9_E9_85_8D">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在平常的Java开发中，我们经常需要使用到模式匹配。但是非常不幸，Java自身并没有内置的模式匹配功能，并且因为缺乏方法结构，很难将它组织成类库使用。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供了一种很好的解决方案，即使用最新的for循环语法实现基本的Java模式匹配功能。在进行模式匹配时，需要先检查对象是否满足条件，是否能提取有用的内容。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模式匹配类库是play.libs.F类库的一部分。接下来将会演示一个简单的实例：我们有一个对象类型的引用并且想要检查这个对象是否为以“command:”开头的字符串。如果我们采用标准的做法应该是：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Object</span><span class="pln"> o </span><span class="pun">=</span><span class="pln"> anything</span><span class="pun">();</span><span class="pln"><br>&nbsp;<br></span><span class="kwd">if</span><span class="pun">(</span><span class="pln">o </span><span class="kwd">instanceof</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">((</span><span class="typ">String</span><span class="pun">)</span><span class="pln">o</span><span class="pun">).</span><span class="pln">startsWith</span><span class="pun">(</span><span class="str">"command:"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">String</span><span class="pun">)</span><span class="pln">o</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">toUpperCase</span><span class="pun">());</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以看到，使用标准的方式不仅语法晦涩，而且容易出错。如果使用Play的模式匹配功能，我们可以这样写：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">for</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> s</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="kwd">and</span><span class="pun">(</span><span class="typ">StartsWith</span><span class="pun">(</span><span class="str">"command:"</span><span class="pun">)).</span><span class="pln">match</span><span class="pun">(</span><span class="pln">o</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">toUpperCase</span><span class="pun">());</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只有当条件满足时for循环才会执行，并且不需要进行强制转换就可以自动提取字符串的值。由于操作中不存在隐式转换，所以是类型安全的，可以通过编译器的检查。
+</p>
+<hr>
+<h4 id="section-Play+Libs-OAuth">OAuth<a class="hashlink" href="#section-Play+Libs-OAuth">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OAuth是用于安全验证的开放式协议，符合标准并且使用方法简单，可以应用到桌面和Web应用程序当中。OAuth的授权不会使第三方触及到用户的帐号信息（如用户名与密码），即第三方无需使用用户名与密码就可以申请获得该用户资源的授权，因此OAuth是安全的。目前已经存在的OAuth版本有两种：OAuth1.0和OAuth2.0。Play为这两种规范都提供了类库，可以满足客户端以及服务端的需求。OAuth的通用处理方式如下，Play框架为其中大部分处理提供了实现：
+</p>
+<ul><li>将用户重定向至提供商的验证页面。
+</li><li>当用户授权验证之后，重新定向到服务器，并且带有没有验证的令牌。
+</li><li>服务器使用指定给当前用户的连接令牌来交换没有验证的令牌，服务器会保存令牌以便执行相应的请求。这一步是在服务器之间进行数据验证与传输。
+</li></ul><p>
+</p><hr>
+<h4 id="section-Play+Libs-OAuth1.0">OAuth 1.0<a class="hashlink" href="#section-Play+Libs-OAuth1.0">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs.OAuth类的实现基于oauth-signpost，为用户提供了OAuth1.0功能的实现。Twitter和google等服务商都在使用OAuth1.0。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了连接到服务器，我们需要使用下面的信息来创建一个OAuth.ServiceInfo实例，这些信息需要从服务提供商那里获取：
+</p>
+<ul><li>Request token URL。
+</li><li>Access token URL。
+</li><li>Authorize URL。
+</li><li>Consumer key。
+</li><li>Consumer secret。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;连接令牌的获取方法如下：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> authenticate</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// TWITTER is a OAuth.ServiceInfo object</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// getUser() is a method returning the current user </span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">OAuth</span><span class="pun">.</span><span class="pln">isVerifierResponse</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// We got the verifier; </span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// now get the access tokens using the request tokens</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">OAuth</span><span class="pun">.</span><span class="typ">Response</span><span class="pln"> resp </span><span class="pun">=</span><span class="pln"> </span><span class="typ">OAuth</span><span class="pun">.</span><span class="pln">service</span><span class="pun">(</span><span class="pln">TWITTER</span><span class="pun">).</span><span class="pln">retrieveAccessToken</span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; getUser</span><span class="pun">().</span><span class="pln">token</span><span class="pun">,</span><span class="pln"> getUser</span><span class="pun">().</span><span class="pln">secret<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// let's store them and go back to index</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; getUser</span><span class="pun">().</span><span class="pln">token </span><span class="pun">=</span><span class="pln"> resp</span><span class="pun">.</span><span class="pln">token</span><span class="pun">;</span><span class="pln"> getUser</span><span class="pun">().</span><span class="pln">secret </span><span class="pun">=</span><span class="pln"> resp</span><span class="pun">.</span><span class="pln">secret</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; getUser</span><span class="pun">().</span><span class="pln">save</span><span class="pun">()</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; index</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">OAuth</span><span class="pln"> twitt </span><span class="pun">=</span><span class="pln"> </span><span class="typ">OAuth</span><span class="pun">.</span><span class="pln">service</span><span class="pun">(</span><span class="pln">TWITTER</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Response</span><span class="pln"> resp </span><span class="pun">=</span><span class="pln"> twitt</span><span class="pun">.</span><span class="pln">retrieveRequestToken</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// We received the unauthorized tokens </span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// we need to store them before continuing</span><span class="pln"><br>&nbsp; &nbsp; getUser</span><span class="pun">().</span><span class="pln">token </span><span class="pun">=</span><span class="pln"> resp</span><span class="pun">.</span><span class="pln">token</span><span class="pun">;</span><span class="pln"> getUser</span><span class="pun">().</span><span class="pln">secret </span><span class="pun">=</span><span class="pln"> resp</span><span class="pun">.</span><span class="pln">secret</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; getUser</span><span class="pun">().</span><span class="pln">save</span><span class="pun">()</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// Redirect the user to the authorization page</span><span class="pln"><br>&nbsp; &nbsp; redirect</span><span class="pun">(</span><span class="pln">twitt</span><span class="pun">.</span><span class="pln">redirectUrl</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">.</span><span class="pln">token</span><span class="pun">));</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后就可以使用令牌对请求进行签名，并调用服务器提供的方法：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">mentions </span><span class="pun">=</span><span class="pln"> WS</span><span class="pun">.</span><span class="pln">url</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">oauth</span><span class="pun">(</span><span class="pln">TWITTER</span><span class="pun">,</span><span class="pln"> getUser</span><span class="pun">().</span><span class="pln">getTokenPair</span><span class="pun">()).</span><span class="pln">get</span><span class="pun">().</span><span class="pln">getString</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详细的例子请参考samples-and-tests/twitter-oauth。
+</p>
+<hr>
+<h4 id="section-Play+Libs-OAuth2.0">OAuth 2.0<a class="hashlink" href="#section-Play+Libs-OAuth2.0">#</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.libs.OAuth2类提供了OAuth2.0的功能实现。OAuth2.0比OAuth1.0更加简单，因为它不存在请求签名，Facebook、37signals等服务商都在使用OAuth2.0。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要连接到服务器，可以使用如下信息创建OAuth2.0实例对象，这些信息同样来源于服务商：
+</p>
+<ul><li>Access token URL。
+</li><li>Authorize URL。
+</li><li>Client ID。
+</li><li>Secret。
+</li></ul><p>
+</p><div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> auth</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// FACEBOOK is a OAuth2 object</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">OAuth2</span><span class="pun">.</span><span class="pln">isCodeResponse</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// authUrl must be the same as the retrieveVerificationCode call</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">OAuth2</span><span class="pun">.</span><span class="typ">Response</span><span class="pln"> response </span><span class="pun">=</span><span class="pln"> FACEBOOK</span><span class="pun">.</span><span class="pln">retrieveAccessToken</span><span class="pun">(</span><span class="pln">authUrl</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// null if an error occurred</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> accessToken </span><span class="pun">=</span><span class="pln"> response</span><span class="pun">.</span><span class="pln">accessToken</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// null if the call was a success</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">OAuth2</span><span class="pun">.</span><span class="typ">Error</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> response</span><span class="pun">.</span><span class="pln">error</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// Save accessToken, you will need it to request the service</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; index</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// authUrl is a String containing an absolute URL where the service </span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// should redirect the user back</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// This will trigger a redirect</span><span class="pln"><br>&nbsp; &nbsp; FACEBOOK</span><span class="pun">.</span><span class="pln">requestVerificationCode</span><span class="pun">(</span><span class="pln">authUrl</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一旦具有了和当前用户关联的连接令牌，我们就可以使用该令牌代表用户对服务器做相关的查询操作。
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">WS</span><span class="pun">.</span><span class="pln">url</span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="str">"https://graph.facebook.com/me?access_token=%s"</span><span class="pun">,</span><span class="pln"> access_token<br></span><span class="pun">).</span><span class="pln">get</span><span class="pun">().</span><span class="pln">getJson</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详细的例子参考amples-and-tests/facebook-oauth2。
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 11）最后由 郑舒天 在 <a href="http://www.playframework.cn/Diff.jsp?page=Play%20Libs&amp;r1=11&amp;r2=10">02-Mar-2012 06:09</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=Play+Libs" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=Play+Libs" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="Play%20Libs_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="Play%20Libs_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="Play%20Libs_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="Play%20Libs_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="Play%20Libs_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="Play%20Libs_files/stat.php" type="text/javascript"></script><script src="Play%20Libs_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>

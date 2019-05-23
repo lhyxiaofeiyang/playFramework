@@ -1,0 +1,918 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 配置Log
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E9%85%8D%E7%BD%AELog' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='配置Log' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=配置Log.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%85%8D%E7%BD%AELog" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=配置Log.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%85%8D%E7%BD%AELog"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">配置Log</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'配置Log' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="测试.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95">测试</a>, <a class="wikipage" href="编写测试.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">编写测试</a>, <a class="wikipage" href="Fixures.htm" tppabs="http://www.playframework.cn/wiki/Fixures">Fixures</a>, <a class="wikipage" href="运行测试.htm" tppabs="http://www.playframework.cn/wiki/%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95">运行测试</a>, <a class="wikipage" href="集成测试.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95">集成测试</a>, <a class="wikipage" href="本章小结9.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%939">本章小结9</a>, <a class="wikipage" href="文件上传.htm" tppabs="http://www.playframework.cn/wiki/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">文件上传</a>, <a class="wikipage" href="JPA支持.htm" tppabs="http://www.playframework.cn/wiki/JPA%E6%94%AF%E6%8C%81">JPA支持</a>, <a class="wikipage" href="HTTP数据验证.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81">HTTP数据验证</a>, <a class="wikipage" href="验证码.htm" tppabs="http://www.playframework.cn/wiki/%E9%AA%8C%E8%AF%81%E7%A0%81">验证码</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=配置Log.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E9%85%8D%E7%BD%AELog" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play内置的日志记录器是在Log4j之上的封装。Log4j的配置之简单使它遍及于越来越多的项目中，在开发中使用Log4j的好处主要可以归纳为以下几个方面：
+ 
+</p><ul><li>通过修改配置文件，就可以决定日志信息的目的地————控制台、文件、GUI组件、甚至是套接口服务器、NT的事件记录器、UNIX Syslog守护进程等 。
+</li><li>通过修改配置文件，定义每一条日志信息的级别，控制日志的输出。我们可以在系统开发阶段打印详细的日志信息以便跟踪系统运行情况，当系统稳定后关闭日志输出，在能跟踪系统运行情况的同时，减少了垃圾代码（由System.out.println打印的信息)的产生。 
+</li><li>整个系统采用统一的日志机制，有利于系统的规划。 
+</li></ul><p><br />
+</p>
+<div class="quote">
+补充：
+<p>Log4j是Apache的一个开放源代码项目。
+</p></div>
+
+<p><br />
+<h3 id="section-_E9_85_8D_E7_BD_AELog-10.5.1_E7_A8_8B_E5_BA_8F_E6_97_A5_E5_BF_97">10.5.1 程序日志<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AELog-10.5.1_E7_A8_8B_E5_BA_8F_E6_97_A5_E5_BF_97">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.Logger是Play的默认日志记录器，该日志记录器通过Log4j记录消息和异常。下例为记录简单的程序日志：
+</p>
+<div class="prettify">
+<pre>
+Logger.info(&quot;A log message&quot;);
+Logger.error(ex, &quot;Oops&quot;);
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.Logger类支持标准的Java格式化语法：
+</p>
+<div class="prettify">
+<pre>
+Logger.debug(&quot;The param was %s&quot;, param);
+Logger.info(&quot;I want to log %s and %s and %s&quot;, a, b, c);
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特定需求下，我们仍然可以直接使用Log4j来创建其他记录器：
+</p>
+<div class="prettify">
+<pre>
+org.apache.log4j.Logger.getLogger(&quot;another.logger&quot;);
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E9_85_8D_E7_BD_AELog-10.5.2_E6_97_A5_E5_BF_97_E7_BA_A7_E5_88_AB">10.5.2 日志级别<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AELog-10.5.2_E6_97_A5_E5_BF_97_E7_BA_A7_E5_88_AB">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过修改application.conf配置可以更改play.Logger的日志记录级别：
+</p>
+<div class="prettify">
+<pre>
+application.log=INFO
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>修改此值无需重新启动服务器就可生效。此日志级别配置只针对应用程序产生的消息有效。
+</p></div>
+<br />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者需要充分配置Log4j，我们可以在conf/目录下创建log4j.properties文件。由于conf目录是在classpath路径配置中的第一个元素，所以这个配置文件将会被所有库使用。标准Log4j配置如下：
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=ERROR, Console
+ 
+log4j.logger.play=INFO
+ 
+# Console
+log4j.appender.Console=org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout=org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern=%d{ABSOLUTE} %-5p ~ %m%n
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可以参考默认配置并在此基础上根据自己的需求进行修改。
+</p>
+<p><br />
+<h3 id="section-_E9_85_8D_E7_BD_AELog-10.5.3Play_E4_B8_ADLog4j_E9_85_8D_E7_BD_AE_E8_AF_A6_E8_A7_A3">10.5.3 Play中Log4j配置详解<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AELog-10.5.3Play_E4_B8_ADLog4j_E9_85_8D_E7_BD_AE_E8_AF_A6_E8_A7_A3">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log4j支持两种配置文件，properties文件(log4j.properties)，以及XML文件(log4j.xml)，本书以log4j.properties配置文件为例进行讲解。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log4j包含三个重要的组件，分别为Logger，Appender以及Layout。Logger被称作日志记录器，用于记录日志的类别；Appender可以被理解为输出源，即日志所输出的位置；Layout是日志布局，体现为日志以何种形式输出。
+</p>
+<p><br />
+<b>Logger</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logger(日志记录器)是日志处理的核心组件，负责处理日志记录的大部分操作。日志级别分为多种，从低到高分为ALL、TRACE、DEBUG、INFO、WARN、ERROR、FATAL、OFF，当然也可以自定义日志级别。标准的日志级别粒度划分如下：
+</p>
+<p><b>Level ALL</b>:所有信息。
+</p>
+<p><b>Level TRACE</b>:级别为细粒度的信息。
+</p>
+<p><b>Level DEBUG</b>: 级别为细粒度的信息，粒度粗于TRACE，该级别打印的信息有助于调试应用程序。
+</p>
+<p><b>Level INFO</b>: 级别为粗粒度的信息，该级别日志主要用于记录程序运行过程的信息。
+</p>
+<p><b>Level WARN</b>:警告信息，预报潜在危险。
+</p>
+<p><b>Level ERROR</b>:错误信息，但应用程序仍可继续运行。
+</p>
+<p><b>Level FATAL</b>:严重错误信息，往往会造成应用程序的退出。
+</p>
+<p><b>Level OFF</b>:不打印任何信息。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log4j建议只使用其中的四个级别，因为这些已经可以满足绝大部分应用的需求，优先级从高到低分别是 ERROR、WARN、INFO、DEBUG。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根Logger配置语法为：
+log4j.rootLogger = [ level ] , [ appenderName],[ appenderName], ...
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体配置写法如下：
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=INFO,Console,DailyRolling
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该配置信息表明记录了INFO级的日志信息，并输出到Console和DailyRolling这两个目的地，其中Console和DailyRolling可以任意起名。这里定义的是INFO级别，只有等于及高于这个级别的信息才进行处理，所以应用程序中所有DEBUG及以下级别的日志信息将不被打印。
+<p><br />
+<b>Appender</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appender(输出源)负责控制日志记录的输出，其语法为：log4j.appender.[ appenderName ] = fully.qualified.name.of.appender.class
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中appenderName在Logger中定义(如Console和DailyRolling)，Log4j提供多种fully.qualified.name.of.appender.class：
+</p>
+<p><b>org.apache.log4j.ConsoleAppender</b>：将日志信息打印到控制台。
+</p>
+<p><b>org.apache.log4j.FileAppender</b>：将日志信息打印到文件中。
+</p>
+<p><b>org.apache.log4j.DailyRollingFileAppender</b>：将日志信息打印到文件中，并每天产生一个文件。
+</p>
+<p><b>org.apache.log4j.RollingFileAppender</b>：将日志信息打印到文件中，文件大小到达指定尺寸时产生一个新文件。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体配置写法如下：
+</p>
+<div class="prettify">
+<pre>
+#将日志信息打印到文件中，并每天产生一个文件
+log4j.appender.DailyRolling=org.apache.log4j.DailyRollingFileAppender          
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appender的不同配置带有相应的操作，其语法为：
+log4j.appender.[ appenderName ].[ option ] = [ value ]。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体配置写法如下：
+</p>
+<div class="prettify">
+<pre>
+#将日志信息文件以.log格式保存在logs/目录下，并以Oopsplay命名。
+log4j.appender.DailyRolling.File = logs/Oopsplay.log                      
+</pre>
+</div>
+<p><br />
+<b>Layout</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout提供了四种日志输出样式，读者可以根据需求格式化日志的输出，其语法为：log4j.appender.[ appenderName ].Layout= fully.qualified.name.of.layout.class。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log4j为Layout提供多种fully.qualified.name.of.appender.class：
+</p>
+<p><b>org.apache.log4j.HTMLLayout</b>：日志信息采用HTML表格形式布局。
+</p>
+<p><b>org.apache.log4j.PatternLayout</b>：日志信息采用灵活的指定布局模式。
+</p>
+<p><b>org.apache.log4j.SimpleLayout</b>：日志中包含信息的级别和信息字符串。
+</p>
+<p><b>org.apache.log4j.TTCCLayout</b>：日志中包含信息产生的时间、线程、类别等信息。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体配置写法如下：
+</p>
+<div class="prettify">
+<pre>
+#将日志信息采用灵活的指定布局模式
+log4j.appender.R.layout=org.apache.log4j.PatternLayout   
+</pre>
+</div>                      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout的格式配置与Java格式化语法类似：
+<p><b>%m</b>:输出代码中指定的消息。
+</p>
+<p><b>%p</b>:输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL。
+</p>
+<p><b>%r</b>:输出自应用启动到输出该log信息耗费的毫秒数。 
+</p>
+<p><b>%c</b>:输出所属的类目，通常就是所在类的全名。 
+</p>
+<p><b>%t</b>:输出产生该日志事件的线程名。 
+</p>
+<p><b>%n</b>:输出一个回车换行符，Windows平台为“\r\n”，Unix平台为“\n”。
+</p>
+<p><b>%l</b>:输出日志事件的发生位置。 
+</p>
+<p><b>%d</b>:输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyyy-MM-dd HH:mm:ss}。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其语法为：log4j.appender.[ appenderName ].Layout.[ option ] = [ value ]
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体配置写法如下：
+</p>
+<div class="prettify">
+<pre>
+log4j.appender.Console.layout.ConversionPattern=%d{ yyyy-MM-dd HH:mm:ss } %-5p %-20c ~ %m%n
+</pre>
+</div>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中%-20c输出日志信息所属的类目，最小宽度为20，如果类名宽度小于20，默认右对齐，加上&quot;-&quot;号则指定为左对齐。
+<p><br />
+<b>配置实例</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将日志输出到控制台:
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=INFO,Console
+ 
+log4j.logger.play=INFO
+
+#输出到控制台
+log4j.appender.Console=org.apache.log4j.ConsoleAppender    
+log4j.appender.Console.Target=System.out
+log4j.appender.Console.layout=org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern= %d{ yyyy-MM-dd HH:mm:ss } %-5p %-20c ~ %m%n
+
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将日志输出到文件(文件大小到达指定尺寸时产生一个新文件):
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=INFO,Rolling
+ 
+log4j.logger.play=INFO
+
+#输出到日志文件(文件大小到达指定尺寸时产生一个新文件)
+log4j.appender.Rolling=org.apache.log4j.RollingFileAppender
+log4j.appender.Rolling.File=logs/Oopaplay.log
+#当日志文件大于1MB时生成新的日志文件，后缀可以是KB, MB 或者是GB
+log4j.appender.Rolling.MaxFileSize=1MB 
+#指定可以产生的滚动文件的最大数   
+log4j.appender.Rolling.MaxBackupIndex=10  
+log4j.appender.Rolling.layout=org.apache.log4j.PatternLayout
+log4j.appender.Rolling.layout.ConversionPattern= %d{ yyyy-MM-dd HH:mm:ss } %-5p %-20c ~ %m%n
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将日志输出到文件(每天产生一个文件):
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=INFO,DailyRolling
+ 
+log4j.logger.play=INFO
+
+#输出到日志文件(每天产生一个文件)
+log4j.appender.DailyRolling = org.apache.log4j.DailyRollingFileAppender
+log4j.appender.DailyRolling.File = logs/Oopaplay.log
+log4j.appender.DailyRolling.layout = org.apache.log4j.PatternLayout
+log4j.appender.DailyRolling.layout.ConversionPattern= %d{ yyyy-MM-dd HH:mm:ss } %-5p %-20c ~ %m%n
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发送Email日志通知:
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=FATAL,MAIL
+ 
+log4j.logger.play=INFO
+
+#发送Email通知
+log4j.appender.MAIL=org.apache.log4j.net.SMTPAppender  
+log4j.appender.MAIL.Threshold=FATAL
+#设置缓存，当日志记录数为5条时，发送邮件。默认为1
+log4j.appender.MAIL.BufferSize=5
+#邮箱登录名，以oopsplay@126.com为例
+log4j.appender.MAIL.SMTPUsername=oopsplay
+#邮箱登录密码，密码为“123”
+log4j.appender.MAIL.SMTPPassword= 123
+#以网易126邮箱服务器为例
+log4j.appender.MAIL.SMTPHost=smtp.126.com
+#邮件主题
+log4j.appender.MAIL.Subject=FATAL LOG
+#邮箱名
+log4j.appender.MAIL.From=oopsplay@126.com
+#目的邮箱，多个邮箱可用逗号分隔
+log4j.appender.MAIL.To=dhl@oopsplay.org,zst@oopsplay.org
+log4j.appender.MAIL.layout=org.apache.log4j.PatternLayout
+log4j.appender.MAIL.layout.ConversionPattern= %d{ yyyy-MM-dd HH:mm:ss } %-5p %-20c ~ %m%n
+</pre>
+</div>
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将日志记录到数据库中:
+</p>
+<div class="prettify">
+<pre>
+log4j.rootLogger=ERROR,DATEBASE
+ 
+log4j.logger.play=INFO
+
+#将日志记录数据库(以mysq数据库为例，数据库名为log，数据表名为ERROR_LOG，字段名为message)
+log4j.appender.DATABASE=org.apache.log4j.jdbc.JDBCAppender
+log4j.appender.DATABASE.Threshold=ERROR
+log4j.appender.DATABASE.URL=jdbc:mysql://localhost:3306/log
+log4j.appender.DATABASE.driver=com.mysql.jdbc.Driver
+log4j.appender.DATABASE.user=root
+log4j.appender.DATABASE.password=root
+log4j.appender.DATABASE.sql=INSERT INTO ERROR_LOG (message) VALUES (&quot;[Oopsplay]%d{yyyy-MM-dd HH:mm:ss} %t %p- %m%n&quot;)
+log4j.appender.DATABASE.layout=org.apache.log4j.PatternLayout
+log4j.appender.DATABASE.layout.ConversionPattern=[Oopsplay]%d{yyyy-MM-dd HH:mm:ss} %t %p- %m%n
+</pre>
+</div> 
+<p />
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-16) was last changed on <a href="../Diff.jsp-page=配置Log&r1=16&r2=15.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E9%85%8D%E7%BD%AELog&r1=16&r2=15">03-Sep-2013 03:44</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=配置Log.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%85%8D%E7%BD%AELog" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=配置Log.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%85%8D%E7%BD%AELog"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="配置Log-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AELog?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

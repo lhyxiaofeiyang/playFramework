@@ -1,0 +1,1776 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 配置参数
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='配置参数' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=配置参数.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=配置参数.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">配置参数</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'配置参数' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="设置图形验证码.htm" tppabs="http://www.playframework.cn/wiki/%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81">设置图形验证码</a>, <a class="wikipage" href="添加标签功能.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD">添加标签功能</a>, <a class="wikipage" href="使用CRUD进行管理.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8CRUD%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86">使用CRUD进行管理</a>, <a class="wikipage" href="添加授权认证.htm" tppabs="http://www.playframework.cn/wiki/%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83%E8%AE%A4%E8%AF%81">添加授权认证</a>, <a class="wikipage" href="创建自定义编辑区.htm" tppabs="http://www.playframework.cn/wiki/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%BE%91%E5%8C%BA">创建自定义编辑区</a>, <a class="wikipage" href="测试工作.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95%E5%B7%A5%E4%BD%9C">测试工作</a>, <a class="wikipage" href="产品化准备.htm" tppabs="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96%E5%87%86%E5%A4%87">产品化准备</a>, <a class="wikipage" href="国际化和本地化.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96">国际化和本地化</a>, <a class="wikipage" href="本章小结12.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%9312">本章小结12</a>, <a class="wikipage" href="Play Libs.htm" tppabs="http://www.playframework.cn/wiki/Play%20Libs">Play Libs</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=配置参数.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0">配置参数<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在conf/application.conf配置文件中通过设置指定key的值来配置Play应用。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E5_BA_94_E7_94_A8_E9_85_8D_E7_BD_AE">应用配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E5_BA_94_E7_94_A8_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>application.baseUrl</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于逆向解析绝对URL。在模版中使用@@{..}，或是在没有Http.Request进入的Job中使用，比如邮件渲染。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在开发（dev）模式下：
+</p>
+<div class="prettify">
+<pre>
+application.baseUrl=http://localhost:9000/
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在产品（prod）模式下：
+</p>
+<div class="prettify">
+<pre>
+%production%.application.baseUrl=http://www.yourdomain.com/
+</pre>
+</div>
+<hr />
+<p><b>application.defaultCookieDomain</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于实现各子域名之间的session/cookie共享。比如，使cookie在所有以“.example.com”结尾的域名中都有效（foo.example.com或者bar.example.com）：
+</p>
+<div class="prettify">
+<pre>
+application.defaultCookieDomain=.example.com
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下，cookie只对指定的域名有效。
+</p>
+<hr />
+<p><b>application.lang.cookie</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于设置存储当前语言的cookie的名称，通过play.i18n.Lang.change(String locale)设置到该cookie中。如果需要在不同的Play应用之间提供不一样的国际化支持，可以为它们配置不一样的cookie名称。
+</p>
+<div class="prettify">
+<pre>
+application.lang.cookie=MYAPP_LANG
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为PLAY_LANG。
+</p>
+<hr />
+<b>application.langs</b>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于定义额外的本地化文件，在conf/messages.{locale}文件中配置相应的区域语言信息，该值为使用逗号分隔的语言代码，比如：
+</p>
+<div class="prettify">
+<pre>
+application.langs=fr,en,ja
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认没有额外语言支持。
+</p>
+<hr />
+<p><b>application.log</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定应用的日志级别，比如：
+</p>
+<div class="prettify">
+<pre>
+application.log=DEBUG
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为INFO。
+</p>
+<hr />
+<p><b>application.log.path</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Log4J配置文件的路径，实现自定义log输出。如果没有指定路径，Play会在conf目录中查找并加载log4j.properties文件。
+</p>
+<div class="prettify">
+<pre>
+application.log.path=/log4j.properties
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认/log4j.properties优于/log4f.xml。
+</p>
+<hr />
+<p><b>application.log.recordCaller</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于记录和显示调用者的方法，比如：
+</p>
+<div class="prettify">
+<pre>
+application.log.recordCaller=true
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>application.mode</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置应用的模式（大小写不敏感），比如：
+</p>
+<div class="prettify">
+<pre>
+application.mode=prod
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可取的值：
+</p>
+<ul><li>DEV：支持实时重载以及提供其他一些开发帮助。
+</li><li>PROD：预编译并缓存Java源码和模版。
+</li></ul><p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为DEV。
+</p>
+<hr />
+<p><b>application.name</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定应用的名称，通常通过Play new 命令来设置。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>application.secret</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置安全加密功能，通常通过Play new或者Play secret命令来设置。如果应用部署在多个实例中，确保该配置的一致性。比如：
+</p>
+<div class="prettify">
+<pre>
+application.secret=mNuAvlsFVjeuynN4IWZxZzFOHYVagafzjruHmWTL26VISKr46rUtyGcJuX7aYx4q
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果没有设置，play.libs.Crypto.sign不会对数据进行加密，比如不会对session进行加密操作。
+</p>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>application.session.cookie</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置session的cookie名称。默认情况下，cookie是不安全的，只有当应用通过HTTPS提供服务的时候才可将其设置为true。比如：
+</p>
+<div class="prettify">
+<pre>
+application.session.cookie=PLAY
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认session会写到瞬时的PLAY_SESSION cookie中。
+</p>
+<hr />
+<p><b>application.session.httpOnly</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于在cookie中设置HTTP only标志，在一定程度上预防了跨站脚本攻击。比如：
+</p>
+<div class="prettify">
+<pre>
+application.session.httpOnly=true
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>application.session.maxAge</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于定义session的过期时间，例如session cookie最大的保存时间。如果没有设置，那么session会在浏览器关闭后失效。下面的例子将session设置为一个小时：
+</p>
+<div class="prettify">
+<pre>
+application.session.maxAge=1h
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将session保存一个星期：
+</p>
+<div class="prettify">
+<pre>
+application.session.maxAge=7d
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下session基于瞬时cookie，在浏览器关闭后失效。
+</p>
+<hr />
+<p><b>application.session.secure</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于为HTTPS连接提供基于cookie的session，比如：
+</p>
+<div class="prettify">
+<pre>
+application.session.secure=true
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>application.session.sendOnlyIfChanged</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于避免在没有改变session的情况下发送session cookie，比如：
+</p>
+<div class="prettify">
+<pre>
+application.session.sendOnlyIfChanged=true
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>application.web_encoding</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置Play与浏览器以及Web service客户端通信时的文本编码格式。一般情况下不需要显式进行设置，因为Play默认使用的是UTF-8。比如：
+</p>
+<div class="prettify">
+<pre>
+application.web_encoding=ISO-8859-1
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;改变application.web_encoding的值会影响到HTTP头部信息中Content-type的charset部分。而且影响到传递和渲染动态结果时用到的编码，但是对二进制的数据（Play提供的静态资源）不会有任何影响：因此当改变了默认的编码格式后，所有public文件夹下包含特殊字符的静态文件必须确保以改变后的编码格式进行保存，其他的文件则应该以UTF-8的格式保存。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_99_84_E4_BB_B6_E9_85_8D_E7_BD_AE">附件配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_99_84_E4_BB_B6_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>attachments.path</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定play.db.jpa.Blob内容存储的路径。该值可以为绝对路径，或者对应于Play项目文件夹的相对路径。比如:
+</p>
+<div class="prettify">
+<pre>
+attachments.path=data/attachments
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为attachments。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-X509_E8_AF_81_E4_B9_A6_E9_85_8D_E7_BD_AE">X509证书配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-X509_E8_AF_81_E4_B9_A6_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>certificate.key.file</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定为HTTPS传输协议指定X509证书的密钥。文件必须命名为host.key。比如：
+</p>
+<div class="prettify">
+<pre>
+certificate.key.file=/certificates/host.key
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为conf/host.key。
+</p>
+<hr />
+<p><b>certificate.file</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定X509证书文件，文件名必须为host.cert。比如：
+</p>
+<div class="prettify">
+<pre>
+certificate.file=/certificates/host.cert
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为conf/host.cert。
+</p>
+<hr />
+<p><b>certificate.password</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定保护X509密钥文件的密码，比如：
+</p>
+<div class="prettify">
+<pre>
+certificate.password=secret
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为secret。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E8_AE_A1_E5_88_92_E4_BB_BB_E5_8A_A1">计划任务<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E8_AE_A1_E5_88_92_E4_BB_BB_E5_8A_A1">#</a></h4>
+</p>
+<hr />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过以cron.开始的配置key来为计划任务配置cron表达式，在Job中使用@play.jobs.On或者@Every注解来使用该值。比如，@On(cron.noon)参考：
+</p>
+<div class="prettify">
+<pre>
+cron.noon=0 0 12 * * ?
+</pre>
+</div>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E6_A0_BC_E5_BC_8F">数据格式<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E6_A0_BC_E5_BC_8F">#</a></h4>
+</p>
+<hr />
+<p><b>date.format</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于以java.text.SimpleDataFormat的方式来设置默认的日期格式，比如：
+</p>
+<div class="prettify">
+<pre>
+date.format=dd-MM-yyyy
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该值会影响到模版中${data.formate()}对日期的格式化，同时也会将绑定的日期设置为该默认格式。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为yyyy-MM-dd。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除此以外，Play还提供为区域语言指定对应的日期格式，比如：
+</p>
+<div class="prettify">
+<pre>
+date.format.fr=dd-MM-yyyy
+</pre>
+</div>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E5_BA_93_E9_85_8D_E7_BD_AE">数据库配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E5_BA_93_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>db</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Play使用的数据库引擎。使用瞬时的内存数据库（H2）可以快速设置开发型数据库:
+</p>
+<div class="prettify">
+<pre>
+db=mem
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简单的文件存取数据库：
+</p>
+<div class="prettify">
+<pre>
+db=fs
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地的MySQL数据库：
+</p>
+<div class="prettify">
+<pre>
+db=mysql:user:pwd@database_name
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重用应用服务器中已存在的数据源：
+</p>
+<div class="prettify">
+<pre>
+db=java:/comp/env/jdbc/myDatasource@
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果设置了Datasource，那么数据库插件会检查db=java:格式的数据源信息，并使默认的JDBC系统失效。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为none。
+</p>
+<hr />
+<p><b>db.destroyMethod</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定通用的destroy方法名称。在使用现存数据源的情况下，有时候需要在应用停止后关闭数据源。比如：
+</p>
+<div class="prettify">
+<pre>
+db.destroyMethod=close
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为none。
+</p>
+<hr />
+<p><b>db.driver</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定数据库的驱动类，比如：
+</p>
+<div class="prettify">
+<pre>
+db.driver=org.postgresql.Driver
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认值：
+</p>
+<ul><li>当db设置为mem或者fs时，或者db.url以jdbc:h2:mem开始时，默认值为org.h2.Driver。
+</li><li>当db配置为mysql:...时，默认值为com.mysql.jdbc.Driver。
+</li></ul><hr />
+<p><b>db.isolation</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定数据库的事务隔离级别，比如：
+</p>
+<div class="prettify">
+<pre>
+db.isolation=SERIALIZABLE
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合法的值为：NONE，READ_UNCOMMITTED，READ_COMMITTED，REPEATABLE_READ，SERIALIZABLE或者传递给java.sql.Connection.setTransactionIsolation()的一个整型值。注意，并不是所有的数据库都支持这些事务隔离级别。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下依赖数据库，通常为READ_COMMITTED。
+</p>
+<hr />
+<p><b>db.pass</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定数据库连接的密码。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值，当db设置为mem或fs时为空字符串。
+</p>
+<hr />
+<p><b>db.pool.maxIdleTimeExcessConnections</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定空闲的连接超过db.pool.minSize所剔除的秒数。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为0：非强制。
+</p>
+<hr />
+<p><b>db.pool.maxSize</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定连接池允许的最大连接数。比如：
+</p>
+<div class="prettify">
+<pre>
+db.pool.maxSize=60
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为30。
+</p>
+<hr />
+<p><b>db.pool.minSize</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定连接池允许的最小连接数，比如：
+</p>
+<div class="prettify">
+<pre>
+db.pool.minSize=10
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为1。
+</p>
+<hr />
+<p><b>db.pool.timeout</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置以毫秒为单位指定连接池的超时时间，比如：
+</p>
+<div class="prettify">
+<pre>
+db.pool.timeout=10000
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为5000。
+</p>
+<hr />
+<p><b>db.url</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置数据库的JDBC信息，结合db.uesr、db.pass、db.driver使用。比如：
+</p>
+<div class="prettify">
+<pre>
+db.url=jdbc:postgresql:database_name
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>db.user</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定数据库的用户名。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值，当db设置为mem或者fs时默认值为sa。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E5_BA_93_E6_89_A9_E5_85_85">数据库扩充<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_95_B0_E6_8D_AE_E5_BA_93_E6_89_A9_E5_85_85">#</a></h4>
+</p>
+<hr />
+<p><b>evolutions.enabled</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于使数据扩充功能失效。比如：
+</p>
+<div class="prettify">
+<pre>
+evolutions.enabled=false
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为true。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Hibernate">Hibernate<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Hibernate">#</a></h4>
+</p>
+<hr />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定额外的Hibernate属性，比如开启SQL注释：
+</p>
+<div class="prettify">
+<pre>
+hibernate.use_sql_comments=true
+</pre>
+</div>
+<p><b>hibernate.connection.datasource</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于配置Hibernate数据源。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_B5_8B_E8_AF_95_E8_BF_90_E8_A1_8C_E5_99_A8">测试运行器<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_B5_8B_E8_AF_95_E8_BF_90_E8_A1_8C_E5_99_A8">#</a></h4>
+</p>
+<hr />
+<p><b>headlessBrowser</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于在运行play auto-test时，指定HtmlUnit的web浏览器兼容模式。比如：
+</p>
+<div class="prettify">
+<pre>
+headlessBrowser=INTERNET_EXPLORER_7
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>FIREFOX_3
+</li><li>FIREFOX_3_6
+</li><li>INTERNET_EXPLORER_6
+</li><li>INTERNET_EXPLORER_7
+</li><li>INTERNET_EXPLORER_8
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为INTERNET_EXPLORER_8。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_9C_8D_E5_8A_A1_E5_99_A8_E9_85_8D_E7_BD_AE">服务器配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_9C_8D_E5_8A_A1_E5_99_A8_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>http.address</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定HTTP监听的地址，从而限制服务器只对指定的地址进行监听，比如：
+</p>
+<div class="prettify">
+<pre>
+http.address=127.0.0.1
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认服务器监听通配地址。
+</p>
+<hr />
+<p><b>http.cacheControl</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;静态资源由HTTP响应的头部信息控制：设置默认max-age的秒数，页面需要被浏览器缓存的时间等等。在产品模式（Prod）下可以使用http.cacheControl来设置缓存的时间，但是在开发模式（Dev）下不会起任何作用。比如设置为no-cache配置如下:
+</p>
+<div class="prettify">
+<pre>
+http.cacheControl=0
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为3600，即缓存会在一小时后失效。
+</p>
+<hr />
+<p><b>http.exposePlayServer</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定是否将HTTP响应头部信息中的server设置为Play，比如：
+</p>
+<div class="prettify">
+<pre>
+http.exposePlayServer=false
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为true。
+</p>
+<hr />
+<p><b>http.path</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定应用在服务器上的URL路径（适用于应用不是以根域名提供服务的情况）。如果应用以WAR包进行部署也不会受任何影响，因为路径是通过应用服务器来处理的。比如：
+</p>
+<div class="prettify">
+<pre>
+http.path=/myapp/
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为/。
+</p>
+<hr />
+<p><b>http.port</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定HTTP服务器监听的端口，比如：
+</p>
+<div class="prettify">
+<pre>
+http.port=8080
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为9000。
+</p>
+<hr />
+<p><b>http.proxyHost</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Web服务请求的代理服务器，比如：
+</p>
+<div class="prettify">
+<pre>
+http.proxyHost=localhost
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为系统属性。
+</p>
+<hr />
+<p><b>http.proxyPassword</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Web服务请求的代理密码。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为系统属性。
+</p>
+<hr />
+<p><b>http.proxyPort</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Web服务请求的代理端口，比如：
+</p>
+<div class="prettify">
+<pre>
+http.proxyPort=3128
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为系统属性。
+</p>
+<hr />
+<p><b>http.proxyUser</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Web请求服务的代理用户。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为系统属性。
+</p>
+<hr />
+<p><b>http.useETag</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于设置是否自动生成实体标签并在必要的时候发送HTTP的304状态，比如设置为不使用实体标签：
+</p>
+<div class="prettify">
+<pre>
+http.useETag=false
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为true。
+</p>
+<hr />
+<p><b>http.userAgent</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于自定义Web服务请求头部信息中的USER_AGENT，比如：
+</p>
+<div class="prettify">
+<pre>
+http.userAgent=myApp 1.0
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>https.port</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定以HTTPS方式提供服务时，服务器监听的端口，比如：
+</p>
+<div class="prettify">
+<pre>
+https.port=9443
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值，即没有HTTPS配置。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Java_E6_BA_90_E7_A0_81">Java源码<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Java_E6_BA_90_E7_A0_81">#</a></h4>
+</p>
+<hr />
+<p><b>java.source</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Java源码级别，会覆盖系统中的java.version属性，比如：
+</p>
+<div class="prettify">
+<pre>
+java.source=1.6
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：1.5/1.6/1.7。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为1.5。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-JPA">JPA<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-JPA">#</a></h4>
+</p>
+<hr />
+<p><b>jpa.dialect</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于定义JPA的方言，比如：
+</p>
+<div class="prettify">
+<pre>
+jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下Play会根据db.driver的值来推测JPA方言。
+</p>
+<hr />
+<p><b>jpa.ddl</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于定义DDL的生成方式。比如，自动对数据库结构进行更新：
+</p>
+<div class="prettify">
+<pre>
+jpa.ddl=create-drop
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认在开发模式下为update，产品模式下为none。
+</p>
+<hr />
+<p><b>jpa.debugSQL</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定是否开启SQL调试功能（DEBUG级别），比如：
+</p>
+<div class="prettify">
+<pre>
+jpa.debugSQL=true
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>jpa.entities</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定额外加载的JPA实体，实体的名称之间使用逗号分隔。加载model包以外的实体，比如其他独立jar包中的实体：
+</p>
+<div class="prettify">
+<pre>
+org.example.model.Person, org.example.model.Organisation
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>pa.mapping-file</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定JPA的映射文件。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-JVM_E9_85_8D_E7_BD_AE">JVM配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-JVM_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>jpda.port</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定当应用在debug模式下运行时JPDA使用的端口，比如：
+</p>
+<div class="prettify">
+<pre>
+jpda.port=8765
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为8000。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Keystore">keystore<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Keystore">#</a></h4>
+</p>
+<hr />
+<p><b>keystore.algorithm</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定JDK安全API标准算法的名称，结合keystore.file配置使用：
+</p>
+<div class="prettify">
+<pre>
+keystore.algorithm=pkcs12
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>jceks(SunJCE提供)。
+</li><li>jks(SUN提供)。
+</li><li>pkcs12。
+</li></ul><p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为JKS。
+</p>
+<hr />
+<p><b>keystore.file</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定keystore证书（HTTPS的支持），文件的名称应为certificate.jks，比如：
+</p>
+<div class="prettify">
+<pre>
+keystore.file=conf/certificate.jks
+</pre>
+</div>
+<hr />
+<p><b>keystore.password</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定对keystore证书文件加密的密码，结合keystore.file配置文件使用：
+</p>
+<div class="prettify">
+<pre>
+keystore.password=secret
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为secret。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Memcached">Memcached<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Memcached">#</a></h4>
+</p>
+<hr />
+<p><b>memcached</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于开启memcached功能，如果没有配置该属性，那么Play会以独立缓存的形式将数据存储到JVM堆中。
+</p>
+<div class="prettify">
+<pre>
+memcached=enabled
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为disabled。
+</p>
+<hr />
+<p><b>memcached.host</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定memcached的主机：
+</p>
+<div class="prettify">
+<pre>
+memcached.host=127.0.0.1:11211
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为127.0.0.1:11211。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们还可以使用多个主机来提供分布式缓存，比如：
+</p>
+<div class="prettify">
+<pre>
+memcached.1.host=127.0.0.1:11211
+memcached.2.host=127.0.0.1:11212
+</pre>
+</div>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E8_87_AA_E5_AE_9A_E4_B9_89MIME_E7_B1_BB_E5_9E_8B">自定义MIME类型<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E8_87_AA_E5_AE_9A_E4_B9_89MIME_E7_B1_BB_E5_9E_8B">#</a></h4>
+</p>
+<hr />
+<p><b>mimetype.xpi</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定额外的MIME类型，比如：
+</p>
+<div class="prettify">
+<pre>
+mimetype.xpi=application/x-xpinstall
+</pre>
+</div>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-WebServices">Web services<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-WebServices">#</a></h4>
+</p>
+<hr />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定实现web service的类名，或者内置的实现方式，比如：
+</p>
+<div class="prettify">
+<pre>
+webservice=urlfetch
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>urlfetch：JDK内部的实现。
+</li><li>async：Async Http Client引擎。
+</li><li>play.libs.WS.WSImpl的实现类。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为async。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_82_AE_E4_BB_B6_E9_85_8D_E7_BD_AE">邮件配置<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E9_82_AE_E4_BB_B6_E9_85_8D_E7_BD_AE">#</a></h4>
+</p>
+<hr />
+<p><b>mail.debug</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定是否开启SMTP事务的日志。Play在底层使用了JavaMail来实现SMTP事务处理。
+</p>
+<div class="prettify">
+<pre>
+mail.debug=true
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为false。
+</p>
+<hr />
+<p><b>mail.smtp</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于简单的邮件配置。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为mock：即使用模拟的邮件收发器。
+</p>
+<hr />
+<p><b>mail.smtp.authenticator</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定自定义SMTP验证器的类名（实现了javax.mail.Authenticator接口）。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>mail.smtp.channel</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定通过加密通道发送邮件的方式。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>clear：不采用加密。
+</li><li>ssl：采用SMTP-over-SSL (SMTPS)连接器，SSL socket会监听465端口。
+</li><li>starttls：如果服务器支持starttls命令，则使用25端口的clear连接方式转换为SSL/TLS。
+</li></ul><p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为clear。
+</p>
+<hr />
+<p><b>mail.smtp.host</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定提供邮件服务的主机，比如：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.host=127.0.0.1
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用Gmail的SMTP服务器：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.host=smtp.gmail.com
+</pre>
+</div>
+<p />
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为localhost。
+</p>
+<hr />
+<p><b>mail.smtp.localhost</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定覆盖SMTP命令的本地主机名称。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值：即使用Java Mail。
+</p>
+<hr />
+<p><b>mail.smtp.pass</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定SMTP服务器连接密码。
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<hr />
+<p><b>mail.smtp.port</b>
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定SMTP服务器连接的端口（会覆盖默认值），比如：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.port=2500
+</pre>
+</div>
+<ul><li>当mail.smtp.channel设置为clear或者starttls时，默认值为25。
+</li><li>当mail.smtp.chaanel设置为ssl时，默认值为465。
+</li></ul><hr />
+<p><b>mail.smtp.protocol</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定是否使用SSL。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>smtp
+</li><li>smtps
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为smtp。
+</p>
+<hr />
+<b>mail.smtp.socketFactory.class</b>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在JavaMail中使用SSL连接时，如果远程服务器的证书没有通过根证书签发，SSL默认会关闭连接，这种情况经常发生在用户使用自己签发的证书时。Play默认会跳过检查，但是可以使用mail.smtp.socketFactory.class来控制。
+</p>
+<hr />
+<p><b>mail.smtp.user</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定SMTP服务器连接的用户名。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为空值。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Play_E8_BF_90_E8_A1_8C_E6_97_B6">Play运行时<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-Play_E8_BF_90_E8_A1_8C_E6_97_B6">#</a></h4>
+</p>
+<hr />
+<b>play.bytecodeCache</b>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定是否在开发模式（Dev）下启用二进制代码的缓存，在产品模式下不受影响。
+</p>
+<div class="prettify">
+<pre>
+play.bytecodeCache=false
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为true。
+</p>
+<hr />
+<p><b>play.editor</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于从错误页面打开文件。如果文本编辑器支持通过URL打开文件，Play会自动将错误页面链接到文件。比如Textmate：
+</p>
+<div class="prettify">
+<pre>
+play.editor=txmt://open?url=file://%s&amp;line=%s
+</pre>
+</div>
+<hr />
+<p><b>play.jobs.pool</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Job连接池，比如：
+</p>
+<div class="prettify">
+<pre>
+play.jobs.pool=20
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为10。
+</p>
+<hr />
+<p><b>play.netty.clientAuth</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于设置javax.net.ssl.SSLEngine客户端验证，比如：
+</p>
+<div class="prettify">
+<pre>
+play.netty.clientAuth=need
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>want：服务器会请求客户端验证。
+</li><li>need：服务器会强制要求客户端验证。
+</li><li>none：不需要验证。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为none。
+</p>
+<hr />
+<p><b>play.netty.maxContentLength</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定HTTP服务器能够提供最大内容的字节数。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为none：即没有最大限制。
+</p>
+<hr />
+<p><b>play.pool</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Play的执行池大小。请尽可能将执行池的数量保持到最低，如果设置为一个线程，那么所有的请求会被该线程连续执行（适用于调试），比如：
+</p>
+<div class="prettify">
+<pre>
+play.pool=10
+</pre>
+</div>
+<ul><li>在开发模式下默认为1。
+</li><li>在产品模式下默认为处理器数量+1。
+</li></ul><hr />
+<p><b>play.tmp</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Play临时文件的存放目录，比如：
+</p>
+<div class="prettify">
+<pre>
+play.tmp=/tmp/play
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>据对路径。
+</li><li>相对于应用的相对路径。
+</li><li>none:即不使用临时文件。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为tmp。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-SSL">SSL<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-SSL">#</a></h4>
+</p>
+<hr />
+<p><b>ssl.KeyManagerFactory.algorithm</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定Java安全套接字扩展（JSSE）信任管理算法的标准名称，结合keystore.file配置使用。
+</p>
+<div class="prettify">
+<pre>
+ssl.KeyManagerFactory.algorithm=SunX509
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为SunX509。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E4_BF_A1_E4_BB_BB_E7_AE_A1_E7_90_86_E5_99_A8">信任管理器<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E4_BF_A1_E4_BB_BB_E7_AE_A1_E7_90_86_E5_99_A8">#</a></h4>
+</p>
+<hr />
+<p><b>trustmanager.algorithm</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定JDK安全API标准算法名称，结合X509 certificates和keystore使用。
+</p>
+<div class="prettify">
+<pre>
+trustmanager.algorithm=pkcs12
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;允许的取值：
+</p>
+<ul><li>jceks (SunJCE提供)。
+</li><li>jks (Sun提供)。
+</li><li>pkcs12。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为pkcs12。
+</p>
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0">文件上传<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E6_96_87_E4_BB_B6_E4_B8_8A_E4_BC_A0">#</a></h4>
+</p>
+<hr />
+<p><b>upload.threshold</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定文件被写入到硬盘的阈值，比如：
+</p>
+<div class="prettify">
+<pre>
+upload.threshold=20480
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为10240。
+</p>
+<p />
+<p><br />
+<h4 id="section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E4_BB_A3_E7_90_86_E8_BD_AC_E5_8F_91">代理转发<a class="hashlink" href="#section-_E9_85_8D_E7_BD_AE_E5_8F_82_E6_95_B0-_E4_BB_A3_E7_90_86_E8_BD_AC_E5_8F_91">#</a></h4>
+</p>
+<hr />
+<p><b>XForwardedHost</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定覆盖HTTP头部信息中X-Forwarded-Host的值，即客户端请求的原始主机，结合代理服务器使用。
+</p>
+<hr />
+<p><b>XForwardedProto</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定覆盖HTTP头部信息中X-Forwarded-Proto和X-Forwarded-SSL的值，即客户端请求的原始协议，从而将代理请求转发给SSL，比如：
+</p>
+<div class="prettify">
+<pre>
+XForwardedProto=https
+</pre>
+</div>
+<hr />
+<p><b>XForwardedSupport</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本配置用于指定允许代理服务器转发的IP地址，这些IP地址使用逗号分隔，比如：
+</p>
+<div class="prettify">
+<pre>
+XForwardedSupport=192.168.1.100,192.168.1.101
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认为127.0.0.1。
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-20) was last changed on <a href="../Diff.jsp-page=配置参数&r1=20&r2=19.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0&r1=20&r2=19">15-Mar-2012 05:38</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=配置参数.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=配置参数.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="配置参数-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

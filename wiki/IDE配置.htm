@@ -1,0 +1,765 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: IDE配置
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=IDE%E9%85%8D%E7%BD%AE' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='IDE配置' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=IDE配置.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=IDE%E9%85%8D%E7%BD%AE" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=IDE配置.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=IDE%E9%85%8D%E7%BD%AE"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">IDE配置</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'IDE配置' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="写在最前面的话.htm" tppabs="http://www.playframework.cn/wiki/%E5%86%99%E5%9C%A8%E6%9C%80%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">写在最前面的话</a>, <a class="wikipage" href="序.htm" tppabs="http://www.playframework.cn/wiki/%E5%BA%8F">序</a>, <a class="wikipage" href="名家推荐.htm" tppabs="http://www.playframework.cn/wiki/%E5%90%8D%E5%AE%B6%E6%8E%A8%E8%8D%90">名家推荐</a>, <a class="wikipage" href="前言.htm" tppabs="http://www.playframework.cn/wiki/%E5%89%8D%E8%A8%80">前言</a>, <a class="wikipage" href="读者群.htm" tppabs="http://www.playframework.cn/wiki/%E8%AF%BB%E8%80%85%E7%BE%A4">读者群</a>, <a class="wikipage" href="如何阅读.htm" tppabs="http://www.playframework.cn/wiki/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB">如何阅读</a>, <a class="wikipage" href="创作过程.htm" tppabs="http://www.playframework.cn/wiki/%E5%88%9B%E4%BD%9C%E8%BF%87%E7%A8%8B">创作过程</a>, <a class="wikipage" href="框架概述.htm" tppabs="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0">框架概述</a>, <a class="wikipage" href="框架特性.htm" tppabs="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7">框架特性</a>, <a class="wikipage" href="安装.htm" tppabs="http://www.playframework.cn/wiki/%E5%AE%89%E8%A3%85">安装</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=IDE配置.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=IDE%E9%85%8D%E7%BD%AE" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play框架会跟踪Java源码的变更，发现源文件有更改就进行自动编译并重载。Play的这个特性使得开发变得更加容易，甚至不需要功能完备的IDE，仅使用文本编辑器就可以轻松开发Web应用。由于当前的Java IDE提供了很好的产品特征：自动提示、填充、编译、辅助重构和调试等，因此选择合适的IDE能够大大提高开发效率，目前Play支持Netbeans、Eclipse和IntelliJ IDEA三种集成开发环境。
+</p><p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.1_E7_94_9F_E6_88_90Eclipse_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">1.4.1 生成Eclipse配置文件<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.1_E7_94_9F_E6_88_90Eclipse_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play自身提供的命令可以简化Eclipse配置。使用<b>play eclipsify</b>命令可以将Play应用转化为Eclipse项目，如图1.12所示：
+</p>
+<div class="prettify">
+<pre>
+play eclipsify oopsplay
+</pre>
+</div>
+<p />
+<p><img class="inline" src="../attach/图片资源/new_eclipsify_play.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/new_eclipsify_play.png" alt="图片资源/new_eclipsify_play.png" />
+</p>
+<p />
+<p><b>(图1.12 使用命令生成Eclipse项目)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用转化为Eclipse项目后，就可以将其导入到workspace，如图1.13，1.14，1.15所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/import.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/import.png" alt="图片资源/import.png" />
+</p>
+<p><b>(图1.13 点击Import)</b>
+</p>
+<p><img class="inline" src="../attach/图片资源/import2.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/import2.png" alt="图片资源/import2.png" />
+</p>
+<p><b>(图1.14 选择将已存在的项目导入workspace)</b>
+</p>
+<p><img class="inline" src="../attach/图片资源/import3.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/import3.png" alt="图片资源/import3.png" />
+</p>
+<p><b>(图1.15 选择新创建的oopsplay项目)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>play eclipsify</b>命令为应用生成了一些启动项。其中主启动项（项目名称.launch）只能够配合Eclipse中的Run As命令使用，JPDA启动项可以在任何时候（Conncet JPDA to项目名称.launch）和Debug命令配合使用，用于开启debugging session(停止debugging session不会终止应用服务)。
+</p>
+<div class="quote">
+提示：
+<p>如果用户对应用做了一些重要的改变(如改变了classpath)，那么需要重新使用<b>play eclipsify</b>命令来生成配置文件。在团队开发的时候不要将这些Eclipse的配置文件提交上去，因为这些自动生成的配置文件包含了对框架绝对路径的参考，每个成员的Play安装路径往往是不一样的，所以必须保持这些Eclipse配置文件的私有性。
+</p></div>
+
+<p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.2_E7_94_9F_E6_88_90Netbeans_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">1.4.2 生成Netbeans配置文件<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.2_E7_94_9F_E6_88_90Netbeans_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play同样提供了简化Netbeans配置的命令。把现有的Play应用转化为Netbeans项目，可以使用<b>play neatbeansify</b>命令，如图1.16所示：
+</p>
+<div class="prettify">
+<pre>
+play netbeansify oopsplay
+</pre>
+</div>
+<p><img class="inline" src="../attach/图片资源/new_netbeansify_play.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/new_netbeansify_play.png" alt="图片资源/new_netbeansify_play.png" />
+</p>
+<p><b>(图1.16 使用命令生成Netbeans项目)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转化完成后，可以将应用作为Netbeans项目开发，如图1.17，1.18所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/netbeans.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/netbeans.png" alt="图片资源/netbeans.png" />
+</p>
+<p><b>(图1.17 Netbeans中选择&quot;打开项目&quot;)</b>
+</p>
+<p><img class="inline" src="../attach/图片资源/import4.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/import4.png" alt="图片资源/import4.png" />
+</p>
+<p><b>(图1.18 选择新创建的oopsplay项目)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击运行按钮（或F6）就可以启动应用。当应用开启之后可以在任何时候点击调试按钮（或Ctrl+F5）附加debugging seesion，停止debugging session应用服务不会终止。
+</p>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>同样地，如果用户对应用进行了一些重要的改变(比如改变了classpath),那么需要使用<b>play netbeansify</b>命令重新生成配置文件，而且必须保持配置文件的私有性（针对团队开发）。
+</p></div>
+
+<p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.3_E7_94_9F_E6_88_90IntelliJIDEA_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">1.4.3生成IntelliJ IDEA配置文件<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.3_E7_94_9F_E6_88_90IntelliJIDEA_E9_85_8D_E7_BD_AE_E6_96_87_E4_BB_B6">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于IntelliJ IDEA受到越来越多开发者的热捧，Play在1.2版本中增加了对其的支持，只需要简单地使用<b>play idealize</b>命令将现有的Play应用转换为IntelliJ IDEA支持的项目即可：
+</p>
+<div class="prettify">
+<pre>
+play idealize myApp
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将应用导入到IntelliJ中，如图1.19所示：
+</p>
+<p><img class="inline" src="../attach/图片资源/intellij.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/intellij.png" alt="图片资源/intellij.png" />
+</p>
+<p><b>(图1.19 应用导入IntelliJ)</b>
+</p>
+<p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.4_E4_BD_BF_E7_94_A8Intype">1.4.4 使用Intype<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.4_E4_BD_BF_E7_94_A8Intype">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intype是Windows下一个强大、直观的轻量级快速代码编辑器，而且非常容易扩展和定制，这都归功于它对脚本和本地插件的支持，使得其对任何程序语言或脚本的开发都极其简单、快捷。下载（地址：intype.info）并安装Intype，具体使用如图1.20所示。
+</p>
+<p><img class="inline" src="../attach/图片资源/intype.png" tppabs="http://www.playframework.cn/attach/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/intype.png" alt="图片资源/intype.png" />
+</p>
+<p><b>(图1.20 Intype使用界面)</b>
+</p>
+<p />
+<p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.5_E6_89_8B_E5_8A_A8_E9_85_8D_E7_BD_AE_E9_A6_96_E9_80_89_E7_9A_84_E7_BC_96_E8_BE_91_E5_99_A8">1.4.5 手动配置首选的编辑器<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.5_E6_89_8B_E5_8A_A8_E9_85_8D_E7_BD_AE_E9_A6_96_E9_80_89_E7_9A_84_E7_BC_96_E8_BE_91_E5_99_A8">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于Play是标准的Java应用，所以不需要任何特定的插件来配合编辑器使用，但是我们也需要了解一些Play工作原理方面的知识：
+</p>
+<p>（1）classpath设置
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play应用的classpath按照如下顺序构建：
+</p>
+<ol><li>应用的/conf目录。
+</li><li>$PLAY_PATH/framework/play.jar。
+</li><li>所有在应用的/lib目录中能找到的jar文件。
+</li><li>所有在$PLAY_PATH/framework/lib目录中能找到的jar文件。
+</li></ol><p><br />
+</p>
+<div class="quote">
+提示：
+<p>如果在应用中使用到了模块（module），那么需要将所有模块的类库（$module/lib 目录）添加到classpath中。
+</p></div>
+<br />
+
+<p>（2）运行Main class
+</p>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运行play.server.Server类就可以启动Play应用。Play使用application.path系统属性查找应用并运行，典型的设置如下：
+</p>
+<div class="prettify">
+<pre>
+java -Dapplication.path=&quot;/app/path&quot;...\\
+</pre>
+</div>
+<p>（3）Java代理
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以通过play.jar中的类库加载Java代理，使热交换和重载功能生效，设置如下：
+</p>
+<div class="prettify">
+<pre>
+java -javaagent:&quot;$PLAY_PATH/framework/play.jar&quot; ...
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这一步不是必须的，但是在某些情况下会加速类重载。
+<p><br />
+<h3 id="section-IDE_E9_85_8D_E7_BD_AE-1.4.6_E8_B0_83_E8_AF_95_E9_97_AE_E9_A2_98">1.4.6 调试问题<a class="hashlink" href="#section-IDE_E9_85_8D_E7_BD_AE-1.4.6_E8_B0_83_E8_AF_95_E9_97_AE_E9_A2_98">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当Java源文件改变时(即保存后)，Play会自动重载Java类（内部自动编译）。由于Java不完全支持类重载，所以很容易使JPDA调试器产生混淆：断点提交可能会失败或者当代码跳转时调试器总在出错行终止。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了避免上述情况发生，最好的解决方案是在代码更新之后开启新的debugging session。幸运的是，JPDA支持在不重启JVM的情况下连接和断开调试，所以正确的调试工作流如下：
+</p>
+<ul><li>更改源代码。
+</li><li>刷新浏览器，查看返回结果，这个时候Play会重载代码变更并且在JVM中重新定义类文件。
+</li><li>如果出错，那么需要开启一个新的debugging session进行调试。
+</li><li>调试并更正代码。
+</li><li>断开调试器。
+</li></ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用此工作流程，调试器将会与加载到JVM中的代码同步。
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-33) was last changed on <a href="../Diff.jsp-page=IDE配置&r1=33&r2=32.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=IDE%E9%85%8D%E7%BD%AE&r1=33&r2=32">07-Apr-2012 07:30</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=IDE配置.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=IDE%E9%85%8D%E7%BD%AE" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=IDE配置.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=IDE%E9%85%8D%E7%BD%AE"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="IDE配置-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/IDE%E9%85%8D%E7%BD%AE?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

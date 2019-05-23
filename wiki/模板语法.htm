@@ -1,0 +1,800 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 模板语法
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='模板语法' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模板语法.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模板语法.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">模板语法</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'模板语法' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="本章小结3.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%933">本章小结3</a>, <a class="wikipage" href="控制层.htm" tppabs="http://www.playframework.cn/wiki/%E6%8E%A7%E5%88%B6%E5%B1%82">控制层</a>, <a class="wikipage" href="控制层概述.htm" tppabs="http://www.playframework.cn/wiki/%E6%8E%A7%E5%88%B6%E5%B1%82%E6%A6%82%E8%BF%B0">控制层概述</a>, <a class="wikipage" href="获取HTTP参数.htm" tppabs="http://www.playframework.cn/wiki/%E8%8E%B7%E5%8F%96HTTP%E5%8F%82%E6%95%B0">获取HTTP参数</a>, <a class="wikipage" href="结果返回.htm" tppabs="http://www.playframework.cn/wiki/%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E">结果返回</a>, <a class="wikipage" href="Action链.htm" tppabs="http://www.playframework.cn/wiki/Action%E9%93%BE">Action链</a>, <a class="wikipage" href="拦截器.htm" tppabs="http://www.playframework.cn/wiki/%E6%8B%A6%E6%88%AA%E5%99%A8">拦截器</a>, <a class="wikipage" href="Session和Flash作用域.htm" tppabs="http://www.playframework.cn/wiki/Session%E5%92%8CFlash%E4%BD%9C%E7%94%A8%E5%9F%9F">Session和Flash作用域</a>, <a class="wikipage" href="本章小结4.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%934">本章小结4</a>, <a class="wikipage" href="模板引擎.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">模板引擎</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=模板语法.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与其他的语言一样，Play的模板也具有严格定义的语法。模板语法被划分为多种元素，用于完成不同类型的任务。Play模板的本质是普通的文本文件，其中带有占位符的部分可以生成动态内容。模板的动态部分采用Groovy语言编写，其语法与Java非常类似。框架可以将需要渲染的结果追加至HTTP响应的数据部分，并发送至模板。所有的动态部分将会在模板的执行期间被解析。
+<br />
+</p><p><br />
+</p>
+<p><b>(表5-1 模板语法)</b>
+</p>
+<table class="wikitable" border="1"><tr class="odd"><th>元素</th><th>描述</th><th>语法</th></tr>
+<tr><td>表达式</td><td>用于输出表达式的值。如 ${note.title} 的作用是将域对象note的属性title的值输出。</td><td>${...}</td></tr>
+<tr class="odd"><td>标签</td><td>用于调用Play框架内置的或是开发人员自定义的标签。如#{get 'title' /}：获取变量 title 的值，该值仅在模板页面中有效。</td><td>#{...}</td></tr>
+<tr><td>引用</td><td>用于生成调用控制器中Action方法的URL，在页面链接中使用的最为频繁。@{...} 和 @@{...} 的区别在于生成的URL分别是相对路径还是绝对路径。如：<br />1.&lt;a href=&quot;@{Application.index()}&quot;&gt;首页&lt;/a&gt;：生成指向首页的链接。<br />2.@{'/public/stylesheets/main.css'}：引入CSS静态资源文件。</td><td>@{...} 和@@{...}</td></tr>
+<tr class="odd"><td>国际化</td><td>用于显示经过国际化处理后的消息内容。</td><td>&amp;{...}</td></tr>
+<tr><td>注释</td><td>用于在模板中添加注释。如：*{ 这是注释 }*。</td><td>*{...}*</td></tr>
+<tr class="odd"><td>脚本</td><td>用于添加复杂的 Groovy 脚本，可以声明变量和执行业务逻辑。</td><td>%{...}%</td></tr>
+</table><p />
+<p><br />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.1_E8_A1_A8_E8_BE_BE_E5_BC_8FExpression">5.1.1 表达式(expression):${…}<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.1_E8_A1_A8_E8_BE_BE_E5_BC_8FExpression">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构建动态部分最简单的方法就是声明表达式。表达式需要以 ${ 开头， 并以 } 结尾，作为占位符使用。具体例子如下：
+</p>
+<div class="prettify">
+<pre>
+&lt;h1&gt;Client ${client.name}&lt;/h1&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上是输出客户姓名的表达式例子。在该例子中，将客户类定义为Client。经过控制器中Action的业务逻辑执行，首先需要向模板注入对象client，之后就可以在模板中使用${…}表达式语法输出client对象的name属性。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果不能确定向模板注入的client对象是否为null，可以使用如下Groovy快捷语法：
+</p>
+<div class="prettify">
+<pre>
+&lt;h1&gt;Client ${client?.name}&lt;/h1&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此时，只有client不为null的情况下，才进行client.name的输出。
+<p><br />
+</p>
+<p />
+<p />
+<p />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.2_E6_A0_87_E7_AD_BETagTagName">5.1.2 标签(tag): #{tagName /}<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.2_E6_A0_87_E7_AD_BETagTagName">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标签是能够附带参数调用的模板片段，如果标签只有一个参数，按照约定，参数的名称为arg，并且该参数名是可以省略的。例如，可以使用#{script}标签加载JavaScript文件：
+<div class="prettify">
+<pre>
+#{script 'jquery.js' /}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play模板中的标签必须是闭合的，可以通过两种方式闭合标签。采用直接闭合的形式：
+</p>
+<div class="prettify">
+<pre>
+#{script  'jquery.js'/}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或者起始标签和结束标签成对地使用：
+<div class="prettify">
+<pre>
+#{script  'jquery.js'}#{/script}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{script}是Play模板的内置标签，由框架实现，可以直接使用。后面会进一步介绍如何自定义标签来满足开发中一些特定的需求。#{list}标签可以对集合类进行迭代操作，使用时需要注意，必须带有两个参数（items以及as）：
+<div class="prettify">
+<pre>
+&lt;h1&gt;Client ${client.name}&lt;/h1&gt;
+&lt;ul&gt;
+    #{list items:client.accounts, as:'account' }
+        &lt;li&gt;${account}&lt;/li&gt;
+    #{/list}
+&lt;/ul&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上例中使用#{list}标签对client.accounts集合进行迭代，并将集合中的每一条数据作为account在页面中输出。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在应用中，模板引擎默认对所有的动态表达式进行转义，以此来避免XSS的安全问题。如果模板中变量${title}的内容为&lt;h1&gt;Title&lt;/h1&gt;，在页面输出时会自动进行转义：
+</p>
+<div class="prettify">
+<pre>
+${title} --&gt; &amp;lt;h1&amp;gt;Title&amp;lt;/h1&amp;gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以通过调用扩展方法raw()，以非转义的形式在页面中输出，具体使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+${title.raw()} --&gt; &lt;h1&gt;Title&lt;/h1&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果需要显示大量的非转义HTML内容，可以使用#{verbatim /}标签：
+</p>
+<div class="prettify">
+<pre>
+#{verbatim}
+    ${title} --&gt; &lt;h1&gt;Title&lt;/h1&gt;
+#{/verbatim}
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.3_E5_BC_95_E7_94_A8Action_E6_88_96_E8_80_85">5.1.3 引用(action):@{…}或者@@{…}<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.3_E5_BC_95_E7_94_A8Action_E6_88_96_E8_80_85">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在前面的章节已经有过一些介绍，Play通过路由器可以（逆向）生成URL，匹配指定的路由。在模板中使用@{…}引用可以达到相同的目的：
+</p>
+<div class="prettify">
+<pre>
+&lt;h1&gt;Client ${client.name}&lt;/h1&gt;
+&lt;p&gt;
+    &lt;a href=&quot;@{Clients.showAccounts(client.id)}&quot;&gt;All accounts&lt;/a&gt;
+&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;a href=&quot;@{Clients.index()}&quot;&gt;Back&lt;/a&gt;
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该实例中，@{Clients.showAccounts(client.id)}调用了Clients控制器中的showAccounts Action方法，并传递了client.id参数。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@{…}引用的使用语法与@{…}相同，只不过生成的是绝对URL（尤其适用于邮箱）。
+</p>
+<p><br />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.4_E5_9B_BD_E9_99_85_E5_8C_96Messages">5.1.4 国际化(messages):&amp;{…}<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.4_E5_9B_BD_E9_99_85_E5_8C_96Messages">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果应用需要进行国际化操作，那么可以在模板中使用&amp;{...}显示国际化信息。需要进行国际化的应用首先需要在conf/messages文件中进行国际化定义：
+ 
+</p>
+<div class="prettify">
+<pre>
+clientName=The client name is %s
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后在模板中就可以通过&amp;{...}显示该国际化信息了：
+</p>
+<div class="prettify">
+<pre>
+&lt;h1&gt;&amp;{'clientName',client.name}&lt;/h1&gt;
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.5_E6_B3_A8_E9_87_8AComment">5.1.5 注释(comment):*{…}*<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.5_E6_B3_A8_E9_87_8AComment">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用*{…}*标记的内容会被模板引擎忽略，起到注释作用：
+</p>
+<div class="prettify">
+<pre>
+*{**** Display the user name ****}*
+&lt;div class=&quot;name&quot;&gt;
+    ${user.name}
+&lt;/div&gt;
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.6_E8_84_9A_E6_9C_ACScript">5.1.6 脚本(script): %{…}%<a class="hashlink" href="#section-_E6_A8_A1_E6_9D_BF_E8_AF_AD_E6_B3_95-5.1.6_E8_84_9A_E6_9C_ACScript">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;脚本是更加复杂的表达式集合，能够声明一些变量或者定义一些语句。Play的模板中使用%{…}%插入脚本：
+</p>
+<div class="prettify">
+<pre>
+%{
+fullName = client.name.toUpperCase()+' '+client.forname;
+}%
+ 
+&lt;h1&gt;Client ${fullName}&lt;/h1&gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以直接使用out内置对象输出动态内容：
+</p>
+<div class="prettify">
+<pre>
+%{
+   fullName = client.name.toUpperCase()+' '+client.forname;
+   out.print('&lt;h1&gt;'+fullName+'&lt;/h1&gt;');
+}%
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板中还可以使用脚本编写结构化语句，执行一些逻辑操作，比如迭代：
+</p>
+<div class="prettify">
+<pre>
+&lt;h1&gt;Client ${client.name}&lt;/h1&gt;
+&lt;ul&gt;
+%{
+     for(account in client.accounts) { 
+}%
+     &lt;li&gt;${account}&lt;/li&gt;
+%{
+     }
+}%
+&lt;/ul&gt;
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用模板时切记：模板不适合处理复杂的业务逻辑，所以在模板中请尽量使用标签，或者直接将处理交给控制器或模型对象。
+</p>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-36) was last changed on <a href="../Diff.jsp-page=模板语法&r1=36&r2=35.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95&r1=36&r2=35">08-Apr-2012 05:53</a> by 丁海亮
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=模板语法.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=模板语法.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="模板语法-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

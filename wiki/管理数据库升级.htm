@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：管理数据库升级
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/mootools.js"></script>
+<script type="text/javascript" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/prettify.js"></script>
+<script type="text/javascript" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="管理数据库升级">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">管理数据库升级</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','管理数据库升级' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/%E5%B1%9E%E6%80%A7%E6%A8%A1%E6%8B%9F">属性模拟</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE">数据库配置</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96">数据持久化</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%97%A0%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B">无状态模型</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Job%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8">Job的直接调用</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%937">本章小结7</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E9%AA%8C%E8%AF%81%E7%A0%81">验证码</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96">国际化</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98">缓存</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96">产品化</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件 (4)</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发人员使用关系数据库时，通常需要跟踪和管理数据库结构的升级和变化。当出现以下几种情况时，我们需要使用更成熟的方式跟踪和管理数据库结构的变化：
+</p><ul><li>在团队开发中，每个成员都需要知道数据库结构的任何变化。
+</li><li>当成品部署到服务器上后，需要采用安全稳定的方式去升级数据库结构。
+</li><li>当开发人员在不同的机器上工作时，需要保持数据库同步。
+</li></ul><p><br>
+</p>
+<div class="quote">
+注意：
+<p>如果采用JPA进行操作，Hibernate会自动处理数据库结构的升级。如果读者经常需要手动管理数据库结构，并进行一些精细的调整，版本控制就变得必不可少了。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.1_E5_8D_87_E7_BA_A7_E8_84_9A_E6_9C_AC">10.14.1 升级脚本<a class="hashlink" href="#section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.1_E5_8D_87_E7_BA_A7_E8_84_9A_E6_9C_AC">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play通过编写升级脚本来跟踪数据库结构的变化。这些脚本采用标准的
+SQL语句作为语法规则，存放在应用程序的db/evolutions目录下。脚本使用统一的命名规则：编写的第一个脚本命名为1.sql，第二个脚本为
+2.sql，并以此类推。每个脚本都包含两个部分：
+</p>
+<ul><li>Ups部分用于描述需要改变的地方。
+</li><li>Downs部分用于描述如何还原。
+</li></ul><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下是数据库升级脚本的例子，起到引导作用：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Users schema</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>&nbsp;<br>CREATE TABLE </span><span class="typ">User</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; email varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; password varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; fullname varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; isAdmin </span><span class="kwd">boolean</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>&nbsp;<br>DROP TABLE </span><span class="typ">User</span><span class="pun">;</span><span class="pln"> </span></pre>
+</div>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>在编写数据库升级脚本时，须使用注释明确地将Ups和Downs部分区分开。
+</p></div>
+
+<p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者已经在application.conf文件中配置了数据库，并且编写了数据库升级脚本(放置在db/evolutions目录下)，应用在启动时就会自动激活数据库的升级模式。我们也可以强制将其关闭，只需在application.conf文件中进行如下配置：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">evolutions</span><span class="pun">.</span><span class="pln">enabled</span><span class="pun">=</span><span class="kwd">false</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一旦数据库的升级模式被激活，框架会执行升级管理。当应用处于DEV模式，Play会在请求到达时检查数据库的结构，如果数据库结构不是最新的，将显示错误页面，并建议使用合适的SQL脚本同步数据库，如图10.6所示。如果应用处于PROD模式，Play则会在整个应用启动之前进行检查。
+<p><img class="inline" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/evolutions.png" alt="">
+</p>
+<p><b>(图10.6 数据库结构不同步)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在页面上点击Apply evolutions按钮，就可以直接执行SQL升级脚本。
+</p>
+<p><br>
+</p>
+<div class="quote">
+补充：
+<p>如果应用使用内存数据库(db=mem)，Play会预先对数据库进行检测。如果数据库为空就会自动执行所有的升级脚本。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.2_E5_90_8C_E6_AD_A5">10.14.2 同步<a class="hashlink" href="#section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.2_E5_90_8C_E6_AD_A5">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;协作开发中，保持应用同步非常重要。设想一下，如果有两个开发者合力开发项目，开发者A因为自己负责的功能模块需要，创建了新的数据表并编写了升级脚本2.sql：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Add Post</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>CREATE TABLE </span><span class="typ">Post</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; title varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; content text NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; postedAt date NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; author_id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; FOREIGN KEY </span><span class="pun">(</span><span class="pln">author_id</span><span class="pun">)</span><span class="pln"> REFERENCES </span><span class="typ">User</span><span class="pun">(</span><span class="pln">id</span><span class="pun">),</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>DROP TABLE </span><span class="typ">Post</span><span class="pun">;</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play会将该升级脚本应用于开发者A的数据库。与此同时，开发者B因功能需求修改了User表，也编写了升级脚本，同样命名为2.sql：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Update User</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD age INT</span><span class="pun">;</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> DROP age</span><span class="pun">;</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发者B先完成了负责的功能模块，并提交了代码(比如开发者采用Git进行管理)。开发者A需要先整合两个人前半段的工作结果，才能开展后续工作，但是在执行git pull的时候，合并会出现如下冲突：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Auto</span><span class="pun">-</span><span class="pln">merging db</span><span class="pun">/</span><span class="pln">evolutions</span><span class="pun">/</span><span class="lit">2</span><span class="pun">.</span><span class="pln">sql<br>CONFLICT </span><span class="pun">(</span><span class="pln">add</span><span class="pun">/</span><span class="pln">add</span><span class="pun">):</span><span class="pln"> </span><span class="typ">Merge</span><span class="pln"> conflict </span><span class="kwd">in</span><span class="pln"> db</span><span class="pun">/</span><span class="pln">evolutions</span><span class="pun">/</span><span class="lit">2</span><span class="pun">.</span><span class="pln">sql<br></span><span class="typ">Automatic</span><span class="pln"> merge failed</span><span class="pun">;</span><span class="pln"> fix conflicts </span><span class="kwd">and</span><span class="pln"> </span><span class="kwd">then</span><span class="pln"> commit the result</span><span class="pun">.</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是因为开发者A和开发者B都创建了2.sql升级脚本，必须进行整合：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span><span class="pln"> HEAD<br></span><span class="com"># Add Post</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>CREATE TABLE </span><span class="typ">Post</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; title varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; content text NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; postedAt date NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; author_id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; FOREIGN KEY </span><span class="pun">(</span><span class="pln">author_id</span><span class="pun">)</span><span class="pln"> REFERENCES </span><span class="typ">User</span><span class="pun">(</span><span class="pln">id</span><span class="pun">),</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>DROP TABLE </span><span class="typ">Post</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">=======</span><span class="pln"><br></span><span class="com"># Update User</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD age INT</span><span class="pun">;</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> DROP age</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span><span class="pln"> devB</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整合工作非常简单，只需要将冲突的部分合并即可：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Add Post and update User</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Ups</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD age INT</span><span class="pun">;</span><span class="pln"><br>&nbsp;<br>CREATE TABLE </span><span class="typ">Post</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; title varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; content text NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; postedAt date NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; author_id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; FOREIGN KEY </span><span class="pun">(</span><span class="pln">author_id</span><span class="pun">)</span><span class="pln"> REFERENCES </span><span class="typ">User</span><span class="pun">(</span><span class="pln">id</span><span class="pun">),</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> DROP age</span><span class="pun">;</span><span class="pln"><br>&nbsp;<br>DROP TABLE </span><span class="typ">Post</span><span class="pun">;</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将整合后的脚本命名为2.sql，作为升级脚本的最新修订版(注意：与前期开发者A应用到数据库的2.sql不同)。Play会发现这个情况，并询问开发者A是否同步数据库，将最新的修订版2.sql替换原来的版本，如图10.7所示。
+ 
+<img class="inline" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/evolutions-conflict.png" alt="">
+</p>
+<p><b>(图10.7 同步升级脚本)</b>
+</p>
+<p><br>
+</p><h3 id="section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.3_E9_9D_9E_E5_90_8C_E6_AD_A5_E7_8A_B6_E6_80_81">10.14.3 非同步状态<a class="hashlink" href="#section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.3_E9_9D_9E_E5_90_8C_E6_AD_A5_E7_8A_B6_E6_80_81">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果脚本(比如3.sql)中存在错误，数据库升级工作将无法完成。当出现这种情况时，Play会将数据库的结构标记为非同步状态，并要求我们手动解决这个问题，之后才能继续别的操作。下例的Ups部分存在错误：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Add another column to User</span><span class="pln"><br>&nbsp; <br></span><span class="com"># --- !Ups</span><span class="pln"><br>ALTER TABLE </span><span class="typ">Userxxx</span><span class="pln"> ADD company varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> DROP company</span><span class="pun">;</span><span class="pln"><br></span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该脚本在执行时会出现错误，Play将数据库的结构标记为非同步状态，如图10.8所示：
+</p>
+<p><img class="inline" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/evolutions-inconsistent.png" alt="">
+</p>
+<p> <b>(图10.8 非同步状态)</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;错误必须得到修正后，才能进行后续操作。使用SQL命令手动更改数据库结构：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD company varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">);</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后点击Mark it resolved按钮，通知框架问题已经解决。由于原先的升级脚本存在错误，必须将其修正。修改3.sql脚本文件：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="com"># Add another column to User</span><span class="pln"><br>&nbsp; <br></span><span class="com"># --- !Ups</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD company varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- !Downs</span><span class="pln"><br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> DROP company</span><span class="pun">;</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play会发现该升级脚本是最新的，因此覆盖原有的3.sql执行，如图10.9所示：
+</p>
+<p><img class="inline" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/evolutions-resolve.png" alt="">
+</p>
+<p><b>(图10.9 成功执行数据库结构同步)</b>
+</p>
+<p> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图10.9所显示的是脚本正确执行的结果，之后可以继续别的工作。
+</p>
+<p><br>
+</p>
+<div class="quote">
+补充：
+<p>介绍一个开发小技巧：开发人员可以在每次开发前手动删除原有的数据库，当应用启动时框架就会自动加载所有的升级脚本。这样做的好处是可以使开发人员的数据库一直保持最新版本。
+</p></div>
+
+<p><br>
+</p><h3 id="section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.4_E5_8D_87_E7_BA_A7_E5_91_BD_E4_BB_A4">10.14.4 升级命令<a class="hashlink" href="#section-_E7_AE_A1_E7_90_86_E6_95_B0_E6_8D_AE_E5_BA_93_E5_8D_87_E7_BA_A7-10.14.4_E5_8D_87_E7_BA_A7_E5_91_BD_E4_BB_A4">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当应用处于DEV模式时，数据库升级是交互式地进行的。但是在PROD模式下，必须先使用<b>play evolutions</b>命令将数据库结构升级为最新版本，才可以开启应用。当框架发现应用程序的数据库不是最新版本时，控制台会出现如下错误信息：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pun">~</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp;_ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_ <br></span><span class="pun">~</span><span class="pln"> &nbsp;_ __ </span><span class="pun">|</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> __ _ _ &nbsp;_</span><span class="pun">|</span><span class="pln"> </span><span class="pun">|</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="str">'_ \| |/ _'</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="pun">|</span><span class="pln">_</span><span class="pun">|</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> &nbsp;__</span><span class="pun">/|</span><span class="pln">_</span><span class="pun">|\</span><span class="pln">____</span><span class="pun">|\</span><span class="pln">__ </span><span class="pun">(</span><span class="pln">_</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln">_</span><span class="pun">|</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">|</span><span class="pln">__</span><span class="pun">/</span><span class="pln"> &nbsp; <br></span><span class="pun">~</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> play</span><span class="pun">!</span><span class="pln"> master</span><span class="pun">-</span><span class="pln">localbuild</span><span class="pun">,</span><span class="pln"> http</span><span class="pun">:</span><span class="com">//www.playframework.org</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> framework ID </span><span class="kwd">is</span><span class="pln"> prod<br></span><span class="pun">~</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="typ">Ctrl</span><span class="pun">+</span><span class="pln">C to stop<br></span><span class="pun">~</span><span class="pln"> <br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">22</span><span class="pln"> INFO &nbsp;</span><span class="pun">~</span><span class="pln"> </span><span class="typ">Starting</span><span class="pln"> </span><span class="pun">~/</span><span class="pln">test<br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">22</span><span class="pln"> INFO &nbsp;</span><span class="pun">~</span><span class="pln"> </span><span class="typ">Precompiling</span><span class="pln"> </span><span class="pun">...</span><span class="pln"><br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> INFO &nbsp;</span><span class="pun">~</span><span class="pln"> </span><span class="typ">Connected</span><span class="pln"> to jdbc</span><span class="pun">:</span><span class="pln">mysql</span><span class="pun">:</span><span class="com">//localhost</span><span class="pln"><br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> WARN &nbsp;</span><span class="pun">~</span><span class="pln"> <br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> WARN &nbsp;</span><span class="pun">~</span><span class="pln"> </span><span class="typ">Your</span><span class="pln"> database </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> up to date</span><span class="pun">.</span><span class="pln"><br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> WARN &nbsp;</span><span class="pun">~</span><span class="pln"> </span><span class="typ">Use</span><span class="pln"> </span><span class="str">`play evolutions`</span><span class="pln"> command to manage database evolutions</span><span class="pun">.</span><span class="pln"><br></span><span class="lit">13</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> ERROR </span><span class="pun">~</span><span class="pln"> <br>&nbsp;<br></span><span class="lit">@662c6n234</span><span class="pln"><br></span><span class="typ">Can</span><span class="str">'t start in PROD mode with errors<br>&nbsp;<br>Your database needs evolution!<br>An SQL script will be run on your database.<br>&nbsp;<br>play.db.Evolutions$InvalidDatabaseRevision<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.db.Evolutions.checkEvolutionsState(Evolutions.java:323)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.db.Evolutions.onApplicationStart(Evolutions.java:197)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.Play.start(Play.java:452)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.Play.init(Play.java:298)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.server.Server.main(Server.java:141)<br>Exception in thread "main" play.db.Evolutions$InvalidDatabaseRevision<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.db.Evolutions.checkEvolutionsState(Evolutions.java:323)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.db.Evolutions.onApplicationStart(Evolutions.java:197)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.Play.start(Play.java:452)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.Play.init(Play.java:298)<br>&nbsp; &nbsp; &nbsp; &nbsp; at play.server.Server.main(Server.java:141)</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该错误信息提示我们运行<b>play evolutions</b>命令同步数据库：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">$ play evolutions<br></span><span class="pun">~</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp;_ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_ <br></span><span class="pun">~</span><span class="pln"> &nbsp;_ __ </span><span class="pun">|</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> __ _ _ &nbsp;_</span><span class="pun">|</span><span class="pln"> </span><span class="pun">|</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="str">'_ \| |/ _'</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="pun">|</span><span class="pln">_</span><span class="pun">|</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> &nbsp;__</span><span class="pun">/|</span><span class="pln">_</span><span class="pun">|\</span><span class="pln">____</span><span class="pun">|\</span><span class="pln">__ </span><span class="pun">(</span><span class="pln">_</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="pun">|</span><span class="pln">_</span><span class="pun">|</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">|</span><span class="pln">__</span><span class="pun">/</span><span class="pln"> &nbsp; <br></span><span class="pun">~</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> play</span><span class="pun">!</span><span class="pln"> master</span><span class="pun">-</span><span class="pln">localbuild</span><span class="pun">,</span><span class="pln"> http</span><span class="pun">:</span><span class="com">//www.playframework.org</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> framework ID </span><span class="kwd">is</span><span class="pln"> gbo<br></span><span class="pun">~</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="typ">Connected</span><span class="pln"> to jdbc</span><span class="pun">:</span><span class="pln">mysql</span><span class="pun">:</span><span class="com">//localhost</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="typ">Application</span><span class="pln"> revision </span><span class="kwd">is</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">[</span><span class="lit">15ed3f5</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="typ">Database</span><span class="pln"> revision </span><span class="kwd">is</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">[</span><span class="pln">da39a3e</span><span class="pun">]</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"><br></span><span class="pun">~</span><span class="pln"> </span><span class="typ">Your</span><span class="pln"> database needs evolutions</span><span class="pun">!</span><span class="pln"><br>&nbsp;<br></span><span class="com"># ----------------------------------------------------------------------------</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- Rev:1,Ups - 6b21167</span><span class="pln"><br>&nbsp;<br>CREATE TABLE </span><span class="typ">User</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; email varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; password varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; fullname varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; isAdmin </span><span class="kwd">boolean</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- Rev:2,Ups - 9cf7e12</span><span class="pln"><br>&nbsp; <br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD age INT</span><span class="pun">;</span><span class="pln"><br>CREATE TABLE </span><span class="typ">Post</span><span class="pln"> </span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL AUTO_INCREMENT</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; title varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; content text NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; postedAt date NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; author_id bigint</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; FOREIGN KEY </span><span class="pun">(</span><span class="pln">author_id</span><span class="pun">)</span><span class="pln"> REFERENCES </span><span class="typ">User</span><span class="pun">(</span><span class="pln">id</span><span class="pun">),</span><span class="pln"><br>&nbsp; &nbsp; PRIMARY KEY </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># --- Rev:3,Ups - 15ed3f5</span><span class="pln"><br>&nbsp;<br>ALTER TABLE </span><span class="typ">User</span><span class="pln"> ADD company varchar</span><span class="pun">(</span><span class="lit">255</span><span class="pun">);</span><span class="pln"><br>&nbsp;<br></span><span class="com"># ----------------------------------------------------------------------------</span><span class="pln"><br>&nbsp;<br></span><span class="pun">~</span><span class="pln"> </span><span class="typ">Run</span><span class="pln"> </span><span class="str">`play evolutions:apply`</span><span class="pln"> to automatically apply </span><span class="kwd">this</span><span class="pln"> script to the db<br></span><span class="pun">~</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> apply it yourself </span><span class="kwd">and</span><span class="pln"> mark it </span><span class="kwd">done</span><span class="pln"> </span><span class="kwd">using</span><span class="pln"> </span><span class="str">`play evolutions:markApplied`</span><span class="pln"><br></span><span class="pun">~</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用<b>play evolutions:apply</b>命令可以通知Play自动执行数据库升级脚本：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">play evolutions</span><span class="pun">:</span><span class="pln">apply</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果在成品数据库上手动执行脚本，可以使用<b>play evolutions:markApplied</b>命令通知Play该数据库已经是最新版本了：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">play evolutions</span><span class="pun">:</span><span class="pln">markApplied</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当应用处于DEV模式，如果框架自动执行升级脚本失败，就需要手动解决，并将数据库结构标记为已修正的：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">play evolutions</span><span class="pun">:</span><span class="pln">resolve</span></pre>
+</div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+<h3>附件列表</h3>
+
+  
+
+  
+
+  <div class="zebra-table"><div class="slimbox-img sortable">
+  <table class="wikitable">
+    <tbody><tr>
+      <th class="sort" title="单击排序">类型</th>
+      <th class="sort" title="单击排序">附件名称</th>
+      <th class="sort" title="单击排序">大小</th>
+      <th class="sort" title="单击排序">版本</th>
+      <th class="sort" title="单击排序">修改日期</th>
+      <th class="sort" title="单击排序">作者</th>
+      
+      <th class="changenote sort" title="单击排序">变更注释</th>
+    </tr>
+
+    
+    
+    <tr class="">
+      <td><div id="attach-png" class="attachtype">png</div></td>
+      <td><a class="slimbox" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-conflict.png" rel="lightbox0 img" title="evolutions-conflict.png">»</a><a class="attachment" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-conflict.png" accesskey="" title="evolutions-conflict.png">evolutions-conflict.png</a></td>
+      <td style="white-space:nowrap;text-align:right;">
+        98.8&nbsp;kB
+      </td>
+      <td style="text-align:center;">
+        <a href="http://www.playframework.cn/PageInfo.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-conflict.png" title="附件附件和版本历史记录">1</a>
+      </td>
+	  <td style="white-space:nowrap;" jspwiki:sortvalue="1305117506000">
+	  11-五月-2011 12:38
+	  </td>
+      <td>曹元彦</td>
+      
+      <td class="changenote">
+      
+      </td>
+    </tr>
+    
+    
+    <tr class="odd">
+      <td><div id="attach-png" class="attachtype">png</div></td>
+      <td><a class="slimbox" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-inconsistent.png" rel="lightbox0 img" title="evolutions-inconsistent.png">»</a><a class="attachment" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-inconsistent.png" accesskey="" title="evolutions-inconsistent.png">evolutions-inconsistent.png</a></td>
+      <td style="white-space:nowrap;text-align:right;">
+        78.3&nbsp;kB
+      </td>
+      <td style="text-align:center;">
+        <a href="http://www.playframework.cn/PageInfo.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-inconsistent.png" title="附件附件和版本历史记录">1</a>
+      </td>
+	  <td style="white-space:nowrap;" jspwiki:sortvalue="1305117512000">
+	  11-五月-2011 12:38
+	  </td>
+      <td>曹元彦</td>
+      
+      <td class="changenote">
+      
+      </td>
+    </tr>
+    
+    
+    <tr class="">
+      <td><div id="attach-png" class="attachtype">png</div></td>
+      <td><a class="slimbox" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-resolve.png" rel="lightbox0 img" title="evolutions-resolve.png">»</a><a class="attachment" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-resolve.png" accesskey="" title="evolutions-resolve.png">evolutions-resolve.png</a></td>
+      <td style="white-space:nowrap;text-align:right;">
+        77.0&nbsp;kB
+      </td>
+      <td style="text-align:center;">
+        <a href="http://www.playframework.cn/PageInfo.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions-resolve.png" title="附件附件和版本历史记录">1</a>
+      </td>
+	  <td style="white-space:nowrap;" jspwiki:sortvalue="1305117520000">
+	  11-五月-2011 12:38
+	  </td>
+      <td>曹元彦</td>
+      
+      <td class="changenote">
+      
+      </td>
+    </tr>
+    
+    
+    <tr class="odd">
+      <td><div id="attach-png" class="attachtype">png</div></td>
+      <td><a class="slimbox" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions.png" rel="lightbox0 img" title="evolutions.png">»</a><a class="attachment" href="http://www.playframework.cn/attach/%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions.png" accesskey="" title="evolutions.png">evolutions.png</a></td>
+      <td style="white-space:nowrap;text-align:right;">
+        80.2&nbsp;kB
+      </td>
+      <td style="text-align:center;">
+        <a href="http://www.playframework.cn/PageInfo.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/evolutions.png" title="附件附件和版本历史记录">1</a>
+      </td>
+	  <td style="white-space:nowrap;" jspwiki:sortvalue="1305117468000">
+	  11-五月-2011 12:37
+	  </td>
+      <td>曹元彦</td>
+      
+      <td class="changenote">
+      
+      </td>
+    </tr>
+    
+
+  </tbody></table>
+  </div></div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 14）最后由 郑舒天 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7&amp;r1=14&amp;r2=13">14-Feb-2012 08:07</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/stat.php" type="text/javascript"></script><script src="%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+<div id="lbOverlay" style="visibility: hidden; opacity: 0;"></div><div id="lbCenter" style="width: 250px; height: 250px; margin-left: -125px; display: none;"><a id="lbCloseLink" href="#" title="关闭 [Esc]"></a><div id="lbImage"></div></div><div id="lbBottomContainer" style="display: none;"><div id="lbBottom"><div id="lbCaption"></div><div><a id="lbPrevLink" href="#" style="display: none;">«上一个</a><span id="lbNumber"></span><a id="lbNextLink" href="#" style="display: none;">下一个»</a></div><div style="clear: both;"></div></div></div></body></html>

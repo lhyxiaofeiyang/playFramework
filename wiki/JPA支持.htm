@@ -1,0 +1,937 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: JPA支持
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=JPA%E6%94%AF%E6%8C%81' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='JPA支持' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=JPA支持.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=JPA%E6%94%AF%E6%8C%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=JPA支持.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=JPA%E6%94%AF%E6%8C%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">JPA支持</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'JPA支持' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="HTTP流式响应.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94">HTTP流式响应</a>, <a class="wikipage" href="使用WebSocket.htm" tppabs="http://www.playframework.cn/wiki/%E4%BD%BF%E7%94%A8WebSocket">使用WebSocket</a>, <a class="wikipage" href="本章小结8.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%938">本章小结8</a>, <a class="wikipage" href="测试.htm" tppabs="http://www.playframework.cn/wiki/%E6%B5%8B%E8%AF%95">测试</a>, <a class="wikipage" href="编写测试.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">编写测试</a>, <a class="wikipage" href="Fixures.htm" tppabs="http://www.playframework.cn/wiki/Fixures">Fixures</a>, <a class="wikipage" href="运行测试.htm" tppabs="http://www.playframework.cn/wiki/%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95">运行测试</a>, <a class="wikipage" href="集成测试.htm" tppabs="http://www.playframework.cn/wiki/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95">集成测试</a>, <a class="wikipage" href="本章小结9.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%939">本章小结9</a>, <a class="wikipage" href="文件上传.htm" tppabs="http://www.playframework.cn/wiki/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">文件上传</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=JPA支持.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=JPA%E6%94%AF%E6%8C%81" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JPA(Java Persistence API)是Java持久化的规范，但JPA本身并不是持久化的具体实现。这就好比规定了所有的手机都必须能打电话。针对以上这个比喻，JPA充当的角色只是手机能打电话这条约束，而不是电话本身。我们能说手机提供了通话功能，但是不能说通话功能就是一个手机，而且很显然手机提供了通话功能之外的其它很多附加的能力。同样的，JPA的实现者也可以根据自身的情况，提供基本功能之外的附加功能。
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前JPA的实现主要有：Hibernate，OpenJPA， Toplink，JDO等。Play默认使用了Hibernate的实现，JPA作为一种规范，因此也可以使用其他任意的JPA实现来替代Hibernate。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JPA的核心概念是通过注解或XML来描述对象与表的映射关系，并将运行期的实体对象持久化到数据库中。Play在JPA的基础上提供了一套非常实用的辅助类来简化对JPA实体的管理，使开发更加便捷。
+</p>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>开发过程中仍然可以通过原生JPA提供的API来管理实体。
+</p></div>
+<br />
+
+<p />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.1_E5_90_AF_E7_94_A8JPA_E5_AE_9E_E4_BD_93_E7_AE_A1_E7_90_86">10.2.1 启用JPA实体管理<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.1_E5_90_AF_E7_94_A8JPA_E5_AE_9E_E4_BD_93_E7_AE_A1_E7_90_86">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play会自动查找标记为javax.persistence.Entity注解的类，@javax.persistence.Entity注解的作用是通知Play对当前实体类进行管理，默认情况下实体类通过Hibernate的Entity Manager进行管理。当然以上所有的前提是必须正确配置JDBC数据源，否则Play将无法进行持久化操作。
+</p>
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.2_E8_8E_B7_E5_BE_97JPA_E5_AE_9E_E4_BD_93_E7_AE_A1_E7_90_86_E5_99_A8">10.2.2 获得JPA实体管理器<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.2_E8_8E_B7_E5_BE_97JPA_E5_AE_9E_E4_BD_93_E7_AE_A1_E7_90_86_E5_99_A8">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JPA实体管理器启动后，程序代码中就可以通过JPA辅助类来取得被管理的实体。例如：
+</p>
+<div class="prettify">
+<pre>
+public static void index(){
+    Query query = JPA.em().createQuery(&quot;from Article&quot;);
+    List&lt;Article&gt; articles = query.getResultList();
+    render(articles);
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.3_E4_BA_8B_E5_8A_A1_E7_AE_A1_E7_90_86">10.2.3 事务管理<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.3_E4_BA_8B_E5_8A_A1_E7_AE_A1_E7_90_86">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事务(Transaction)是访问并可能更新数据库中各种数据项的程序执行单元。Play会自动进行事务管理，在每次发送HTTP请求时自动开启事务，发送HTTP响应完毕后提交事务。如果程序在request/response过程中抛出了异常，事务会自动回滚。当然也可以显式调用JPA.setRollbackOnly()方法通知JPA不要提交当前事务，而在代码中对事务进行强制回滚。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play为事务管理控制提供了注解的支持。如果需要将Action声明为只读事务，可以在Action方法上标记@play.db.jpa.Transactional(readOnly=true)注解；如果执行当前方法时无需开启事务，可以在Action方法上标记@play.db.jpa.NoTransaction；如果当前控制器中所有方法都无需开启事务，可以直接在控制器上标明@play.db.jpa.NoTransaction。这样做的好处是，大大提升了应用的性能，因为添加@play.db.jpa.NoTransaction注解后Play不会从连接池中获取连接。
+</p>
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.4Play.db.jpa.Model_E8_BE_85_E5_8A_A9_E7_B1_BB">10.2.4 play.db.jpa.Model辅助类<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.4Play.db.jpa.Model_E8_BE_85_E5_8A_A9_E7_B1_BB">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.db.jpa.Model是Play中主要的JPA辅助类，它提供了大量的辅助方法，简化程序对JPA的访问。需要做的就是使JPA实体类继承play.db.jpa.Model。如下是继承Model的Post实体类：
+</p>
+<div class="prettify">
+<pre>
+@Entity
+public class Post extends Model {
+    
+    public String title;
+    public String content;
+    public Date postDate;
+    
+    @ManyToOne
+    public Author author;
+    
+    @OneToMany
+    public List&lt;Comment&gt; comments;
+    
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.db.jpa.Model类默认包含了一个自增长的长整型id字段，并将其作为主键。这通常是比较好的方案：让自增长的长整型id作为JPA实体的主键（技术主键），并指定另一字段作为实体的功能主键。
+</p>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>Play将实体的成员变量的访问权限定义为public，从而无需编写大量的setter/getter方法。
+</p></div>
+<br />
+
+<p />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.5_E4_BD_BF_E7_94_A8GenericModel_E8_87_AA_E5_AE_9A_E4_B9_89ID">10.2.5 使用GenericModel自定义ID<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.5_E4_BD_BF_E7_94_A8GenericModel_E8_87_AA_E5_AE_9A_E4_B9_89ID">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play并不强制要求实体类都继承play.db.jpa.Model，某些情况下应用不需要自增长型的id字段作为实体类的主键，可以选择将JPA实体类继承自play.db.jpa.GenericModel。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下例是User实体的映射。其中实体的id属性是UUID(通用唯一识别码 Universally Unique Identifier)，name和mail属性是必需的，并且使用Play验证器来验证简单的业务规则。
+</p>
+<div class="prettify">
+<pre>
+@Entity
+public class User extends GenericModel {
+    @Id
+    @GeneratedValue(generator = &quot;system-uuid&quot;)
+    @GenericGenerator(name = &quot;system-uuid&quot;, strategy = &quot;uuid&quot;)
+    public String id;
+
+    @Required
+    public String name;
+
+    @Required
+    @MaxSize(value=255, message = &quot;email.maxsize&quot;)
+    @play.data.validation.Email
+    public String mail;
+}
+</pre>
+</div>
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.6_E6_9F_A5_E6_89_BE_E5_AF_B9_E8_B1_A1">10.2.6 查找对象<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.6_E6_9F_A5_E6_89_BE_E5_AF_B9_E8_B1_A1">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.db.jpa.Model 类提供多种方法用于数据查找。
+</p>
+<p />
+<p><br />
+<b>通过ID查找</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;findById()是最常用的查找对象方法，可以根据实体对象的Id进行查找：
+</p>
+<div class="prettify">
+<pre>
+Post aPost = Post.findById(5L);
+</pre>
+</div>
+<p><br />
+<b>查找所有对象</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;findAll()用来检索所有对象：
+</p>
+<div class="prettify">
+<pre>
+List&lt;Post&gt; posts = Post.findAll();
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下方法实现的效果与findAll()等价：
+</p>
+<div class="prettify">
+<pre>
+List&lt;Post&gt; posts = Post.all().fetch();
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采用以下写法可以对查询结果进行分页：
+</p>
+<div class="prettify">
+<pre>
+// 最多匹配100篇 post
+List&lt;Post&gt; posts = Post.all().fetch(100); 
+
+//从第50篇post开始查找，并且最多匹配到第100篇post
+List&lt;Post&gt; posts = Post.all().from(50).fetch(100); 
+</pre>
+</div>
+<p><br />
+<b>使用精简语句查询</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供了非常语义化的查询表达式来创建查询语句，但是只支持一些简单的条件查询。
+</p>
+<div class="prettify">
+<pre>
+Post.find(&quot;byTitle&quot;, &quot;My first post&quot;).fetch();
+Post.find(&quot;byTitleLike&quot;, &quot;%hello%&quot;).fetch();
+Post.find(&quot;byAuthorIsNull&quot;).fetch();
+Post.find(&quot;byTitleLikeAndAuthor&quot;, &quot;%hello%&quot;, connectedUser).fetch();
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简单的查询语句必须遵循固定语法规则：“[Property][Comparator]And?”。其中Comparator有以下几种形式:
+</p>
+<ul><li>LessThan – 小于给定的值
+</li><li>LessThanEquals – 小于等于给定的值
+</li><li>GreaterThan – 大于给定的值
+</li><li>GreaterThanEquals – 大于等于给定的值
+</li><li>Like – 与SQL语法中like相似，但属性总是会被转换成小写
+</li><li>Ilike – 与Like相似，但是大小写敏感，会将参数全部转换成小写
+</li><li>Elike – 与SQL语法中like等价，不会进行大小写转换
+</li><li>NotEqual – 不等于
+</li><li>Between – 在两个数值之间(需要两个参数)
+</li><li>IsNotNull – 不为空(不需要参数)
+</li><li>IsNull – 为空(不需要参数)
+</li></ul><p><br />
+<b>使用JPQL查询</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Play中也可以书写完整的JPQL语句进行查询：
+</p>
+<div class="prettify">
+<pre>
+Post.find(
+    &quot;select p from Post p, Comment c &quot; +
+    &quot;where c.post = p and c.subject like ?&quot;, &quot;%hop%&quot;
+);
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以在JPQL语句中只写条件部分的查询：
+</p>
+<div class="prettify">
+<pre>
+Post.find(&quot;title&quot;, &quot;My first post&quot;).fetch();
+Post.find(&quot;title like ?&quot;, &quot;%hello%&quot;).fetch();
+Post.find(&quot;author is null&quot;).fetch();
+Post.find(&quot;title like % and author is null&quot;, &quot;%hello%&quot;).fetch();
+Post.find(&quot;title like % and author is null order by postDate&quot;, 
+&quot;%hello%&quot;).fetch();
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;甚至可以只写order by的部分，对查询结果进行升降排序：
+</p>
+<div class="prettify">
+<pre>
+Post.find(&quot;order by postDate desc&quot;).fetch();
+</pre>
+</div>
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.7_E7_BB_9F_E8_AE_A1_E5_AF_B9_E8_B1_A1">10.2.7 统计对象<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.7_E7_BB_9F_E8_AE_A1_E5_AF_B9_E8_B1_A1">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play提供的count()方法具有统计查询对象结果的功能：
+</p>
+<div class="prettify">
+<pre>
+long postCount = Post.count();
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以在count()方法中指定条件来统计目标对象数量：
+</p>
+<div class="prettify">
+<pre>
+long userPostCount = Post.count(&quot;author = ?&quot;, connectedUser);
+</pre>
+</div>
+<p />
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.8_E6_98_BE_E5_BC_8F_E5_9C_B0_E6_8C_81_E4_B9_85_E5_8C_96_E5_AF_B9_E8_B1_A1">10.2.8 显式地持久化对象<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.8_E6_98_BE_E5_BC_8F_E5_9C_B0_E6_8C_81_E4_B9_85_E5_8C_96_E5_AF_B9_E8_B1_A1">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hibernate会将数据库中查询到的结果以对象缓存的形式维护起来。当实体管理器在进行查询匹配等操作的过程中，数据一直作为持久对象存在。这意味着如果事务没有提交，对象的任何改变都将自动持久化到数据库中。JPA的规范是这样定义的：对象的修改默认与事务过程一致，所以无需显式地调用任何方法就可以持久化修改后的数据。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这种全自动的持久化管理，也有不足的地方，因为我们并不总是希望对象一旦修改就被持久化。所以与其通知实体管理器更新一个对象，还不如告诉它哪些对象不需要更新。refresh()方法可以回滚单个实体，在事务提交之前调用，对象将不被持久化。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下例是提交表单后，处理持久化对象的常规方式：
+</p>
+<div class="prettify">
+<pre>
+public static void save(Long id) {
+    User user = User.findById(id);
+    user.edit(&quot;user&quot;, params.all());   //修改持久化的对象
+    validation.valid(user);
+    if(validation.hasErrors()) {
+        // 需要显式抛弃user对象
+        user.refresh();
+        edit(id);
+    }
+    show(id);
+}
+</pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可能大部分开发者都会犯这样的错误：当不希望对象被持久化时，忘记通知实体管理器抛弃当前对象，以为只要没有显式地调用save()方法，对象就不会被持久化。
+ 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play总结了这个问题，并做了处理过程的改进。所有继承JPASupport/JPAModel的对象需要显式地调用save()方法才能实现实体的持久化操作。重写上例中的代码：
+</p>
+<div class="prettify">
+<pre>
+public static void save(Long id) {
+    User user = User.findById(id);
+    user.edit(&quot;user&quot;, params.all());
+    validation.valid(user);
+    if(validation.hasErrors()) {
+        edit(id);
+    }else{
+    	user.save();
+   	show(id);
+    }
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显式地调用save()方法在对象级联的操作中显得非常繁琐，通过在注解中声明cascade=CascadeType.ALL属性可以很方便的解决这个问题。
+</p>
+<p><br />
+</p>
+<div class="quote">
+提示：
+<p>注解中声明cascade=CascadeType.ALL后，save()方法会自动包含级联操作。
+</p></div>
+
+<p><br />
+<h3 id="section-JPA_E6_94_AF_E6_8C_81-10.2.9_E6_B3_9B_E5_9E_8B_E9_97_AE_E9_A2_98">10.2.9 泛型问题<a class="hashlink" href="#section-JPA_E6_94_AF_E6_8C_81-10.2.9_E6_B3_9B_E5_9E_8B_E9_97_AE_E9_A2_98">#</a></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.db.jpa.Model中定义了大量的泛型方法，这些方法通过泛型参数来指定方法的返回类型。调用这些方法时，会根据执行上下文返回具体的类型。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如，findAll()方法的定义如下：
+</p>
+<div class="prettify">
+<pre>
+&lt;T&gt; List&lt;T&gt; findAll();
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;findAll()的使用方法如下：
+</p>
+<div class="prettify">
+<pre>
+List&lt;Post&gt; posts = Post.findAll();
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方法返回结果中指定了List&lt;Post&gt;，通知Java编译器确切的类型，泛型T才被解析为Post类型。但是我们无法直接在循环参数中指定泛型方法返回值类型。所以下面的代码无法通过编译，会提示“Type mismatch: cannot convert from element type Object to Post”类型转换错误：
+</p>
+<div class="prettify">
+<pre>
+for(Post p : Post.findAll()) {
+    p.delete();
+}
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;针对这个问题，通常的解决方案是为其指定中间变量：
+</p>
+<div class="prettify">
+<pre>
+List&lt;Post&gt; posts = Post.findAll(); 
+for(Post p : posts) {
+    p.delete();
+}
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面介绍一种实用却较少用到的Java语言特性，代码简洁并更具可读性：
+</p>
+<div class="prettify">
+<pre>
+for(Post p : Post.&lt;Post&gt;findAll()) {
+    p.delete();
+}
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+注意：
+<p>开发者在使用JPA的时候需要注意，Play并不支持XA（采用两阶段提交方式来管理分布式事务）。如果在同一个请求中配置了多个不同的JPA，Play的做法是尽最大可能commit事务。如第一个数据库的commit成功了，但是第二个数据库的commit失败了，第一个commit并不会回滚。所以，开发者在同个请求中使用多个JPA配置的时候，需要格外的当心。
+</p></div>
+
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-26) was last changed on <a href="../Diff.jsp-page=JPA支持&r1=26&r2=25.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=JPA%E6%94%AF%E6%8C%81&r1=26&r2=25">03-Sep-2013 06:42</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=JPA支持.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=JPA%E6%94%AF%E6%8C%81" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=JPA支持.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=JPA%E6%94%AF%E6%8C%81"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="JPA支持-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/JPA%E6%94%AF%E6%8C%81?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

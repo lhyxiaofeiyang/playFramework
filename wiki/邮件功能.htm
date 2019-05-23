@@ -1,0 +1,854 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org">
+
+<head>
+  <title>
+    PlayFramework: 邮件功能
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css"
+     href="../templates/default/jspwiki.css" tppabs="http://www.playframework.cn/templates/default/jspwiki.css"/>
+
+<link rel="stylesheet" type="text/css" media="print" 
+     href="../templates/default/jspwiki_print.css" tppabs="http://www.playframework.cn/templates/default/jspwiki_print.css" />
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="../scripts/mootools.js" tppabs="http://www.playframework.cn/scripts/mootools.js"></script>
+<script type="text/javascript" src="../scripts/prettify.js" tppabs="http://www.playframework.cn/scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-common.js" tppabs="http://www.playframework.cn/scripts/jspwiki-common.js"></script>
+<script type="text/javascript" src="../scripts/jspwiki-commonstyles.js" tppabs="http://www.playframework.cn/scripts/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content='view' />
+<meta name="wikiBaseUrl" content='http://www.playframework.cn/' />
+<meta name="wikiPageUrl" content='/wiki/%23%24%25' />
+<meta name="wikiEditUrl" content='/Edit.jsp?page=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD' />
+<meta name="wikiJsonUrl" content='/JSON-RPC' />
+<meta name="wikiPageName" content='邮件功能' />
+<meta name="wikiUserName" content='183.12.170.88' />
+<meta name="wikiTemplateUrl" content='/templates/default/' />
+<meta name="wikiApplicationName" content='PlayFramework' />
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"( All )",
+"javascript.slimbox.error":"<h2>Error</h2>There was a problem with your request.<br />Please try again",
+"javascript.slimbox.remoteRequest":"Remote Request {0} of {1}",
+"javascript.slimbox.close":"Close &#215;",
+"javascript.quick.edit.htm"/*tpa=http://www.playframework.cn/wiki/javascript.quick.edit*/:"[Edit]",
+"javascript.sort.descending":"Descending order. Click to reverse sort order",
+"javascript.expand":"Click to expand",
+"javascript.group.validName":"Please provide a valid name for the new Group",
+"javascript.slimbox.next.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.next*/:"Next&raquo;",
+"javascript.filter.all.htm"/*tpa=http://www.playframework.cn/wiki/javascript.filter.all*/:"( All )",
+"javascript.edit.areyousure":"Without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.quick.edit.title":"Edit section {0}...",
+"javascript.slimbox.directLink":"Direct Link to the target",
+"javascript.prefs.areyousure":"Without clicking the Save User Preferences button, your changes will be lost. Are you sure you want to exit this page?",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info.htm"/*tpa=http://www.playframework.cn/wiki/javascript.slimbox.info*/:"Image {0} of {1}",
+"javascript.tip.default.title":"More...",
+"javascript.edit.resize":"Drag to resize the text area",
+"javascript.edit.findandreplace.nomatch":"No match found!",
+"javascript.sort.ascending":"Ascending order. Click to reverse sort order",
+"javascript.slimbox.close.title":"Close [Esc]",
+"javascript.edit.toolbar.makeSelection":"Please make first a selection.",
+"javascript.favs.hide.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.hide*/:"Click to hide Favorites",
+"javascript.sectionediting.label":"Section Overview",
+"javascript.slimbox.previous":"&laquo;Previous",
+"javascript.favs.show.htm"/*tpa=http://www.playframework.cn/wiki/javascript.favs.show*/:"Click to show Favorites",
+"javascript.collapse":"Click to collapse",
+"javascript.category.title":"Click to show category [{0}] ...",
+"javascript.sort.click":"Click to sort",
+"javascript.edit.startOfPage":"( Start of page )"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="search" href="/wiki/FindPage"
+    title='Search PlayFramework' />
+<link rel="help"   href="/wiki/TextFormattingRules"
+    title="Help" />
+
+ <link rel="start"  href="/wiki/PlayFramework%20Tutorial"
+    title="Front page" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki_print.css"
+    title="Print friendly" />
+<link rel="alternate stylesheet" type="text/css" href="/templates/default/jspwiki.css"
+    title="Standard" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=邮件功能.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=邮件功能.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">邮件功能</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp"
+        class="wikiform"
+           id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; "
+        onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; "
+           type="text" value="Quick Navigation"
+           name="query" id="query"
+           size="20" 
+      accesskey="f" />
+  <button type="submit"
+  		 name="searchSubmit" id="searchSubmit"
+  		value="Go!"
+  		title="Go!"></button>
+  </div>
+  <div id="searchboxMenu" style='visibility:hidden;'>
+    <div id="searchTools">
+      <a href="#" id='quickView' class='action'
+      onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','View the selected page' );"
+        title="View the selected page">view</a>
+      <a href="#" id='quickEdit' class='action'
+      onclick="SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/,'Edit the selected page' );"
+        title="Edit the selected page">edit</a>
+      <a href="#" id='quickClone' class='action'	
+      onclick="return SearchBox.navigate( '../Login.jsp-redirect=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Login.jsp?redirect=__PAGEHERE__*/, 'Clone the selected page', true );"
+        title="Clone the selected page">clone</a>
+      <a href="#" id="advancedSearch" class='action'
+      onclick="SearchBox.navigate( '../Search.jsp-query=__PAGEHERE__.htm'/*tpa=http://www.playframework.cn/Search.jsp?query=__PAGEHERE__*/,'邮件功能' )"
+        title="Advanced Search [ f ]">find</a>
+    </div>
+    <div id="searchResult" >
+	  Quick search
+      <span id="searchTarget" >(type ahead)</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput" ></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      Recent Searches
+      <span><a href="#" id="recentClear">(Clear)</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">Your trail:&nbsp;<a class="wikipage" href="本章小结9.htm" tppabs="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%939">本章小结9</a>, <a class="wikipage" href="文件上传.htm" tppabs="http://www.playframework.cn/wiki/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">文件上传</a>, <a class="wikipage" href="JPA支持.htm" tppabs="http://www.playframework.cn/wiki/JPA%E6%94%AF%E6%8C%81">JPA支持</a>, <a class="wikipage" href="HTTP数据验证.htm" tppabs="http://www.playframework.cn/wiki/HTTP%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81">HTTP数据验证</a>, <a class="wikipage" href="验证码.htm" tppabs="http://www.playframework.cn/wiki/%E9%AA%8C%E8%AF%81%E7%A0%81">验证码</a>, <a class="wikipage" href="配置Log.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AELog">配置Log</a>, <a class="wikipage" href="配置框架ID.htm" tppabs="http://www.playframework.cn/wiki/%E9%85%8D%E7%BD%AE%E6%A1%86%E6%9E%B6ID">配置框架ID</a>, <a class="wikipage" href="国际化.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96">国际化</a>, <a class="wikipage" href="缓存.htm" tppabs="http://www.playframework.cn/wiki/%E7%BC%93%E5%AD%98">缓存</a>, <a class="wikipage" href="产品化.htm" tppabs="http://www.playframework.cn/wiki/%E4%BA%A7%E5%93%81%E5%8C%96">产品化</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton">
+      <a href="MoreMenu.htm" tppabs="http://www.playframework.cn/wiki/MoreMenu" class="action more">More...</a>
+    </li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v" ><span class='accesskey'>V</span>iew</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a" ><span class='accesskey'>A</span>ttach</a>
+  
+    
+  <a id="menu-info" href="../PageInfo.jsp-page=邮件功能.htm" tppabs="http://www.playframework.cn/PageInfo.jsp?page=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD" accesskey="i" ><span class='accesskey'>I</span>nfo</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent" >
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Web应用程序的开发中，经常会有处理邮件的需求。Play的play.libs.Mail辅助类为我们提供了方便的发送电子邮件的支持。下例代码演示如何使用Play发送简单的文本邮件：
+</p><div class="prettify">
+<pre>
+SimpleEmail email = new SimpleEmail();
+// 邮件发送者
+email.setFrom(&quot;sender@zenexity.fr&quot;);
+// 邮件接收者
+email.addTo(&quot;recipient@zenexity.fr&quot;);
+// 邮件主题
+email.setSubject(&quot;subject&quot;);
+// 邮件内容
+email.setMsg(&quot;Message&quot;);
+Mail.send(email); 
+</pre>
+</div>
+<p />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下例代码演示如何使用Play发送HTML格式邮件:
+</p>
+<div class="prettify">
+<pre>
+HtmlEmail email = new HtmlEmail();
+email.addTo(&quot;info@lunatech.com&quot;);
+email.setFrom(&quot;sender@lunatech.com&quot;, &quot;Nicolas&quot;);
+email.setSubject(&quot;Test email with inline image&quot;);
+// 在邮件中嵌入图片
+URL url = new URL(&quot;http://www.zenexity.fr/public/images/layout/logo.png&quot;);
+String cid = email.embed(url, &quot;Zenexity logo&quot;);
+// 设置HTML邮件内容
+email.setHtmlMsg(&quot;&lt;html&gt;Zenexity logo - &lt;img src=\&quot;cid:&quot;+cid+&quot;\&quot;&gt;&lt;/html&gt;&quot;);
+// 设置邮箱不支持HTML邮件提示
+email.setTextMsg(&quot;Your email client does not support HTML, too bad :(&quot;);
+Mail.send(email);
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>HTML是网页格式，以HTML格式发送邮件，对方接收到的邮件将会以页面形式显示。 
+</p></div>
+
+<p><br />
+<h3 id="section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.1_E9_82_AE_E4_BB_B6_E5_92_8CMVC_E9_9B_86_E6_88_90">10.10.1 邮件和MVC集成<a class="hashlink" href="#section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.1_E9_82_AE_E4_BB_B6_E5_92_8CMVC_E9_9B_86_E6_88_90">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play还可以使用JavaMail标准的模板机制和语法发送复杂的、动态的电子邮件。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，我们需要为应用程序创建Mailer类。创建的Mailer类存放在notifiers包下，并继承于play.mvc.Mailer类。Mailer类中每个公共静态方法都是邮件发送者，类似MVC中的控制器的角色：
+</p>
+<div class="prettify">
+<pre>
+package notifiers;
+ 
+import play.*;
+import play.mvc.*;
+import java.util.*;
+
+import org.apache.commons.mail.EmailAttachment;
+
+import models.*;
+ 
+public class Mails extends Mailer {
+ 
+   public static void welcome(User user) {
+      // 邮件主题
+      setSubject(&quot;Welcome %s&quot;, user.name);
+      // 邮件接收者
+      addRecipient(user.email);
+      // 邮件发送者
+      setFrom(&quot;Me &lt;me@me.com&gt;&quot;);
+      // 添加附件
+      EmailAttachment attachment = new EmailAttachment();
+      attachment.setDescription(&quot;A pdf document&quot;);
+      attachment.setPath(Play.getFile(&quot;rules.pdf&quot;).getPath());
+      addAttachment(attachment);
+      // 以模板推送，渲染邮件
+      send(user);
+   }
+ 
+   public static void lostPassword(User user) {
+      String newpassword = user.password;
+      setFrom(&quot;Robot &lt;robot@thecompany.com&gt;&quot;);
+      setSubject(&quot;Your password has been reset&quot;);
+      addRecipient(user.email);
+      send(user, newpassword);
+   }
+ 
+}
+</pre>
+</div>
+<p><br />
+<b>以HTML模板渲染邮件</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们通常采用HTML模板作为邮件体进行推送。上例welcome Action调用的send()方法会以app/views/Mails/welcome.html模板作为e-mail消息体进行渲染。因此，我们需要在app/views/Mails/目录下创建welcome.html模板：
+</p>
+<div class="prettify">
+<pre>
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;Welcome &lt;b&gt;${user.name}&lt;/b&gt;.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而lostPassword Action调用的模板为app/views/Mails/lostPassword.html，我们也为此创建相应的模板：
+</p>
+<pre>
+&lt;html&gt;
+    &lt;body&gt;&lt;head&gt;...&lt;/head&gt;&lt;body&gt;
+        &lt;img src=&quot;mycompany.com/images&quot;/&gt;
+        &lt;p&gt;
+            Hello ${user.name}, Your new password is &lt;b&gt;${newpassword}&lt;/b&gt;.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p><br />
+<b>以纯文本渲染邮件</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果不存在对应的HTML模板，框架默认以纯文本模板形式推送电子邮件。当控制器调用send()方法时，Play以app/views/Mails/welcome.txt模板作为e-mail消息体渲染：
+</p>
+<div class="prettify">
+<pre>
+Welcome ${user.name},
+...
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而lostPassword()方法对应的纯文本模板为app/views/Mails/lostPassword.txt：
+</p>
+<div class="prettify">
+<pre>
+Hello ${user.name},
+ 
+Your new password is ${newpassword}.
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果同时存在HTML模板和纯文本模板，那么纯文本模板将被视为可选。在前面的例子中，如果app/views/Mails/lostPassword.html模板和app/views/Mails/lostPassword.txt模板同时存在，那么该电子邮件将以lostPassword.html模板(text/html形式)进行渲染，lostPassword.txt模板将被视为可选的方式。在应用中推荐以HMTL格式发送电子邮件。
+</p>
+<p><br />
+<b>通过e-mail连接应用程序</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用@@{}标签可以在邮件中包含应用程序的连接：
+</p>
+<div class="prettify">
+<pre>
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;Welcome &lt;b&gt;${user.name}&lt;/b&gt;.&lt;/p&gt;
+        &lt;a href=&quot;@@{application.index}&quot;&gt;link&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果使用Job发送e-mail，需要在application.conf文件中配置application.baseUrl选项。application.baseUrl的值必须是合法的外部baseurl（对应于应用程序）。如playframework.org官方网站使用内部Job发送e-mail，application.baseUrl需进行如下配置：
+</p>
+<div class="prettify">
+<pre>
+application.baseUrl=http://www.playframework.org/
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.2SMTP_E9_85_8D_E7_BD_AE">10.10.2 SMTP 配置<a class="hashlink" href="#section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.2SMTP_E9_85_8D_E7_BD_AE">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在我们使用Play的邮件功能之前，需要在conf/application.conf文件中定义SMTP服务器地址：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.host=smtp.taldius.net
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果该SMTP服务器需要认证，则添加用户名密码属性配置：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.user=username
+mail.smtp.pass=password
+</pre>
+</div>
+<p><br />
+<b>配置通道和端口</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电子邮件在网络上是以明文方式传输的，在传输过程中并没有提供加密服务。直接将邮件暴露在互联网上非常危险，攻击者可以轻易截获用户的私密信息。Play提供两种信道加密发送邮件的方式。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果服务器支持starttls命令(见协议: RFC 2487)，通过25端口与服务器建立连接可以直接切换至SSL/TLS模式，具体配置如下：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.channel=starttls
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果服务器支持的是SMTP-over-SSL(SMTPS)连接，通常SSL socket会在465端口进行监听。针对这种情况Play的具体配置如下：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.channel=ssl
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.3_E6_9B_B4_E5_A4_9A_E9_85_8D_E7_BD_AE_E9_A1_B9">10.10.3 更多配置项<a class="hashlink" href="#section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.3_E6_9B_B4_E5_A4_9A_E9_85_8D_E7_BD_AE_E9_A1_B9">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认情况下，Play使用JavaMail执行SMTP事务。如果需要查看它是如何运行的，可以添加如下配置：
+</p>
+<div class="prettify">
+<pre>
+mail.debug=true
+</pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当通过JavaMail建立SSL连接时，如果远程服务器不是由根证书(root certificate)进行签名，SSL默认会将其丢弃。以下属性配置对该选项进行控制：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.socketFactory.class
+</pre>
+</div>
+<p><br />
+</p>
+<div class="quote">
+补充：
+<p>使用自签证书（self-signed certificate）时，Play的默认行为是跳过该连接检查。
+</p></div>
+
+<p><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者需要自定义连接服务器的端口，可以配置以下属性进行端口控制：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.port=2500
+</pre>
+</div>
+<p><br />
+<h3 id="section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.4_E4_BD_BF_E7_94_A8Gmail">10.10.4 使用Gmail<a class="hashlink" href="#section-_E9_82_AE_E4_BB_B6_E5_8A_9F_E8_83_BD-10.10.4_E4_BD_BF_E7_94_A8Gmail">#</a></h3>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们以Gmail作为邮件服务器为例，介绍具体的SMTP配置选项：
+</p>
+<div class="prettify">
+<pre>
+mail.smtp.host=smtp.gmail.com
+mail.smtp.user=yourGmailLogin
+mail.smtp.pass=yourGmailPassword
+mail.smtp.channel=ssl
+</pre>
+</div>
+<p />
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab" >
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>Add new attachment</h3>
+
+
+<div class="formhelp">Only authorized users are allowed to upload new attachments.</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab" >
+
+  </div>
+
+    
+  
+
+<div style="clear:both;" ></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id='actionsBottom' class="pageactions"> 
+    
+
+    <a href="#top" 
+      class="action quick2top" 
+      title="Go to top" >&laquo;</a>
+
+    
+       This page (revision-23) was last changed on <a href="../Diff.jsp-page=邮件功能&r1=23&r2=22.htm" tppabs="http://www.playframework.cn/Diff.jsp?page=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD&r1=23&r2=22">14-Feb-2012 08:04</a> by 郑舒天
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      G&#8217;day (anonymous guest)
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="../Login.jsp-redirect=邮件功能.htm" tppabs="http://www.playframework.cn/Login.jsp?redirect=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD" 
+        class="action login"
+        title="Log in or Register as new user">Log in</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="../UserPreferences.jsp-redirect=邮件功能.htm" tppabs="http://www.playframework.cn/UserPreferences.jsp?redirect=%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD"
+      class="action prefs" accesskey="p"
+      title="Manage your preferences [ p ]">My <span class='accesskey'>P</span>refs
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  <ul id="morepopup">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" 
+               href="邮件功能-skin=raw.htm" tppabs="http://www.playframework.cn/wiki/%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD?skin=raw"
+              title="View Page Source">View Page Source
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class='separator'>
+        <div id="moremenu" ></div>
+      </li>
+  </ul>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr />
+<p><b>Play!China Wiki</b>
+</p>
+<p />
+<ul><li><a class="wikipage" href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="PlayChina Team.htm" tppabs="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="图片资源.htm" tppabs="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="社区现状.htm" tppabs="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="发展轨迹.htm" tppabs="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="联系我们.htm" tppabs="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr />
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="javascript:if(confirm('http://www.oopsplay.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.oopsplay.org/'" tppabs="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="../images/out.png" tppabs="http://www.playframework.cn/images/out.png" alt="" />
+</li></ul><p />
+<hr />
+<b>Cooperative Site</b>
+<p><br />
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/oschina_logo.png" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/oschina_logo.png" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../attach/LeftMenuFooter/logo.gif" tppabs="http://www.playframework.cn/attach/LeftMenuFooter/logo.gif" height="75" width="165" /></td></tr>
+</table>
+
+<table border="0" class="imageplugin">
+<tr><td><img src="../../tva1.sinaimg.cn/crop.0.0.180.180.180/634352b0jw1e8qgp5bmzyj2050050aa8.jpg" tppabs="http://tp1.sinaimg.cn/1665356464/180/1279885352/1" height="165" width="165" /></td></tr>
+</table>
+
+</p>
+<p />
+    
+  </div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo" > 
+    <a href="PlayFramework Tutorial.htm" tppabs="http://www.playframework.cn/wiki/PlayFramework%20Tutorial"
+       title="Go to home page PlayFramework Tutorial ">Home</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

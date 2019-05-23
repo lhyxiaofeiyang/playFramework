@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0069)http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7 -->
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    PlayFramework：框架特性
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="./框架特性_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="./框架特性_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+&lt;style type="text/css"&gt;
+#hiddenmorepopup { display:block; }
+&lt;/style&gt;
+</noscript>
+
+
+<script type="text/javascript" src="./框架特性_files/mootools.js"></script>
+<script type="text/javascript" src="./框架特性_files/prettify.js"></script>
+<script type="text/javascript" src="./框架特性_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="./框架特性_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="框架特性">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="./框架特性_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="./框架特性_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">框架特性</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="http://www.playframework.cn/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == &#39;&#39; ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = &#39;&#39;}; return true; " type="text" value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; zoom: 1; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#" id="quickView" class="action" onclick="SearchBox.navigate( &#39;/wiki/__PAGEHERE__&#39;,&#39;查看选定页面&#39; );" title="查看选定页面">查看</a>
+      <a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#" id="quickEdit" class="action" onclick="SearchBox.navigate( &#39;/Edit.jsp?page=__PAGEHERE__&#39;,&#39;编辑选定页面&#39; );" title="编辑选定页面">编辑</a>
+      <a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#" id="quickClone" class="action" onclick="return SearchBox.navigate( &#39;/Edit.jsp?page=__PAGEHERE__&#39;, &#39;复制选定页面&#39;, true );" title="复制选定页面">复制</a>
+      <a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#" id="advancedSearch" class="action" onclick="SearchBox.navigate( &#39;http://www.playframework.cn/Search.jsp?query=__PAGEHERE__&#39;,&#39;框架特性&#39; )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">PlayFramework Tutorial</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; zoom: 1; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.1_E6_97_A0_E7_BC_9D_E9_9B_86_E6_88_90_E7_8E_B0_E6_9C_89_E5_BC_80_E5_8F_91_E7_8E_AF_E5_A2_83">1.2.1 无缝集成现有开发环境<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.1_E6_97_A0_E7_BC_9D_E9_9B_86_E6_88_90_E7_8E_B0_E6_9C_89_E5_BC_80_E5_8F_91_E7_8E_AF_E5_A2_83">#</a></h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play1.x是基于Java的Web开发框架，允许开发者使用自己常用的集成开发工具（如Eclipse）和类库。如果读者已经以Java作为开发方向，那么无须进行开发语言、IDE或者类库的切换，要做的就是在更加高效的Java环境中开发Web应用。
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.2_E7_83_AD_E9_87_8D_E8_BD_BD_E5_92_8C_E4_BF_AE_E6_94_B9Bug">1.2.2 热重载和修改Bug<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.2_E7_83_AD_E9_87_8D_E8_BD_BD_E5_92_8C_E4_BF_AE_E6_94_B9Bug">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java在过去因为开发效率低下而臭名昭著，主要是因为其重复和乏味的编译-打包-部署周期。因此在设计框架的时候对这些因素都进行了重新考量，目标是让Play应用的开发过程变得更加高效。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play框架会自动编译Java源文件，而不用重新启动Web服务器将代码热加载至JVM。这样做的好处是：当代码修改完保存后，框架自动编译并重载修改后的类，只需刷新浏览器就可以查看更改的结果，就像在LAMP或者Rails环境中开发一样。另外一个好处是：开发的时候甚至可以只用简单的文本编辑器，而不使用功能完备的Java IDE进行开发，如图1.1所示：
+</p>
+<p><img class="inline" src="./框架特性_files/editor.png" alt="图片资源/editor.png">
+</p>
+<p>
+</p><p><b>(图1.1 简单的文本编辑器)</b>
+</p>
+<p>
+</p><p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用Play开发应用的过程中，在任何时候出现的语法错误或者异常，框架都能够准确将其定位并显示对应的提示信息。好处显而易见：应用的Bug能够很直观地显示出来，帮助开发者迅速锁定出错位置。如图1.2所示：
+</p>
+<p><img class="inline" src="./框架特性_files/guide1-3.png" alt="图片资源/guide1-3.png">
+</p>
+<p><b>(图1.2 框架准确定位错误代码位置)</b>
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play框架替换了原有以栈跟踪的方式来提示错误，取而代之的是在浏览器中以更加友好并且直观的页面形式来显示错误出现的确切位置(当然在控制台中仍以栈跟踪的方式显示错误信息)。此外，Play还把模板执行发生的异常信息完美地集成到了Java栈跟踪里面，如图1.3所示：
+</p>
+<p><img class="inline" src="./框架特性_files/stacktrace.png" alt="图片资源/stacktrace.png">
+</p>
+<p><b>(图1.3 模板执行出错后的Java堆栈跟踪)</b>
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.3_E7_AE_80_E5_8D_95_E7_9A_84_E6_97_A0_E7_8A_B6_E6_80_81MVC_E6_9E_B6_E6_9E_84">1.2.3 简单的无状态MVC架构<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.3_E7_AE_80_E5_8D_95_E7_9A_84_E6_97_A0_E7_8A_B6_E6_80_81MVC_E6_9E_B6_E6_9E_84">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一端是数据库，另一端是Web浏览器，为什么我们需要在这两者之间保存状态？
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有状态并且基于组件的Java Web框架能够更加容易地保存页面状态，但这同样带来了很多其他的问题：如果用户在新的浏览器窗口中重新打开应用会发生什么？用户按了后退按钮又会是什么结果？
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无共享架构是很多Web应用框架所提倡的（ROR，Django等）。由于浏览器变得越来越强大，我们并不需要技巧性地构建HTTP模型来创建伪造的状态，只需在客户端使用Ajax或者离线存储技术就可以很容易地解决状态问题。无共享架构的另一优势是使页面的呈现更加平滑，更容易地实现局部页面更新（或者渐进式的页面处理流程）。
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.4HTTP_E5_88_B0_E4_BB_A3_E7_A0_81_E7_9A_84_E6_98_A0_E5_B0_84">1.2.4 HTTP到代码的映射<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.4HTTP_E5_88_B0_E4_BB_A3_E7_A0_81_E7_9A_84_E6_98_A0_E5_B0_84">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果读者使用过其他的Java Web框架（比如说Struts）可能会发现，这些框架的底层实现其实是对HTTP协议做了进一步封装，所以它们提供的Java API和自身的理念会让人觉得很不自然。Play框架在设计过程中换了一种思维方式，即Web应用框架也应该提供完整、直接的方式去访问HTTP————这也是Play框架和其他Java Web框架最根本的差异。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP，Request/Response模式，Rest架构风格，HTTP内容协商（Content–type negotiation），URI等等，所有这些都是Play框架的主要概念。如果用户需要将URI绑定到指定的Java方法调用，只需要在路由文件中以如下方式进行配置：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">GET &nbsp; &nbsp;</span><span class="pun">/</span><span class="pln">clients</span><span class="pun">/{</span><span class="pln">id</span><span class="pun">}</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="typ">Clients</span><span class="pun">.</span><span class="pln">show</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果Ajax，REST以及管理页面之间的“前进/后退”操作是日常开发中需要频繁考虑的需求，那么Play框架无疑是最佳的选择，因为针对这些问题它都提供了非常优秀的解决方案。
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.5_E9_AB_98_E6_95_88_E7_9A_84_E6_A8_A1_E6_9D_BF_E5_BC_95_E6_93_8E">1.2.5 高效的模板引擎<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.5_E9_AB_98_E6_95_88_E7_9A_84_E6_A8_A1_E6_9D_BF_E5_BC_95_E6_93_8E">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也许读者已经深深地感受到了JSP和表达式语言背后的理念，但是为什么在创建标签库的时候需要如此多的配置文件？为什么不能直接访问底层的模型对象？JSP中太多的限制确实让开发者感到失望，受JSP启发又不被其约束，Play框架提供了自定义的模板引擎机制。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发者再也不需要编写这些令人厌倦的代码了：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;%</span><span class="embsrc"><span class="lit">@</span><span class="pln"> taglib uri</span><span class="pun">=</span><span class="str">"http://java.sun.com/jsp/jstl/core"</span><span class="pln"> prefix</span><span class="pun">=</span><span class="str">"c"</span><span class="pln"> </span></span><span class="tag">%&gt;</span><span class="pln"><br></span><span class="tag">&lt;%</span><span class="embsrc"><span class="lit">@</span><span class="pln"> taglib uri</span><span class="pun">=</span><span class="str">"http://java.sun.com/jsp/jstl/functions"</span><span class="pln"> prefix</span><span class="pun">=</span><span class="str">"fn"</span><span class="pln"> </span></span><span class="tag">%&gt;</span><span class="pln"><br>&nbsp;<br></span><span class="tag">&lt;c:choose&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;c:when </span><span class="atn">test</span><span class="tag">=</span><span class="atv">"${emails.unread != null &amp;&amp; fn:size(emails.unread)}"</span><span class="tag">&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; You have ${fn:size(emails.unread)} unread email(s)!<br>&nbsp; &nbsp; </span><span class="tag">&lt;/c:when&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;c:otherwise&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; You have no unread emails!<br>&nbsp; &nbsp; </span><span class="tag">&lt;/c:otherwise&gt;</span><span class="pln"><br></span><span class="tag">&lt;/c:choose&gt;</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相信开发者更倾向于用以下方式来书写模板代码：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">You</span><span class="pln"> have $</span><span class="pun">{</span><span class="pln">emails</span><span class="pun">.</span><span class="pln">unread </span><span class="pun">?:</span><span class="pln"> </span><span class="str">'no'</span><span class="pun">}</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">emails</span><span class="pun">.</span><span class="pln">unread</span><span class="pun">?.</span><span class="pln">pluralize</span><span class="pun">(</span><span class="str">'email'</span><span class="pun">)}</span><span class="pln"> </span><span class="pun">!</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play模板引擎使用的表达式语言为Groovy，它提供了与Java一致的语法。Play主要使用模板机制来渲染HTML，当然也可以生成其他的文档格式，比如e-mail messages，JSON等等。
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.6_E5_86_85_E7_BD_AEJPA_E6_94_AF_E6_8C_81">1.2.6 内置JPA支持<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.6_E5_86_85_E7_BD_AEJPA_E6_94_AF_E6_8C_81">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JPA（Java Persistence API）是Java中最简洁的对象关系映射（object-relational mapping即ORM）API。如果读者以前了解或者使用过JPA，就会发现与其他框架相比，在Play中使用会更加方便。这是因为Play框架对其做了进一步封装，不需要任何配置，Play会自动开启JPA实体管理器（EM），一旦代码被调用就自动进行持久化操作。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此外，实体如果继承Play提供的play.db.jpa.Model类，操作代码将会更加简洁，更加美观：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> messages</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> page</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">User</span><span class="pln"> connectedUser </span><span class="pun">=</span><span class="pln"> </span><span class="typ">User</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="str">"byEmail"</span><span class="pun">,</span><span class="pln"> connected</span><span class="pun">()).</span><span class="pln">first</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Message</span><span class="pun">&gt;</span><span class="pln"> messages </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Message</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">"user = ? and read = false order by date desc"</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; connectedUser<br>&nbsp; &nbsp; </span><span class="pun">).</span><span class="kwd">from</span><span class="pun">(</span><span class="pln">page </span><span class="pun">*</span><span class="pln"> </span><span class="lit">10</span><span class="pun">).</span><span class="pln">fetch</span><span class="pun">(</span><span class="lit">10</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; render</span><span class="pun">(</span><span class="pln">connectedUser</span><span class="pun">,</span><span class="pln"> messages</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.7_E6_B5_8B_E8_AF_95_E9_A9_B1_E5_8A_A8_E5_BC_80_E5_8F_91TDD">1.2.7 测试驱动开发（TDD）<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.7_E6_B5_8B_E8_AF_95_E9_A9_B1_E5_8A_A8_E5_BC_80_E5_8F_91TDD">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;框架集成的测试运行器（Test Runner）让测试驱动开发变的非常简单。Play允许开发者编写各种类型的测试，从基本的单元测试到完善的验收测试，以及直接在浏览器中运行的Selenium测试。值得注意的是，这些测试还可以进行代码覆盖率的统计，具体的测试界面如图1.4所示。
+</p>
+<p><img class="inline" src="./框架特性_files/guide2-2.png" alt="图片资源/guide2-2.png">
+</p>
+<p>
+</p><p><b>(图1.4 浏览器中的测试运行器)</b>
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.8FullStack_E5_BA_94_E7_94_A8_E6_A1_86_E6_9E_B6">1.2.8 Full Stack应用框架<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.8FullStack_E5_BA_94_E7_94_A8_E6_A1_86_E6_9E_B6">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play框架的最初设计受到实际Java Web开发的启发，包含了所有创建主流Web应用所需要的工具：
+</p>
+<ul><li>通过JDBC提供关系数据库支持。
+</li></ul><ul><li>使用Hibernate进行对象关系映射（JPA）。
+</li></ul><ul><li>使用分布式Memcached集成缓存支持。
+</li></ul><ul><li>以JSON或者XML的形式提供web service支持。
+</li></ul><ul><li>基于OpenID的分布式用户信息验证。
+</li></ul><ul><li>Web应用可以部署在任何应用服务器上（Tomcat，Jboss，GAE，Cloud等）。
+</li></ul><ul><li>图像处理API（验证码）。
+</li></ul><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此外Play还提供了很多实用的模块。开发者可以结合这些模块构建Web应用，这使得我们可以以更加简单，更加直接的方式重用Java代码、模板以及静态资源（比如JavaScript和CSS文件）。
+</p>
+<p><br>
+</p><h3 id="section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.9Play_E7_9A_84_E7_89_B9_E6_80_A7_E6_80_BB_E7_BB_93">1.2.9 Play的特性总结<a class="hashlink" href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#section-_E6_A1_86_E6_9E_B6_E7_89_B9_E6_80_A7-1.2.9Play_E7_9A_84_E7_89_B9_E6_80_A7_E6_80_BB_E7_BB_93">#</a></h3>
+<p></p>
+<ol><li>自动编译和重载：当编辑Java文件并保存后，刷新浏览器就能立即查看结果。使用Play开发不需要手动编译、部署以及重新启动Web服务器等操作。
+</li><li>无状态模型：Play是真正的无共享框架，为REST而准备。它可以将同一个应用的多个实例分别部署在多台服务器上，因而扩展性非常强。
+</li><li>高效的模板引擎：基于表达式语言Groovy的清晰模板引擎，提供了模板的继承、导入以及标签自定义等功能。
+</li><li>快速解决错误：当错误发生时，Play会在浏览器中显示出错代码块并提示问题发生的确切位置。
+</li><li>Full Stack:提供创建Web应用所需的全部功能，集成了Hibernate、OpenID、Memcached等第三方类库。
+</li><li>纯Java：Play采用Java编写代码，可以方便地使用任何Java类库，并且能够非常好地和Eclipse、Netbeans等IDE集成，只需通过命令生成匹配的项目文件即可。
+</li><li>基于非阻塞的IO模型：允许创建基于长轮询和WebSocket的主流Web应用。
+</li><li>有趣并且高效：省去了Java应用重启的时间，提高了应用的开发效率。
+</li></ol>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="http://www.playframework.cn/wiki/%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 7）最后由 郑舒天 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7&amp;r1=7&amp;r2=6">07-Apr-2012 06:51</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E6%A1%86%E6%9E%B6%E7%89%B9%E6%80%A7" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="./框架特性_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="./框架特性_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table border="0" class="imageplugin">
+<tbody><tr><td><img src="./框架特性_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table border="0" class="imageplugin">
+<tbody><tr><td><img src="./框架特性_files/logo.gif" height="75" width="165"></td></tr>
+</tbody></table>
+
+<table border="0" class="imageplugin">
+<tbody><tr><td><img src="./框架特性_files/1" height="165" width="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="./框架特性_files/stat.php" type="text/javascript"></script><script src="./框架特性_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>

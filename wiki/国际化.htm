@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="top" xmlns="http://www.w3.org/1999/xhtml" xmlns:jspwiki="http://www.jspwiki.org"><head>
+  <title>
+    PlayFramework：国际化
+  </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen, projection, print" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki_print.css">
+<!-- INCLUDERESOURCES (stylesheet) -->
+
+<!-- INCLUDERESOURCES (inlinecss) -->
+
+
+
+<noscript>
+<style type="text/css">
+#hiddenmorepopup { display:block; }
+</style>
+</noscript>
+
+
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/mootools.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/prettify.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki-common.js"></script>
+<script type="text/javascript" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki-commonstyles.js"></script>
+<!-- INCLUDERESOURCES (script) -->
+
+
+
+
+
+<meta name="wikiContext" content="view">
+<meta name="wikiBaseUrl" content="http://www.playframework.cn/">
+<meta name="wikiPageUrl" content="/wiki/%23%24%25">
+<meta name="wikiEditUrl" content="/Edit.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96">
+<meta name="wikiJsonUrl" content="/JSON-RPC">
+<meta name="wikiPageName" content="国际化">
+<meta name="wikiUserName" content="119.137.62.59">
+<meta name="wikiTemplateUrl" content="/templates/default/">
+<meta name="wikiApplicationName" content="PlayFramework">
+
+<script type="text/javascript">//<![CDATA[
+/* Localized javascript strings: LocalizedStrings[] */
+var LocalizedStrings = {
+"javascript.edit.allsections":"（全部）",
+"javascript.slimbox.error":"<h2>错误</h2> 您的请求有问题。<br />请重试",
+"javascript.slimbox.remoteRequest":"远程请求 {0}（共 {1} 个）",
+"javascript.slimbox.close":"关闭 &#215;",
+"javascript.quick.edit":"[编辑]",
+"javascript.sort.descending":"降序。单击反转排序顺序",
+"javascript.expand":"单击扩展",
+"javascript.group.validName":"请为新组指定有效的名称",
+"javascript.slimbox.next":"下一个&raquo;",
+"javascript.filter.all":"（全部）",
+"javascript.edit.areyousure":"如果没有单击“保存”按钮所做的更改将丢失。是否要退出此页面？",
+"javascript.quick.edit.title":"编辑段落 {0}...",
+"javascript.slimbox.directLink":"到目标的直接链接",
+"javascript.prefs.areyousure":"如果没有单击“保存用户首选项”按钮，前面所做的更改将丢失。是否要退出此页面？",
+"javascript.sbox.clone.suffix":"-New",
+"javascript.slimbox.info":"图像 {0}（共 {1} 个）",
+"javascript.tip.default.title":"更多...",
+"javascript.edit.resize":"拖动来调整文本区的大小",
+"javascript.edit.findandreplace.nomatch":"未找到匹配项！",
+"javascript.sort.ascending":"升序。单击反转排序顺序",
+"javascript.slimbox.close.title":"关闭 [Esc]",
+"javascript.edit.toolbar.makeSelection":"请先进行选择。",
+"javascript.favs.hide":"单击隐藏收藏夹",
+"javascript.sectionediting.label":"段落概览",
+"javascript.slimbox.previous":"&laquo;上一个",
+"javascript.favs.show":"单击显示收藏夹",
+"javascript.collapse":"单击折叠",
+"javascript.category.title":"单击显示类别 [{0}] ...",
+"javascript.sort.click":"单击排序",
+"javascript.edit.startOfPage":"（页面开始）"
+};
+
+
+/* INCLUDERESOURCES (jsfunction) */
+
+//]]></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="search" href="http://www.playframework.cn/wiki/FindPage" title="Search PlayFramework">
+<link rel="help" href="http://www.playframework.cn/wiki/TextFormattingRules" title="Help">
+
+ <link rel="start" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="Front page">
+<link rel="alternate stylesheet" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki_print.css" title="Print friendly">
+<link rel="alternate stylesheet" type="text/css" href="%E5%9B%BD%E9%99%85%E5%8C%96_files/jspwiki.css" title="Standard">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+<link rel="icon" type="image/x-icon" href="http://www.playframework.cn/images/favicon.ico">
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+</head>
+
+<body class="view">
+
+<div id="wikibody" class="fav-left">
+ 
+  
+
+
+
+
+
+
+<div id="header">
+
+  <div class="titlebox"></div>
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+
+  <div class="pagename">国际化</div>
+
+  <div class="searchbox">
+
+
+
+
+
+
+<form action="/Search.jsp" class="wikiform" id="searchForm" accept-charset="UTF-8">
+
+  <div style="position:relative">
+  <input onblur="if( this.value == '' ) { this.value = this.defaultValue }; return true; " onfocus="if( this.value == this.defaultValue ) { this.value = ''}; return true; " value="快速导航" name="query" id="query" size="20" accesskey="f" autocomplete="off" type="text">
+  <button type="submit" name="searchSubmit" id="searchSubmit" value="转到！" title="转到！"></button>
+  </div>
+  <div id="searchboxMenu" style="visibility: hidden; opacity: 0;" visibility="visible">
+    <div id="searchTools">
+      <a href="#" id="quickView" class="action" onclick="SearchBox.navigate( '/wiki/__PAGEHERE__','查看选定页面' );" title="查看选定页面">查看</a>
+      <a href="#" id="quickEdit" class="action" onclick="SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__','编辑选定页面' );" title="编辑选定页面">编辑</a>
+      <a href="#" id="quickClone" class="action" onclick="return SearchBox.navigate( '/Edit.jsp?page=__PAGEHERE__', '复制选定页面', true );" title="复制选定页面">复制</a>
+      <a href="#" id="advancedSearch" class="action" onclick="SearchBox.navigate( 'http://www.playframework.cn/Search.jsp?query=__PAGEHERE__','国际化' )" title="高级搜索 [ f ]">查找</a>
+    </div>
+    <div id="searchResult">
+	  快速搜索
+      <span id="searchTarget">（输入提示）</span>
+      <span id="searchSpin" class="spin" style="position:absolute;display:none;"></span>
+	  <div id="searchOutput"></div>
+    </div>
+    <div id="recentSearches" style="display:none;">
+      最近的搜索
+      <span><a href="#" id="recentClear">（清除）</a></span>
+    </div>
+  </div>
+
+</form></div>
+
+  <div class="breadcrumbs">浏览记录：&nbsp;<a class="wikipage" href="http://www.playframework.cn/wiki/Action%E9%93%BE">Action链</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%8B%A6%E6%88%AA%E5%99%A8">拦截器</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Session%E5%92%8CFlash%E4%BD%9C%E7%94%A8%E5%9F%9F">Session和Flash作用域</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E5%B1%9E%E6%80%A7%E6%A8%A1%E6%8B%9F">属性模拟</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE">数据库配置</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96">数据持久化</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%97%A0%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B">无状态模型</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/Job%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8">Job的直接调用</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%937">本章小结7</a>, <a class="wikipage" href="http://www.playframework.cn/wiki/%E9%AA%8C%E8%AF%81%E7%A0%81">验证码</a></div>
+
+</div>
+
+  <div id="content">
+
+    <div id="page">
+      
+
+
+
+
+
+<div id="actionsTop" class="pageactions"> 
+  <ul>
+
+    
+    
+    
+
+    
+    <li id="morebutton" href="#">
+      <a href="http://www.playframework.cn/wiki/MoreMenu" class="action more">更多...</a>
+    <ul id="morepopup" style="visibility: hidden; opacity: 0;">
+     
+       	
+     
+       
+     
+    
+       
+     
+       <li>
+       
+       <a class="action rawpage wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BD%E9%99%85%E5%8C%96?skin=raw" title="查看页面源代码">查看页面源代码
+       </a>
+       
+       
+       </li>
+      
+        
+  
+      
+      
+      
+
+      
+	  <li class="separator">
+        <div id="moremenu"></div>
+      </li>
+  </ul></li>
+
+  </ul>
+</div>
+
+      
+
+
+
+
+
+
+
+
+<div class="tabmenu">
+
+  
+
+  
+
+  
+  
+  
+    
+  
+    
+  
+
+
+
+  <a class="activetab" id="menu-pagecontent" accesskey="v">查看</a>
+
+  
+
+  
+  <a id="menu-attach" accesskey="a">附件</a>
+  
+    
+  <a id="menu-info" href="http://www.playframework.cn/PageInfo.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96" accesskey="i">信息</a>
+    
+  
+
+</div>
+<div class="tabs">
+
+  <div id="pagecontent">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国际化(I18n)是指应用程序可以适应不同地区的语言，是商业系统中
+不可或缺的一部分，所以当我们需要构建跨区域的应用时，必须使用国际化来满足不同语言的需求。本节的介绍，可以帮助我们理解Play应用程序如何实现国际
+化支持。
+</p><p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.1UTF8_E7_BC_96_E7_A0_81">10.7.1 UTF-8 编码<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.1UTF8_E7_BC_96_E7_A0_81">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用程序的编码一直是令人非常头痛的问题，因此Play给出了一个较好的解决方案：即所有的编码都采用UTF-8编码格式。
+</p>
+<p><br>
+</p>
+<div class="quote">
+补充：
+<p>UTF-8是UNICODE的一种变长字符编码，又称万国码。并且已经标准化，可以显示所有语言的字符。
+</p></div>
+
+<p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者在开发Play应用时，请务必保持编码的一致：
+</p>
+<ol><li>以UTF-8编码方式编辑所有的源文件。
+</li><li>在HTTP请求头中定义适当的编码。
+</li><li>将HTML meta标签设置为UTF–8。
+</li><li>如果应用使用了数据库，将数据库编码配置为UTF-8格式，并且始终以UTF-8编码方式连接。
+</li></ol><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读者可能会感到奇怪，为什么Play的配置文件(甚至一些Java属性文件)
+都不是*.properties后缀格式的。这是因为Java规定属性文件(properties 
+files)必须为iso-8859-1编码，而Play只支持UTF-8一种编码格式。
+</p>
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.2_E5_AE_9A_E4_B9_89_E4_B8_8D_E5_90_8C_E8_AF_AD_E8_A8_80_E7_9A_84messages_E6_96_87_E4_BB_B6">10.7.2 定义不同语言的messages文件<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.2_E5_AE_9A_E4_B9_89_E4_B8_8D_E5_90_8C_E8_AF_AD_E8_A8_80_E7_9A_84messages_E6_96_87_E4_BB_B6">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了使应用程序支持I18n，需要为不同区域的语言配置messages文件。我们可以直接在Play项目的conf/目录下创建messages文件(该文件实际就是Java属性文件)，例如：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">hello</span><span class="pun">=</span><span class="typ">Hello</span><span class="pun">!</span><span class="pln"><br>back</span><span class="pun">=</span><span class="typ">Back</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以为不同语言指定不同的messages文件，并以ISO语言代码作为messages文件的扩展名。例如，创建conf/messages.zh文件，对应中文的国际化支持：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">hello</span><span class="pun">=你好！</span><span class="pln"><br>back</span><span class="pun">=后退</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们创建了不同语言指定的messages文件之后，需要在conf/application.conf文件中进行配置，添加文件的引用：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">application</span><span class="pun">.</span><span class="pln">langs</span><span class="pun">=</span><span class="pln">zh</span></pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当所有的配置完成后，我们就可以在视图模板中进行中文的国际化操作了：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;h1&gt;</span><span class="pln">&amp;{'hello'}</span><span class="tag">&lt;/h1&gt;</span></pre>
+</div>
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.3_E5_AE_9A_E4_B9_89_E6_94_AF_E6_8C_81_E7_9A_84_E8_AF_AD_E8_A8_80">10.7.3 定义支持的语言<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.3_E5_AE_9A_E4_B9_89_E6_94_AF_E6_8C_81_E7_9A_84_E8_AF_AD_E8_A8_80">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以在conf/application.conf文件中设置程序支持的语言列表，适应多种语言的国际化：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">application</span><span class="pun">.</span><span class="pln">langs</span><span class="pun">=</span><span class="pln">fr</span><span class="pun">,</span><span class="pln">en</span><span class="pun">,</span><span class="pln">ja</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当用户第一次发送请求时，Play会解析HTTP请求头中Accept-language的信息，识别用户所使用的语言。之后Play会将识别的语言信息保存至PLAY_LANG cookie，并在以后的请求中使用同样的语言进行处理。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以采用“语言_国家”的命名形式区别那些多样化的语言(en_US，en_GB，zh_CN或者zh_TW)。比如：在某个应用程序中，大部分用户来自美国，但同时需要支持英国英语，比较好的定义方式是将“en”作为美国英语，将“en_GB”作为英国英语。
+</p>
+<p><br>
+</p>
+<div class="quote">
+注意：
+<p>HTTP请求头中的Accept-language常常不包含国家信息，因此需要慎用这种“语言_国家”的形式定义语言。
+</p></div>
+<br>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以在Java代码中直接使用play.i18n.Lang对象获得当前使用的语言：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">String</span><span class="pln"> lang </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Lang</span><span class="pun">.</span><span class="pln">get</span><span class="pun">();</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;play.i18n.Lang辅助类提供的change()方法可以改变用户语言：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Lang</span><span class="pun">.</span><span class="pln">change</span><span class="pun">(</span><span class="str">"zh"</span><span class="pun">);</span></pre>
+</div>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用change()方法改变用户语言后，新的语言信息会保存在用户的language cookie中。
+</p>
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.4_E5_AE_9A_E4_B9_89_E6_97_B6_E9_97_B4_E6_A0_BC_E5_BC_8F">10.7.4 定义时间格式<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.4_E5_AE_9A_E4_B9_89_E6_97_B6_E9_97_B4_E6_A0_BC_E5_BC_8F">#</a></h3>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以在application.conf文件中进行如下属性设置，定义项目的统一时间格式：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">date</span><span class="pun">.</span><span class="pln">format</span><span class="pun">=</span><span class="pln">yyy</span><span class="pun">-</span><span class="pln">MM</span><span class="pun">-</span><span class="pln">dd<br>date</span><span class="pun">.</span><span class="pln">format</span><span class="pun">.</span><span class="pln">fr</span><span class="pun">=</span><span class="pln">dd</span><span class="pun">/</span><span class="pln">MM</span><span class="pun">/</span><span class="pln">yyyy</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此时如果在视图模板中使用${date.format()}进行渲染，format()方法将参照此配置进行格式规定。如果date变量作为HTTP参数进行绑定，也遵循配置中的时间格式。
+</p>
+<p><br>
+</p><h3 id="section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.5_E6_9C_AC_E5_9C_B0_E5_8C_96messages_E7_94_A8_E6_B3_95_E8_AF_A6_E8_A7_A3">10.7.5 本地化messages用法详解<a class="hashlink" href="#section-_E5_9B_BD_E9_99_85_E5_8C_96-10.7.5_E6_9C_AC_E5_9C_B0_E5_8C_96messages_E7_94_A8_E6_B3_95_E8_AF_A6_E8_A7_A3">#</a></h3>
+<b>Messages参数</b>
+<p></p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在程序代码中，我们可以使用play.i18n.Messages类获取messages文件中定义的内容：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> hello</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; renderText</span><span class="pun">(</span><span class="typ">Messages</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">"hello"</span><span class="pun">));</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messages文件中的内容是可以使用标准的java.util.Formatter语法进行格式化的，因此当我们需要在messages文件中定义动态内容时，可以使用%s，%d等格式化输出：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">hello</span><span class="pun">=</span><span class="typ">Hello</span><span class="pln"> </span><span class="pun">%</span><span class="pln">s</span><span class="pun">!</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果messages文件中包含了动态内容，play.i18n.Messages类可以直接传递变量。修改hello Action：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> hello</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> user</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; renderText</span><span class="pun">(</span><span class="typ">Messages</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">"hello"</span><span class="pun">,</span><span class="pln"> user</span><span class="pun">));</span><span class="pln"><br></span><span class="pun">}</span></pre>
+</div>
+<p><br>
+<b>模板输出</b>
+</p>
+<p>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当应用具备国际化支持后，我们可以在模板文件中使用 &amp;{...} 显示本地化内容：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;h1&gt;</span><span class="pln">&amp;{'hello'}</span><span class="tag">&lt;/h1&gt;</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下是包含动态内容的&amp;{...}使用方式：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;h1&gt;</span><span class="pln">&amp;{'hello', params.user}</span><span class="tag">&lt;/h1&gt;</span></pre>
+</div>
+<p><br>
+<b>多个参数</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果开发者在使用messages文件时需要使用多个传入参数，可以采用下例写法。该messages文件定义了guess的本地化操作，传入了两个十进制的integer参数。
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">guess</span><span class="pun">=</span><span class="typ">Please</span><span class="pln"> pick a number between </span><span class="pun">%</span><span class="pln">d </span><span class="kwd">and</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在模板中就可以按照messages文件所定义的输出格式进行本地化操作了，但在使用时需要注意参数的顺序，具体使用方式如下。
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;p&gt;</span><span class="pln">&amp;{'guess', low, high}</span><span class="tag">&lt;/p&gt;</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果low的值为10，high的值为100，那么在模板中的输出就是：
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="typ">Please</span><span class="pln"> pick a number between </span><span class="lit">10</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">100</span></pre>
+</div>
+<p>
+</p><p><br>
+<b>参数索引</b>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在使用messages文件时，开发者可以通过索引定位，更加精确地使用传入参数，实现个性化的用法。下例代码展示了英文messages本地化的操作，包含了两个传入参数：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">guess</span><span class="pun">.</span><span class="pln">characteristic</span><span class="pun">=</span><span class="typ">Guess</span><span class="pln"> </span><span class="pun">%</span><span class="pln">s</span><span class="pun">’</span><span class="pln">s </span><span class="pun">%</span><span class="pln">s</span><span class="pun">.</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定义的guess.characteristic包含两个传入参数，在模板中的具体使用如下：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="tag">&lt;p&gt;</span><span class="pln">&amp;{'guess.characteristic', person.name, 'age'}</span><span class="tag">&lt;/p&gt;</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是有些国家的语言并不是按照这个顺序的，比如法文就是按照相反的顺序书写这句话的。因此，我们在法文的本地化文件messages.fr中就需要使用索引，指定传入参数的顺序。
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">guess</span><span class="pun">.</span><span class="pln">characteristic</span><span class="pun">=</span><span class="typ">Devinez</span><span class="pln"> </span><span class="pun">%</span><span class="lit">2</span><span class="pln">$s de </span><span class="pun">%</span><span class="lit">1</span><span class="pln">$s</span><span class="pun">.</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在messages文件中使用索引的格式为索引数字和$符号，索引的起始位置从1开始。因此，%2$s的位置将会输出传入的第二个参数，即age这个参数。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play还允许针对传入的age参数进行本地化操作，只需要在messages文件中使用&amp;{...}标签即可。如果开发者希望改变模板中age的输出样式，可以将age作为key值，进行本地化设置，下例为messages.zh文件的写法：
+</p>
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">guess</span><span class="pun">.</span><span class="pln">characteristic</span><span class="pun">=猜猜%</span><span class="pln">s</span><span class="pun">的&amp;{%</span><span class="pln">s</span><span class="pun">}。</span><span class="pln"><br>age </span><span class="pun">=</span><span class="pln"> </span><span class="pun">年龄</span></pre>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下例为messages.fr文件的写法
+<div class="prettify">
+<pre class="prettyprint prettified"><span class="pln">guess</span><span class="pun">.</span><span class="pln">characteristic</span><span class="pun">=</span><span class="typ">Devinez</span><span class="pln"> </span><span class="pun">&amp;{%</span><span class="lit">2</span><span class="pln">$s</span><span class="pun">}</span><span class="pln"> de </span><span class="pun">%</span><span class="lit">1</span><span class="pln">$s</span><span class="pun">.</span><span class="pln"><br>age </span><span class="pun">=</span><span class="pln"> l</span><span class="pun">’</span><span class="pln">age</span></pre>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在messages文件中使用&amp;{...}标签后，Play会按照key值进行遍历查找，获取相应的本地化内容。
+</p></div>
+
+
+
+
+
+
+        
+  </div>
+
+
+  
+
+  
+  <div id="attach" class="hidetab">
+
+    
+
+
+
+
+
+
+
+
+
+
+<div id="addattachment">
+<h3>添加新附件</h3>
+
+
+<div class="formhelp">只有授权的用户才能上传新附件。</div>
+
+</div>
+
+
+
+  </div>
+
+  
+    
+  <div id="info" class="hidetab">
+
+  </div>
+
+    
+  
+
+<div style="clear:both;"></div>
+</div>
+
+      
+
+
+
+
+
+
+
+<div id="actionsBottom" class="pageactions"> 
+    
+
+    <a href="#top" class="action quick2top" title="转到顶部">«</a>
+
+    
+       该页面（修订版 27）最后由 郑舒天 在 <a href="http://www.playframework.cn/Diff.jsp?page=%E5%9B%BD%E9%99%85%E5%8C%96&amp;r1=27&amp;r2=26">06-Sep-2013 06:09</a> 修改。
+    
+
+    
+
+   
+
+  
+
+   
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div id="favorites">
+
+  
+
+
+
+
+
+
+<div class="userbox">
+
+  
+    <span class="username anonymous">
+      您好（匿名访客）
+    </span>
+  
+  
+  
+
+  
+  
+  
+    
+      <a href="http://www.playframework.cn/Login.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96" class="action login" title="登录或注册为新用户">登录</a>
+    
+  
+  
+  
+  
+
+  
+  
+    <a href="http://www.playframework.cn/UserPreferences.jsp?redirect=%E5%9B%BD%E9%99%85%E5%8C%96" class="action prefs" accesskey="p" title="管理首选项 [ p ]">我的首选项(<span class="accesskey">P</span>)
+    </a>
+  
+  
+
+  <div class="clearbox"></div>
+
+</div>
+  
+  <div id="hiddenmorepopup">
+  
+  </div>
+  
+  
+
+  
+
+  
+
+  
+  <div class="leftmenu">
+    <hr>
+<p><b>Play!China Wiki</b>
+</p>
+<p>
+</p><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial">书籍撰写</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/PlayChina%20Team">团队首页</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90">图片资源</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E7%A4%BE%E5%8C%BA%E7%8E%B0%E7%8A%B6">社区现状</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E5%8F%91%E5%B1%95%E8%BD%A8%E8%BF%B9">发展轨迹</a>
+</li></ul><ul><li><a class="wikipage" href="http://www.playframework.cn/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+</li></ul>
+    
+  </div>
+  
+  <div class="leftmenufooter">
+    <hr>
+<p><b>Official Platform</b>
+</p>
+<ul><li><a class="external" href="http://www.oopsplay.org/">官方门户</a><img class="outlink" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/out.png" alt="">
+</li></ul><p>
+</p><ul><li><a class="external" href="mailto:dhl@playframework.cn">团队邮箱</a><img class="outlink" src="%E5%9B%BD%E9%99%85%E5%8C%96_files/out.png" alt="">
+</li></ul><p>
+</p><hr>
+<b>Cooperative Site</b>
+<p><br>
+</p><table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96_files/oschina_logo.png"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96_files/logo.gif" width="165" height="75"></td></tr>
+</tbody></table>
+
+<table class="imageplugin" border="0">
+<tbody><tr><td><img src="%E5%9B%BD%E9%99%85%E5%8C%96_files/1.jpg" width="165" height="165"></td></tr>
+</tbody></table>
+
+<p></p>
+<p>
+    
+  </p></div>
+
+  
+
+  
+  <!-- 
+  <div class="wikiversion">JSPWiki v2.8.4
+  --> 
+ <span class="rssfeed">
+    
+  </span>
+  </div>  
+  <div style="display:none">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1252938720'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252938720' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1252938720"><a href="http://www.cnzz.com/stat/website.php?web_id=1252938720" target="_blank" title="站长统计">站长统计</a></span><script src="%E5%9B%BD%E9%99%85%E5%8C%96_files/stat.php" type="text/javascript"></script><script src="%E5%9B%BD%E9%99%85%E5%8C%96_files/core.php" charset="utf-8" type="text/javascript"></script>
+  </div>
+</div>
+
+
+	<div class="clearbox"></div>
+  </div>
+
+  
+
+
+
+
+
+ 
+<div id="footer">
+
+  <div class="applicationlogo"> 
+    <a href="http://www.playframework.cn/wiki/PlayFramework%20Tutorial" title="转到主页 PlayFramework Tutorial ">主页</a>
+  </div>
+
+  <div class="companylogo"></div>
+
+  <div class="copyright"></div>
+
+  <div class="wikiversion">
+    JSPWiki v2.8.4
+  </div>
+
+  <div class="rssfeed">
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</body></html>
